@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
@@ -14,6 +15,11 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [animatedOpen, setAnimatedOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const closeMenu = () => setOpen(false);
 
@@ -79,65 +85,68 @@ export function MobileNav() {
         </span>
       </button>
 
-      {visible && (
-        <div className="fixed inset-0 top-16 z-40 overflow-hidden">
-          <button
-            type="button"
-            className={`absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 ${
-              animatedOpen ? "opacity-100" : "opacity-0"
-            }`}
-            onClick={closeMenu}
-            aria-label="Cerrar menú"
-          />
+      {mounted &&
+        visible &&
+        createPortal(
+          <div className="fixed inset-0 top-16 z-40 overflow-hidden md:hidden">
+            <button
+              type="button"
+              className={`absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 ${
+                animatedOpen ? "opacity-100" : "opacity-0"
+              }`}
+              onClick={closeMenu}
+              aria-label="Cerrar menú"
+            />
 
-          <nav
-            id="mobile-nav-panel"
-            className={`relative border-b border-accent/15 bg-brand px-5 py-6 shadow-2xl shadow-black/50 transition-all duration-300 ease-out ${
-              animatedOpen
-                ? "translate-y-0 opacity-100"
-                : "-translate-y-4 opacity-0"
-            }`}
-          >
-            <ul className="flex flex-col gap-1">
-              {NAV_LINKS.map((link) => {
-                const isActive = isNavLinkActive(pathname, link.href);
+            <nav
+              id="mobile-nav-panel"
+              className={`relative border-b border-accent/15 bg-brand px-5 py-6 shadow-2xl shadow-black/50 transition-all duration-300 ease-out ${
+                animatedOpen
+                  ? "translate-y-0 opacity-100"
+                  : "-translate-y-4 opacity-0"
+              }`}
+            >
+              <ul className="flex flex-col gap-1">
+                {NAV_LINKS.map((link) => {
+                  const isActive = isNavLinkActive(pathname, link.href);
 
-                return (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      onClick={closeMenu}
-                      aria-current={isActive ? "page" : undefined}
-                      className={`block rounded-lg px-4 py-3.5 text-lg font-medium transition-colors ${
-                        isActive
-                          ? "bg-accent/10 text-accent"
-                          : "text-white/80 hover:bg-accent/10 hover:text-accent"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        onClick={closeMenu}
+                        aria-current={isActive ? "page" : undefined}
+                        className={`block rounded-lg px-4 py-3.5 text-lg font-medium transition-colors ${
+                          isActive
+                            ? "bg-accent/10 text-accent"
+                            : "text-white/80 hover:bg-accent/10 hover:text-accent"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
 
-            <div className="mt-6 space-y-3 border-t border-accent/15 pt-6">
-              <WhatsAppLink className="flex w-full items-center justify-center rounded-lg border border-accent/25 px-4 py-3.5 text-base font-medium text-accent hover:bg-accent/10">
-                WhatsApp
-              </WhatsAppLink>
-              <Button
-                href="/contacto"
-                variant="primary"
-                size="lg"
-                className="w-full shadow-none"
-                onClick={closeMenu}
-              >
-                Valoración gratuita
-              </Button>
-            </div>
-          </nav>
-        </div>
-      )}
+              <div className="mt-6 space-y-3 border-t border-accent/15 pt-6">
+                <WhatsAppLink className="flex w-full items-center justify-center rounded-lg border border-accent/25 px-4 py-3.5 text-base font-medium text-accent hover:bg-accent/10">
+                  WhatsApp
+                </WhatsAppLink>
+                <Button
+                  href="/contacto"
+                  variant="primary"
+                  size="lg"
+                  className="w-full shadow-none"
+                  onClick={closeMenu}
+                >
+                  Valoración gratuita
+                </Button>
+              </div>
+            </nav>
+          </div>,
+          document.body,
+        )}
     </div>
   );
 }

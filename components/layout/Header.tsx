@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { NavLinks } from "@/components/layout/NavLinks";
-import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 
 export function Header() {
   return (
@@ -18,20 +17,16 @@ export function Header() {
         <NavLinks className="hidden items-center gap-1 md:flex" />
 
         <div className="flex shrink-0 items-center gap-2">
-          <WhatsAppLink
-            showIcon
-            className="hidden h-10 w-10 items-center justify-center rounded-full border border-accent/25 text-accent hover:border-accent/40 hover:bg-accent/10 md:inline-flex"
-          >
-            <span className="sr-only">WhatsApp</span>
-          </WhatsAppLink>
-          <Button
-            href="/contacto"
-            variant="primary"
-            size="sm"
-            className="hidden shadow-none md:inline-flex"
-          >
-            Valoración gratuita
-          </Button>
+          <div className="hidden md:block">
+            <Button
+              href="/contacto"
+              variant="primary"
+              size="sm"
+              className="shadow-none"
+            >
+              Valoración gratuita
+            </Button>
+          </div>
           <MobileNav />
         </div>
       </Container>
