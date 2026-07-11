@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   },
   description:
     "Agencia inmobiliaria en Madrid. Compra, vende o alquila propiedades con transparencia y asesoramiento personalizado.",
+  icons: {
+    icon: "/brand/logo-web.png",
+    apple: "/brand/logo-web.png",
+  },
 };
 
 export default function RootLayout({

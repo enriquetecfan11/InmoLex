@@ -10,7 +10,7 @@
 ## 2. Datos reales
 
 - [ ] Sustituir placeholders de contacto y titular legal
-- [ ] Logo real (el dorado `#c9a962` ya coincide con la marca)
+- [x] Logo real (el dorado `#c9a962` ya coincide con la marca) — `public/brand/logo-web.png`
 - [ ] Propiedades reales con fotos propias
 - [ ] Revisar y aprobar textos con la clienta
 - [ ] Carta de presentación definitiva (`lib/about.ts`)

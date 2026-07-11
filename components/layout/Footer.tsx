@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/contact";
 import { NAV_LINKS } from "@/lib/navigation";
@@ -34,8 +35,8 @@ export function Footer() {
       <Container className="py-12 sm:py-14 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="font-display text-3xl text-accent">
-              InmoLex
+            <Link href="/" className="inline-block transition-opacity hover:opacity-90">
+              <BrandLogo imageClassName="h-11 w-auto shrink-0" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
               Inmobiliaria premium en Madrid. Compra, venta y alquiler con

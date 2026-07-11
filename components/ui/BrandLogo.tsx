@@ -1,25 +1,36 @@
-import { HouseIcon } from "@/components/ui/HouseIcon";
+import Image from "next/image";
+
+export const BRAND_LOGO = {
+  src: "/brand/logo-web.png",
+  width: 438,
+  height: 393,
+  alt: "InmoLex — Inmobiliaria Cero",
+} as const;
 
 interface BrandLogoProps {
   showName?: boolean;
   className?: string;
+  imageClassName?: string;
 }
 
-export function BrandLogo({ showName = true, className = "" }: BrandLogoProps) {
+export function BrandLogo({
+  showName = true,
+  className = "",
+  imageClassName = "h-9 w-auto shrink-0 sm:h-10",
+}: BrandLogoProps) {
   return (
     <span className={`flex min-w-0 items-center gap-2.5 ${className}`}>
-      {/* TODO: sustituir por logo real de Inmobiliaria Cero en public/brand/logo.svg */}
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/[0.08] text-accent sm:h-10 sm:w-10">
-        <HouseIcon size={20} />
-      </span>
+      <Image
+        src={BRAND_LOGO.src}
+        alt={BRAND_LOGO.alt}
+        width={BRAND_LOGO.width}
+        height={BRAND_LOGO.height}
+        className={imageClassName}
+        priority
+      />
       {showName && (
-        <span className="flex min-w-0 flex-col leading-none">
-          <span className="truncate font-display text-xl tracking-tight text-accent sm:text-2xl">
-            InmoLex
-          </span>
-          <span className="mt-0.5 truncate text-[0.6rem] font-medium uppercase tracking-[0.18em] text-white/40">
-            Inmobiliaria Cero
-          </span>
+        <span className="truncate font-display text-xl tracking-tight text-accent sm:text-2xl">
+          InmoLex
         </span>
       )}
     </span>
