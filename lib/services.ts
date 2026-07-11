@@ -1,7 +1,7 @@
 export type ServiceCategory =
   | "intermediacion"
   | "inversion"
-  | "audiovisual";
+  | "adicional";
 
 export interface Service {
   id: string;
@@ -16,71 +16,74 @@ export interface Service {
 export const SERVICE_CATEGORY_LABELS: Record<ServiceCategory, string> = {
   intermediacion: "Intermediación inmobiliaria",
   inversion: "Inversión y financiación",
-  audiovisual: "Servicios audiovisuales",
+  adicional: "Servicios adicionales",
 };
 
-export const SERVICES: Service[] = [
+export const CORE_SERVICES: Service[] = [
   {
-    id: "inmuebles",
-    title: "Inmuebles",
+    id: "comprar-vender",
+    title: "Comprar o vender",
     description:
-      "Accede a nuestra cartera exclusiva de viviendas en las mejores zonas de Madrid. Compra, venta y alquiler con asesoramiento personalizado.",
+      "Compra, venta y asesoramiento personalizado en cada paso del proceso inmobiliario.",
     category: "intermediacion",
-    href: "/propiedades",
-    cta: "Ver propiedades",
-  },
-  {
-    id: "venta",
-    title: "Venta de viviendas",
-    description:
-      "Valoramos tu inmueble con criterio de mercado, preparamos un reportaje profesional y gestionamos todo el proceso hasta la firma.",
-    category: "intermediacion",
-    href: "/contacto",
-    cta: "Solicitar valoración",
+    href: "/servicios/comprar-vender",
+    cta: "Solicitar información",
   },
   {
     id: "alquiler",
-    title: "Alquiler de viviendas",
+    title: "Alquiler",
     description:
-      "Selección de inquilinos, contratos, visitas y seguimiento. Para propietarios e inquilinos que buscan transparencia y agilidad.",
+      "Busca un alquiler o pon tu propiedad en el mercado con gestión integral y transparencia.",
     category: "intermediacion",
-    href: "/contacto",
+    href: "/servicios/alquiler",
     cta: "Consultar alquiler",
   },
   {
-    id: "inversion",
-    title: "Inversión inmobiliaria",
+    id: "valoracion",
+    title: "Valoración gratuita",
     description:
-      "Identificamos oportuniones con rentabilidad real: análisis de zona, proyección de retorno y acompañamiento en la operación.",
-    category: "inversion",
-    href: "/contacto",
-    cta: "Hablar con un asesor",
+      "Tasación sin compromiso con criterio de mercado y respuesta en menos de 24 horas.",
+    category: "intermediacion",
+    href: "/servicios/valoracion",
+    cta: "Solicitar valoración",
   },
   {
-    id: "inversor",
-    title: "¿Eres inversor?",
+    id: "financiacion",
+    title: "Hipoteca o préstamo",
     description:
-      "Accede a operaciones off-market, dossiers con datos financieros y un equipo que entiende tu perfil de riesgo y horizonte de inversión.",
+      "Comparamos las mejores condiciones y te guiamos en la tramitación sin coste adicional.",
     category: "inversion",
-    href: "/contacto",
+    href: "/servicios/financiacion",
+    cta: "Simular financiación",
+  },
+  {
+    id: "deuda",
+    title: "Problemas con el pago",
+    description:
+      "Soluciones para situaciones de deuda hipotecaria. Nosotros compramos tu deuda.",
+    category: "inversion",
+    href: "/servicios/deuda",
+    cta: "Consultar solución",
+  },
+  {
+    id: "inversores",
+    title: "Inversores y subastas",
+    description:
+      "Oportunidades off-market, subastas y dossiers con datos financieros para inversores.",
+    category: "inversion",
+    href: "/servicios/inversores",
     cta: "Acceso inversores",
     featured: true,
   },
-  {
-    id: "hipotecas",
-    title: "Hipotecas y financiación",
-    description:
-      "Comparamos las mejores condiciones del mercado y te guiamos en la tramitación. Sin coste adicional por nuestra intermediación.",
-    category: "inversion",
-    href: "/contacto",
-    cta: "Simular hipoteca",
-  },
+];
+
+export const ADDITIONAL_SERVICES: Service[] = [
   {
     id: "reportajes",
     title: "Reportajes fotográficos",
     description:
-      "Fotografía profesional de interiores y exteriores que transmite la esencia de cada inmueble. Imprescindible para vender más rápido.",
-    category: "audiovisual",
+      "Fotografía profesional de interiores y exteriores que transmite la esencia de cada inmueble.",
+    category: "adicional",
     href: "/contacto",
     cta: "Solicitar reportaje",
   },
@@ -88,8 +91,8 @@ export const SERVICES: Service[] = [
     id: "dron",
     title: "Fotografía con dron",
     description:
-      "Vistas aéreas de chalets, áticos y parcelas que destacan ubicación, entorno y dimensiones reales del inmueble.",
-    category: "audiovisual",
+      "Vistas aéreas de chalets, áticos y parcelas que destacan ubicación y dimensiones reales.",
+    category: "adicional",
     href: "/contacto",
     cta: "Reservar sesión",
   },
@@ -97,12 +100,14 @@ export const SERVICES: Service[] = [
     id: "eventos",
     title: "Organización de eventos",
     description:
-      "Presentaciones exclusivas, jornadas de puertas abiertas y eventos de networking para promotores, inversores y compradores.",
-    category: "audiovisual",
+      "Presentaciones exclusivas, jornadas de puertas abiertas y eventos de networking inmobiliario.",
+    category: "adicional",
     href: "/contacto",
     cta: "Planificar evento",
   },
 ];
+
+export const SERVICES: Service[] = [...CORE_SERVICES, ...ADDITIONAL_SERVICES];
 
 export function getServicesByCategory(category: ServiceCategory): Service[] {
   return SERVICES.filter((service) => service.category === category);

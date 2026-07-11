@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import {
+  ADDITIONAL_SERVICES,
+  CORE_SERVICES,
   SERVICE_CATEGORY_LABELS,
-  SERVICES,
   getServicesByCategory,
   type ServiceCategory,
 } from "@/lib/services";
@@ -12,10 +13,10 @@ import {
 const CATEGORIES: ServiceCategory[] = [
   "intermediacion",
   "inversion",
-  "audiovisual",
+  "adicional",
 ];
 
-const featuredService = SERVICES.find((service) => service.featured);
+const featuredService = CORE_SERVICES.find((service) => service.featured);
 
 export function ServicesSection() {
   return (
@@ -41,9 +42,7 @@ export function ServicesSection() {
               Todo lo que necesitas en un solo lugar
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-              Desde la compra de tu hogar hasta la producción audiovisual de tu
-              inmueble. Asesoramiento integral con la misma exigencia en cada
-              servicio.
+              Compra, venta, alquiler, financiación e inversión. Asesoramiento integral con la misma exigencia en cada servicio.
             </p>
           </header>
         </RevealOnScroll>
@@ -78,9 +77,12 @@ export function ServicesSection() {
 
         <div className="space-y-16 py-14 sm:space-y-20 sm:py-16 lg:py-24">
           {CATEGORIES.map((category) => {
-            const items = getServicesByCategory(category).filter(
-              (service) => !service.featured,
-            );
+            const items =
+              category === "adicional"
+                ? ADDITIONAL_SERVICES
+                : getServicesByCategory(category).filter(
+                    (service) => !service.featured,
+                  );
 
             if (items.length === 0) return null;
 
@@ -115,8 +117,7 @@ export function ServicesSection() {
               ¿No encuentras lo que buscas?
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/65 sm:text-base">
-              Cuéntanos tu caso y te proponemos la solución más adecuada, sin
-              compromiso.
+              Cuéntanos tu caso y te proponemos la solución más adecuada, sin compromiso.
             </p>
             <Button
               href="/contacto"

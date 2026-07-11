@@ -131,6 +131,9 @@ export function Footer() {
             <Link href="/privacidad" className="transition-colors hover:text-accent">
               Privacidad
             </Link>
+            <Link href="/cookies" className="transition-colors hover:text-accent">
+              Cookies
+            </Link>
           </div>
         </div>
       </Container>

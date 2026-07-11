@@ -1,6 +1,8 @@
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
+import { InmoLexLeadForm } from "@/components/forms/InmoLexLeadForm";
+import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { CONTACTO_CHOICES } from "@/lib/google-form-prefill";
 
 export function HomeContactCta() {
   return (
@@ -11,35 +13,32 @@ export function HomeContactCta() {
 
       <Container className="relative py-16 sm:py-20">
         <RevealOnScroll>
-          <div className="relative overflow-hidden rounded-2xl border border-accent/25 bg-accent/[0.06] p-8 backdrop-blur-sm sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+          <div className="relative overflow-hidden rounded-2xl border border-accent/25 bg-accent/[0.06] p-8 backdrop-blur-sm sm:p-10">
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/[0.1] blur-3xl" />
-            <div className="relative max-w-2xl">
-              
-              <h2 className="mt-3 font-display text-3xl tracking-tight text-white sm:text-4xl">
-                ¿Quieres vender, comprar o invertir?
+            <div className="relative mx-auto max-w-xl">
+              <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+                ¿Tienes una duda?
               </h2>
               <p className="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
-                Cuéntanos tu objetivo y te devolvemos una propuesta clara: pasos,
-                tiempos y escenario de precio, sin compromiso.
+                Rellena el formulario o escríbenos por WhatsApp. Te llamamos nosotros.
               </p>
-            </div>
 
-            <div className="relative mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:shrink-0">
-              <Button
-                href="/contacto"
-                size="lg"
-                className="w-full hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 sm:w-auto"
-              >
-                Contactar
-              </Button>
-              <Button
-                href="/propiedades"
-                variant="secondary"
-                size="lg"
-                className="w-full hover:-translate-y-0.5 sm:w-auto"
-              >
-                Ver propiedades
-              </Button>
+              <div className="mt-8">
+                <InmoLexLeadForm
+                  formKey="contacto"
+                  choice={CONTACTO_CHOICES.consulta}
+                  showDetails
+                  detailsLabel="¿Qué necesitas?"
+                  submitLabel="Enviar consulta"
+                  className="border-accent/20 bg-brand-dark/30"
+                />
+              </div>
+
+              <p className="mt-6 text-center">
+                <WhatsAppLink className="inline-flex items-center justify-center rounded-lg border border-accent/30 bg-accent/[0.06] px-6 py-3 text-base font-semibold text-accent transition-colors hover:border-accent/50 hover:bg-accent/10">
+                  Prefiero WhatsApp
+                </WhatsAppLink>
+              </p>
             </div>
           </div>
         </RevealOnScroll>
@@ -47,4 +46,3 @@ export function HomeContactCta() {
     </section>
   );
 }
-

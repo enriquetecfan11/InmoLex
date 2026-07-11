@@ -2,13 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { ServiceCard } from "@/components/services/ServiceCard";
-import { SERVICES, type Service } from "@/lib/services";
-
-const HOME_SERVICES = [
-  SERVICES.find((service) => service.id === "venta"),
-  SERVICES.find((service) => service.id === "hipotecas"),
-  SERVICES.find((service) => service.id === "reportajes"),
-].filter((service): service is Service => Boolean(service));
+import { CORE_SERVICES, type Service } from "@/lib/services";
 
 export function HomeServicesPreview() {
   return (
@@ -24,17 +18,16 @@ export function HomeServicesPreview() {
               Servicios
             </p>
             <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">
-              Una propuesta integral, sin fricción
+              Todo lo que necesitas en un solo lugar
             </h2>
             <p className="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
-              Estrategia, ejecución y seguimiento. Elige el punto de partida y
-              nos encargamos del resto.
+              Asesoramiento integral en compra, venta, alquiler, financiación e inversión. Elige el punto de partida y nos encargamos del resto.
             </p>
           </header>
         </RevealOnScroll>
 
         <ul className="mt-10 grid list-none gap-6 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-8">
-          {HOME_SERVICES.map((service, index) => (
+          {CORE_SERVICES.map((service: Service, index) => (
             <li key={service.id}>
               <RevealOnScroll delay={Math.min(index * 90, 240)}>
                 <ServiceCard service={service} />
@@ -46,7 +39,7 @@ export function HomeServicesPreview() {
         <RevealOnScroll>
           <div className="mt-12 flex flex-col items-center justify-center gap-4 text-center sm:mt-14 sm:flex-row sm:text-left">
             <p className="text-sm text-white/65">
-              Ver el catálogo completo de servicios y casos de uso.
+              Consulta el catálogo completo de servicios.
             </p>
             <Button
               href="/servicios"
@@ -54,7 +47,7 @@ export function HomeServicesPreview() {
               size="lg"
               className="w-full hover:-translate-y-0.5 sm:w-auto"
             >
-              Ir a servicios
+              Ver todos los servicios
             </Button>
           </div>
         </RevealOnScroll>
