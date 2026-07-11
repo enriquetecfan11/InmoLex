@@ -158,10 +158,10 @@ export function PropertiesListing({
           <RevealOnScroll>
             <header className="mx-auto max-w-2xl text-center">
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-                Cartera exclusiva
+                Nuestros inmuebles en cartera
               </p>
               <h1 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl lg:text-[3.25rem]">
-                Propiedades seleccionadas
+                Propiedades disponibles
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
                 Una selección cuidada de viviendas de alto standing en las

@@ -1,6 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { useState } from "react";
+import { InmoLexLeadForm } from "@/components/forms/InmoLexLeadForm";
+import { getWhatsAppHref } from "@/lib/contact";
+import {
+  CONTACTO_CHOICES,
+} from "@/lib/google-form-prefill";
 import { formatPrice, type Property } from "@/lib/properties";
 
 interface PropertyContactPanelProps {
@@ -24,12 +29,17 @@ function WhatsAppIcon() {
   );
 }
 
+type ContactMode = "visita" | "info";
+
 export function PropertyContactPanel({ property }: PropertyContactPanelProps) {
-  const contactHref = `/contacto?propiedad=${property.id}`;
-  const whatsappText = encodeURIComponent(
-    `Hola, me interesa la propiedad "${property.title}" (${property.location}). Me gustaría recibir más información.`,
-  );
-  const whatsappHref = `https://wa.me/34910000000?text=${whatsappText}`;
+  const [mode, setMode] = useState<ContactMode>("visita");
+  const whatsappText = `Hola, me interesa la propiedad "${property.title}" (${property.location}). Me gustaría recibir más información.`;
+  const whatsappHref = getWhatsAppHref(whatsappText);
+
+  const choice =
+    mode === "visita"
+      ? CONTACTO_CHOICES.visita
+      : CONTACTO_CHOICES.consulta;
 
   return (
     <>
@@ -43,23 +53,54 @@ export function PropertyContactPanel({ property }: PropertyContactPanelProps) {
           </p>
           <p className="mt-1 text-sm text-white/50">{property.location}</p>
 
-          <div className="mt-6 space-y-3">
-            <Button href={contactHref} size="lg" className="w-full hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/40">
-              Agendar visita
-            </Button>
-            <Button href={contactHref} variant="outline" size="lg" className="w-full">
-              Solicitar información
-            </Button>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="property-cta-whatsapp inline-flex w-full items-center justify-center gap-2 rounded-lg border border-accent/30 bg-accent/[0.06] px-8 py-3.5 text-base font-medium text-accent transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+          <div className="mt-6 grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={() => setMode("visita")}
+              className={`rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
+                mode === "visita"
+                  ? "bg-accent text-brand"
+                  : "border border-accent/20 text-white/70 hover:border-accent/35"
+              }`}
             >
-              <WhatsAppIcon />
-              WhatsApp
-            </a>
+              Agendar visita
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode("info")}
+              className={`rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
+                mode === "info"
+                  ? "bg-accent text-brand"
+                  : "border border-accent/20 text-white/70 hover:border-accent/35"
+              }`}
+            >
+              Más info
+            </button>
           </div>
+
+          <div className="mt-4">
+            <InmoLexLeadForm
+              key={mode}
+              formKey="contacto"
+              choice={choice}
+              showProperty
+              propertyDefault={property.title}
+              showDetails={mode === "info"}
+              detailsLabel="¿Qué necesitas?"
+              submitLabel={mode === "visita" ? "Solicitar visita" : "Solicitar información"}
+              className="border-0 bg-transparent p-0 backdrop-blur-none"
+            />
+          </div>
+
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noreferrer"
+            className="property-cta-whatsapp mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-accent/30 bg-accent/[0.06] px-6 py-3 text-sm font-medium text-accent transition-all duration-300 hover:border-accent/50 hover:bg-accent/10"
+          >
+            <WhatsAppIcon />
+            WhatsApp
+          </a>
 
           <p className="mt-6 border-t border-accent/15 pt-5 text-xs leading-relaxed text-white/40">
             Asesoramiento personalizado sin compromiso. Respuesta en menos de 24 horas.
@@ -78,13 +119,12 @@ export function PropertyContactPanel({ property }: PropertyContactPanelProps) {
             </p>
             <p className="truncate text-xs text-white/45">{property.location}</p>
           </div>
-          <Button
-            href={contactHref}
-            size="md"
-            className="shrink-0 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/40"
+          <a
+            href={`/propiedades/${property.id}#contacto`}
+            className="inline-flex shrink-0 items-center justify-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-brand shadow-md shadow-black/20"
           >
-            Agendar visita
-          </Button>
+            Contactar
+          </a>
           <a
             href={whatsappHref}
             target="_blank"
@@ -94,6 +134,27 @@ export function PropertyContactPanel({ property }: PropertyContactPanelProps) {
           >
             <WhatsAppIcon />
           </a>
+        </div>
+      </div>
+      <div
+        id="contacto"
+        className="property-mobile-contact mt-14 scroll-mt-24 border-t border-accent/15 pt-10 lg:hidden"
+      >
+        <h2 className="font-display text-2xl text-accent">Contactar</h2>
+        <p className="mt-2 text-sm text-white/55">
+          Solicita visita o más información sin salir de esta página.
+        </p>
+        <div className="mt-6">
+          <InmoLexLeadForm
+            key={mode}
+            formKey="contacto"
+            choice={choice}
+            showProperty
+            propertyDefault={property.title}
+            showDetails={mode === "info"}
+            detailsLabel="¿Qué necesitas?"
+            submitLabel={mode === "visita" ? "Solicitar visita" : "Solicitar información"}
+          />
         </div>
       </div>
     </>

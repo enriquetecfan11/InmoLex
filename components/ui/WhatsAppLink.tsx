@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getWhatsAppHref } from "@/lib/contact";
 
 interface WhatsAppLinkProps {
@@ -32,7 +31,7 @@ export function WhatsAppLink({
   showIcon = true,
 }: WhatsAppLinkProps) {
   return (
-    <Link
+    <a
       href={getWhatsAppHref(message)}
       target="_blank"
       rel="noopener noreferrer"
@@ -40,6 +39,6 @@ export function WhatsAppLink({
     >
       {showIcon && <WhatsAppIcon />}
       {children ?? "WhatsApp"}
-    </Link>
+    </a>
   );
 }

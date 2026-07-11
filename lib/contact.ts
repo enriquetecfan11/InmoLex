@@ -1,12 +1,14 @@
+import { LEGAL_ENTITY } from "@/lib/legal/entity";
+
 export const CONTACT_INFO = {
   phone: "+34 910 000 000",
   phoneHref: "tel:+34910000000",
-  email: "hola@inmobiliariacero.es",
-  emailHref: "mailto:hola@inmobiliariacero.es",
+  email: LEGAL_ENTITY.email,
+  emailHref: `mailto:${LEGAL_ENTITY.email}`,
   whatsapp: "+34 910 000 000",
   whatsappNumber:
     process.env.NEXT_PUBLIC_CONTACT_WHATSAPP_NUMBER ?? "34910000000",
-  address: "Calle Serrano 45, 28001 Madrid",
+  address: LEGAL_ENTITY.address,
   addressHref:
     "https://www.google.com/maps/search/?api=1&query=Calle+Serrano+45,+28001+Madrid",
   hours: {

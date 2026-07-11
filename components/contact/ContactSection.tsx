@@ -1,28 +1,8 @@
-import { Suspense } from "react";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { ContactInfo } from "@/components/contact/ContactInfo";
-import { ContactForm } from "@/components/contact/ContactForm";
+import { ContactFormCta } from "@/components/contact/ContactFormCta";
 import { CONTACT_INFO } from "@/lib/contact";
-
-function FormSkeleton() {
-  return (
-    <div
-      className="animate-pulse rounded-2xl border border-accent/15 bg-accent/[0.04] p-8 backdrop-blur-sm"
-      aria-hidden
-    >
-      <div className="grid gap-5 sm:grid-cols-2">
-        {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className={i === 3 ? "sm:col-span-2" : ""}>
-            <div className="mb-2 h-4 w-24 rounded bg-white/10" />
-            <div className="h-12 rounded-lg bg-white/5" />
-          </div>
-        ))}
-      </div>
-      <div className="mt-8 h-12 w-40 rounded-lg bg-white/10" />
-    </div>
-  );
-}
 
 function ContactMap() {
   return (
@@ -72,8 +52,7 @@ export function ContactSection() {
               Cuéntanos qué necesitas
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-              Respuesta personalizada en menos de 24 horas. Asesoramiento
-              gratuito y sin compromiso.
+              Respuesta personalizada en menos de 24 horas. Asesoramiento gratuito y sin compromiso.
             </p>
           </header>
         </RevealOnScroll>
@@ -84,9 +63,7 @@ export function ContactSection() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={120}>
-            <Suspense fallback={<FormSkeleton />}>
-              <ContactForm />
-            </Suspense>
+            <ContactFormCta />
           </RevealOnScroll>
         </div>
 
