@@ -148,7 +148,7 @@ export function PropertiesListing({
   );
 
   return (
-    <section className="brand-section py-16 sm:py-20 lg:py-28">
+    <section className="brand-section py-12 sm:py-16 lg:py-20">
       <div className="brand-section__gradient" aria-hidden />
       <div className="brand-section__atmosphere" aria-hidden />
       <div className="brand-section__glow" aria-hidden />
@@ -172,7 +172,7 @@ export function PropertiesListing({
           </RevealOnScroll>
         )}
 
-        <RevealOnScroll className={showHeader ? "mt-12 sm:mt-16" : ""}>
+        <RevealOnScroll className={showHeader ? "mt-10 sm:mt-12" : ""}>
           <PropertyFilters
             filters={filters}
             onChange={setFilters}
@@ -182,7 +182,7 @@ export function PropertiesListing({
 
         {sorted.length > 0 ? (
           <>
-            <ul className="mt-12 grid list-none grid-cols-1 gap-x-8 gap-y-14 sm:mt-16 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-20">
+            <ul className="mt-10 grid list-none grid-cols-1 gap-x-8 gap-y-12 sm:mt-12 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-16">
               {paginated.map((property, index) => (
                 <li key={property.id}>
                   <RevealOnScroll delay={Math.min(index * 80, 400)}>
@@ -199,7 +199,7 @@ export function PropertiesListing({
             />
           </>
         ) : (
-          <RevealOnScroll className="mt-16">
+          <RevealOnScroll className="mt-12">
             <div className="mx-auto max-w-md rounded-xl border border-accent/15 bg-accent/[0.04] px-8 py-14 text-center backdrop-blur-sm">
               <p className="font-display text-2xl text-accent">Sin resultados</p>
               <p className="mt-3 text-sm leading-relaxed text-white/55">

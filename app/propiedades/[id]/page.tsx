@@ -13,12 +13,8 @@ import { PropertyQuickStats } from "@/components/properties/PropertyQuickStats";
 import { PropertyVideos } from "@/components/properties/PropertyVideos";
 import { PropertyShareButton } from "@/components/properties/PropertyShareButton";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import {
-  formatPrice,
-  formatPropertyReference,
-  getSimilarProperties,
-  PROPERTIES,
-} from "@/lib/properties";
+import { formatPrice, getSimilarProperties } from "@/lib/properties";
+import { getProperty, getProperties } from "@/app/actions/property-actions";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -28,7 +24,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const property = PROPERTIES.find((p) => p.id === id);
+  const property = await getProperty(id);
   if (!property) return { title: "Propiedad no encontrada" };
   return {
     title: property.title,
@@ -37,7 +33,7 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return PROPERTIES.map((p) => ({ id: p.id }));
+  return [];
 }
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -51,45 +47,45 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 export default async function PropertyDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const property = PROPERTIES.find((p) => p.id === id);
+  const property = await getProperty(id);
 
   if (!property) notFound();
 
-  const similarProperties = getSimilarProperties(property);
+  const allProperties = await getProperties();
+  const similarProperties = getSimilarProperties(property, allProperties);
 
   return (
-    <article className="brand-section property-detail pb-24 lg:pb-20">
+    <article className="brand-section property-detail pb-20 lg:pb-16">
       <div className="brand-section__gradient" aria-hidden />
       <div className="brand-section__atmosphere" aria-hidden />
 
       <PropertyDetailHero property={property} />
       <PropertyQuickStats property={property} />
 
-      <Container className="relative mt-6 sm:mt-8">
+      <Container className="relative mt-5 sm:mt-6">
         <div className="flex justify-end">
           <PropertyShareButton property={property} />
         </div>
       </Container>
 
-      <Container className="relative mt-8 sm:mt-10 lg:mt-12">
+      <Container className="relative mt-6 sm:mt-8 lg:mt-10">
         <div className="grid gap-12 lg:grid-cols-[1fr_320px] lg:gap-14 xl:grid-cols-[1fr_360px]">
-          <div className="min-w-0 space-y-14 sm:space-y-16 lg:space-y-20">
+          <div className="min-w-0 space-y-12 sm:space-y-14 lg:space-y-16">
             <RevealOnScroll>
-              <SectionHeading>Galería</SectionHeading>
-              <div className="mt-8">
-                <PropertyGallery images={property.images} title={property.title} />
+              <SectionHeading>Descripción</SectionHeading>
+              <div className="property-description-panel mt-8 rounded-2xl border border-accent/15 bg-accent/[0.04] p-6 sm:p-8 lg:p-10">
+                <div className="mt-5 max-w-3xl space-y-5">
+                  <p className="text-lg leading-[1.85] text-white/78 sm:text-xl sm:leading-[1.85]">
+                    {property.description}
+                  </p>
+                </div>
               </div>
             </RevealOnScroll>
 
             <RevealOnScroll>
-              <SectionHeading>Descripción</SectionHeading>
-              <div className="property-description mt-8 max-w-3xl">
-                <p className="text-lg leading-[1.85] text-white/70 sm:text-xl sm:leading-[1.8]">
-                  {property.description}
-                </p>
-                <p className="mt-6 text-sm text-white/40">
-                  Dirección aproximada: {property.approximateAddress}
-                </p>
+              <SectionHeading>Galería</SectionHeading>
+              <div className="mt-8">
+                <PropertyGallery images={property.images} title={property.title} />
               </div>
             </RevealOnScroll>
 
@@ -104,7 +100,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         </div>
 
         {similarProperties.length > 0 && (
-          <div className="mt-20 border-t border-accent/15 pt-16 sm:mt-24 sm:pt-20">
+          <div className="mt-16 border-t border-accent/15 pt-12 sm:mt-20 sm:pt-16">
             <RevealOnScroll>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <SectionHeading>Propiedades similares</SectionHeading>

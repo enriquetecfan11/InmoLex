@@ -41,7 +41,7 @@ export function PropertyDetailHero({ property }: PropertyDetailHeroProps) {
 
   return (
     <section className="property-hero relative">
-      <div className="property-hero__image relative aspect-[4/5] overflow-hidden sm:aspect-[16/10] lg:aspect-[21/9]">
+      <div className="property-hero__image relative aspect-[4/3] overflow-hidden sm:aspect-[16/10] lg:aspect-[21/9]">
         <Image
           src={getPropertyCoverImage(property)}
           alt={property.title}

@@ -129,12 +129,27 @@ function PlanCard({ label, src, title }: PlanCardProps) {
 }
 
 export function PropertyFloorPlans({ property }: PropertyFloorPlansProps) {
+  const plans = [
+    { label: "Plano 2D", src: property.plan2d },
+    { label: "Plano 3D", src: property.plan3d },
+  ].filter((plan) => Boolean(plan.src));
+
+  if (plans.length === 0) {
+    return null;
+  }
+
   return (
     <RevealOnScroll>
       <SectionHeading>Planos</SectionHeading>
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
-        <PlanCard label="Plano 2D" src={property.plan2d} title={property.title} />
-        <PlanCard label="Plano 3D" src={property.plan3d} title={property.title} />
+        {plans.map((plan) => (
+          <PlanCard
+            key={plan.label}
+            label={plan.label}
+            src={plan.src}
+            title={property.title}
+          />
+        ))}
       </div>
     </RevealOnScroll>
   );

@@ -139,13 +139,13 @@ export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
   ];
 
   return (
-    <div className="property-quick-stats border-y border-accent/15 bg-brand-dark/40">
-      <div className="mx-auto w-full max-w-7xl px-5 py-6 sm:px-8 sm:py-8">
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8 lg:gap-4">
+    <div className="property-quick-stats relative z-10 -mt-6 border-y border-accent/15 bg-brand-dark/70 sm:-mt-8">
+      <div className="mx-auto w-full max-w-7xl px-5 py-5 sm:px-8 sm:py-8">
+        <ul className="flex gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-4 sm:gap-3 sm:overflow-visible sm:pb-0 lg:grid-cols-8 lg:gap-4">
           {stats.map((stat) => (
             <li
               key={stat.label}
-              className="property-stat-chip flex flex-col items-center gap-2 rounded-xl border border-accent/10 bg-accent/[0.03] px-3 py-4 text-center transition-colors hover:border-accent/25 hover:bg-accent/[0.06] sm:px-4"
+              className="property-stat-chip flex min-w-[8.5rem] flex-col items-center gap-2 rounded-xl border border-accent/10 bg-accent/[0.03] px-3 py-4 text-center transition-colors hover:border-accent/25 hover:bg-accent/[0.06] sm:min-w-0 sm:px-4"
             >
               <StatIcon>{stat.icon}</StatIcon>
               <div>

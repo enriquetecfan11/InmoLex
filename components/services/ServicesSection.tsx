@@ -21,7 +21,7 @@ const featuredService = CORE_SERVICES.find((service) => service.featured);
 export function ServicesSection() {
   return (
     <section className="relative overflow-hidden bg-brand text-white">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-[#111111] to-brand-dark" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-brand-dark" />
       <div
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
@@ -34,7 +34,7 @@ export function ServicesSection() {
 
       <Container className="relative">
         <RevealOnScroll>
-          <header className="mx-auto max-w-2xl pt-14 text-center sm:pt-16 lg:pt-20">
+          <header className="mx-auto max-w-2xl pt-10 text-center sm:pt-12 lg:pt-16">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
               Servicios
             </p>
@@ -75,7 +75,7 @@ export function ServicesSection() {
           </RevealOnScroll>
         )}
 
-        <div className="space-y-16 py-14 sm:space-y-20 sm:py-16 lg:py-24">
+        <div className="space-y-12 py-10 sm:space-y-16 sm:py-12 lg:py-16">
           {CATEGORIES.map((category) => {
             const items =
               category === "adicional"

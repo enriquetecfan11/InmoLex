@@ -12,11 +12,11 @@ interface ServiceLandingProps {
 export function ServiceLanding({ page }: ServiceLandingProps) {
   return (
     <section className="relative overflow-hidden bg-brand text-white">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-[#111111] to-brand-dark" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-brand-dark" />
       <div className="brand-section__atmosphere absolute inset-0" aria-hidden />
       <div className="pointer-events-none absolute -right-32 top-1/3 h-[600px] w-[600px] rounded-full bg-accent/[0.08] blur-3xl" />
 
-      <Container className="relative py-16 sm:py-20 lg:py-24">
+      <Container className="relative py-12 sm:py-16 lg:py-20">
         <RevealOnScroll>
           <header className="mx-auto max-w-2xl text-center">
             {page.highlight && (
@@ -33,10 +33,10 @@ export function ServiceLanding({ page }: ServiceLandingProps) {
           </header>
         </RevealOnScroll>
 
-        <RevealOnScroll className="mt-12 sm:mt-16">
+        <RevealOnScroll className="mt-10 sm:mt-12">
           <ServiceLeadSection page={page} />
 
-          <div className="mx-auto mt-8 max-w-xl">
+          <div className="mx-auto mt-6 max-w-xl">
             <p className="text-center text-sm text-white/55">
               Solo tardarás 1 minuto · Te llamamos nosotros
             </p>
@@ -51,7 +51,7 @@ export function ServiceLanding({ page }: ServiceLandingProps) {
             </div>
 
             {page.privacyNote && (
-              <p className="mt-8 rounded-lg border border-accent/15 bg-accent/[0.04] px-5 py-4 text-sm leading-relaxed text-white/55">
+              <p className="mt-6 rounded-lg border border-accent/15 bg-accent/[0.04] px-5 py-4 text-sm leading-relaxed text-white/55">
                 {page.privacyNote}{" "}
                 <Link href="/privacidad" className="text-accent underline underline-offset-2 hover:text-accent-light">
                   Privacidad
@@ -61,7 +61,7 @@ export function ServiceLanding({ page }: ServiceLandingProps) {
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll className="mt-12 text-center">
+        <RevealOnScroll className="mt-10 text-center">
           <Link href="/" className="text-sm font-medium text-accent transition-colors hover:text-accent-light">
             ← Volver al inicio
           </Link>

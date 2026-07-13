@@ -16,7 +16,9 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function PropertyFeaturesSection({ property }: PropertyFeaturesSectionProps) {
-  const groups = getPropertyFeatureGroups(property);
+  const groups = property.detailSections?.length
+    ? property.detailSections
+    : getPropertyFeatureGroups(property);
 
   return (
     <RevealOnScroll>
