@@ -2,7 +2,13 @@ import propertiesData from "@/data/properties.json";
 
 export type Operation = "venta" | "alquiler";
 
-export type PropertyType = "piso" | "atico" | "chalet" | "duplex";
+export type PropertyType =
+  | "piso"
+  | "atico"
+  | "chalet"
+  | "duplex"
+  | "casa_pueblo"
+  | "habitacion";
 
 export type PropertyBadge =
   | "nuevo"
@@ -37,6 +43,12 @@ export interface EnergyCertificate {
   emissions: number;
 }
 
+export interface PropertyDetailSection {
+  id: string;
+  label: string;
+  items: string[];
+}
+
 export interface Property {
   id: string;
   createdAt: string;
@@ -68,6 +80,7 @@ export interface Property {
   badge?: PropertyBadge;
   energyCertificate?: EnergyCertificate;
   coordinates?: PropertyCoordinates;
+  detailSections?: PropertyDetailSection[];
 }
 
 export const PROPERTY_TYPE_LABELS: Record<PropertyType, string> = {
@@ -75,6 +88,8 @@ export const PROPERTY_TYPE_LABELS: Record<PropertyType, string> = {
   atico: "Ático",
   chalet: "Chalet",
   duplex: "Dúplex",
+  casa_pueblo: "Casa de pueblo",
+  habitacion: "Habitación",
 };
 
 export const BADGE_LABELS: Record<PropertyBadge, string> = {
@@ -135,12 +150,14 @@ export const DISTRICTS = [
   "Chamartín",
   "Moncloa",
   "Centro",
+  "Maials",
+  "Son Armadams",
 ] as const;
 
 export const PROPERTIES = propertiesData as Property[];
 
 export function getPropertyCoverImage(property: Property): string {
-  return property.images[0];
+  return property.images[0] ?? "/property-placeholder.svg";
 }
 
 export function formatPrice(price: number, operation: Operation): string {
@@ -171,6 +188,10 @@ export function matchesPropertySearch(property: Property, query: string): boolea
     property.district.toLowerCase().includes(normalized) ||
     property.approximateAddress.toLowerCase().includes(normalized) ||
     property.description.toLowerCase().includes(normalized) ||
+    property.detailSections?.some((section) =>
+      section.label.toLowerCase().includes(normalized) ||
+      section.items.some((item) => item.toLowerCase().includes(normalized)),
+    ) ||
     property.features.some((feature) => feature.toLowerCase().includes(normalized))
   );
 }
@@ -202,10 +223,14 @@ export function getSimilarProperties(
 }
 
 export function getPropertyMapEmbedUrl(property: Property): string {
-  const { lat, lng } = property.coordinates ?? {
-    lat: 40.4168,
-    lng: -3.7038,
-  };
+  if (!property.coordinates) {
+    const query = encodeURIComponent(
+      property.approximateAddress || property.location || property.district,
+    );
+    return `https://www.openstreetmap.org/search?query=${query}`;
+  }
+
+  const { lat, lng } = property.coordinates;
   const delta = 0.012;
   const bbox = [
     lng - delta,
@@ -225,5 +250,7 @@ export function getPropertyMapHref(property: Property): string {
     return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
   }
 
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${property.approximateAddress}, Madrid`)}`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    property.approximateAddress || property.location || property.district,
+  )}`;
 }
