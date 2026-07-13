@@ -8,16 +8,16 @@ import {
   formatPrice,
   formatPropertyReference,
   getPropertyCoverImage,
-  PROPERTIES,
   type Property,
 } from "@/lib/properties";
 
-const FEATURED = PROPERTIES.filter((p) => p.badge === "destacado").slice(0, 3);
-const OPERATION_COUNT = new Set(FEATURED.map((property) => property.operation)).size;
+interface HomeFeaturedPropertiesProps {
+  properties: Property[];
+}
 
 function FeaturedPropertyCard({ property }: { property: Property }) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-accent/15 bg-[#111111] shadow-[0_24px_65px_-42px_rgba(0,0,0,0.75)]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-accent/15 bg-brand-dark shadow-[0_24px_65px_-42px_rgba(0,0,0,0.75)]">
       <div className="relative aspect-[4/3] overflow-hidden">
         <Link
           href={`/propiedades/${property.id}`}
@@ -106,11 +106,14 @@ function FeaturedPropertyCard({ property }: { property: Property }) {
   );
 }
 
-export function HomeFeaturedProperties() {
+export function HomeFeaturedProperties({ properties }: HomeFeaturedPropertiesProps) {
+  const FEATURED = properties.filter((p) => p.badge === "destacado").slice(0, 3);
+  const OPERATION_COUNT = new Set(FEATURED.map((property) => property.operation)).size;
+
   if (FEATURED.length === 0) return null;
 
   return (
-    <section className="brand-section py-16 sm:py-20 lg:py-28">
+    <section className="brand-section py-12 sm:py-16 lg:py-20">
       <div className="brand-section__gradient" aria-hidden />
       <div className="brand-section__atmosphere" aria-hidden />
       <div
@@ -133,7 +136,7 @@ export function HomeFeaturedProperties() {
                 buena ubicación, luz, estado y una historia clara para quien entra a verlos.
               </p>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-accent/15 bg-white/6 p-4 shadow-[0_16px_40px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm">
                   <p className="font-display text-3xl tracking-tight text-white">
                     {FEATURED.length.toString().padStart(2, "0")}
@@ -144,7 +147,7 @@ export function HomeFeaturedProperties() {
                 </div>
                 <div className="rounded-2xl border border-accent/15 bg-white/6 p-4 shadow-[0_16px_40px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm">
                   <p className="font-display text-3xl tracking-tight text-white">
-                    {PROPERTIES.length.toString().padStart(2, "0")}
+                    {properties.length.toString().padStart(2, "0")}
                   </p>
                   <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-accent">
                     Inmuebles en cartera
@@ -160,7 +163,7 @@ export function HomeFeaturedProperties() {
                 </div>
               </div>
 
-              <div className="mt-8 rounded-[1.5rem] border border-accent/15 bg-white/6 p-6 shadow-[0_20px_50px_-35px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+              <div className="mt-6 rounded-[1.5rem] border border-accent/15 bg-white/6 p-6 shadow-[0_20px_50px_-35px_rgba(0,0,0,0.45)] backdrop-blur-sm">
                 <p className="text-sm font-medium text-white">
                   ¿Buscas algo distinto?
                 </p>
@@ -197,7 +200,7 @@ export function HomeFeaturedProperties() {
               </div>
             </RevealOnScroll>
 
-            <ul className="mt-6 grid list-none grid-cols-1 gap-6 sm:grid-cols-2">
+            <ul className="mt-5 grid list-none grid-cols-1 gap-6 sm:grid-cols-2">
               {FEATURED.map((property, index) => (
                 <li key={property.id}>
                   <RevealOnScroll delay={Math.min(index * 90, 270)}>

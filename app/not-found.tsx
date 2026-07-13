@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <section className="brand-section flex flex-1 items-center py-20 sm:py-28">
+    <section className="brand-section flex flex-1 items-center py-16 sm:py-20">
       <div className="brand-section__gradient" aria-hidden />
       <div className="brand-section__atmosphere" aria-hidden />
       <div className="brand-section__glow" aria-hidden />

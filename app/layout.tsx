@@ -38,9 +38,11 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      data-scroll-behavior="smooth"
       className={`${cormorant.variable} ${sourceSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <Header />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />

@@ -3,26 +3,41 @@
 /*
  * Paleta de marca — negro y dorado
  *
- * Token         Color     Uso
- * brand         #0a0a0a   Negro principal
- * brand-dark    #000000   Negro profundo
- * accent        #c9a962   Dorado
- * accent-light  #dfc07a   Dorado claro (hovers)
- * accent-dark   #a68b3f   Dorado oscuro
+ * Token             Color     Uso
+ * negro-profundo     #0A0A0A   Fondo principal
+ * negro-tarjeta      #121212   Fondo de bloques y tarjetas
+ * dorado-logo        #C5A059   Dorado principal del logo
+ * dorado-brillante   #E5C483   Dorado claro para hover
+ * texto-principal    #F3F4F6   Texto principal
+ * texto-secundario   #9CA3AF   Texto secundario
  */
 :root {
-  --brand: #0a0a0a;
-  --brand-dark: #000000;
-  --accent: #c9a962;
-  --accent-light: #dfc07a;
-  --accent-dark: #a68b3f;
-  --surface: #fafaf8;
-  --surface-muted: #f0ede6;
-  --ink: var(--brand);
-  --ink-muted: #6b6b6b;
+  --negro-profundo: #0a0a0a;
+  --negro-tarjeta: #121212;
+  --dorado-logo: #c5a059;
+  --dorado-brillante: #e5c483;
+  --texto-principal: #f3f4f6;
+  --texto-secundario: #9ca3af;
+
+  /* Compatibilidad con los tokens ya usados por Tailwind */
+  --brand: var(--negro-profundo);
+  --brand-dark: var(--negro-tarjeta);
+  --accent: var(--dorado-logo);
+  --accent-light: var(--dorado-brillante);
+  --accent-dark: color-mix(in srgb, var(--dorado-logo) 72%, black);
+  --surface: var(--negro-tarjeta);
+  --surface-muted: color-mix(in srgb, var(--negro-tarjeta) 88%, black);
+  --ink: var(--texto-principal);
+  --ink-muted: var(--texto-secundario);
 }
 
 @theme inline {
+  --color-negro-profundo: var(--negro-profundo);
+  --color-negro-tarjeta: var(--negro-tarjeta);
+  --color-dorado-logo: var(--dorado-logo);
+  --color-dorado-brillante: var(--dorado-brillante);
+  --color-texto-principal: var(--texto-principal);
+  --color-texto-secundario: var(--texto-secundario);
   --color-brand: var(--brand);
   --color-brand-dark: var(--brand-dark);
   --color-accent: var(--accent);
@@ -37,8 +52,8 @@
 }
 
 body {
-  background: var(--surface);
-  color: var(--ink);
+  background: var(--negro-profundo);
+  color: var(--texto-principal);
   font-family: var(--font-source-sans), system-ui, sans-serif;
 }
 
@@ -113,16 +128,14 @@ html {
 
 /* Properties section */
 .property-reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .property-reveal--visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .property-card {
@@ -172,8 +185,18 @@ html {
 .brand-section {
   position: relative;
   overflow: hidden;
-  background: var(--brand);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--brand) 94%, white 6%),
+    var(--brand)
+  );
   color: white;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 3%, transparent);
+}
+
+.brand-section + .brand-section {
+  margin-top: -1px;
 }
 
 .brand-section__gradient {
@@ -229,7 +252,7 @@ html {
 }
 
 .contact-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23c9a962' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23c5a059' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
 }

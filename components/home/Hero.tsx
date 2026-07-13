@@ -5,7 +5,7 @@ import { HomePortfolioCta } from "@/components/home/HomePortfolioCta";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-brand text-white">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-[#111111] to-brand-dark" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-brand-dark" />
       <div
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{

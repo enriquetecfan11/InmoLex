@@ -32,9 +32,9 @@ const SOCIAL_ICONS = {
 export function Footer() {
   return (
     <footer className="border-t border-accent/20 bg-brand text-white">
-      <Container className="py-12 sm:py-14 lg:py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
-          <div className="sm:col-span-2 lg:col-span-1">
+      <Container className="py-10 sm:py-14 lg:py-16">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10 lg:gap-12">
+          <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block transition-opacity hover:opacity-90">
               <BrandLogo imageClassName="h-11 w-auto shrink-0" />
             </Link>
@@ -111,19 +111,9 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          <div>
-            <h2 className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-accent">
-              Horario
-            </h2>
-            <ul className="mt-4 space-y-2 text-sm text-white/60">
-              <li>{CONTACT_INFO.hours.weekdays}</li>
-              <li>{CONTACT_INFO.hours.saturday}</li>
-            </ul>
-          </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-accent/15 pt-6 text-sm text-white/45 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-accent/15 pt-6 text-sm text-white/45 sm:mt-10 sm:flex-row">
           <p>© {new Date().getFullYear()} InmoLex. Todos los derechos reservados.</p>
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link href="/aviso-legal" className="transition-colors hover:text-accent">
@@ -134,6 +124,9 @@ export function Footer() {
             </Link>
             <Link href="/cookies" className="transition-colors hover:text-accent">
               Cookies
+            </Link>
+            <Link href="/admin/login" className="transition-colors hover:text-accent">
+              Zona privada
             </Link>
           </div>
         </div>

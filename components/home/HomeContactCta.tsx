@@ -11,7 +11,7 @@ export function HomeContactCta() {
       <div className="brand-section__atmosphere" aria-hidden />
       <div className="brand-section__glow" aria-hidden />
 
-      <Container className="relative py-16 sm:py-20">
+      <Container className="relative py-12 sm:py-16">
         <RevealOnScroll>
           <div className="relative overflow-hidden rounded-2xl border border-accent/25 bg-accent/[0.06] p-8 backdrop-blur-sm sm:p-10">
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/[0.1] blur-3xl" />
@@ -23,7 +23,7 @@ export function HomeContactCta() {
                 Rellena el formulario o escríbenos por WhatsApp. Te llamamos nosotros.
               </p>
 
-              <div className="mt-8">
+            <div className="mt-6">
                 <InmoLexLeadForm
                   formKey="contacto"
                   choice={CONTACTO_CHOICES.consulta}
@@ -34,7 +34,7 @@ export function HomeContactCta() {
                 />
               </div>
 
-              <p className="mt-6 text-center">
+              <p className="mt-5 text-center">
                 <WhatsAppLink className="inline-flex items-center justify-center rounded-lg border border-accent/30 bg-accent/[0.06] px-6 py-3 text-base font-semibold text-accent transition-colors hover:border-accent/50 hover:bg-accent/10">
                   Prefiero WhatsApp
                 </WhatsAppLink>

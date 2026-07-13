@@ -33,7 +33,7 @@ export function HomeWhyChoose() {
       <div className="brand-section__atmosphere" aria-hidden />
       <div className="brand-section__glow" aria-hidden />
 
-      <Container className="relative py-16 sm:py-20 lg:py-24">
+      <Container className="relative py-12 sm:py-16 lg:py-20">
         <RevealOnScroll>
           <header className="mx-auto max-w-2xl text-center">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
@@ -49,7 +49,7 @@ export function HomeWhyChoose() {
           </header>
         </RevealOnScroll>
 
-        <ul className="mt-10 grid list-none gap-6 sm:grid-cols-2 lg:mt-12 lg:gap-8">
+        <ul className="mt-8 grid list-none gap-6 sm:grid-cols-2 lg:mt-10 lg:gap-8">
           {PILLARS.map((pillar, index) => (
             <li key={pillar.title}>
               <RevealOnScroll delay={Math.min(index * 90, 270)}>
@@ -67,7 +67,7 @@ export function HomeWhyChoose() {
         </ul>
 
         <RevealOnScroll>
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 text-center sm:mt-14 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 text-center sm:mt-12 sm:flex-row">
             <Button
               href="/quienes-somos"
               variant="secondary"
