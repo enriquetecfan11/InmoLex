@@ -4,7 +4,8 @@ export type ServiceMenuIcon =
   | "valuation"
   | "finance"
   | "debt"
-  | "investor";
+  | "investor"
+  | "nautica";
 
 export interface ServiceMenuItem {
   id: string;
@@ -58,5 +59,12 @@ export const SERVICE_MENU_ITEMS: ServiceMenuItem[] = [
     description: "Oportunidades off-market y operaciones en subasta.",
     href: "/servicios/inversores",
     icon: "investor",
+  },
+  {
+    id: "nautica",
+    title: "Náutica",
+    description: "Yates, veleros y motoras en venta o alquiler.",
+    href: "/servicios/nautica",
+    icon: "nautica",
   },
 ];

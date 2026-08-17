@@ -24,6 +24,10 @@ export interface ServicePage {
   prefillChoice?: string;
   privacyNote?: string;
   highlight?: string;
+  extraLink?: {
+    href: string;
+    label: string;
+  };
 }
 
 export const SERVICE_PAGES: ServicePage[] = [
@@ -124,6 +128,20 @@ export const SERVICE_PAGES: ServicePage[] = [
     formKey: "contacto",
     ctaLabel: "Soy inversor",
     prefillChoice: CONTACTO_CHOICES.inversor,
+  },
+  {
+    slug: "nautica",
+    eyebrow: "Náutica",
+    title: "Compra, venta y alquiler de embarcaciones",
+    description:
+      "Cuéntanos qué buscas o qué quieres vender. Te llamamos nosotros.",
+    formKey: "contacto",
+    ctaLabel: "Quiero información náutica",
+    prefillChoice: CONTACTO_CHOICES.consulta,
+    extraLink: {
+      href: "/nautica",
+      label: "Ver catálogo de embarcaciones",
+    },
   },
 ];
 

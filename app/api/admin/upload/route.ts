@@ -11,8 +11,10 @@ export async function POST(request: Request) {
     }
 
     const supabase = createSupabaseServiceClient();
+    const folderRaw = String(formData.get("folder") ?? "properties");
+    const folder = folderRaw === "nautica" ? "nautica" : "properties";
     const fileName = `${Date.now()}-${file.name}`;
-    const filePath = `properties/${fileName}`;
+    const filePath = `${folder}/${fileName}`;
 
     const { error: uploadError } = await supabase.storage
       .from("property-images")

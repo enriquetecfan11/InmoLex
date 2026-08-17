@@ -61,5 +61,13 @@ export function ServiceMenuIconGlyph({ icon, className = "" }: ServiceMenuIconPr
           <path d="M12 12h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       );
+    case "nautica":
+      return (
+        <svg {...props}>
+          <path d="M5 18h18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M7 18c1.2-3 3.8-6 7-8 3.2 2 5.8 5 7 8" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+          <path d="M14 10V6l4 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
   }
 }

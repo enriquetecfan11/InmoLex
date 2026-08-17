@@ -1,6 +1,7 @@
 export const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/propiedades", label: "Propiedades" },
+  { href: "/nautica", label: "Náutica" },
   { href: "/servicios", label: "Servicios" },
   { href: "/quienes-somos", label: "Quiénes somos" },
   { href: "/contacto", label: "Contacto" },

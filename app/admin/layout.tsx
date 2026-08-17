@@ -17,6 +17,22 @@ export default async function AdminLayout({
             <Link href="/admin/dashboard" className="font-display text-lg text-accent">
               InmoLex Admin
             </Link>
+            {session && (
+              <nav className="flex items-center gap-1 text-sm">
+                <Link
+                  href="/admin/dashboard"
+                  className="rounded-lg px-3 py-1.5 text-white/60 transition hover:bg-accent/10 hover:text-accent"
+                >
+                  Propiedades
+                </Link>
+                <Link
+                  href="/admin/nautica"
+                  className="rounded-lg px-3 py-1.5 text-white/60 transition hover:bg-accent/10 hover:text-accent"
+                >
+                  Náutica
+                </Link>
+              </nav>
+            )}
           </div>
           {session && (
             <form action={logout}>

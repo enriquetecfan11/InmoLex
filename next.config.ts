@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "img4.idealista.com",
       },
+      {
+        protocol: "https",
+        hostname: "xyzkedditfhztkvtqzns.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
     ],
   },
 };

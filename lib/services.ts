@@ -75,6 +75,15 @@ export const CORE_SERVICES: Service[] = [
     cta: "Acceso inversores",
     featured: true,
   },
+  {
+    id: "nautica",
+    title: "Náutica",
+    description:
+      "Compra, venta y alquiler de yates, veleros y motoras con el mismo criterio que nuestras propiedades.",
+    category: "intermediacion",
+    href: "/servicios/nautica",
+    cta: "Ver náutica",
+  },
 ];
 
 export const ADDITIONAL_SERVICES: Service[] = [

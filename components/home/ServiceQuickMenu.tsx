@@ -8,7 +8,7 @@ export function ServiceQuickMenu() {
   return (
     <Container className="relative">
       <RevealOnScroll>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6 lg:gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-3">
           {SERVICE_MENU_ITEMS.map((item, index) => (
             <RevealOnScroll key={item.id} delay={Math.min(index * 60, 300)}>
               <Link

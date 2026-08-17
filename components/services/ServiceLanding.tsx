@@ -41,7 +41,15 @@ export function ServiceLanding({ page }: ServiceLandingProps) {
               Solo tardarás 1 minuto · Te llamamos nosotros
             </p>
 
-            <div className="mt-6 text-center">
+            <div className="mt-6 flex flex-col items-center gap-4 text-center">
+              {page.extraLink && (
+                <Link
+                  href={page.extraLink.href}
+                  className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3.5 text-base font-semibold text-brand transition-colors hover:bg-accent-light"
+                >
+                  {page.extraLink.label}
+                </Link>
+              )}
               <WhatsAppLink
                 message={`Hola, vengo desde la página de ${page.title} en InmoLex y prefiero contactar por WhatsApp.`}
                 className="inline-flex items-center justify-center rounded-lg border border-accent/30 bg-accent/[0.06] px-6 py-3.5 text-base font-semibold text-accent transition-colors hover:border-accent/50 hover:bg-accent/10"

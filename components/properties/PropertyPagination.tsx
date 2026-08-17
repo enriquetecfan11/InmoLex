@@ -8,6 +8,8 @@ interface PropertyPaginationProps {
   totalPages: number;
   totalItems: number;
   pageSize: number;
+  itemLabel?: string;
+  ariaLabel?: string;
 }
 
 function buildPageHref(pathname: string, params: URLSearchParams, page: number): string {
@@ -23,6 +25,8 @@ export function PropertyPagination({
   totalPages,
   totalItems,
   pageSize,
+  itemLabel = "propiedades",
+  ariaLabel = "Paginación de propiedades",
 }: PropertyPaginationProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -53,14 +57,14 @@ export function PropertyPagination({
   return (
     <nav
       className="property-pagination mt-12 border-t border-accent/15 pt-8 sm:mt-16"
-      aria-label="Paginación de propiedades"
+      aria-label={ariaLabel}
     >
       <p className="text-center text-sm text-white/45">
         Mostrando{" "}
         <span className="font-medium text-white/70">
           {start}–{end}
         </span>{" "}
-        de <span className="font-medium text-accent">{totalItems}</span> propiedades
+        de <span className="font-medium text-accent">{totalItems}</span> {itemLabel}
       </p>
 
       <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
