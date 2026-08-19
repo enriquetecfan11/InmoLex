@@ -40,9 +40,7 @@ export async function generateMetadata({
   };
 }
 
-export function generateStaticParams() {
-  return [];
-}
+export const dynamic = "force-dynamic";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
