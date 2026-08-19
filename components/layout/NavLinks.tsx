@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { isNavLinkActive, NAV_LINKS } from "@/lib/navigation";
 
 interface NavLinksProps {
@@ -18,9 +18,10 @@ export function NavLinks({
   onNavigate,
 }: NavLinksProps) {
   const pathname = usePathname();
+  const t = useTranslations("nav");
 
   return (
-    <nav className={className} aria-label="Navegación principal">
+    <nav className={className} aria-label={t("ariaLabel")}>
       {NAV_LINKS.map((link) => {
         const isActive = isNavLinkActive(pathname, link.href);
 
@@ -36,7 +37,7 @@ export function NavLinks({
                 : ""
             }`}
           >
-            {link.label}
+            {t(link.key)}
           </Link>
         );
       })}

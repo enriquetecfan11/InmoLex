@@ -1,4 +1,7 @@
-import { ORIENTATION_LABELS, type Property } from "@/lib/properties";
+"use client";
+
+import { useTranslations } from "next-intl";
+import type { Property } from "@/lib/properties";
 
 interface PropertyQuickStatsProps {
   property: Property;
@@ -19,9 +22,13 @@ function StatIcon({ children }: { children: React.ReactNode }) {
 }
 
 export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
+  const t = useTranslations("properties.stats");
+  const tCommon = useTranslations("common");
+  const tOrientation = useTranslations("labels.orientation");
+
   const stats: StatItem[] = [
     {
-      label: "Superficie",
+      label: t("area"),
       value: `${property.sqm} m²`,
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
@@ -35,7 +42,7 @@ export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
       ),
     },
     {
-      label: "Habitaciones",
+      label: t("bedrooms"),
       value: String(property.bedrooms),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
@@ -50,7 +57,7 @@ export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
       ),
     },
     {
-      label: "Baños",
+      label: t("bathrooms"),
       value: String(property.bathrooms),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
@@ -65,8 +72,8 @@ export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
       ),
     },
     {
-      label: "Terraza",
-      value: property.terrace ? "Sí" : "No",
+      label: t("terrace"),
+      value: property.terrace ? tCommon("yes") : tCommon("no"),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
           <path
@@ -80,8 +87,8 @@ export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
       ),
     },
     {
-      label: "Parking",
-      value: property.garage ? "Sí" : "No",
+      label: t("parking"),
+      value: property.garage ? tCommon("yes") : tCommon("no"),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
           <rect
@@ -98,8 +105,8 @@ export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
       ),
     },
     {
-      label: "Trastero",
-      value: property.storage ? "Sí" : "No",
+      label: t("storage"),
+      value: property.storage ? tCommon("yes") : tCommon("no"),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
           <path
@@ -113,12 +120,12 @@ export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
       ),
     },
     {
-      label: "Ascensor",
+      label: t("elevator"),
       value: property.elevator
         ? property.elevatorCount
-          ? `Sí (${property.elevatorCount})`
-          : "Sí"
-        : "No",
+          ? tCommon("yesCount", { count: property.elevatorCount })
+          : tCommon("yes")
+        : tCommon("no"),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
           <rect x="5" y="2.5" width="8" height="13" rx="1" stroke="currentColor" strokeWidth="1.2" />
@@ -127,8 +134,8 @@ export function PropertyQuickStats({ property }: PropertyQuickStatsProps) {
       ),
     },
     {
-      label: "Orientación",
-      value: ORIENTATION_LABELS[property.orientation],
+      label: t("orientation"),
+      value: tOrientation(property.orientation),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
           <circle cx="9" cy="9" r="5.5" stroke="currentColor" strokeWidth="1.2" />

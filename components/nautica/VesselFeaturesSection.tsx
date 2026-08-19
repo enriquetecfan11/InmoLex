@@ -1,5 +1,6 @@
+import { useLocale, useTranslations } from "next-intl";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import { VESSEL_TYPE_LABELS, formatLength, type Vessel } from "@/lib/vessels";
+import { formatLength, type Vessel } from "@/lib/vessels";
 
 interface VesselFeaturesSectionProps {
   vessel: Vessel;
@@ -15,26 +16,36 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function VesselFeaturesSection({ vessel }: VesselFeaturesSectionProps) {
+  const t = useTranslations("vessels");
+  const tLabels = useTranslations("labels");
+  const locale = useLocale();
+
   const groups = [
     {
       id: "basic",
-      label: "Ficha técnica",
+      label: t("techSheet"),
       items: [
-        VESSEL_TYPE_LABELS[vessel.type],
-        vessel.lengthMeters ? `Eslora ${formatLength(vessel.lengthMeters)}` : null,
-        vessel.year ? `Año ${vessel.year}` : null,
-        vessel.manufacturer ? `Astillero ${vessel.manufacturer}` : null,
-        vessel.engine ? `Motor ${vessel.engine}` : null,
-        `${vessel.cabins} ${vessel.cabins === 1 ? "camarote" : "camarotes"}`,
-        `${vessel.bathrooms} ${vessel.bathrooms === 1 ? "baño" : "baños"}`,
-        vessel.capacity ? `${vessel.capacity} plazas` : null,
+        tLabels(`vesselType.${vessel.type}`),
+        vessel.lengthMeters
+          ? t("lengthValue", { value: formatLength(vessel.lengthMeters, locale) })
+          : null,
+        vessel.year ? t("yearValue", { year: vessel.year }) : null,
+        vessel.manufacturer ? t("shipyard", { name: vessel.manufacturer }) : null,
+        vessel.engine ? t("engineValue", { name: vessel.engine }) : null,
+        vessel.cabins === 1
+          ? t("cabin", { count: vessel.cabins })
+          : t("cabins", { count: vessel.cabins }),
+        vessel.bathrooms === 1
+          ? t("bathroom", { count: vessel.bathrooms })
+          : t("bathrooms", { count: vessel.bathrooms }),
+        vessel.capacity ? t("capacity", { count: vessel.capacity }) : null,
       ].filter((item): item is string => Boolean(item)),
     },
     ...(vessel.features.length
       ? [
           {
             id: "extras",
-            label: "Equipamiento",
+            label: t("equipment"),
             items: vessel.features,
           },
         ]
@@ -45,7 +56,7 @@ export function VesselFeaturesSection({ vessel }: VesselFeaturesSectionProps) {
 
   return (
     <RevealOnScroll>
-      <SectionHeading>Características</SectionHeading>
+      <SectionHeading>{t("features")}</SectionHeading>
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         {groups.map((group) => (
           <div

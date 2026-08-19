@@ -1,4 +1,5 @@
 import propertiesData from "@/data/properties.json";
+import { toIntlLocale } from "@/i18n/intl-locale";
 
 export type Operation = "venta" | "alquiler";
 
@@ -160,14 +161,19 @@ export function getPropertyCoverImage(property: Property): string {
   return property.images[0] ?? "/property-placeholder.svg";
 }
 
-export function formatPrice(price: number, operation: Operation): string {
-  const formatted = new Intl.NumberFormat("es-ES", {
+export function formatPrice(
+  price: number,
+  operation: Operation,
+  options?: { locale?: string; perMonth?: string },
+): string {
+  const formatted = new Intl.NumberFormat(toIntlLocale(options?.locale ?? "es"), {
     style: "currency",
     currency: "EUR",
     maximumFractionDigits: 0,
   }).format(price);
 
-  return operation === "alquiler" ? `${formatted}/mes` : formatted;
+  const suffix = options?.perMonth ?? "/mes";
+  return operation === "alquiler" ? `${formatted}${suffix}` : formatted;
 }
 
 export function formatPropertyReference(id: string): string {

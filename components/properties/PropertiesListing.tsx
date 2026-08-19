@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useMemo } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import {
@@ -53,6 +55,7 @@ export function PropertiesListing({
   properties = PROPERTIES,
   showHeader = true,
 }: PropertiesListingProps) {
+  const t = useTranslations("properties");
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -158,15 +161,13 @@ export function PropertiesListing({
           <RevealOnScroll>
             <header className="mx-auto max-w-2xl text-center">
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-                Nuestros inmuebles en cartera
+                {t("eyebrow")}
               </p>
               <h1 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl lg:text-[3.25rem]">
-                Propiedades disponibles
+                {t("title")}
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-                Una selección cuidada de viviendas de alto standing en las
-                mejores zonas de Madrid. Cada propiedad, revisada con criterio
-                profesional.
+                {t("lead")}
               </p>
             </header>
           </RevealOnScroll>
@@ -201,17 +202,16 @@ export function PropertiesListing({
         ) : (
           <RevealOnScroll className="mt-12">
             <div className="mx-auto max-w-md rounded-xl border border-accent/15 bg-accent/[0.04] px-8 py-14 text-center backdrop-blur-sm">
-              <p className="font-display text-2xl text-accent">Sin resultados</p>
+              <p className="font-display text-2xl text-accent">{t("emptyTitle")}</p>
               <p className="mt-3 text-sm leading-relaxed text-white/55">
-                No hay propiedades que coincidan con los filtros seleccionados.
-                Prueba a ajustar los criterios de búsqueda.
+                {t("emptyLead")}
               </p>
               <button
                 type="button"
                 onClick={() => setFilters(initialFilters)}
                 className="mt-6 text-sm font-medium text-accent transition-colors hover:text-accent-light"
               >
-                Restablecer filtros
+                {t("resetFilters")}
               </button>
             </div>
           </RevealOnScroll>

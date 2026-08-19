@@ -1,10 +1,10 @@
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import {
-  BADGE_LABELS,
   formatPrice,
   formatPropertyReference,
   getPropertyCoverImage,
@@ -16,6 +16,12 @@ interface HomeFeaturedPropertiesProps {
 }
 
 function FeaturedPropertyCard({ property }: { property: Property }) {
+  const t = useTranslations("home.featured");
+  const tBadge = useTranslations("labels.badge");
+  const tOperation = useTranslations("labels.operation");
+  const tCommon = useTranslations("common");
+  const locale = useLocale();
+
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-accent/15 bg-brand-dark shadow-[0_24px_65px_-42px_rgba(0,0,0,0.75)]">
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -36,21 +42,24 @@ function FeaturedPropertyCard({ property }: { property: Property }) {
 
         {property.badge && (
           <span className="absolute left-4 top-4 rounded-full border border-accent/30 bg-accent/90 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-brand backdrop-blur-sm">
-            {BADGE_LABELS[property.badge]}
+            {tBadge(property.badge)}
           </span>
         )}
 
         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
           <div className="min-w-0 text-white">
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/75">
-              Ref. {formatPropertyReference(property.id)}
+              {tCommon("ref", { id: formatPropertyReference(property.id) })}
             </p>
             <p className="mt-1 font-display text-2xl tracking-tight text-accent">
-              {formatPrice(property.price, property.operation)}
+              {formatPrice(property.price, property.operation, {
+                locale,
+                perMonth: tCommon("perMonth"),
+              })}
             </p>
           </div>
           <span className="shrink-0 rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white/85 backdrop-blur-sm">
-            {property.operation === "venta" ? "Venta" : "Alquiler"}
+            {tOperation(property.operation)}
           </span>
         </div>
       </div>
@@ -73,19 +82,19 @@ function FeaturedPropertyCard({ property }: { property: Property }) {
         <dl className="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-5 text-sm">
           <div>
             <dt className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/40">
-              Habitaciones
+              {t("bedrooms")}
             </dt>
             <dd className="mt-1 font-medium text-white">{property.bedrooms}</dd>
           </div>
           <div>
             <dt className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/40">
-              Baños
+              {t("bathrooms")}
             </dt>
             <dd className="mt-1 font-medium text-white">{property.bathrooms}</dd>
           </div>
           <div>
             <dt className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/40">
-              Superficie
+              {t("area")}
             </dt>
             <dd className="mt-1 font-medium text-white">{property.sqm} m²</dd>
           </div>
@@ -98,7 +107,7 @@ function FeaturedPropertyCard({ property }: { property: Property }) {
             size="md"
             className="w-full hover:-translate-y-0.5"
           >
-            Ver propiedad
+            {t("viewProperty")}
           </Button>
         </div>
       </div>
@@ -107,6 +116,7 @@ function FeaturedPropertyCard({ property }: { property: Property }) {
 }
 
 export function HomeFeaturedProperties({ properties }: HomeFeaturedPropertiesProps) {
+  const t = useTranslations("home.featured");
   const FEATURED = properties.filter((p) => p.badge === "destacado").slice(0, 3);
   const OPERATION_COUNT = new Set(FEATURED.map((property) => property.operation)).size;
 
@@ -126,14 +136,13 @@ export function HomeFeaturedProperties({ properties }: HomeFeaturedPropertiesPro
           <RevealOnScroll>
             <div className="max-w-xl">
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-accent">
-                Seleccion editorial
+                {t("eyebrow")}
               </p>
               <h2 className="mt-3 font-display text-4xl tracking-tight text-white sm:text-5xl">
-                Pocas propiedades. Mejor elegidas.
+                {t("title")}
               </h2>
               <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-                Reunimos los inmuebles que realmente merecen abrir la conversación:
-                buena ubicación, luz, estado y una historia clara para quien entra a verlos.
+                {t("lead")}
               </p>
 
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -142,7 +151,7 @@ export function HomeFeaturedProperties({ properties }: HomeFeaturedPropertiesPro
                     {FEATURED.length.toString().padStart(2, "0")}
                   </p>
                   <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-accent">
-                    Destacados ahora
+                    {t("highlightedNow")}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-accent/15 bg-white/6 p-4 shadow-[0_16px_40px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm">
@@ -150,7 +159,7 @@ export function HomeFeaturedProperties({ properties }: HomeFeaturedPropertiesPro
                     {properties.length.toString().padStart(2, "0")}
                   </p>
                   <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-accent">
-                    Inmuebles en cartera
+                    {t("portfolio")}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-accent/15 bg-white/6 p-4 shadow-[0_16px_40px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm">
@@ -158,18 +167,17 @@ export function HomeFeaturedProperties({ properties }: HomeFeaturedPropertiesPro
                     {OPERATION_COUNT.toString().padStart(2, "0")}
                   </p>
                   <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-accent">
-                    Operaciones activas
+                    {t("activeOps")}
                   </p>
                 </div>
               </div>
 
               <div className="mt-6 rounded-[1.5rem] border border-accent/15 bg-white/6 p-6 shadow-[0_20px_50px_-35px_rgba(0,0,0,0.45)] backdrop-blur-sm">
                 <p className="text-sm font-medium text-white">
-                  ¿Buscas algo distinto?
+                  {t("lookingDifferent")}
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-white/65">
-                  Filtramos por zona, presupuesto y tipo de operación para llegar
-                  antes a la propiedad que encaja contigo.
+                  {t("lookingDifferentLead")}
                 </p>
                 <Button
                   href="/propiedades"
@@ -177,7 +185,7 @@ export function HomeFeaturedProperties({ properties }: HomeFeaturedPropertiesPro
                   size="lg"
                   className="mt-5 hover:-translate-y-0.5"
                 >
-                  Ver todo el catálogo
+                  {t("viewCatalog")}
                 </Button>
               </div>
             </div>
@@ -188,14 +196,14 @@ export function HomeFeaturedProperties({ properties }: HomeFeaturedPropertiesPro
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-white/45">
-                    Destacadas ahora
+                    {t("highlightedNowShort")}
                   </p>
                   <h3 className="mt-2 font-display text-2xl text-white">
-                    Una vista rápida de la selección
+                    {t("quickView")}
                   </h3>
                 </div>
                 <p className="max-w-sm text-sm leading-relaxed text-white/60">
-                  Cada propiedad entra por criterio, no por volumen.
+                  {t("criterion")}
                 </p>
               </div>
             </RevealOnScroll>

@@ -1,17 +1,21 @@
+import createMiddleware from "next-intl/middleware";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { routing } from "@/i18n/routing";
 
-export async function middleware(request: NextRequest) {
+const intlMiddleware = createMiddleware(routing);
+
+export default function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  const response = NextResponse.next({
-    request: {
-      headers: request.headers,
-    },
-  });
+
+  if (pathname.startsWith("/api")) {
+    return NextResponse.next();
+  }
 
   if (pathname.startsWith("/admin")) {
     const cookie = request.headers.get("cookie") || "";
-    const hasAccessToken = cookie.includes("sb-access-token") || cookie.includes("sb-refresh-token");
+    const hasAccessToken =
+      cookie.includes("sb-access-token") || cookie.includes("sb-refresh-token");
     const isLoginPage = pathname === "/admin/login";
 
     if (!hasAccessToken && !isLoginPage) {
@@ -25,11 +29,17 @@ export async function middleware(request: NextRequest) {
       url.pathname = "/admin/dashboard";
       return NextResponse.redirect(url);
     }
+
+    return NextResponse.next({
+      request: {
+        headers: request.headers,
+      },
+    });
   }
 
-  return response;
+  return intlMiddleware(request);
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/((?!_next|_vercel|.*\\..*).*)"],
 };

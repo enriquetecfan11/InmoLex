@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import type { Property } from "@/lib/properties";
 
@@ -19,6 +20,8 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 function PlanPlaceholder({ label }: { label: string }) {
+  const t = useTranslations("properties.plans");
+
   return (
     <div className="flex aspect-[16/10] flex-col items-center justify-center rounded-xl border border-dashed border-accent/20 bg-accent/[0.02] px-6 text-center">
       <svg
@@ -33,7 +36,7 @@ function PlanPlaceholder({ label }: { label: string }) {
         <path d="M5 14h22M11 8v18M21 8v18" stroke="currentColor" strokeWidth="1.2" />
       </svg>
       <p className="mt-4 text-sm font-medium text-white/55">{label}</p>
-      <p className="mt-1 text-xs text-white/35">Plano próximamente</p>
+      <p className="mt-1 text-xs text-white/35">{t("comingSoon")}</p>
     </div>
   );
 }
@@ -45,6 +48,7 @@ interface PlanCardProps {
 }
 
 function PlanCard({ label, src, title }: PlanCardProps) {
+  const t = useTranslations("properties.plans");
   const [modalOpen, setModalOpen] = useState(false);
 
   if (!src) {
@@ -68,14 +72,14 @@ function PlanCard({ label, src, title }: PlanCardProps) {
             onClick={() => setModalOpen(true)}
             className="text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
           >
-            Ampliar
+            {t("enlarge")}
           </button>
         </div>
         <button
           type="button"
           onClick={() => setModalOpen(true)}
           className="mt-3 block w-full overflow-hidden rounded-xl ring-1 ring-accent/15 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
-          aria-label={`Ampliar ${label}`}
+          aria-label={t("enlarge")}
         >
           <div className="relative aspect-[16/10] bg-brand-dark">
             <Image
@@ -129,9 +133,10 @@ function PlanCard({ label, src, title }: PlanCardProps) {
 }
 
 export function PropertyFloorPlans({ property }: PropertyFloorPlansProps) {
+  const t = useTranslations("properties.plans");
   const plans = [
-    { label: "Plano 2D", src: property.plan2d },
-    { label: "Plano 3D", src: property.plan3d },
+    { label: t("plan2d"), src: property.plan2d },
+    { label: t("plan3d"), src: property.plan3d },
   ].filter((plan) => Boolean(plan.src));
 
   if (plans.length === 0) {
@@ -140,7 +145,7 @@ export function PropertyFloorPlans({ property }: PropertyFloorPlansProps) {
 
   return (
     <RevealOnScroll>
-      <SectionHeading>Planos</SectionHeading>
+      <SectionHeading>{t("title")}</SectionHeading>
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         {plans.map((plan) => (
           <PlanCard

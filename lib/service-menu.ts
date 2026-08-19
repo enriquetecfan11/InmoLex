@@ -1,10 +1,13 @@
 export type ServiceMenuIcon =
   | "buy-sell"
   | "rent"
+  | "keys"
   | "valuation"
+  | "chart"
   | "finance"
   | "debt"
   | "investor"
+  | "portfolio"
   | "nautica";
 
 export interface ServiceMenuItem {

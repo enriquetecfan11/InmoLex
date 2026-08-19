@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
-import { BADGE_LABELS } from "@/lib/properties";
 import {
   formatLength,
   formatPrice,
@@ -82,7 +82,15 @@ const badgeStyles: Record<NonNullable<Vessel["badge"]>, string> = {
 };
 
 export function VesselCard({ vessel, showReference = false }: VesselCardProps) {
+  const t = useTranslations("vessels");
+  const tCommon = useTranslations("common");
+  const tLabels = useTranslations("labels");
+  const locale = useLocale();
   const isUnavailable = vessel.badge === "vendido" || vessel.badge === "reservado";
+  const price = formatPrice(vessel.price, vessel.operation, {
+    locale,
+    perMonth: tCommon("perMonth"),
+  });
 
   return (
     <article className="property-card group flex h-full flex-col">
@@ -107,7 +115,7 @@ export function VesselCard({ vessel, showReference = false }: VesselCardProps) {
             <span
               className={`absolute left-4 top-4 rounded-full border px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] backdrop-blur-sm ${badgeStyles[vessel.badge]}`}
             >
-              {BADGE_LABELS[vessel.badge]}
+              {tLabels(`badge.${vessel.badge}`)}
             </span>
           )}
         </Link>
@@ -120,11 +128,11 @@ export function VesselCard({ vessel, showReference = false }: VesselCardProps) {
       <div className="flex flex-1 flex-col pt-6">
         {showReference && (
           <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/40">
-            Ref. {formatVesselReference(vessel.id)}
+            {tCommon("ref", { id: formatVesselReference(vessel.id) })}
           </p>
         )}
         <p className={`font-display text-2xl tracking-tight text-accent sm:text-[1.65rem] ${showReference ? "mt-2" : ""}`}>
-          {formatPrice(vessel.price, vessel.operation)}
+          {price}
         </p>
 
         <h3 className="mt-2 font-display text-xl leading-snug text-white">
@@ -141,12 +149,14 @@ export function VesselCard({ vessel, showReference = false }: VesselCardProps) {
         <ul className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-accent/15 pt-5 text-sm text-white/55">
           <li className="flex items-center gap-1.5">
             <LengthIcon />
-            <span>{formatLength(vessel.lengthMeters)}</span>
+            <span>{formatLength(vessel.lengthMeters, locale)}</span>
           </li>
           <li className="flex items-center gap-1.5">
             <CabinIcon />
             <span>
-              {vessel.cabins} {vessel.cabins === 1 ? "camarote" : "camarotes"}
+              {vessel.cabins === 1
+                ? t("cabin", { count: vessel.cabins })
+                : t("cabins", { count: vessel.cabins })}
             </span>
           </li>
           <li className="flex items-center gap-1.5">
@@ -163,7 +173,7 @@ export function VesselCard({ vessel, showReference = false }: VesselCardProps) {
               size="md"
               className="w-full text-sm"
             >
-              Solicitar información
+              {t("requestInfo")}
             </Button>
           ) : (
             <Button
@@ -172,7 +182,7 @@ export function VesselCard({ vessel, showReference = false }: VesselCardProps) {
               size="md"
               className="property-card-cta w-full text-sm hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/40"
             >
-              Ver embarcación
+              {t("viewVessel")}
             </Button>
           )}
         </div>

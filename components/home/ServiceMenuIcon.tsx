@@ -3,12 +3,17 @@ import type { ServiceMenuIcon } from "@/lib/service-menu";
 interface ServiceMenuIconProps {
   icon: ServiceMenuIcon;
   className?: string;
+  size?: number;
 }
 
-export function ServiceMenuIconGlyph({ icon, className = "" }: ServiceMenuIconProps) {
+export function ServiceMenuIconGlyph({
+  icon,
+  className = "",
+  size = 28,
+}: ServiceMenuIconProps) {
   const props = {
-    width: 28,
-    height: 28,
+    width: size,
+    height: size,
     viewBox: "0 0 28 28",
     fill: "none",
     "aria-hidden": true as const,
@@ -31,12 +36,26 @@ export function ServiceMenuIconGlyph({ icon, className = "" }: ServiceMenuIconPr
           <path d="M11 15h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       );
+    case "keys":
+      return (
+        <svg {...props}>
+          <circle cx="9.5" cy="14" r="4" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M13.5 14h10M19.5 14v3.5M23.5 14v2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      );
     case "valuation":
       return (
         <svg {...props}>
           <path d="M6 22V10l8-5 8 5v12" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
           <path d="M11 22v-6h6v6" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
           <path d="M10 12h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      );
+    case "chart":
+      return (
+        <svg {...props}>
+          <path d="M5 22V6M5 22h18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M10 17v-5M15 17V9M20 17v-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       );
     case "finance":
@@ -59,6 +78,13 @@ export function ServiceMenuIconGlyph({ icon, className = "" }: ServiceMenuIconPr
           <path d="M5 22V14l9-6 9 6v8" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
           <path d="M10 22v-5h8v5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
           <path d="M12 12h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      );
+    case "portfolio":
+      return (
+        <svg {...props}>
+          <path d="M5 18 11 11l4 3.5L23 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M17 6h6v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
     case "nautica":

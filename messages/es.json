@@ -1,0 +1,863 @@
+{
+  "languages": {
+    "es": "Español",
+    "en": "English",
+    "sv": "Svenska",
+    "uk": "Українська",
+    "it": "Italiano",
+    "zh": "中文",
+    "nl": "Nederlands",
+    "nb": "Norsk",
+    "ca": "Català"
+  },
+  "metadata": {
+    "siteTitle": "InmoLex | Compra, venta y alquiler",
+    "siteTitleTemplate": "%s | InmoLex",
+    "siteDescription": "Agencia inmobiliaria en Madrid. Compra, vende o alquila propiedades con transparencia y asesoramiento personalizado.",
+    "home": {
+      "title": "Inicio",
+      "description": "Agencia inmobiliaria en Madrid. Compra, vende o alquila propiedades con transparencia y asesoramiento personalizado."
+    },
+    "properties": {
+      "title": "Propiedades",
+      "description": "Descubre nuestra selección exclusiva de viviendas de alto standing en Madrid. Compra y alquiler con asesoramiento personalizado.",
+      "notFound": "Propiedad no encontrada"
+    },
+    "vessels": {
+      "title": "Náutica",
+      "description": "Catálogo de embarcaciones: yates, veleros, lanchas y motoras en venta y alquiler, con asesoramiento personalizado.",
+      "notFound": "Embarcación no encontrada"
+    },
+    "services": {
+      "title": "Servicios",
+      "description": "Servicios inmobiliarios integrales en Madrid: venta, alquiler, inversión, hipotecas, reportajes fotográficos y más.",
+      "notFound": "Servicio no encontrado"
+    },
+    "about": {
+      "title": "Quiénes somos",
+      "description": "Conoce InmoLex: presentación, historia, servicios y organización de eventos. Cercanía, criterio y una ejecución impecable."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Contacta con InmoLex en Madrid. Asesoramiento gratuito, sin compromiso y respuesta en menos de 24 horas."
+    },
+    "legalNotice": {
+      "title": "Aviso legal",
+      "description": "Aviso legal e información del titular del sitio web de InmoLex."
+    },
+    "privacy": {
+      "title": "Política de privacidad",
+      "description": "Política de privacidad y tratamiento de datos de InmoLex."
+    },
+    "cookies": {
+      "title": "Política de cookies",
+      "description": "Información sobre el uso de cookies en el sitio web de InmoLex."
+    }
+  },
+  "nav": {
+    "ariaLabel": "Navegación principal",
+    "home": "Inicio",
+    "properties": "Propiedades",
+    "nautica": "Náutica",
+    "services": "Servicios",
+    "about": "Quiénes somos",
+    "contact": "Contacto"
+  },
+  "header": {
+    "freeValuation": "Valoración gratuita",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "language": "Idioma"
+  },
+  "footer": {
+    "tagline": "Inmobiliaria premium en Madrid. Compra, venta y alquiler con asesoramiento personalizado y máxima transparencia.",
+    "navigation": "Navegación",
+    "contact": "Contacto",
+    "rights": "© {year} InmoLex. Todos los derechos reservados.",
+    "legalNotice": "Aviso legal",
+    "privacy": "Privacidad",
+    "cookies": "Cookies",
+    "privateArea": "Zona privada"
+  },
+  "home": {
+    "heroTitle": "¿Qué necesitas?",
+    "heroSubtitle": "Pulsa un botón. Te llamamos nosotros.",
+    "portfolioCta": "Nuestros inmuebles en cartera",
+    "whyEyebrow": "Nosotros",
+    "whyTitle": "Por qué elegir InmoLex",
+    "whyLead": "Un servicio boutique: decisiones con criterio, ejecución cuidada y una comunicación que te da control.",
+    "whyCta": "Conócenos",
+    "whyTalk": "Hablar con un asesor",
+    "pillars": {
+      "market": {
+        "title": "Criterio de mercado",
+        "description": "Valoración realista y estrategia comercial para maximizar resultado sin perder tiempo."
+      },
+      "execution": {
+        "title": "Ejecución impecable",
+        "description": "Fotografía, vídeo y materiales listos para publicar con una presentación coherente."
+      },
+      "followUp": {
+        "title": "Seguimiento claro",
+        "description": "Comunicación constante, datos de visitas y ajustes de estrategia con transparencia."
+      },
+      "network": {
+        "title": "Red de confianza",
+        "description": "Colaboradores (financiación, reformas, legal) para resolver fricciones antes de que aparezcan."
+      }
+    },
+    "contactTitle": "¿Tienes una duda?",
+    "contactLead": "Rellena el formulario o escríbenos por WhatsApp. Te llamamos nosotros.",
+    "contactDetailsLabel": "¿Qué necesitas?",
+    "contactSubmit": "Enviar consulta",
+    "preferWhatsapp": "Prefiero WhatsApp",
+    "featured": {
+      "eyebrow": "Seleccion editorial",
+      "title": "Pocas propiedades. Mejor elegidas.",
+      "lead": "Reunimos los inmuebles que realmente merecen abrir la conversación: buena ubicación, luz, estado y una historia clara para quien entra a verlos.",
+      "highlightedNow": "Destacados ahora",
+      "portfolio": "Inmuebles en cartera",
+      "activeOps": "Operaciones activas",
+      "lookingDifferent": "¿Buscas algo distinto?",
+      "lookingDifferentLead": "Filtramos por zona, presupuesto y tipo de operación para llegar antes a la propiedad que encaja contigo.",
+      "viewCatalog": "Ver todo el catálogo",
+      "highlightedNowShort": "Destacadas ahora",
+      "quickView": "Una vista rápida de la selección",
+      "criterion": "Cada propiedad entra por criterio, no por volumen.",
+      "bedrooms": "Habitaciones",
+      "bathrooms": "Baños",
+      "area": "Superficie",
+      "viewProperty": "Ver propiedad"
+    },
+    "featuredVessels": {
+      "eyebrow": "Selección náutica",
+      "title": "Pocas embarcaciones. Mejor elegidas.",
+      "lead": "Yates, veleros y motoras con criterio: eslora, estado, amarre y una presentación a la altura de quien quiere navegar, no solo mirar.",
+      "highlightedNow": "Destacadas ahora",
+      "portfolio": "En cartera",
+      "activeOps": "Operaciones activas",
+      "lookingDifferent": "¿Buscas algo distinto?",
+      "lookingDifferentLead": "Filtramos por tipo, eslora, presupuesto y puerto para llegar antes a la embarcación que encaja contigo.",
+      "viewCatalog": "Ver el catálogo náutico",
+      "quickView": "Una vista rápida de la flota",
+      "criterion": "Cada embarcación entra por criterio, no por volumen.",
+      "length": "Eslora",
+      "cabins": "Camarotes",
+      "year": "Año",
+      "viewVessel": "Ver embarcación"
+    },
+    "servicesEyebrow": "Servicios",
+    "servicesTitle": "Todo lo que necesitas en un solo lugar",
+    "servicesLead": "Asesoramiento integral en compra, venta, alquiler, financiación e inversión. Elige el punto de partida y nos encargamos del resto.",
+    "catalogTitle": "Descubre todos nuestros servicios",
+    "catalogLead": "Consulta el catálogo completo de servicios.",
+    "catalogCta": "Ver todos los servicios"
+  },
+  "elite": {
+    "kicker": "Elite Real Estate · Global",
+    "title": "Alta gama, sin comisiones exageradas.",
+    "lead": "GrupoRol ofrece un servicio inmobiliario exclusivo y de primer nivel para quienes buscan máxima excelencia y, a la vez, eficiencia financiera. Rompemos con el modelo tradicional del lujo: atención y herramientas premium, con honorarios más competitivos que los habituales del sector.",
+    "differentialTitle": "Excelencia sin sobrecostes",
+    "differentialBody": "GrupoRol combina atención personalizada, tecnología avanzada, alcance internacional y servicios inmobiliarios premium, sin trasladar al cliente las estructuras de coste habituales del sector de lujo.",
+    "differentialHighlight": "Alta gama, con honorarios más competitivos.",
+    "closeTitle": "El lujo no tiene por qué costar más.",
+    "closeSubtitle": "Experimente el verdadero servicio Elite.",
+    "cta": "Solicitar una consulta",
+    "blocks": {
+      "coverage": {
+        "title": "Cobertura Global",
+        "body": "No tenemos fronteras. Nos desplazamos a cualquier parte del mundo para gestionar propiedades, realizar inspecciones o cerrar negociaciones personalmente.",
+        "accent": "Su ubicación es nuestra ubicación."
+      },
+      "tailored": {
+        "title": "Servicio a Medida",
+        "body": "Cada cliente y cada operación son distintos. Personalizamos por completo el caso y diseñamos una estrategia adaptada a sus necesidades financieras, fiscales y logísticas: un auténtico traje a medida inmobiliario."
+      },
+      "tech": {
+        "title": "Tecnología Visual de Vanguardia",
+        "body": "Maximizamos el valor y el alcance de cada propiedad con herramientas digitales premium, pensadas para compradores nacionales e internacionales.",
+        "items": {
+          "photo": "Reportaje fotográfico profesional",
+          "tours": "Tours virtuales 360°",
+          "visits": "Visitas inmersivas de alta definición",
+          "plans2d": "Planos 2D",
+          "plans3d": "Modelados y planos 3D",
+          "presentation": "Presentación nacional e internacional"
+        }
+      },
+      "finance": {
+        "title": "Soluciones Financieras y Compra de Deuda",
+        "body": "Acompañamos operaciones inmobiliarias financieramente complejas: compra de deuda, gestión y liquidación de cargas, reestructuración y liberación de activos.",
+        "accent": "Resolvemos operaciones que otros consideran demasiado complejas."
+      },
+      "network": {
+        "title": "Red Internacional y Gestión Integral",
+        "body": "Trabajamos junto a inmobiliarias y colaboradores internacionales para multiplicar la visibilidad de cada propiedad, con discreción y atención personalizada.",
+        "items": {
+          "sale": "Venta",
+          "rent": "Alquiler",
+          "negotiation": "Negociación",
+          "exposure": "Exposición internacional",
+          "coordination": "Coordinación de la operación"
+        }
+      }
+    }
+  },
+  "common": {
+    "sale": "Venta",
+    "rent": "Alquiler",
+    "ref": "Ref. {id}",
+    "perMonth": "/mes",
+    "yes": "Sí",
+    "no": "No",
+    "yesCount": "Sí ({count})",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "backHome": "← Volver al inicio"
+  },
+  "labels": {
+    "operation": {
+      "venta": "Venta",
+      "alquiler": "Alquiler"
+    },
+    "badge": {
+      "nuevo": "Nuevo",
+      "reservado": "Reservado",
+      "vendido": "Vendido",
+      "destacado": "Destacado",
+      "exclusivo": "Exclusivo"
+    },
+    "status": {
+      "disponible": "Disponible",
+      "reservado": "Reservado",
+      "vendido": "Vendido",
+      "alquilado": "Alquilado"
+    },
+    "propertyType": {
+      "piso": "Piso",
+      "atico": "Ático",
+      "chalet": "Chalet",
+      "duplex": "Dúplex",
+      "casa_pueblo": "Casa de pueblo",
+      "habitacion": "Habitación"
+    },
+    "vesselType": {
+      "yate": "Yate",
+      "velero": "Velero",
+      "lancha": "Lancha",
+      "catamaran": "Catamarán",
+      "motora": "Motora"
+    },
+    "orientation": {
+      "norte": "Norte",
+      "sur": "Sur",
+      "este": "Este",
+      "oeste": "Oeste",
+      "noreste": "Noreste",
+      "noroeste": "Noroeste",
+      "sureste": "Sureste",
+      "suroeste": "Suroeste"
+    },
+    "energy": {
+      "A": "Muy eficiente",
+      "B": "Eficiente",
+      "C": "Consumo medio",
+      "D": "Consumo elevado",
+      "E": "Consumo muy elevado",
+      "F": "Consumo excesivo",
+      "G": "Consumo excesivo"
+    }
+  },
+  "properties": {
+    "eyebrow": "Nuestros inmuebles en cartera",
+    "title": "Propiedades disponibles",
+    "lead": "Una selección cuidada de viviendas de alto standing en las mejores zonas de Madrid. Cada propiedad, revisada con criterio profesional.",
+    "emptyTitle": "Sin resultados",
+    "emptyLead": "No hay propiedades que coincidan con los filtros seleccionados. Prueba a ajustar los criterios de búsqueda.",
+    "resetFilters": "Restablecer filtros",
+    "viewProperty": "Ver propiedad",
+    "requestInfo": "Solicitar información",
+    "bedroomsShort": "{count} hab.",
+    "bathroom": "{count} baño",
+    "bathrooms": "{count} baños",
+    "resultOne": "propiedad",
+    "resultOther": "propiedades",
+    "paginationAria": "Paginación de propiedades",
+    "showing": "Mostrando {start}–{end} de {total} {itemLabel}",
+    "description": "Descripción",
+    "gallery": "Galería",
+    "similar": "Propiedades similares",
+    "similarLead": "Selección exclusiva en la misma zona",
+    "backToList": "Volver a propiedades",
+    "luxury": "Lujo",
+    "salePrice": "Precio de venta",
+    "rentPrice": "Precio de alquiler mensual",
+    "features": "Características",
+    "featureGroups": {
+      "interior": "Interior",
+      "exterior": "Exterior",
+      "edificio": "Edificio",
+      "extras": "Extras",
+      "accesibilidad": "Accesibilidad"
+    },
+    "generatedFeatures": {
+      "terrace": "Terraza",
+      "balcony": "Balcón",
+      "garage": "Plaza de garaje",
+      "storage": "Trastero",
+      "elevator": "Ascensor",
+      "elevatorCount": "Ascensor ({count})",
+      "pmrYes": "Acceso adaptado PMR",
+      "pmrNo": "Sin adaptación PMR registrada",
+      "orientation": "Orientación {value}"
+    },
+    "stats": {
+      "area": "Superficie",
+      "bedrooms": "Habitaciones",
+      "bathrooms": "Baños",
+      "terrace": "Terraza",
+      "parking": "Parking",
+      "storage": "Trastero",
+      "elevator": "Ascensor",
+      "orientation": "Orientación"
+    },
+    "energy": {
+      "title": "Certificado energético",
+      "lead": "Eficiencia energética del inmueble según certificación oficial vigente.",
+      "rating": "Calificación energética",
+      "consumption": "Consumo energético",
+      "emissions": "Emisiones CO₂"
+    },
+    "map": {
+      "title": "Ubicación",
+      "lead": "Zona aproximada de la propiedad en {district}. La dirección exacta se facilita en la visita.",
+      "openMaps": "Abrir en Google Maps"
+    },
+    "plans": {
+      "comingSoon": "Plano próximamente",
+      "enlarge": "Ampliar",
+      "title": "Planos",
+      "plan2d": "Plano 2D",
+      "plan3d": "Plano 3D"
+    },
+    "videos": {
+      "title": "Vídeo",
+      "lead": "Descubra los detalles y el ambiente de esta propiedad en vídeo."
+    },
+    "galleryCta": "Ver galería",
+    "contact": {
+      "price": "Precio",
+      "bookVisit": "Agendar visita",
+      "moreInfo": "Más info",
+      "whatsappLead": "Asesoramiento personalizado sin compromiso. Respuesta en menos de 24 horas.",
+      "contact": "Contactar",
+      "formLead": "Solicita visita o más información sin salir de esta página.",
+      "bookVisitSubmit": "Solicitar visita",
+      "requestInfoSubmit": "Solicitar información",
+      "actionsAria": "Acciones de contacto",
+      "whatsappAria": "Contactar por WhatsApp",
+      "whatsappMessage": "Hola, me interesa la propiedad \"{title}\" ({location}). Me gustaría recibir más información."
+    },
+    "share": {
+      "share": "Compartir",
+      "close": "Cerrar menú de compartir",
+      "copy": "Copiar enlace",
+      "copied": "Enlace copiado",
+      "emailSubject": "{title} · InmoLex"
+    },
+    "filters": {
+      "search": "Buscar por texto o referencia",
+      "searchPlaceholder": "Ej. Salamanca, ático, INM-0001…",
+      "operation": "Operación",
+      "allOperations": "Todas",
+      "location": "Ubicación",
+      "allZones": "Todas las zonas",
+      "price": "Precio",
+      "anyPrice": "Cualquier precio",
+      "price0": "Hasta 500.000 €",
+      "price1": "500.000 – 1.000.000 €",
+      "price2": "1.000.000 – 2.000.000 €",
+      "price3": "Más de 2.000.000 €",
+      "rent0": "Alquiler hasta 2.500 €",
+      "rent1": "Alquiler más de 2.500 €",
+      "bedrooms": "Habitaciones",
+      "any": "Cualquiera",
+      "type": "Tipo",
+      "allTypes": "Todos",
+      "sort": "Orden",
+      "relevance": "Relevancia",
+      "newest": "Más recientes",
+      "priceAsc": "Precio: menor a mayor",
+      "priceDesc": "Precio: mayor a menor",
+      "areaDesc": "Superficie: mayor a menor",
+      "terrace": "Terraza",
+      "garage": "Garaje",
+      "elevator": "Ascensor",
+      "pmr": "Acceso PMR",
+      "clear": "Limpiar filtros"
+    }
+  },
+  "vessels": {
+    "eyebrow": "Catálogo náutico",
+    "title": "Embarcaciones disponibles",
+    "lead": "Yates, veleros y motoras seleccionadas con el mismo criterio que nuestras propiedades.",
+    "emptyTitle": "Sin resultados",
+    "emptyLead": "No hay embarcaciones que coincidan con los filtros seleccionados. Prueba a ajustar los criterios de búsqueda.",
+    "resetFilters": "Restablecer filtros",
+    "viewVessel": "Ver embarcación",
+    "requestInfo": "Solicitar información",
+    "resultOne": "embarcación",
+    "resultOther": "embarcaciones",
+    "paginationAria": "Paginación de embarcaciones",
+    "description": "Descripción",
+    "gallery": "Galería",
+    "similar": "Embarcaciones similares",
+    "similarLead": "Selección en la misma zona u operación",
+    "backToList": "Volver a náutica",
+    "features": "Características",
+    "techSheet": "Ficha técnica",
+    "equipment": "Equipamiento",
+    "lengthValue": "Eslora {value}",
+    "yearValue": "Año {year}",
+    "shipyard": "Astillero {name}",
+    "engineValue": "Motor {name}",
+    "cabin": "{count} camarote",
+    "cabins": "{count} camarotes",
+    "bathroom": "{count} baño",
+    "bathrooms": "{count} baños",
+    "capacity": "{count} plazas",
+    "stats": {
+      "length": "Eslora",
+      "year": "Año",
+      "cabins": "Camarotes",
+      "bathrooms": "Baños",
+      "capacity": "Plazas",
+      "engine": "Motor"
+    },
+    "map": {
+      "title": "Ubicación",
+      "lead": "Puerto o zona aproximada de la embarcación. El amarre exacto se facilita en la visita.",
+      "port": "Puerto / zona",
+      "openMaps": "Abrir en Google Maps"
+    },
+    "videos": {
+      "title": "Vídeo",
+      "lead": "Descubra los detalles y el ambiente de esta embarcación en vídeo."
+    },
+    "contact": {
+      "price": "Precio",
+      "bookVisit": "Agendar visita",
+      "moreInfo": "Más info",
+      "whatsappLead": "Asesoramiento náutico personalizado sin compromiso. Respuesta en menos de 24 horas.",
+      "contact": "Contactar",
+      "formLead": "Solicita visita o más información sin salir de esta página.",
+      "bookVisitSubmit": "Solicitar visita",
+      "requestInfoSubmit": "Solicitar información",
+      "actionsAria": "Acciones de contacto",
+      "whatsappAria": "Contactar por WhatsApp",
+      "whatsappMessage": "Hola, me interesa la embarcación \"{title}\" ({location}). Me gustaría recibir más información."
+    },
+    "share": {
+      "emailSubject": "{title} · InmoLex Náutica"
+    },
+    "filters": {
+      "search": "Buscar por texto o referencia",
+      "searchPlaceholder": "Ej. Palma, yate, NAU-0001…",
+      "operation": "Operación",
+      "allOperations": "Todas",
+      "type": "Tipo",
+      "allTypes": "Todos",
+      "location": "Ubicación",
+      "portZone": "Zona / puerto",
+      "allPorts": "Todos los puertos",
+      "price": "Precio",
+      "anyPrice": "Cualquier precio",
+      "price0": "Hasta 100.000 €",
+      "price1": "100.000 – 500.000 €",
+      "price2": "500.000 – 1.000.000 €",
+      "price3": "Más de 1.000.000 €",
+      "rent0": "Alquiler hasta 5.000 €",
+      "rent1": "Alquiler más de 5.000 €",
+      "length": "Eslora",
+      "anyLength": "Cualquiera",
+      "length0": "Hasta 10 m",
+      "length1": "10 – 15 m",
+      "length2": "15 – 20 m",
+      "length3": "Más de 20 m",
+      "sort": "Orden",
+      "relevance": "Relevancia",
+      "newest": "Más recientes",
+      "priceAsc": "Precio: menor a mayor",
+      "priceDesc": "Precio: mayor a menor",
+      "lengthDesc": "Eslora: mayor a menor",
+      "clear": "Limpiar filtros"
+    }
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "title": "Todo lo que necesitas en un solo lugar",
+    "lead": "Compra, venta, alquiler, financiación e inversión. Asesoramiento integral con la misma exigencia en cada servicio.",
+    "leadForm": {
+      "submitDefault": "Enviar solicitud",
+      "detailsIntermediation": "Cuéntanos qué buscas o qué tienes",
+      "detailsFinance": "Cuéntanos tu situación",
+      "placeholderIntermediation": "Ej.: piso 3 hab. máx. 400.000 €…",
+      "placeholderFinance": "Ej.: debo 180.000 €, cuotas atrasadas…"
+    },
+    "investorsEyebrow": "Para inversores",
+    "notFoundCtaTitle": "¿No encuentras lo que buscas?",
+    "notFoundCtaLead": "Cuéntanos tu caso y te proponemos la solución más adecuada, sin compromiso.",
+    "contactNow": "Contactar ahora",
+    "minuteNote": "Solo tardarás 1 minuto · Te llamamos nosotros",
+    "preferWhatsapp": "Prefiero WhatsApp",
+    "whatsappMessage": "Hola, vengo desde la página de {title} en InmoLex y prefiero contactar por WhatsApp.",
+    "privacyLink": "Privacidad",
+    "categories": {
+      "intermediacion": "Intermediación inmobiliaria",
+      "inversion": "Inversión y financiación",
+      "adicional": "Servicios adicionales"
+    },
+    "items": {
+      "comprar-vender": {
+        "title": "Comprar o vender",
+        "description": "Compra, venta y asesoramiento personalizado en cada paso del proceso inmobiliario.",
+        "cta": "Solicitar información",
+        "menuDescription": "Encuentra tu hogar o vende con asesoramiento experto."
+      },
+      "alquiler": {
+        "title": "Alquiler",
+        "description": "Busca un alquiler o pon tu propiedad en el mercado con gestión integral y transparencia.",
+        "cta": "Consultar alquiler",
+        "menuDescription": "Busca un alquiler o pon tu propiedad en el mercado."
+      },
+      "valoracion": {
+        "title": "Valoración gratuita",
+        "description": "Tasación sin compromiso con criterio de mercado y respuesta en menos de 24 horas.",
+        "cta": "Solicitar valoración",
+        "menuDescription": "Tasación sin compromiso con criterio de mercado."
+      },
+      "financiacion": {
+        "title": "Hipoteca o préstamo",
+        "description": "Comparamos las mejores condiciones y te guiamos en la tramitación sin coste adicional.",
+        "cta": "Simular financiación",
+        "menuDescription": "Financiación adaptada a tu situación personal."
+      },
+      "deuda": {
+        "title": "Problemas con el pago",
+        "description": "Soluciones para situaciones de deuda hipotecaria. Nosotros compramos tu deuda.",
+        "cta": "Consultar solución",
+        "menuDescription": "Soluciones para situaciones de deuda hipotecaria.",
+        "highlight": "Nosotros compramos tu deuda"
+      },
+      "inversores": {
+        "title": "Inversores y subastas",
+        "description": "Oportunidades off-market, subastas y dossiers con datos financieros para inversores.",
+        "cta": "Acceso inversores",
+        "menuDescription": "Oportunidades off-market y operaciones en subasta."
+      },
+      "nautica": {
+        "title": "Náutica",
+        "description": "Compra, venta y alquiler de yates, veleros y motoras con el mismo criterio que nuestras propiedades.",
+        "cta": "Ver náutica",
+        "menuDescription": "Yates, veleros y motoras en venta o alquiler."
+      },
+      "reportajes": {
+        "title": "Reportajes fotográficos",
+        "description": "Fotografía profesional de interiores y exteriores que transmite la esencia de cada inmueble.",
+        "cta": "Solicitar reportaje"
+      },
+      "dron": {
+        "title": "Fotografía con dron",
+        "description": "Vistas aéreas de chalets, áticos y parcelas que destacan ubicación y dimensiones reales.",
+        "cta": "Reservar sesión"
+      },
+      "eventos": {
+        "title": "Organización de eventos",
+        "description": "Presentaciones exclusivas, jornadas de puertas abiertas y eventos de networking inmobiliario.",
+        "cta": "Planificar evento"
+      }
+    },
+    "pages": {
+      "comprar-vender": {
+        "eyebrow": "Compra y venta",
+        "title": "Comprar o vender",
+        "description": "Pulsa el botón que corresponda. Te llamamos nosotros.",
+        "options": {
+          "buy": {
+            "label": "Quiero comprar",
+            "description": "Te ayudamos a encontrar tu propiedad.",
+            "cta": "Quiero comprar"
+          },
+          "sell": {
+            "label": "Quiero vender",
+            "description": "Valoramos tu inmueble sin compromiso.",
+            "cta": "Quiero vender"
+          }
+        }
+      },
+      "alquiler": {
+        "eyebrow": "Alquiler",
+        "title": "Alquiler",
+        "description": "¿Buscas piso o quieres alquilar el tuyo? Elige una opción.",
+        "options": {
+          "search": {
+            "label": "Busco alquiler",
+            "description": "Dinos qué buscas y te contactamos.",
+            "cta": "Busco alquiler"
+          },
+          "list": {
+            "label": "Quiero alquilar mi piso",
+            "description": "Gestionamos el alquiler por ti.",
+            "cta": "Alquilar mi piso"
+          }
+        }
+      },
+      "valoracion": {
+        "eyebrow": "Valoración",
+        "title": "Valoración gratuita",
+        "description": "Sin compromiso. Un clic y te llamamos.",
+        "cta": "Pedir valoración gratis"
+      },
+      "financiacion": {
+        "eyebrow": "Financiación",
+        "title": "Hipoteca o préstamo",
+        "description": "Elige qué necesitas. Nosotros te guiamos.",
+        "privacyNote": "Tus datos financieros se usan solo para estudiar tu solicitud.",
+        "options": {
+          "mortgage": {
+            "label": "Hipoteca",
+            "description": "Para comprar tu vivienda.",
+            "cta": "Pedir hipoteca"
+          },
+          "loan": {
+            "label": "Préstamo personal",
+            "description": "Para otros proyectos.",
+            "cta": "Pedir préstamo"
+          }
+        }
+      },
+      "deuda": {
+        "eyebrow": "Ayuda con deuda",
+        "title": "Problemas con el pago",
+        "description": "Te ayudamos. Cuéntanos tu caso con total confidencialidad.",
+        "cta": "Necesito ayuda con mi deuda",
+        "highlight": "Nosotros compramos tu deuda",
+        "privacyNote": "Información confidencial. Solo la usamos para estudiar tu situación."
+      },
+      "inversores": {
+        "eyebrow": "Inversión",
+        "title": "Inversores y subastas",
+        "description": "Accede a oportunidades exclusivas.",
+        "cta": "Soy inversor"
+      },
+      "nautica": {
+        "eyebrow": "Náutica",
+        "title": "Compra, venta y alquiler de embarcaciones",
+        "description": "Cuéntanos qué buscas o qué quieres vender. Te llamamos nosotros.",
+        "cta": "Quiero información náutica",
+        "extraLink": "Ver catálogo de embarcaciones"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Quiénes somos",
+    "title": "Cercanía, criterio y una ejecución impecable",
+    "subtitle": "InmoLex nace para elevar la experiencia de comprar, vender o invertir: asesoramiento honesto, procesos claros y un estándar visual y comercial a la altura del inmueble.",
+    "history": {
+      "origin": {
+        "title": "Origen",
+        "description": "Empezamos con una idea simple: tratar cada operación como si fuera propia. Sin prisas, sin letra pequeña y con una comunicación constante."
+      },
+      "method": {
+        "title": "Método",
+        "description": "Combinamos análisis de mercado, preparación de producto (foto y vídeo) y una gestión de visitas que prioriza el tiempo de comprador y propietario."
+      },
+      "evolution": {
+        "title": "Evolución",
+        "description": "Hoy trabajamos con clientes particulares e inversores, con una cartera cuidada y una red de colaboradores que garantiza agilidad sin perder calidad."
+      }
+    },
+    "servicesEyebrow": "Servicios",
+    "servicesTitle": "Una propuesta integral, sin ruido",
+    "servicesLead": "Unificamos asesoramiento, comercialización y contenido visual para que cada inmueble se presente con precisión y coherencia.",
+    "highlights": {
+      "sale": "Venta y alquiler con estrategia comercial y seguimiento semanal",
+      "investment": "Inversión inmobiliaria con análisis de retorno y escenarios",
+      "finance": "Hipotecas y financiación con comparativa de opciones",
+      "media": "Producción audiovisual: foto y vídeo con dron"
+    },
+    "viewServices": "Ver servicios",
+    "talkAdvisor": "Hablar con un asesor",
+    "eventsTitle": "Organización de eventos",
+    "eventsDescription": "Coordinamos presentaciones privadas, jornadas de puertas abiertas y eventos de networking para promotores, inversores y compradores, cuidando desde el guion hasta la experiencia en sala.",
+    "eventsBullets": {
+      "guests": "Convocatoria y gestión de asistentes",
+      "staging": "Puesta en escena, señalética y recorrido",
+      "coverage": "Cobertura fotográfica y vídeo-resumen"
+    },
+    "letterTitle": "Carta de presentación",
+    "letterPending": "Este bloque queda pendiente de recibir el texto definitivo para integrarlo con el tono de marca.",
+    "ctaTitle": "¿Hablamos de tu caso?",
+    "ctaLead": "Te respondemos con claridad y un plan de acción sin compromiso.",
+    "ctaButton": "Contactar ahora"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Cuéntanos qué necesitas",
+    "lead": "Respuesta personalizada en menos de 24 horas. Asesoramiento gratuito y sin compromiso.",
+    "mapTitle": "Ubicación de InmoLex en Madrid",
+    "office": "Nuestra oficina",
+    "helpEyebrow": "Estamos para ayudarte",
+    "helpTitle": "Hablemos de tu próximo hogar",
+    "helpLead": "Ya sea para comprar, vender o alquilar, nuestro equipo te acompaña con transparencia y atención personalizada en cada paso.",
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+    "whatsapp": "WhatsApp",
+    "address": "Dirección",
+    "hours": "Horario de atención",
+    "weekdays": "Lun – Vie: 9:30 – 19:00",
+    "saturday": "Sáb: 10:00 – 14:00",
+    "trustAria": "Indicadores de confianza",
+    "trust": {
+      "response": "Tiempo medio de respuesta",
+      "free": "Asesoramiento sin coste",
+      "noObligation": "Consulta sin obligación",
+      "clients": "Clientes satisfechos"
+    },
+    "trustValues": {
+      "free": "Gratuito",
+      "noObligation": "Sin compromiso"
+    },
+    "formTitle": "¿Tienes una duda?",
+    "formLead": "Déjanos tu teléfono y te llamamos. Sin salir de esta página.",
+    "detailsLabel": "¿Qué necesitas?",
+    "submit": "Enviar consulta",
+    "orWhatsapp": "O escríbenos por WhatsApp",
+    "defaultWhatsapp": "Hola, me gustaría recibir más información sobre InmoLex."
+  },
+  "forms": {
+    "unavailable": "Formulario próximamente. Mientras tanto, <link>contáctanos aquí</link>.",
+    "success": "¡Solicitud enviada!",
+    "successLead": "Te llamamos en breve. Gracias por confiar en InmoLex.",
+    "optional": "(opcional)",
+    "zone": "¿En qué zona?",
+    "zonePlaceholder": "Salamanca, Chamberí, La Moraleja…",
+    "detailsDefault": "Cuéntanos qué necesitas",
+    "property": "¿Qué propiedad te interesa?",
+    "name": "Nombre",
+    "phone": "Teléfono",
+    "email": "Email",
+    "privacy": "Acepto la política de privacidad",
+    "privacyFinance": "Acepto la política de privacidad y el tratamiento confidencial de mis datos",
+    "privacyLink": "Ver política",
+    "submit": "Enviar solicitud",
+    "submitting": "Enviando…",
+    "errors": {
+      "unavailable": "Formulario no disponible.",
+      "choice": "Selecciona una opción.",
+      "name": "El nombre es obligatorio.",
+      "phone": "El teléfono es obligatorio.",
+      "email": "Introduce un email válido.",
+      "privacy": "Debes aceptar la política de privacidad.",
+      "submit": "No se pudo enviar. Inténtalo de nuevo.",
+      "connection": "Error de conexión. Inténtalo de nuevo."
+    }
+  },
+  "cookiesBanner": {
+    "aria": "Consentimiento de cookies",
+    "text": "Utilizamos cookies para mejorar su experiencia. Puede aceptar o rechazar las cookies no esenciales.",
+    "more": "Más información",
+    "reject": "Rechazar",
+    "accept": "Aceptar"
+  },
+  "legal": {
+    "eyebrow": "Información legal",
+    "updated": "Última actualización: {date}",
+    "bindingNote": "La versión jurídicamente vinculante de este documento es la española.",
+    "notice": {
+      "title": "Aviso legal",
+      "intro": "En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa a los usuarios de los datos identificativos del titular de este sitio web.",
+      "identityTitle": "Datos identificativos",
+      "holder": "Titular: {legalName} ({tradeName}).",
+      "taxId": "CIF: {taxId}.",
+      "email": "Correo electrónico: {email}",
+      "address": "Dirección: {address}",
+      "purposeTitle": "Objeto",
+      "purpose": "El presente sitio web tiene por objeto ofrecer información sobre los servicios inmobiliarios de {tradeName} y facilitar el contacto con potenciales clientes mediante formularios, teléfono, correo electrónico y WhatsApp.",
+      "termsTitle": "Condiciones de uso",
+      "terms1": "El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación de las presentes condiciones. El usuario se compromete a hacer un uso adecuado de los contenidos y servicios ofrecidos.",
+      "terms2": "Los formularios de contacto enlazan a Google Forms gestionados por el titular. Al enviarlos, el usuario acepta las condiciones indicadas en cada formulario y en la política de privacidad.",
+      "ipTitle": "Propiedad intelectual",
+      "ip": "Todos los contenidos del sitio web (textos, imágenes, logotipos, diseño) son propiedad de {tradeName} o de sus licenciantes y están protegidos por la legislación de propiedad intelectual.",
+      "liabilityTitle": "Responsabilidad",
+      "liability1": "{tradeName} no se hace responsable de los daños derivados del uso indebido del sitio web ni de la información publicada por terceros a través de enlaces externos.",
+      "liability2": "Las fotografías, planos y descripciones de inmuebles tienen carácter orientativo y pueden variar. La información contractual definitiva se facilitará en el momento de la operación.",
+      "lawTitle": "Legislación aplicable",
+      "law": "Las presentes condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someterán a los juzgados y tribunales de {jurisdiction}."
+    },
+    "privacy": {
+      "title": "Política de privacidad",
+      "intro": "En {tradeName} ({legalName}) tratamos sus datos personales con la máxima diligencia y conforme a la normativa vigente en materia de protección de datos (RGPD y LOPDGDD).",
+      "controllerTitle": "Responsable del tratamiento",
+      "controller": "Responsable: {legalName} ({tradeName}).",
+      "contactEmail": "Correo de contacto: {email}",
+      "purposeTitle": "Finalidad del tratamiento",
+      "purpose": "Los datos personales que nos facilite a través de formularios, correo electrónico, teléfono o WhatsApp serán tratados para:",
+      "purposeList": {
+        "requests": "Gestionar sus solicitudes de información, compra, venta, alquiler o valoración.",
+        "services": "Prestar servicios de intermediación inmobiliaria y financiación.",
+        "comms": "Enviar comunicaciones relacionadas con su consulta.",
+        "legal": "Cumplir con obligaciones legales aplicables."
+      },
+      "formsTitle": "Formularios de contacto",
+      "forms1": "Al pulsar los botones de la web, puede acceder a formularios alojados en Google Forms (Google LLC). Los datos que introduzca se envían directamente al responsable del tratamiento para gestionar su solicitud.",
+      "forms2": "Le recomendamos no incluir información sensible que no sea necesaria para su consulta. Puede ejercer sus derechos contactando con nosotros en la dirección indicada al inicio de esta política.",
+      "financeTitle": "Tratamiento de datos financieros",
+      "finance1": "En formularios de hipoteca, préstamo personal o situaciones de deuda hipotecaria, podemos recabar datos de carácter financiero (ingresos, deudas, situación laboral).",
+      "finance2": "Estos datos se tratarán exclusivamente para estudiar su solicitud y ofrecerle una solución adecuada. No se cederán a terceros sin su consentimiento expreso, salvo obligación legal.",
+      "sensitiveTitle": "Tratamiento de datos sensibles (deuda hipotecaria)",
+      "sensitive": "La información relativa a procedimientos judiciales, embargos o subastas se considera de carácter sensible. La trataremos con estricta confidencialidad y únicamente para analizar su situación y proponer alternativas.",
+      "legalBasisTitle": "Legitimación",
+      "legalBasis": "La base legal para el tratamiento es el consentimiento del interesado, la ejecución de medidas precontractuales a petición del interesado y el interés legítimo en responder a sus consultas.",
+      "retentionTitle": "Conservación de datos",
+      "retention": "Conservaremos sus datos mientras sea necesario para atender su solicitud y, posteriormente, durante los plazos legalmente establecidos.",
+      "recipientsTitle": "Destinatarios",
+      "recipients1": "No cedemos sus datos a terceros, salvo obligación legal o cuando sea necesario para la prestación del servicio solicitado (por ejemplo, entidades financieras en caso de solicitud de hipoteca, con su autorización previa).",
+      "recipients2": "Los formularios de Google Forms pueden implicar el tratamiento de datos por Google como proveedor tecnológico, conforme a su propia política de privacidad.",
+      "rightsTitle": "Derechos",
+      "rights1": "Puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando un correo a {email}.",
+      "rights2": "También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
+    },
+    "cookies": {
+      "title": "Política de cookies",
+      "intro": "Este sitio web utiliza almacenamiento local en su navegador para recordar preferencias básicas. A continuación le informamos sobre su uso.",
+      "whatTitle": "¿Qué son las cookies?",
+      "what": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Permiten recordar preferencias y mejorar la funcionalidad del sitio.",
+      "useTitle": "Qué utilizamos en esta web",
+      "use": "En la versión actual del sitio utilizamos únicamente:",
+      "useList": {
+        "storage": "Almacenamiento local (localStorage) para recordar si ha aceptado o rechazado el aviso de cookies.",
+        "technical": "Cookies técnicas estrictamente necesarias para el funcionamiento básico del sitio, si las requiere el proveedor de hosting."
+      },
+      "analyticsTitle": "Cookies de análisis",
+      "analytics": "Actualmente no instalamos cookies de análisis ni herramientas de medición de audiencia. Si en el futuro se incorporan, se le informará y se solicitará su consentimiento cuando corresponda.",
+      "manageTitle": "Gestión de cookies",
+      "manage1": "Al acceder al sitio web, se le mostrará un banner donde puede aceptar o rechazar las cookies no esenciales.",
+      "manage2": "También puede configurar su navegador para bloquear o eliminar cookies y datos almacenados localmente. Consulte la ayuda de su navegador para más información.",
+      "moreTitle": "Más información",
+      "more1": "Para cualquier consulta sobre el uso de cookies, puede contactarnos en {email}.",
+      "more2": "Consulte también nuestra política de privacidad para más información sobre el tratamiento de sus datos."
+    }
+  },
+  "notFound": {
+    "code": "Error 404",
+    "title": "Página no encontrada",
+    "lead": "La página que buscas no existe o ha sido movida. Explora nuestras propiedades o contacta con nuestro equipo.",
+    "home": "Volver al inicio",
+    "properties": "Ver propiedades",
+    "help": "¿Necesitas ayuda?",
+    "contact": "Contacta con nosotros"
+  }
+}

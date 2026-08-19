@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { getPropertyFeatureGroups } from "@/lib/property-features";
 import type { Property } from "@/lib/properties";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -5,6 +8,13 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 interface PropertyFeaturesSectionProps {
   property: Property;
 }
+
+type FeatureGroupId =
+  | "interior"
+  | "exterior"
+  | "edificio"
+  | "extras"
+  | "accesibilidad";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
@@ -16,13 +26,32 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function PropertyFeaturesSection({ property }: PropertyFeaturesSectionProps) {
-  const groups = property.detailSections?.length
-    ? property.detailSections
-    : getPropertyFeatureGroups(property);
+  const t = useTranslations("properties");
+  const tGroups = useTranslations("properties.featureGroups");
+  const tGenerated = useTranslations("properties.generatedFeatures");
+  const tOrientation = useTranslations("labels.orientation");
+  const isCms = Boolean(property.detailSections?.length);
+  const groups = isCms
+    ? property.detailSections!
+    : getPropertyFeatureGroups(property, {
+        terrace: tGenerated("terrace"),
+        balcony: tGenerated("balcony"),
+        garage: tGenerated("garage"),
+        storage: tGenerated("storage"),
+        elevator: tGenerated("elevator"),
+        elevatorCount: tGenerated("elevatorCount", {
+          count: property.elevatorCount ?? 0,
+        }),
+        pmrYes: tGenerated("pmrYes"),
+        pmrNo: tGenerated("pmrNo"),
+        orientation: tGenerated("orientation", {
+          value: tOrientation(property.orientation),
+        }),
+      });
 
   return (
     <RevealOnScroll>
-      <SectionHeading>Características</SectionHeading>
+      <SectionHeading>{t("features")}</SectionHeading>
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         {groups.map((group) => (
           <div
@@ -30,7 +59,7 @@ export function PropertyFeaturesSection({ property }: PropertyFeaturesSectionPro
             className="property-feature-group rounded-2xl border border-accent/12 bg-gradient-to-br from-accent/[0.04] to-transparent p-5 transition-colors hover:border-accent/22"
           >
             <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-accent">
-              {group.label}
+              {isCms ? group.label : tGroups(group.id as FeatureGroupId)}
             </h3>
             <ul className="mt-4 space-y-2.5">
               {group.items.map((item) => (

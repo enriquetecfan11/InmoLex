@@ -9,6 +9,18 @@ export interface FeatureGroup {
   items: string[];
 }
 
+export interface GeneratedFeatureLabels {
+  terrace: string;
+  balcony: string;
+  garage: string;
+  storage: string;
+  elevator: string;
+  elevatorCount: string;
+  pmrYes: string;
+  pmrNo: string;
+  orientation: string;
+}
+
 const EXTERIOR_PATTERN =
   /terraza|jardín|piscina|balcón|vistas|parcela|exterior|jardin/i;
 const BUILDING_PATTERN =
@@ -16,7 +28,27 @@ const BUILDING_PATTERN =
 const EXTRAS_PATTERN =
   /seguridad|bodega|domótica|chimenea|alarma|garaje/i;
 
-export function getPropertyFeatureGroups(property: Property): FeatureGroup[] {
+function defaultGeneratedLabels(property: Property): GeneratedFeatureLabels {
+  return {
+    terrace: "Terraza",
+    balcony: "Balcón",
+    garage: "Plaza de garaje",
+    storage: "Trastero",
+    elevator: "Ascensor",
+    elevatorCount: property.elevatorCount
+      ? `Ascensor (${property.elevatorCount})`
+      : "Ascensor",
+    pmrYes: "Acceso adaptado PMR",
+    pmrNo: "Sin adaptación PMR registrada",
+    orientation: `Orientación ${ORIENTATION_LABELS[property.orientation].toLowerCase()}`,
+  };
+}
+
+export function getPropertyFeatureGroups(
+  property: Property,
+  labels?: GeneratedFeatureLabels,
+): FeatureGroup[] {
+  const generated = labels ?? defaultGeneratedLabels(property);
   const interior: string[] = [];
   const exterior: string[] = [];
   const edificio: string[] = [];
@@ -31,20 +63,18 @@ export function getPropertyFeatureGroups(property: Property): FeatureGroup[] {
   }
 
   if (property.terrace && !exterior.some((f) => /terraza/i.test(f))) {
-    exterior.push("Terraza");
+    exterior.push(generated.terrace);
   }
   if (property.balcony && !exterior.some((f) => /balcón/i.test(f))) {
-    exterior.push("Balcón");
+    exterior.push(generated.balcony);
   }
   if (property.garage && !extras.some((f) => /garaje/i.test(f))) {
-    extras.push("Plaza de garaje");
+    extras.push(generated.garage);
   }
-  if (property.storage) extras.push("Trastero");
+  if (property.storage) extras.push(generated.storage);
   if (property.elevator) {
     edificio.push(
-      property.elevatorCount
-        ? `Ascensor (${property.elevatorCount})`
-        : "Ascensor",
+      property.elevatorCount ? generated.elevatorCount : generated.elevator,
     );
   }
 
@@ -57,10 +87,8 @@ export function getPropertyFeatureGroups(property: Property): FeatureGroup[] {
       id: "accesibilidad",
       label: "Accesibilidad",
       items: [
-        property.pmrAccessible
-          ? "Acceso adaptado PMR"
-          : "Sin adaptación PMR registrada",
-        `Orientación ${ORIENTATION_LABELS[property.orientation].toLowerCase()}`,
+        property.pmrAccessible ? generated.pmrYes : generated.pmrNo,
+        generated.orientation,
       ],
     },
   ];

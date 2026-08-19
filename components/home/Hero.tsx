@@ -1,8 +1,11 @@
+import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { ServiceQuickMenu } from "@/components/home/ServiceQuickMenu";
 import { HomePortfolioCta } from "@/components/home/HomePortfolioCta";
 
 export function Hero() {
+  const t = useTranslations("home");
+
   return (
     <section className="relative overflow-hidden bg-brand text-white">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-brand-dark" />
@@ -18,10 +21,10 @@ export function Hero() {
       <Container className="relative pt-16 sm:pt-20 lg:pt-24">
         <div className="mx-auto max-w-3xl text-center">
             <h1 className="hero-title font-display text-[2.5rem] leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.25rem]">
-              ¿Qué necesitas?
+              {t("heroTitle")}
             </h1>
             <p className="hero-subtitle mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-              Pulsa un botón. Te llamamos nosotros.
+              {t("heroSubtitle")}
             </p>
         </div>
       </Container>

@@ -1,8 +1,10 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 import {
-  BADGE_LABELS,
   formatPrice,
   formatPropertyReference,
   getPropertyCoverImage,
@@ -109,6 +111,10 @@ const badgeStyles: Record<
 };
 
 export function PropertyCard({ property, showReference = false }: PropertyCardProps) {
+  const locale = useLocale();
+  const t = useTranslations("properties");
+  const tCommon = useTranslations("common");
+  const tBadge = useTranslations("labels.badge");
   const isUnavailable =
     property.badge === "vendido" || property.badge === "reservado";
 
@@ -135,7 +141,7 @@ export function PropertyCard({ property, showReference = false }: PropertyCardPr
             <span
               className={`absolute left-4 top-4 rounded-full border px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] backdrop-blur-sm ${badgeStyles[property.badge]}`}
             >
-              {BADGE_LABELS[property.badge]}
+              {tBadge(property.badge)}
             </span>
           )}
         </Link>
@@ -148,11 +154,14 @@ export function PropertyCard({ property, showReference = false }: PropertyCardPr
       <div className="flex flex-1 flex-col pt-6">
         {showReference && (
           <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/40">
-            Ref. {formatPropertyReference(property.id)}
+            {tCommon("ref", { id: formatPropertyReference(property.id) })}
           </p>
         )}
         <p className={`font-display text-2xl tracking-tight text-accent sm:text-[1.65rem] ${showReference ? "mt-2" : ""}`}>
-          {formatPrice(property.price, property.operation)}
+          {formatPrice(property.price, property.operation, {
+            locale,
+            perMonth: tCommon("perMonth"),
+          })}
         </p>
 
         <h3 className="mt-2 font-display text-xl leading-snug text-white">
@@ -172,13 +181,14 @@ export function PropertyCard({ property, showReference = false }: PropertyCardPr
         <ul className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-accent/15 pt-5 text-sm text-white/55">
           <li className="flex items-center gap-1.5">
             <BedIcon />
-            <span>{property.bedrooms} hab.</span>
+            <span>{t("bedroomsShort", { count: property.bedrooms })}</span>
           </li>
           <li className="flex items-center gap-1.5">
             <BathIcon />
             <span>
-              {property.bathrooms}{" "}
-              {property.bathrooms === 1 ? "baño" : "baños"}
+              {property.bathrooms === 1
+                ? t("bathroom", { count: property.bathrooms })
+                : t("bathrooms", { count: property.bathrooms })}
             </span>
           </li>
           <li className="flex items-center gap-1.5">
@@ -195,7 +205,7 @@ export function PropertyCard({ property, showReference = false }: PropertyCardPr
               size="md"
               className="w-full text-sm"
             >
-              Solicitar información
+              {t("requestInfo")}
             </Button>
           ) : (
             <Button
@@ -204,7 +214,7 @@ export function PropertyCard({ property, showReference = false }: PropertyCardPr
               size="md"
               className="property-card-cta w-full text-sm hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/40"
             >
-              Ver propiedad
+              {t("viewProperty")}
             </Button>
           )}
         </div>

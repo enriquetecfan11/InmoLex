@@ -2,16 +2,20 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
+type RevealVariant = "none" | "editorial";
+
 interface RevealOnScrollProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: RevealVariant;
 }
 
 export function RevealOnScroll({
   children,
   className = "",
   delay = 0,
+  variant = "none",
 }: RevealOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -34,10 +38,15 @@ export function RevealOnScroll({
     return () => observer.disconnect();
   }, []);
 
+  const revealClass =
+    variant === "editorial"
+      ? `editorial-reveal ${visible ? "editorial-reveal--visible" : ""}`
+      : `property-reveal ${visible ? "property-reveal--visible" : ""}`;
+
   return (
     <div
       ref={ref}
-      className={`property-reveal ${visible ? "property-reveal--visible" : ""} ${className}`}
+      className={`${revealClass} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

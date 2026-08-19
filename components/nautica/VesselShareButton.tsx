@@ -1,7 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { formatPrice, formatVesselReference, type Vessel } from "@/lib/vessels";
+import { useLocale, useTranslations } from "next-intl";
+import {
+  formatPrice,
+  formatVesselReference,
+  type Vessel,
+} from "@/lib/vessels";
 
 interface VesselShareButtonProps {
   vessel: Vessel;
@@ -12,6 +17,10 @@ export function VesselShareButton({
   vessel,
   className = "",
 }: VesselShareButtonProps) {
+  const tShare = useTranslations("properties.share");
+  const tVessels = useTranslations("vessels.share");
+  const tCommon = useTranslations("common");
+  const locale = useLocale();
   const [shareUrl, setShareUrl] = useState("");
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(false);
@@ -21,11 +30,14 @@ export function VesselShareButton({
   }, []);
 
   const reference = formatVesselReference(vessel.id);
-  const price = formatPrice(vessel.price, vessel.operation);
-  const shareText = `${vessel.title} · ${price} · Ref. ${reference}`;
+  const price = formatPrice(vessel.price, vessel.operation, {
+    locale,
+    perMonth: tCommon("perMonth"),
+  });
+  const shareText = `${vessel.title} · ${price} · ${tCommon("ref", { id: reference })}`;
 
   const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${shareText}\n${shareUrl}`)}`;
-  const emailHref = `mailto:?subject=${encodeURIComponent(`${vessel.title} · InmoLex Náutica`)}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
+  const emailHref = `mailto:?subject=${encodeURIComponent(tVessels("emailSubject", { title: vessel.title }))}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
 
   const copyLink = useCallback(async () => {
     if (!shareUrl) return;
@@ -57,7 +69,7 @@ export function VesselShareButton({
             strokeLinejoin="round"
           />
         </svg>
-        Compartir
+        {tShare("share")}
       </button>
 
       {open && (
@@ -65,7 +77,7 @@ export function VesselShareButton({
           <button
             type="button"
             className="fixed inset-0 z-40 cursor-default"
-            aria-label="Cerrar menú de compartir"
+            aria-label={tShare("close")}
             onClick={() => setOpen(false)}
           />
           <div
@@ -80,7 +92,7 @@ export function VesselShareButton({
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/80 transition-colors hover:bg-accent/10 hover:text-accent"
               onClick={() => setOpen(false)}
             >
-              WhatsApp
+              {tCommon("whatsapp")}
             </a>
             <a
               href={emailHref}
@@ -88,7 +100,7 @@ export function VesselShareButton({
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/80 transition-colors hover:bg-accent/10 hover:text-accent"
               onClick={() => setOpen(false)}
             >
-              Email
+              {tCommon("email")}
             </a>
             <button
               type="button"
@@ -99,7 +111,7 @@ export function VesselShareButton({
               }}
               className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-white/80 transition-colors hover:bg-accent/10 hover:text-accent"
             >
-              {copied ? "Enlace copiado" : "Copiar enlace"}
+              {copied ? tShare("copied") : tShare("copy")}
             </button>
           </div>
         </>

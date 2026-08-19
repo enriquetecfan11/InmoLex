@@ -1,7 +1,9 @@
 "use client";
 
 import { useMemo } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 
 interface PropertyPaginationProps {
   currentPage: number;
@@ -25,12 +27,16 @@ export function PropertyPagination({
   totalPages,
   totalItems,
   pageSize,
-  itemLabel = "propiedades",
-  ariaLabel = "Paginación de propiedades",
+  itemLabel,
+  ariaLabel,
 }: PropertyPaginationProps) {
+  const t = useTranslations("properties");
+  const tCommon = useTranslations("common");
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
+  const resolvedItemLabel = itemLabel ?? t("resultOther");
+  const resolvedAriaLabel = ariaLabel ?? t("paginationAria");
 
   const pages = useMemo(() => {
     if (totalPages <= 5) {
@@ -57,14 +63,15 @@ export function PropertyPagination({
   return (
     <nav
       className="property-pagination mt-12 border-t border-accent/15 pt-8 sm:mt-16"
-      aria-label={ariaLabel}
+      aria-label={resolvedAriaLabel}
     >
       <p className="text-center text-sm text-white/45">
-        Mostrando{" "}
-        <span className="font-medium text-white/70">
-          {start}–{end}
-        </span>{" "}
-        de <span className="font-medium text-accent">{totalItems}</span> {itemLabel}
+        {t("showing", {
+          start,
+          end,
+          total: totalItems,
+          itemLabel: resolvedItemLabel,
+        })}
       </p>
 
       <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
@@ -74,7 +81,7 @@ export function PropertyPagination({
           disabled={currentPage <= 1}
           className="rounded-lg border border-accent/20 px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:border-accent/35 hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
         >
-          Anterior
+          {tCommon("previous")}
         </button>
 
         {pages.map((page, index) => {
@@ -106,7 +113,7 @@ export function PropertyPagination({
           disabled={currentPage >= totalPages}
           className="rounded-lg border border-accent/20 px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:border-accent/35 hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
         >
-          Siguiente
+          {tCommon("next")}
         </button>
       </div>
     </nav>

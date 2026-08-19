@@ -1,0 +1,863 @@
+{
+  "languages": {
+    "es": "Español",
+    "en": "English",
+    "sv": "Svenska",
+    "uk": "Українська",
+    "it": "Italiano",
+    "zh": "中文",
+    "nl": "Nederlands",
+    "nb": "Norsk",
+    "ca": "Català"
+  },
+  "metadata": {
+    "siteTitle": "InmoLex | Kopen, verkopen en huren",
+    "siteTitleTemplate": "%s | InmoLex",
+    "siteDescription": "Makelaarskantoor in Madrid. Koop, verkoop of huur vastgoed met transparantie en persoonlijk advies.",
+    "home": {
+      "title": "Home",
+      "description": "Makelaarskantoor in Madrid. Koop, verkoop of huur vastgoed met transparantie en persoonlijk advies."
+    },
+    "properties": {
+      "title": "Woningen",
+      "description": "Ontdek onze exclusieve selectie van high-end woningen in Madrid. Koop en verhuur met persoonlijk advies.",
+      "notFound": "Woning niet gevonden"
+    },
+    "vessels": {
+      "title": "Jachten",
+      "description": "Catalogus van vaartuigen: jachten, zeilboten, speedboten en motorboten te koop en te huur, met persoonlijk advies.",
+      "notFound": "Vaartuig niet gevonden"
+    },
+    "services": {
+      "title": "Diensten",
+      "description": "Volledige vastgoeddiensten in Madrid: verkoop, verhuur, investering, hypotheken, fotoreportages en meer.",
+      "notFound": "Dienst niet gevonden"
+    },
+    "about": {
+      "title": "Over ons",
+      "description": "Leer InmoLex kennen: voorstelling, geschiedenis, diensten en evenementen. Nabijheid, oordeel en een feilloze uitvoering."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Neem contact op met InmoLex in Madrid. Gratis advies zonder verplichting en antwoord binnen 24 uur."
+    },
+    "legalNotice": {
+      "title": "Juridische kennisgeving",
+      "description": "Juridische kennisgeving en gegevens van de eigenaar van de InmoLex-website."
+    },
+    "privacy": {
+      "title": "Privacybeleid",
+      "description": "Privacybeleid en gegevensverwerking van InmoLex."
+    },
+    "cookies": {
+      "title": "Cookiebeleid",
+      "description": "Informatie over het gebruik van cookies op de InmoLex-website."
+    }
+  },
+  "nav": {
+    "ariaLabel": "Hoofdnavigatie",
+    "home": "Home",
+    "properties": "Woningen",
+    "nautica": "Jachten",
+    "services": "Diensten",
+    "about": "Over ons",
+    "contact": "Contact"
+  },
+  "header": {
+    "freeValuation": "Gratis taxatie",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "language": "Taal"
+  },
+  "footer": {
+    "tagline": "Premiummakelaar in Madrid. Koop, verkoop en verhuur met persoonlijk advies en maximale transparantie.",
+    "navigation": "Navigatie",
+    "contact": "Contact",
+    "rights": "© {year} InmoLex. Alle rechten voorbehouden.",
+    "legalNotice": "Juridische kennisgeving",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "privateArea": "Privégebied"
+  },
+  "home": {
+    "heroTitle": "Wat hebt u nodig?",
+    "heroSubtitle": "Druk op een knop. Wij bellen u.",
+    "portfolioCta": "Onze woningen in portefeuille",
+    "whyEyebrow": "Over ons",
+    "whyTitle": "Waarom InmoLex",
+    "whyLead": "Een boutiquedienst: beslissingen met oordeel, zorgvuldige uitvoering en communicatie die u de controle geeft.",
+    "whyCta": "Leer ons kennen",
+    "whyTalk": "Spreek met een adviseur",
+    "pillars": {
+      "market": {
+        "title": "Marktoordeel",
+        "description": "Realistische taxatie en een commerciële strategie die het resultaat maximaliseert zonder tijd te verspillen."
+      },
+      "execution": {
+        "title": "Feilloze uitvoering",
+        "description": "Fotografie, video en materiaal klaar voor publicatie, met een samenhangende presentatie."
+      },
+      "followUp": {
+        "title": "Duidelijke opvolging",
+        "description": "Voortdurende communicatie, bezichtigingsgegevens en strategieaanpassingen, altijd met transparantie."
+      },
+      "network": {
+        "title": "Een netwerk van vertrouwen",
+        "description": "Partners in financiering, renovatie en juridische zaken, zodat wrijving wordt opgelost voordat ze ontstaat."
+      }
+    },
+    "contactTitle": "Hebt u een vraag?",
+    "contactLead": "Vul het formulier in of schrijf ons via WhatsApp. Wij bellen u.",
+    "contactDetailsLabel": "Wat hebt u nodig?",
+    "contactSubmit": "Verzoek versturen",
+    "preferWhatsapp": "Ik verkies WhatsApp",
+    "featured": {
+      "eyebrow": "Redactionele selectie",
+      "title": "Minder woningen. Beter gekozen.",
+      "lead": "We brengen de woningen samen die écht een gesprek verdienen: ligging, licht, staat en een helder verhaal voor wie binnenstapt.",
+      "highlightedNow": "Nu in de kijker",
+      "portfolio": "Woningen in portefeuille",
+      "activeOps": "Actieve transacties",
+      "lookingDifferent": "Zoekt u iets anders?",
+      "lookingDifferentLead": "We filteren op zone, budget en type transactie om sneller bij de woning te komen die bij u past.",
+      "viewCatalog": "Bekijk de volledige catalogus",
+      "highlightedNowShort": "Nu in de kijker",
+      "quickView": "Een snelle blik op de selectie",
+      "criterion": "Elke woning komt binnen op merites, niet op volume.",
+      "bedrooms": "Slaapkamers",
+      "bathrooms": "Badkamers",
+      "area": "Oppervlakte",
+      "viewProperty": "Bekijk woning"
+    },
+    "featuredVessels": {
+      "eyebrow": "Nautische selectie",
+      "title": "Minder vaartuigen. Beter gekozen.",
+      "lead": "Jachten, zeilboten en motorboten met oordeel: lengte, staat, ligplaats en een presentatie die past bij wie wil varen, niet alleen kijken.",
+      "highlightedNow": "Nu in de kijker",
+      "portfolio": "In portefeuille",
+      "activeOps": "Actieve transacties",
+      "lookingDifferent": "Zoekt u iets anders?",
+      "lookingDifferentLead": "We filteren op type, lengte, budget en haven om sneller bij het vaartuig te komen dat bij u past.",
+      "viewCatalog": "Bekijk de jachtencatalogus",
+      "quickView": "Een snelle blik op de vloot",
+      "criterion": "Elk vaartuig komt binnen op merites, niet op volume.",
+      "length": "Lengte",
+      "cabins": "Kajuiten",
+      "year": "Jaar",
+      "viewVessel": "Bekijk vaartuig"
+    },
+    "servicesEyebrow": "Diensten",
+    "servicesTitle": "Alles wat u nodig hebt op één plek",
+    "servicesLead": "Volledig advies bij kopen, verkopen, huren, financieren en investeren. Kies een startpunt: de rest nemen wij voor onze rekening.",
+    "catalogTitle": "Ontdek al onze diensten",
+    "catalogLead": "Bekijk de volledige dienstencatalogus.",
+    "catalogCta": "Alle diensten bekijken"
+  },
+  "elite": {
+    "kicker": "Elite Real Estate · Global",
+    "title": "Hoogwaardig, zonder overdreven commissies.",
+    "lead": "GrupoRol biedt een exclusieve vastgoeddienst van het hoogste niveau voor wie maximale excellentie én financiële efficiëntie zoekt. We breken met het traditionele luxemodel: premium aandacht en tools, met honoraria die competitiever zijn dan gebruikelijk in de sector.",
+    "differentialTitle": "Excellentie zonder extra kosten",
+    "differentialBody": "GrupoRol combineert persoonlijke aandacht, geavanceerde technologie, internationaal bereik en premium vastgoeddiensten, zonder de gebruikelijke kostenstructuren van het luxesegment door te rekenen aan de klant.",
+    "differentialHighlight": "Hoogwaardig, met competitievere honoraria.",
+    "closeTitle": "Luxe hoeft niet meer te kosten.",
+    "closeSubtitle": "Ervaar de echte Elite-dienst.",
+    "cta": "Vraag een consult aan",
+    "blocks": {
+      "coverage": {
+        "title": "Wereldwijde dekking",
+        "body": "We kennen geen grenzen. We reizen overal ter wereld om vastgoed te beheren, inspecties uit te voeren of onderhandelingen persoonlijk af te ronden.",
+        "accent": "Uw locatie is onze locatie."
+      },
+      "tailored": {
+        "title": "Dienst op maat",
+        "body": "Elke klant en elke transactie is anders. We personaliseren het dossier volledig en ontwerpen een strategie afgestemd op uw financiële, fiscale en logistieke behoeften: een echt maatpak in vastgoed."
+      },
+      "tech": {
+        "title": "Visuele technologie van de volgende generatie",
+        "body": "We maximaliseren de waarde en het bereik van elk object met digitale premiumtools, bedoeld voor nationale en internationale kopers.",
+        "items": {
+          "photo": "Professionele fotoreportage",
+          "tours": "Virtuele 360°-tours",
+          "visits": "Immersieve bezichtigingen in hoge definitie",
+          "plans2d": "2D-plannen",
+          "plans3d": "3D-modellering en plannen",
+          "presentation": "Nationale en internationale presentatie"
+        }
+      },
+      "finance": {
+        "title": "Financiële oplossingen en aankoop van schuld",
+        "body": "We begeleiden financieel complexe vastgoedtransacties: aankoop van schuld, beheer en afwikkeling van lasten, herstructurering en vrijgave van activa.",
+        "accent": "We lossen transacties op die anderen te complex vinden."
+      },
+      "network": {
+        "title": "Internationaal netwerk en integraal beheer",
+        "body": "We werken samen met internationale makelaars en partners om de zichtbaarheid van elk object te vermenigvuldigen, met discretie en persoonlijke aandacht.",
+        "items": {
+          "sale": "Verkoop",
+          "rent": "Verhuur",
+          "negotiation": "Onderhandeling",
+          "exposure": "Internationale zichtbaarheid",
+          "coordination": "Coördinatie van de transactie"
+        }
+      }
+    }
+  },
+  "common": {
+    "sale": "Verkoop",
+    "rent": "Verhuur",
+    "ref": "Ref. {id}",
+    "perMonth": "/mnd",
+    "yes": "Ja",
+    "no": "Nee",
+    "yesCount": "Ja ({count})",
+    "whatsapp": "WhatsApp",
+    "email": "E-mail",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "backHome": "← Terug naar home"
+  },
+  "labels": {
+    "operation": {
+      "venta": "Verkoop",
+      "alquiler": "Verhuur"
+    },
+    "badge": {
+      "nuevo": "Nieuw",
+      "reservado": "Gereserveerd",
+      "vendido": "Verkocht",
+      "destacado": "Uitgelicht",
+      "exclusivo": "Exclusief"
+    },
+    "status": {
+      "disponible": "Beschikbaar",
+      "reservado": "Gereserveerd",
+      "vendido": "Verkocht",
+      "alquilado": "Verhuurd"
+    },
+    "propertyType": {
+      "piso": "Appartement",
+      "atico": "Penthouse",
+      "chalet": "Villa",
+      "duplex": "Duplex",
+      "casa_pueblo": "Stadswoning",
+      "habitacion": "Kamer"
+    },
+    "vesselType": {
+      "yate": "Jacht",
+      "velero": "Zeilboot",
+      "lancha": "Speedboot",
+      "catamaran": "Catamaran",
+      "motora": "Motorboot"
+    },
+    "orientation": {
+      "norte": "Noord",
+      "sur": "Zuid",
+      "este": "Oost",
+      "oeste": "West",
+      "noreste": "Noordoost",
+      "noroeste": "Noordwest",
+      "sureste": "Zuidoost",
+      "suroeste": "Zuidwest"
+    },
+    "energy": {
+      "A": "Zeer efficiënt",
+      "B": "Efficiënt",
+      "C": "Gemiddeld verbruik",
+      "D": "Hoog verbruik",
+      "E": "Zeer hoog verbruik",
+      "F": "Overmatig verbruik",
+      "G": "Overmatig verbruik"
+    }
+  },
+  "properties": {
+    "eyebrow": "Onze woningen in portefeuille",
+    "title": "Beschikbare woningen",
+    "lead": "Een zorgvuldig gekozen selectie van high-end woningen in de beste wijken van Madrid. Elke woning beoordeeld met professioneel oordeel.",
+    "emptyTitle": "Geen resultaten",
+    "emptyLead": "Geen woningen komen overeen met de geselecteerde filters. Probeer de zoekcriteria aan te passen.",
+    "resetFilters": "Filters resetten",
+    "viewProperty": "Bekijk woning",
+    "requestInfo": "Informatie aanvragen",
+    "bedroomsShort": "{count} slk.",
+    "bathroom": "{count} badkamer",
+    "bathrooms": "{count} badkamers",
+    "resultOne": "woning",
+    "resultOther": "woningen",
+    "paginationAria": "Paginering van woningen",
+    "showing": "{start}–{end} van {total} {itemLabel} weergegeven",
+    "description": "Beschrijving",
+    "gallery": "Galerij",
+    "similar": "Vergelijkbare woningen",
+    "similarLead": "Exclusieve selectie in dezelfde zone",
+    "backToList": "Terug naar woningen",
+    "luxury": "Luxe",
+    "salePrice": "Verkoopprijs",
+    "rentPrice": "Maandelijkse huurprijs",
+    "features": "Kenmerken",
+    "featureGroups": {
+      "interior": "Interieur",
+      "exterior": "Exterieur",
+      "edificio": "Gebouw",
+      "extras": "Extra’s",
+      "accesibilidad": "Toegankelijkheid"
+    },
+    "generatedFeatures": {
+      "terrace": "Terras",
+      "balcony": "Balkon",
+      "garage": "Garageplaats",
+      "storage": "Berging",
+      "elevator": "Lift",
+      "elevatorCount": "Lift ({count})",
+      "pmrYes": "Toegankelijk voor PMR",
+      "pmrNo": "Geen geregistreerde PMR-aanpassing",
+      "orientation": "Oriëntatie {value}"
+    },
+    "stats": {
+      "area": "Oppervlakte",
+      "bedrooms": "Slaapkamers",
+      "bathrooms": "Badkamers",
+      "terrace": "Terras",
+      "parking": "Parking",
+      "storage": "Berging",
+      "elevator": "Lift",
+      "orientation": "Oriëntatie"
+    },
+    "energy": {
+      "title": "Energielabel",
+      "lead": "Energie-efficiëntie van de woning volgens het geldende officiële certificaat.",
+      "rating": "Energielabel",
+      "consumption": "Energieverbruik",
+      "emissions": "CO₂-uitstoot"
+    },
+    "map": {
+      "title": "Ligging",
+      "lead": "Ongeveer de ligging van de woning in {district}. Het exacte adres wordt bij de bezichtiging meegedeeld.",
+      "openMaps": "Openen in Google Maps"
+    },
+    "plans": {
+      "comingSoon": "Plan binnenkort",
+      "enlarge": "Vergroten",
+      "title": "Plannen",
+      "plan2d": "2D-plattegrond",
+      "plan3d": "3D-plattegrond"
+    },
+    "videos": {
+      "title": "Video",
+      "lead": "Ontdek de details en de sfeer van deze woning op video."
+    },
+    "galleryCta": "Bekijk galerij",
+    "contact": {
+      "price": "Prijs",
+      "bookVisit": "Bezichtiging plannen",
+      "moreInfo": "Meer info",
+      "whatsappLead": "Persoonlijk advies zonder verplichting. Antwoord binnen 24 uur.",
+      "contact": "Contact",
+      "formLead": "Vraag een bezichtiging of meer informatie aan zonder deze pagina te verlaten.",
+      "bookVisitSubmit": "Bezichtiging aanvragen",
+      "requestInfoSubmit": "Informatie aanvragen",
+      "actionsAria": "Contactacties",
+      "whatsappAria": "Contact via WhatsApp",
+      "whatsappMessage": "Hallo, ik ben geïnteresseerd in de woning \"{title}\" ({location}). Ik ontvang graag meer informatie."
+    },
+    "share": {
+      "share": "Delen",
+      "close": "Deelmenu sluiten",
+      "copy": "Link kopiëren",
+      "copied": "Link gekopieerd",
+      "emailSubject": "{title} · InmoLex"
+    },
+    "filters": {
+      "search": "Zoeken op tekst of referentie",
+      "searchPlaceholder": "Bv. Salamanca, penthouse, INM-0001…",
+      "operation": "Transactie",
+      "allOperations": "Alle",
+      "location": "Ligging",
+      "allZones": "Alle zones",
+      "price": "Prijs",
+      "anyPrice": "Elke prijs",
+      "price0": "Tot 500.000 €",
+      "price1": "500.000 – 1.000.000 €",
+      "price2": "1.000.000 – 2.000.000 €",
+      "price3": "Meer dan 2.000.000 €",
+      "rent0": "Huur tot 2.500 €",
+      "rent1": "Huur meer dan 2.500 €",
+      "bedrooms": "Slaapkamers",
+      "any": "Alle",
+      "type": "Type",
+      "allTypes": "Alle",
+      "sort": "Sorteren",
+      "relevance": "Relevantie",
+      "newest": "Nieuwste",
+      "priceAsc": "Prijs: laag naar hoog",
+      "priceDesc": "Prijs: hoog naar laag",
+      "areaDesc": "Oppervlakte: groot naar klein",
+      "terrace": "Terras",
+      "garage": "Garage",
+      "elevator": "Lift",
+      "pmr": "PMR-toegang",
+      "clear": "Filters wissen"
+    }
+  },
+  "vessels": {
+    "eyebrow": "Jachtencatalogus",
+    "title": "Beschikbare vaartuigen",
+    "lead": "Jachten, zeilboten en motorboten geselecteerd met hetzelfde oordeel als onze woningen.",
+    "emptyTitle": "Geen resultaten",
+    "emptyLead": "Geen vaartuigen komen overeen met de geselecteerde filters. Probeer de zoekcriteria aan te passen.",
+    "resetFilters": "Filters resetten",
+    "viewVessel": "Bekijk vaartuig",
+    "requestInfo": "Informatie aanvragen",
+    "resultOne": "vaartuig",
+    "resultOther": "vaartuigen",
+    "paginationAria": "Paginering van vaartuigen",
+    "description": "Beschrijving",
+    "gallery": "Galerij",
+    "similar": "Vergelijkbare vaartuigen",
+    "similarLead": "Selectie in dezelfde zone of transactie",
+    "backToList": "Terug naar jachten",
+    "features": "Kenmerken",
+    "techSheet": "Technische fiche",
+    "equipment": "Uitrusting",
+    "lengthValue": "Lengte {value}",
+    "yearValue": "Jaar {year}",
+    "shipyard": "Werf {name}",
+    "engineValue": "Motor {name}",
+    "cabin": "{count} kajuit",
+    "cabins": "{count} kajuiten",
+    "bathroom": "{count} badkamer",
+    "bathrooms": "{count} badkamers",
+    "capacity": "{count} plaatsen",
+    "stats": {
+      "length": "Lengte",
+      "year": "Jaar",
+      "cabins": "Kajuiten",
+      "bathrooms": "Badkamers",
+      "capacity": "Plaatsen",
+      "engine": "Motor"
+    },
+    "map": {
+      "title": "Ligging",
+      "lead": "Ongeveer de haven of zone van het vaartuig. De exacte ligplaats wordt bij de bezichtiging meegedeeld.",
+      "port": "Haven / zone",
+      "openMaps": "Openen in Google Maps"
+    },
+    "videos": {
+      "title": "Video",
+      "lead": "Ontdek de details en de sfeer van dit vaartuig op video."
+    },
+    "contact": {
+      "price": "Prijs",
+      "bookVisit": "Bezichtiging plannen",
+      "moreInfo": "Meer info",
+      "whatsappLead": "Persoonlijk nautisch advies zonder verplichting. Antwoord binnen 24 uur.",
+      "contact": "Contact",
+      "formLead": "Vraag een bezichtiging of meer informatie aan zonder deze pagina te verlaten.",
+      "bookVisitSubmit": "Solicitar visita",
+      "requestInfoSubmit": "Solicitar información",
+      "actionsAria": "Acciones de contacto",
+      "whatsappAria": "Contactar por WhatsApp",
+      "whatsappMessage": "Hola, me interesa la embarcación \"{title}\" ({location}). Me gustaría recibir más información."
+    },
+    "share": {
+      "emailSubject": "{title} · InmoLex Jachten"
+    },
+    "filters": {
+      "search": "Zoeken op tekst of referentie",
+      "searchPlaceholder": "Bv. Palma, jacht, NAU-0001…",
+      "operation": "Transactie",
+      "allOperations": "Alle",
+      "type": "Type",
+      "allTypes": "Alle",
+      "location": "Ligging",
+      "allPorts": "Alle havens",
+      "price": "Prijs",
+      "anyPrice": "Elke prijs",
+      "length": "Lengte",
+      "anyLength": "Alle",
+      "sort": "Sorteren",
+      "relevance": "Relevantie",
+      "newest": "Nieuwste",
+      "priceAsc": "Prijs: laag naar hoog",
+      "priceDesc": "Prijs: hoog naar laag",
+      "lengthDesc": "Lengte: groot naar klein",
+      "clear": "Filters wissen",
+      "portZone": "Zona / puerto",
+      "price0": "Hasta 100.000 €",
+      "price1": "100.000 – 500.000 €",
+      "price2": "500.000 – 1.000.000 €",
+      "price3": "Más de 1.000.000 €",
+      "rent0": "Alquiler hasta 5.000 €",
+      "rent1": "Alquiler más de 5.000 €",
+      "length0": "Hasta 10 m",
+      "length1": "10 – 15 m",
+      "length2": "15 – 20 m",
+      "length3": "Más de 20 m"
+    }
+  },
+  "services": {
+    "eyebrow": "Diensten",
+    "title": "Alles wat u nodig hebt op één plek",
+    "lead": "Koop, verkoop, verhuur, financiering en investering. Integrale begeleiding met dezelfde eis in elke dienst.",
+    "leadForm": {
+      "submitDefault": "Aanvraag versturen",
+      "detailsIntermediation": "Vertel ons wat u zoekt of wat u hebt",
+      "detailsFinance": "Vertel ons uw situatie",
+      "placeholderIntermediation": "Bv.: appartement 3 slk. max. 400.000 €…",
+      "placeholderFinance": "Bv.: ik ben 180.000 € schuldig, achterstallige termijnen…"
+    },
+    "investorsEyebrow": "Voor investeerders",
+    "notFoundCtaTitle": "Vindt u niet wat u zoekt?",
+    "notFoundCtaLead": "Vertel ons uw zaak en we stellen de meest geschikte oplossing voor, zonder verplichting.",
+    "contactNow": "Nu contact opnemen",
+    "minuteNote": "Duurt slechts 1 minuut · Wij bellen u",
+    "preferWhatsapp": "Ik verkies WhatsApp",
+    "whatsappMessage": "Hallo, ik kom van de pagina {title} op InmoLex en neem liever contact op via WhatsApp.",
+    "privacyLink": "Privacy",
+    "categories": {
+      "intermediacion": "Vastgoedbemiddeling",
+      "inversion": "Investering en financiering",
+      "adicional": "Aanvullende diensten"
+    },
+    "items": {
+      "comprar-vender": {
+        "title": "Kopen of verkopen",
+        "description": "Koop, verkoop en persoonlijk advies in elke stap van het vastgoedproces.",
+        "cta": "Informatie aanvragen",
+        "menuDescription": "Vind uw woning of verkoop met deskundig advies."
+      },
+      "alquiler": {
+        "title": "Verhuur",
+        "description": "Zoek een huurwoning of zet uw vastgoed op de markt met integraal beheer en transparantie.",
+        "cta": "Vraag over verhuur",
+        "menuDescription": "Zoek een huurwoning of zet uw vastgoed op de markt."
+      },
+      "valoracion": {
+        "title": "Gratis taxatie",
+        "description": "Schatting zonder verplichting met marktoordeel en antwoord binnen 24 uur.",
+        "cta": "Taxatie aanvragen",
+        "menuDescription": "Schatting zonder verplichting met marktoordeel."
+      },
+      "financiacion": {
+        "title": "Hypotheek of lening",
+        "description": "We vergelijken de beste voorwaarden en begeleiden u bij de aanvraag zonder extra kosten.",
+        "cta": "Financiering simuleren",
+        "menuDescription": "Financiering afgestemd op uw situatie."
+      },
+      "deuda": {
+        "title": "Betalingsproblemen",
+        "description": "Oplossingen voor situaties van hypotheekschuld. Wij kopen uw schuld.",
+        "cta": "Oplossing bekijken",
+        "menuDescription": "Oplossingen voor situaties van hypotheekschuld.",
+        "highlight": "Wij kopen uw schuld"
+      },
+      "inversores": {
+        "title": "Investeerders en veilingen",
+        "description": "Off-market kansen, veilingen en dossiers met financiële data voor investeerders.",
+        "cta": "Toegang voor investeerders",
+        "menuDescription": "Off-market kansen en veilingtransacties."
+      },
+      "nautica": {
+        "title": "Jachten",
+        "description": "Koop, verkoop en verhuur van jachten, zeilboten en motorboten met hetzelfde oordeel als onze woningen.",
+        "cta": "Bekijk jachten",
+        "menuDescription": "Jachten, zeilboten en motorboten te koop of te huur."
+      },
+      "reportajes": {
+        "title": "Fotoreportages",
+        "description": "Professionele interieur- en exterieurfotografie die de essentie van elk object weergeeft.",
+        "cta": "Reportage aanvragen"
+      },
+      "dron": {
+        "title": "Dronefotografie",
+        "description": "Luchtbeelden van villa’s, penthouses en percelen die ligging en echte schaal tonen.",
+        "cta": "Sessie boeken"
+      },
+      "eventos": {
+        "title": "Evenementenorganisatie",
+        "description": "Exclusieve presentaties, opendeurdagen en vastgoednetwerkevenementen.",
+        "cta": "Evenement plannen"
+      }
+    },
+    "pages": {
+      "comprar-vender": {
+        "eyebrow": "Koop en verkoop",
+        "title": "Kopen of verkopen",
+        "description": "Druk op de juiste knop. Wij bellen u.",
+        "options": {
+          "buy": {
+            "label": "Ik wil kopen",
+            "description": "We helpen u uw woning te vinden.",
+            "cta": "Ik wil kopen"
+          },
+          "sell": {
+            "label": "Ik wil verkopen",
+            "description": "We taxeren uw vastgoed zonder verplichting.",
+            "cta": "Ik wil verkopen"
+          }
+        }
+      },
+      "alquiler": {
+        "eyebrow": "Verhuur",
+        "title": "Verhuur",
+        "description": "Zoekt u een appartement of wilt u het uwe verhuren? Kies een optie.",
+        "options": {
+          "search": {
+            "label": "Ik zoek huur",
+            "description": "Vertel ons wat u zoekt, dan nemen we contact op.",
+            "cta": "Ik zoek huur"
+          },
+          "list": {
+            "label": "Ik wil mijn appartement verhuren",
+            "description": "Wij beheren de verhuur voor u.",
+            "cta": "Verhuur mijn appartement"
+          }
+        }
+      },
+      "valoracion": {
+        "eyebrow": "Taxatie",
+        "title": "Gratis taxatie",
+        "description": "Zonder verplichting. Eén klik en we bellen.",
+        "cta": "Gratis taxatie aanvragen"
+      },
+      "financiacion": {
+        "eyebrow": "Financiering",
+        "title": "Hypotheek of lening",
+        "description": "Kies wat u nodig hebt. Wij begeleiden u.",
+        "privacyNote": "Uw financiële gegevens worden alleen gebruikt om uw aanvraag te beoordelen.",
+        "options": {
+          "mortgage": {
+            "label": "Hypotheek",
+            "description": "Om uw woning te kopen.",
+            "cta": "Hypotheek aanvragen"
+          },
+          "loan": {
+            "label": "Persoonlijke lening",
+            "description": "Voor andere projecten.",
+            "cta": "Lening aanvragen"
+          }
+        }
+      },
+      "deuda": {
+        "eyebrow": "Hulp bij schuld",
+        "title": "Betalingsproblemen",
+        "description": "We helpen u. Vertel ons uw zaak in alle vertrouwelijkheid.",
+        "cta": "Ik heb hulp nodig bij mijn schuld",
+        "highlight": "Wij kopen uw schuld",
+        "privacyNote": "Vertrouwelijke informatie. We gebruiken die alleen om uw situatie te beoordelen."
+      },
+      "inversores": {
+        "eyebrow": "Investering",
+        "title": "Investeerders en veilingen",
+        "description": "Krijg toegang tot exclusieve kansen.",
+        "cta": "Ik ben investeerder"
+      },
+      "nautica": {
+        "eyebrow": "Jachten",
+        "title": "Koop, verkoop en verhuur van vaartuigen",
+        "description": "Vertel ons wat u zoekt of wat u wilt verkopen. Wij bellen u.",
+        "cta": "Ik wil nautische informatie",
+        "extraLink": "Bekijk de catalogus van vaartuigen"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Over ons",
+    "title": "Nabijheid, oordeel en een feilloze uitvoering",
+    "subtitle": "InmoLex bestaat om de ervaring van kopen, verkopen of investeren te tillen: eerlijk advies, heldere processen en een visuele en commerciële standaard die het object waardig is.",
+    "history": {
+      "origin": {
+        "title": "Oorsprong",
+        "description": "We begonnen met een eenvoudig idee: elke transactie behandelen alsof het de onze is. Zonder haast, zonder kleine lettertjes en met constante communicatie."
+      },
+      "method": {
+        "title": "Methode",
+        "description": "We combineren marktanalyse, productvoorbereiding (foto en video) en bezichtigingsbeheer dat de tijd van koper en eigenaar respecteert."
+      },
+      "evolution": {
+        "title": "Evolutie",
+        "description": "Vandaag werken we met particulieren en investeerders, met een zorgvuldig gekozen portefeuille en een partnernetwerk dat wendbaarheid garandeert zonder kwaliteit te verliezen."
+      }
+    },
+    "servicesEyebrow": "Diensten",
+    "servicesTitle": "Een integraal aanbod, zonder ruis",
+    "servicesLead": "We verenigen advies, commercialisering en visuele content zodat elk object met precisie en samenhang wordt gepresenteerd.",
+    "highlights": {
+      "sale": "Verkoop en verhuur met commerciële strategie en wekelijkse opvolging",
+      "investment": "Vastgoedinvestering met rendementsanalyse en scenario’s",
+      "finance": "Hypotheken en financiering met vergelijking van opties",
+      "media": "Audiovisuele productie: foto en video met drone"
+    },
+    "viewServices": "Bekijk diensten",
+    "talkAdvisor": "Spreek met een adviseur",
+    "eventsTitle": "Evenementenorganisatie",
+    "eventsDescription": "We coördineren privépresentaties, opendeurdagen en netwerkevenementen voor ontwikkelaars, investeerders en kopers, van het script tot de ervaring in de zaal.",
+    "eventsBullets": {
+      "guests": "Uitnodiging en gastenbeheer",
+      "staging": "Enscenering, bewegwijzering en parcours",
+      "coverage": "Fotocoverage en videosamenvatting"
+    },
+    "letterTitle": "Presentatiebrief",
+    "letterPending": "Dit blok wacht op de definitieve tekst om die te integreren met de merkstoon.",
+    "ctaTitle": "Praten we over uw zaak?",
+    "ctaLead": "We antwoorden helder en met een actieplan, zonder verplichting.",
+    "ctaButton": "Nu contact opnemen"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Vertel ons wat u nodig hebt",
+    "lead": "Persoonlijk antwoord binnen 24 uur. Gratis advies zonder verplichting.",
+    "mapTitle": "Locatie van InmoLex in Madrid",
+    "office": "Ons kantoor",
+    "helpEyebrow": "We zijn er om te helpen",
+    "helpTitle": "Laten we over uw volgende woning praten",
+    "helpLead": "Of u nu koopt, verkoopt of huurt, ons team begeleidt u met transparantie en persoonlijke aandacht in elke stap.",
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "address": "Adres",
+    "hours": "Openingsuren",
+    "weekdays": "Ma – vr: 9:30 – 19:00",
+    "saturday": "Za: 10:00 – 14:00",
+    "trustAria": "Vertrouwensindicatoren",
+    "trust": {
+      "response": "Gemiddelde reactietijd",
+      "free": "Advies zonder kosten",
+      "noObligation": "Vraag zonder verplichting",
+      "clients": "Tevreden klanten"
+    },
+    "trustValues": {
+      "free": "Gratis",
+      "noObligation": "Zonder verplichting"
+    },
+    "formTitle": "Hebt u een vraag?",
+    "formLead": "Laat uw telefoonnummer achter, dan bellen wij. Zonder deze pagina te verlaten.",
+    "detailsLabel": "Wat hebt u nodig?",
+    "submit": "Verzoek versturen",
+    "orWhatsapp": "Of schrijf ons via WhatsApp",
+    "defaultWhatsapp": "Hallo, ik zou graag meer informatie over InmoLex ontvangen."
+  },
+  "forms": {
+    "unavailable": "Formulier binnenkort. Ondertussen kunt u <link>hier contact met ons opnemen</link>.",
+    "success": "Aanvraag verstuurd!",
+    "successLead": "We bellen u binnenkort. Dank u voor het vertrouwen in InmoLex.",
+    "optional": "(optioneel)",
+    "zone": "In welke zone?",
+    "zonePlaceholder": "Salamanca, Chamberí, La Moraleja…",
+    "detailsDefault": "Vertel ons wat u nodig hebt",
+    "property": "Welke woning interesseert u?",
+    "name": "Naam",
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "privacy": "Ik aanvaard het privacybeleid",
+    "privacyFinance": "Ik aanvaard het privacybeleid en de vertrouwelijke verwerking van mijn gegevens",
+    "privacyLink": "Bekijk beleid",
+    "submit": "Aanvraag versturen",
+    "submitting": "Versturen…",
+    "errors": {
+      "unavailable": "Formulier niet beschikbaar.",
+      "choice": "Selecteer een optie.",
+      "name": "Naam is verplicht.",
+      "phone": "Telefoon is verplicht.",
+      "email": "Voer een geldig e-mailadres in.",
+      "privacy": "U moet het privacybeleid aanvaarden.",
+      "submit": "Verzenden mislukt. Probeer opnieuw.",
+      "connection": "Verbindingsfout. Probeer opnieuw."
+    }
+  },
+  "cookiesBanner": {
+    "aria": "Cookietoestemming",
+    "text": "We gebruiken cookies om uw ervaring te verbeteren. U kunt niet-essentiële cookies aanvaarden of weigeren.",
+    "more": "Meer informatie",
+    "reject": "Weigeren",
+    "accept": "Aanvaarden"
+  },
+  "legal": {
+    "eyebrow": "Juridische informatie",
+    "updated": "Laatst bijgewerkt: {date}",
+    "bindingNote": "De juridisch bindende versie van dit document is de Spaanse.",
+    "notice": {
+      "title": "Juridische kennisgeving",
+      "intro": "In overeenstemming met Wet 34/2002 van 11 juli betreffende diensten van de informatiemaatschappij en elektronische handel (LSSI-CE) worden gebruikers geïnformeerd over de identificatiegegevens van de eigenaar van deze website.",
+      "identityTitle": "Identificatiegegevens",
+      "holder": "Eigenaar: {legalName} ({tradeName}).",
+      "taxId": "CIF: {taxId}.",
+      "email": "E-mail: {email}",
+      "address": "Adres: {address}",
+      "purposeTitle": "Doel",
+      "purpose": "Deze website heeft tot doel informatie te bieden over de vastgoeddiensten van {tradeName} en contact met potentiële klanten te vergemakkelijken via formulieren, telefoon, e-mail en WhatsApp.",
+      "termsTitle": "Gebruiksvoorwaarden",
+      "terms1": "Toegang tot en gebruik van deze website verlenen de status van gebruiker en impliceren de aanvaarding van deze voorwaarden. De gebruiker verbindt zich tot een passend gebruik van de aangeboden inhoud en diensten.",
+      "terms2": "Contactformulieren linken naar Google Forms die door de eigenaar worden beheerd. Door ze te versturen, aanvaardt de gebruiker de voorwaarden van elk formulier en van het privacybeleid.",
+      "ipTitle": "Intellectuele eigendom",
+      "ip": "Alle inhoud van de website (teksten, beelden, logo’s, ontwerp) is eigendom van {tradeName} of haar licentiegevers en is beschermd door de wetgeving inzake intellectuele eigendom.",
+      "liabilityTitle": "Aansprakelijkheid",
+      "liability1": "{tradeName} is niet aansprakelijk voor schade die voortvloeit uit oneigenlijk gebruik van de website of uit informatie die door derden via externe links is gepubliceerd.",
+      "liability2": "Foto’s, plannen en beschrijvingen van woningen zijn indicatief en kunnen variëren. De definitieve contractuele informatie wordt bij de transactie verstrekt.",
+      "lawTitle": "Toepasselijk recht",
+      "law": "Deze voorwaarden worden beheerst door de Spaanse wetgeving. Bij elk geschil onderwerpen de partijen zich aan de rechtbanken van {jurisdiction}."
+    },
+    "privacy": {
+      "title": "Privacybeleid",
+      "intro": "Bij {tradeName} ({legalName}) verwerken wij uw persoonsgegevens met de grootste zorgvuldigheid en in overeenstemming met de geldende regelgeving inzake gegevensbescherming (AVG en LOPDGDD).",
+      "controllerTitle": "Verwerkingsverantwoordelijke",
+      "controller": "Verantwoordelijke: {legalName} ({tradeName}).",
+      "contactEmail": "Contact-e-mail: {email}",
+      "purposeTitle": "Doel van de verwerking",
+      "purpose": "De persoonsgegevens die u via formulieren, e-mail, telefoon of WhatsApp verstrekt, worden verwerkt om:",
+      "purposeList": {
+        "requests": "Uw verzoeken om informatie, koop, verkoop, verhuur of taxatie te behandelen.",
+        "services": "Diensten van vastgoedbemiddeling en financiering te verlenen.",
+        "comms": "Communicatie te versturen die verband houdt met uw vraag.",
+        "legal": "Aan toepasselijke wettelijke verplichtingen te voldoen."
+      },
+      "formsTitle": "Contactformulieren",
+      "forms1": "Wanneer u op de knoppen van de website klikt, kunt u toegang krijgen tot formulieren die op Google Forms (Google LLC) worden gehost. De gegevens die u invoert, worden rechtstreeks naar de verwerkingsverantwoordelijke gestuurd om uw verzoek te behandelen.",
+      "forms2": "Wij raden u aan geen gevoelige informatie op te nemen die niet nodig is voor uw vraag. U kunt uw rechten uitoefenen door ons te contacteren op het adres dat aan het begin van dit beleid is vermeld.",
+      "financeTitle": "Verwerking van financiële gegevens",
+      "finance1": "In formulieren voor hypotheek, persoonlijke lening of hypotheekschuld kunnen wij financiële gegevens verzamelen (inkomsten, schulden, arbeidssituatie).",
+      "finance2": "Deze gegevens worden uitsluitend verwerkt om uw aanvraag te beoordelen en een passende oplossing te bieden. Ze worden niet aan derden doorgegeven zonder uw uitdrukkelijke toestemming, behalve bij wettelijke verplichting.",
+      "sensitiveTitle": "Verwerking van gevoelige gegevens (hypotheekschuld)",
+      "sensitive": "Informatie over gerechtelijke procedures, beslagen of veilingen wordt als gevoelig beschouwd. We behandelen die met strikte vertrouwelijkheid en enkel om uw situatie te analyseren en alternatieven voor te stellen.",
+      "legalBasisTitle": "Rechtsgrond",
+      "legalBasis": "De rechtsgrond voor de verwerking is de toestemming van de betrokkene, de uitvoering van precontractuele maatregelen op verzoek van de betrokkene en het gerechtvaardigd belang om op vragen te antwoorden.",
+      "retentionTitle": "Bewaring van gegevens",
+      "retention": "We bewaren uw gegevens zolang dat nodig is om uw verzoek te behandelen en daarna gedurende de wettelijk vastgelegde termijnen.",
+      "recipientsTitle": "Ontvangers",
+      "recipients1": "We geven uw gegevens niet door aan derden, behalve bij wettelijke verplichting of wanneer dat nodig is voor de gevraagde dienst (bijvoorbeeld financiële instellingen bij een hypotheekaanvraag, met uw voorafgaande toestemming).",
+      "recipients2": "Google Forms kan inhouden dat Google gegevens verwerkt als technologieleverancier, overeenkomstig het eigen privacybeleid.",
+      "rightsTitle": "Rechten",
+      "rights1": "U kunt uw rechten van inzage, rectificatie, wissing, bezwaar, beperking en overdraagbaarheid uitoefenen door een e-mail te sturen naar {email}.",
+      "rights2": "U hebt ook het recht een klacht in te dienen bij het Spaanse Agentschap voor Gegevensbescherming (www.aepd.es)."
+    },
+    "cookies": {
+      "title": "Cookiebeleid",
+      "intro": "Deze website gebruikt lokale opslag in uw browser om basisvoorkeuren te onthouden. Hieronder leggen we het gebruik uit.",
+      "whatTitle": "Wat zijn cookies?",
+      "what": "Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen wanneer u een website bezoekt. Ze maken het mogelijk voorkeuren te onthouden en de functionaliteit van de site te verbeteren.",
+      "useTitle": "Wat we op deze website gebruiken",
+      "use": "In de huidige versie van de site gebruiken we enkel:",
+      "useList": {
+        "storage": "Lokale opslag (localStorage) om te onthouden of u de cookiemelding hebt aanvaard of geweigerd.",
+        "technical": "Strikt noodzakelijke technische cookies voor de basiswerking van de site, indien vereist door de hostingprovider."
+      },
+      "analyticsTitle": "Analysecookies",
+      "analytics": "Momenteel installeren we geen analysecookies of tools voor publieksmeting. Als ze in de toekomst worden toegevoegd, wordt u geïnformeerd en wordt uw toestemming gevraagd wanneer dat vereist is.",
+      "manageTitle": "Beheer van cookies",
+      "manage1": "Bij toegang tot de website verschijnt een banner waarin u niet-essentiële cookies kunt aanvaarden of weigeren.",
+      "manage2": "U kunt uw browser ook instellen om cookies en lokaal opgeslagen gegevens te blokkeren of te verwijderen. Raadpleeg de help van uw browser voor meer informatie.",
+      "moreTitle": "Meer informatie",
+      "more1": "Voor vragen over het gebruik van cookies kunt u ons bereiken via {email}.",
+      "more2": "Raadpleeg ook ons privacybeleid voor meer informatie over de verwerking van uw gegevens."
+    }
+  },
+  "notFound": {
+    "code": "Fout 404",
+    "title": "Pagina niet gevonden",
+    "lead": "De pagina die u zoekt bestaat niet of is verplaatst. Verken onze woningen of neem contact op met ons team.",
+    "home": "Terug naar home",
+    "properties": "Woningen bekijken",
+    "help": "Hulp nodig?",
+    "contact": "Neem contact met ons op"
+  }
+}

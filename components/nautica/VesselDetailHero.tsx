@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import { BADGE_LABELS, PROPERTY_STATUS_LABELS } from "@/lib/properties";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import {
-  VESSEL_TYPE_LABELS,
   formatPrice,
   formatVesselReference,
   getVesselCoverImage,
@@ -21,19 +20,25 @@ const badgeStyles: Record<NonNullable<Vessel["badge"]>, string> = {
   exclusivo: "border-accent-light/40 bg-accent text-brand",
 };
 
-function getHeroTags(vessel: Vessel): string[] {
+export function VesselDetailHero({ vessel }: VesselDetailHeroProps) {
+  const t = useTranslations("vessels");
+  const tCommon = useTranslations("common");
+  const tLabels = useTranslations("labels");
+  const tProperties = useTranslations("properties");
+  const locale = useLocale();
+
   const tags: string[] = [];
 
-  if (vessel.badge) tags.push(BADGE_LABELS[vessel.badge]);
-  if (vessel.price >= 1_000_000) tags.push("Lujo");
-  if (vessel.status === "disponible") tags.push("Disponible");
-  else tags.push(PROPERTY_STATUS_LABELS[vessel.status]);
+  if (vessel.badge) tags.push(tLabels(`badge.${vessel.badge}`));
+  if (vessel.price >= 1_000_000) tags.push(tProperties("luxury"));
+  if (vessel.status === "disponible") tags.push(tLabels("status.disponible"));
+  else tags.push(tLabels(`status.${vessel.status}`));
 
-  return [...new Set(tags)];
-}
-
-export function VesselDetailHero({ vessel }: VesselDetailHeroProps) {
-  const tags = getHeroTags(vessel);
+  const uniqueTags = [...new Set(tags)];
+  const price = formatPrice(vessel.price, vessel.operation, {
+    locale,
+    perMonth: tCommon("perMonth"),
+  });
 
   return (
     <section className="property-hero relative">
@@ -66,16 +71,17 @@ export function VesselDetailHero({ vessel }: VesselDetailHeroProps) {
                 strokeLinejoin="round"
               />
             </svg>
-            Volver a náutica
+            {t("backToList")}
           </Link>
 
           <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white/45">
-            Ref. {formatVesselReference(vessel.id)}
+            {tCommon("ref", { id: formatVesselReference(vessel.id) })}
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
-            {tags.map((tag) => {
-              const isBadge = vessel.badge && tag === BADGE_LABELS[vessel.badge];
+            {uniqueTags.map((tag) => {
+              const isBadge =
+                vessel.badge && tag === tLabels(`badge.${vessel.badge}`);
               return (
                 <span
                   key={tag}
@@ -90,7 +96,7 @@ export function VesselDetailHero({ vessel }: VesselDetailHeroProps) {
               );
             })}
             <span className="rounded-full border border-white/10 bg-brand/40 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white/70 backdrop-blur-sm">
-              {VESSEL_TYPE_LABELS[vessel.type]}
+              {tLabels(`vesselType.${vessel.type}`)}
             </span>
           </div>
 
@@ -119,11 +125,13 @@ export function VesselDetailHero({ vessel }: VesselDetailHeroProps) {
           </p>
 
           <p className="property-hero__price mt-5 font-display text-3xl text-accent sm:text-4xl lg:text-5xl">
-            {formatPrice(vessel.price, vessel.operation)}
+            {price}
           </p>
 
           <p className="mt-2 text-sm text-white/45">
-            {vessel.operation === "venta" ? "Precio de venta" : "Precio de alquiler"}
+            {vessel.operation === "venta"
+              ? tProperties("salePrice")
+              : tProperties("rentPrice")}
           </p>
         </div>
       </div>

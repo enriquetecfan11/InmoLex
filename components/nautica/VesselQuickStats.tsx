@@ -1,3 +1,4 @@
+import { useLocale, useTranslations } from "next-intl";
 import { formatLength, type Vessel } from "@/lib/vessels";
 
 interface VesselQuickStatsProps {
@@ -19,10 +20,13 @@ function StatIcon({ children }: { children: React.ReactNode }) {
 }
 
 export function VesselQuickStats({ vessel }: VesselQuickStatsProps) {
+  const t = useTranslations("vessels.stats");
+  const locale = useLocale();
+
   const stats: StatItem[] = [
     {
-      label: "Eslora",
-      value: formatLength(vessel.lengthMeters),
+      label: t("length"),
+      value: formatLength(vessel.lengthMeters, locale),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
           <path
@@ -36,7 +40,7 @@ export function VesselQuickStats({ vessel }: VesselQuickStatsProps) {
       ),
     },
     {
-      label: "Año",
+      label: t("year"),
       value: vessel.year ? String(vessel.year) : "—",
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
@@ -46,7 +50,7 @@ export function VesselQuickStats({ vessel }: VesselQuickStatsProps) {
       ),
     },
     {
-      label: "Camarotes",
+      label: t("cabins"),
       value: String(vessel.cabins),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
@@ -61,7 +65,7 @@ export function VesselQuickStats({ vessel }: VesselQuickStatsProps) {
       ),
     },
     {
-      label: "Baños",
+      label: t("bathrooms"),
       value: String(vessel.bathrooms),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
@@ -76,7 +80,7 @@ export function VesselQuickStats({ vessel }: VesselQuickStatsProps) {
       ),
     },
     {
-      label: "Plazas",
+      label: t("capacity"),
       value: String(vessel.capacity),
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
@@ -86,7 +90,7 @@ export function VesselQuickStats({ vessel }: VesselQuickStatsProps) {
       ),
     },
     {
-      label: "Motor",
+      label: t("engine"),
       value: vessel.engine || "—",
       icon: (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>

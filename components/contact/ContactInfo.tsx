@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { CONTACT_INFO, TRUST_SIGNALS } from "@/lib/contact";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 
@@ -83,55 +83,56 @@ function WhatsAppIcon() {
   );
 }
 
-const CONTACT_ITEMS = [
-  {
-    icon: PhoneIcon,
-    label: "Teléfono",
-    value: CONTACT_INFO.phone,
-    href: CONTACT_INFO.phoneHref,
-  },
-  {
-    icon: EmailIcon,
-    label: "Correo electrónico",
-    value: CONTACT_INFO.email,
-    href: CONTACT_INFO.emailHref,
-  },
-  {
-    icon: WhatsAppIcon,
-    label: "WhatsApp",
-    value: CONTACT_INFO.whatsapp,
-    whatsapp: true,
-  },
-  {
-    icon: LocationIcon,
-    label: "Dirección",
-    value: CONTACT_INFO.address,
-    href: CONTACT_INFO.addressHref,
-    external: true,
-  },
-  {
-    icon: ClockIcon,
-    label: "Horario de atención",
-    value: `${CONTACT_INFO.hours.weekdays}\n${CONTACT_INFO.hours.saturday}`,
-  },
-] as const;
-
 export function ContactInfo() {
+  const t = useTranslations("contact");
+
+  const contactItems = [
+    {
+      icon: PhoneIcon,
+      label: t("phone"),
+      value: CONTACT_INFO.phone,
+      href: CONTACT_INFO.phoneHref,
+    },
+    {
+      icon: EmailIcon,
+      label: t("email"),
+      value: CONTACT_INFO.email,
+      href: CONTACT_INFO.emailHref,
+    },
+    {
+      icon: WhatsAppIcon,
+      label: t("whatsapp"),
+      value: CONTACT_INFO.whatsapp,
+      whatsapp: true,
+    },
+    {
+      icon: LocationIcon,
+      label: t("address"),
+      value: CONTACT_INFO.address,
+      href: CONTACT_INFO.addressHref,
+      external: true,
+    },
+    {
+      icon: ClockIcon,
+      label: t("hours"),
+      value: `${t("weekdays")}\n${t("saturday")}`,
+    },
+  ] as const;
+
   return (
     <div className="flex flex-col">
       <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-        Estamos para ayudarte
+        {t("helpEyebrow")}
       </p>
       <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">
-        Hablemos de tu próximo hogar
+        {t("helpTitle")}
       </h2>
       <p className="mt-4 max-w-md text-base leading-relaxed text-white/70">
-        Ya sea para comprar, vender o alquilar, nuestro equipo te acompaña con
-        transparencia y atención personalizada en cada paso.
+        {t("helpLead")}
       </p>
 
       <ul className="mt-10 flex list-none flex-col gap-6">
-        {CONTACT_ITEMS.map((item) => {
+        {contactItems.map((item) => {
           const Icon = item.icon;
           const content = (
             <div className="contact-info-item group flex gap-4">
@@ -143,11 +144,14 @@ export function ContactInfo() {
                   {item.label}
                 </p>
                 {"whatsapp" in item && item.whatsapp ? (
-                  <WhatsAppLink className="mt-1 block text-sm font-medium text-white/80 hover:text-accent">
+                  <WhatsAppLink
+                    message={t("defaultWhatsapp")}
+                    className="mt-1 block text-sm font-medium text-white/80 hover:text-accent"
+                  >
                     {item.value}
                   </WhatsAppLink>
                 ) : "href" in item && item.href ? (
-                  <Link
+                  <a
                     href={item.href}
                     {...("external" in item && item.external
                       ? { target: "_blank", rel: "noopener noreferrer" }
@@ -159,7 +163,7 @@ export function ContactInfo() {
                         {line}
                       </span>
                     ))}
-                  </Link>
+                  </a>
                 ) : (
                   <p className="mt-1 text-sm font-medium text-white/80 whitespace-pre-line">
                     {item.value}
@@ -175,22 +179,28 @@ export function ContactInfo() {
 
       <div
         className="mt-10 flex flex-wrap gap-x-6 gap-y-4 border-t border-accent/15 pt-8"
-        aria-label="Indicadores de confianza"
+        aria-label={t("trustAria")}
       >
-        {TRUST_SIGNALS.map((signal, index) => (
-          <div key={signal.label} className="flex items-center gap-6">
-            {index > 0 && (
-              <span
-                className="hidden h-8 w-px bg-accent/20 sm:block"
-                aria-hidden
-              />
-            )}
-            <div>
-              <p className="text-sm font-semibold text-accent">{signal.value}</p>
-              <p className="mt-0.5 text-xs text-white/45">{signal.label}</p>
+        {TRUST_SIGNALS.map((signal, index) => {
+          const value =
+            "valueKey" in signal ? t(`trustValues.${signal.valueKey}`) : signal.value;
+          const label = t(`trust.${signal.labelKey}`);
+
+          return (
+            <div key={signal.labelKey} className="flex items-center gap-6">
+              {index > 0 && (
+                <span
+                  className="hidden h-8 w-px bg-accent/20 sm:block"
+                  aria-hidden
+                />
+              )}
+              <div>
+                <p className="text-sm font-semibold text-accent">{value}</p>
+                <p className="mt-0.5 text-xs text-white/45">{label}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

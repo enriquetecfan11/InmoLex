@@ -1,4 +1,6 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import NextLink from "next/link";
 import { Container } from "@/components/ui/Container";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
@@ -30,6 +32,10 @@ const SOCIAL_ICONS = {
 } as const;
 
 export function Footer() {
+  const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
+  const tContact = useTranslations("contact");
+
   return (
     <footer className="border-t border-accent/20 bg-brand text-white">
       <Container className="py-10 sm:py-14 lg:py-16">
@@ -39,8 +45,7 @@ export function Footer() {
               <BrandLogo imageClassName="h-11 w-auto shrink-0" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
-              Inmobiliaria premium en Madrid. Compra, venta y alquiler con
-              asesoramiento personalizado y máxima transparencia.
+              {t("tagline")}
             </p>
             <div className="mt-6 flex items-center gap-3">
               {SOCIAL_LINKS.map((social) => {
@@ -63,7 +68,7 @@ export function Footer() {
 
           <div>
             <h2 className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-accent">
-              Navegación
+              {t("navigation")}
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               {NAV_LINKS.map((link) => (
@@ -72,7 +77,7 @@ export function Footer() {
                     href={link.href}
                     className="text-white/60 transition-colors hover:text-accent"
                   >
-                    {link.label}
+                    {tNav(link.key)}
                   </Link>
                 </li>
               ))}
@@ -81,7 +86,7 @@ export function Footer() {
 
           <div>
             <h2 className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-accent">
-              Contacto
+              {t("contact")}
             </h2>
             <ul className="mt-4 space-y-3 text-sm text-white/60">
               <li>
@@ -95,7 +100,10 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <WhatsAppLink className="text-white/60 hover:text-accent">
+                <WhatsAppLink
+                  message={tContact("defaultWhatsapp")}
+                  className="text-white/60 hover:text-accent"
+                >
                   {CONTACT_INFO.whatsapp}
                 </WhatsAppLink>
               </li>
@@ -114,20 +122,20 @@ export function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-accent/15 pt-6 text-sm text-white/45 sm:mt-10 sm:flex-row">
-          <p>© {new Date().getFullYear()} InmoLex. Todos los derechos reservados.</p>
+          <p>{t("rights", { year: new Date().getFullYear() })}</p>
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link href="/aviso-legal" className="transition-colors hover:text-accent">
-              Aviso legal
+              {t("legalNotice")}
             </Link>
             <Link href="/privacidad" className="transition-colors hover:text-accent">
-              Privacidad
+              {t("privacy")}
             </Link>
             <Link href="/cookies" className="transition-colors hover:text-accent">
-              Cookies
+              {t("cookies")}
             </Link>
-            <Link href="/admin/login" className="transition-colors hover:text-accent">
-              Zona privada
-            </Link>
+            <NextLink href="/admin/login" className="transition-colors hover:text-accent">
+              {t("privateArea")}
+            </NextLink>
           </div>
         </div>
       </Container>

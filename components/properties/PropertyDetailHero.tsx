@@ -1,9 +1,9 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import {
-  BADGE_LABELS,
-  PROPERTY_STATUS_LABELS,
-  PROPERTY_TYPE_LABELS,
   formatPrice,
   formatPropertyReference,
   getPropertyCoverImage,
@@ -25,19 +25,32 @@ const badgeStyles: Record<
   exclusivo: "border-accent-light/40 bg-accent text-brand",
 };
 
-function getHeroTags(property: Property): string[] {
+function getHeroTags(
+  property: Property,
+  labels: { badge?: string; luxury: string; status: string },
+): string[] {
   const tags: string[] = [];
 
-  if (property.badge) tags.push(BADGE_LABELS[property.badge]);
-  if (property.price >= 1_000_000) tags.push("Lujo");
-  if (property.status === "disponible") tags.push("Disponible");
-  else tags.push(PROPERTY_STATUS_LABELS[property.status]);
+  if (labels.badge) tags.push(labels.badge);
+  if (property.price >= 1_000_000) tags.push(labels.luxury);
+  tags.push(labels.status);
 
   return [...new Set(tags)];
 }
 
 export function PropertyDetailHero({ property }: PropertyDetailHeroProps) {
-  const tags = getHeroTags(property);
+  const locale = useLocale();
+  const t = useTranslations("properties");
+  const tCommon = useTranslations("common");
+  const tBadge = useTranslations("labels.badge");
+  const tStatus = useTranslations("labels.status");
+  const tType = useTranslations("labels.propertyType");
+  const badgeLabel = property.badge ? tBadge(property.badge) : undefined;
+  const tags = getHeroTags(property, {
+    badge: badgeLabel,
+    luxury: t("luxury"),
+    status: tStatus(property.status),
+  });
 
   return (
     <section className="property-hero relative">
@@ -70,16 +83,16 @@ export function PropertyDetailHero({ property }: PropertyDetailHeroProps) {
                 strokeLinejoin="round"
               />
             </svg>
-            Volver a propiedades
+            {t("backToList")}
           </Link>
 
           <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white/45">
-            Ref. {formatPropertyReference(property.id)}
+            {tCommon("ref", { id: formatPropertyReference(property.id) })}
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => {
-              const isBadge = property.badge && tag === BADGE_LABELS[property.badge];
+              const isBadge = Boolean(badgeLabel && tag === badgeLabel);
               return (
                 <span
                   key={tag}
@@ -94,7 +107,7 @@ export function PropertyDetailHero({ property }: PropertyDetailHeroProps) {
               );
             })}
             <span className="rounded-full border border-white/10 bg-brand/40 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white/70 backdrop-blur-sm">
-              {PROPERTY_TYPE_LABELS[property.type]}
+              {tType(property.type)}
             </span>
           </div>
 
@@ -123,11 +136,14 @@ export function PropertyDetailHero({ property }: PropertyDetailHeroProps) {
           </p>
 
           <p className="property-hero__price mt-5 font-display text-3xl text-accent sm:text-4xl lg:text-5xl">
-            {formatPrice(property.price, property.operation)}
+            {formatPrice(property.price, property.operation, {
+              locale,
+              perMonth: tCommon("perMonth"),
+            })}
           </p>
 
           <p className="mt-2 text-sm text-white/45">
-            {property.operation === "venta" ? "Precio de venta" : "Precio de alquiler mensual"}
+            {property.operation === "venta" ? t("salePrice") : t("rentPrice")}
           </p>
         </div>
       </div>

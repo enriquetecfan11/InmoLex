@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import {
   getPropertyMapEmbedUrl,
@@ -19,14 +22,14 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function PropertyLocationMap({ property }: PropertyLocationMapProps) {
+  const t = useTranslations("properties.map");
   const mapHref = getPropertyMapHref(property);
 
   return (
     <RevealOnScroll>
-      <SectionHeading>Ubicación</SectionHeading>
+      <SectionHeading>{t("title")}</SectionHeading>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-        Zona aproximada de la propiedad en {property.district}. La dirección exacta se facilita
-        tras concertar una visita.
+        {t("lead", { district: property.district })}
       </p>
 
       <div className="property-location-map contact-map relative mt-8 overflow-hidden rounded-2xl border border-accent/15">
@@ -62,7 +65,7 @@ export function PropertyLocationMap({ property }: PropertyLocationMapProps) {
               />
               <circle cx="8" cy="5.5" r="1.25" stroke="currentColor" strokeWidth="1.2" />
             </svg>
-            Abrir en Google Maps
+            {t("openMaps")}
           </a>
         </div>
       </div>

@@ -1,5 +1,6 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
+import { Link } from "@/i18n/navigation";
+import NextLink from "next/link";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
@@ -32,6 +33,14 @@ const sizeStyles: Record<ButtonSize, string> = {
   lg: "px-8 py-3.5 text-base",
 };
 
+function isPublicHref(href: string): boolean {
+  return (
+    href.startsWith("/") &&
+    !href.startsWith("/admin") &&
+    !href.startsWith("/api")
+  );
+}
+
 export function Button({
   children,
   href,
@@ -45,10 +54,18 @@ export function Button({
   const styles = `inline-flex items-center justify-center rounded-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-60 ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
 
   if (href) {
+    if (isPublicHref(href)) {
+      return (
+        <Link href={href} className={styles} onClick={onClick}>
+          {children}
+        </Link>
+      );
+    }
+
     return (
-      <Link href={href} className={styles} onClick={onClick}>
+      <NextLink href={href} className={styles} onClick={onClick}>
         {children}
-      </Link>
+      </NextLink>
     );
   }
 

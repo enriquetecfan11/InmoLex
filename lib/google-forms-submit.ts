@@ -16,6 +16,11 @@ export interface LeadFormPayload {
   property?: string;
 }
 
+export interface GoogleFormSubmitResult {
+  ok: boolean;
+  errorKey?: string;
+}
+
 function appendEntry(
   params: URLSearchParams,
   entryId: string | undefined,
@@ -50,21 +55,21 @@ function buildSubmissionBody(
 export async function submitToGoogleForm(
   formKey: GoogleFormKey,
   payload: LeadFormPayload
-): Promise<{ ok: boolean; error?: string }> {
+): Promise<GoogleFormSubmitResult> {
   if (!payload.choice.trim()) {
-    return { ok: false, error: "Selecciona una opción." };
+    return { ok: false, errorKey: "choice" };
   }
   if (!payload.nombre.trim()) {
-    return { ok: false, error: "El nombre es obligatorio." };
+    return { ok: false, errorKey: "name" };
   }
   if (!payload.telefono.trim()) {
-    return { ok: false, error: "El teléfono es obligatorio." };
+    return { ok: false, errorKey: "phone" };
   }
   if (!payload.email.trim() || !payload.email.includes("@")) {
-    return { ok: false, error: "Introduce un email válido." };
+    return { ok: false, errorKey: "email" };
   }
   if (!payload.privacyAccepted) {
-    return { ok: false, error: "Debes aceptar la política de privacidad." };
+    return { ok: false, errorKey: "privacy" };
   }
 
   const fields = GOOGLE_FORM_FIELDS[formKey];
@@ -85,8 +90,8 @@ export async function submitToGoogleForm(
       return { ok: true };
     }
 
-    return { ok: false, error: "No se pudo enviar. Inténtalo de nuevo." };
+    return { ok: false, errorKey: "submit" };
   } catch {
-    return { ok: false, error: "Error de conexión. Inténtalo de nuevo." };
+    return { ok: false, errorKey: "connection" };
   }
 }

@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useMemo } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import {
@@ -31,6 +33,8 @@ function cleanParams(params: URLSearchParams): URLSearchParams {
 }
 
 export function VesselsListing({ vessels }: VesselsListingProps) {
+  const t = useTranslations("vessels");
+  const locale = useLocale();
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -74,8 +78,8 @@ export function VesselsListing({ vessels }: VesselsListingProps) {
 
   const locationOptions = useMemo(() => {
     const fromData = vessels.map((vessel) => vessel.location).filter(Boolean);
-    return [...new Set(fromData)].sort((a, b) => a.localeCompare(b, "es"));
-  }, [vessels]);
+    return [...new Set(fromData)].sort((a, b) => a.localeCompare(b, locale));
+  }, [locale, vessels]);
 
   const filtered = useMemo(() => filterVessels(vessels, filters), [filters, vessels]);
 
@@ -118,14 +122,13 @@ export function VesselsListing({ vessels }: VesselsListingProps) {
         <RevealOnScroll>
           <header className="mx-auto max-w-2xl text-center">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-              Catálogo náutico
+              {t("eyebrow")}
             </p>
             <h1 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl lg:text-[3.25rem]">
-              Embarcaciones disponibles
+              {t("title")}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-              Yates, veleros y motoras seleccionadas con el mismo criterio que
-              nuestras propiedades: pocas, bien presentadas y listas para visita.
+              {t("lead")}
             </p>
           </header>
         </RevealOnScroll>
@@ -155,24 +158,23 @@ export function VesselsListing({ vessels }: VesselsListingProps) {
               totalPages={totalPages}
               totalItems={sorted.length}
               pageSize={PROPERTIES_PAGE_SIZE}
-              itemLabel="embarcaciones"
-              ariaLabel="Paginación de embarcaciones"
+              itemLabel={sorted.length === 1 ? t("resultOne") : t("resultOther")}
+              ariaLabel={t("paginationAria")}
             />
           </>
         ) : (
           <RevealOnScroll className="mt-12">
             <div className="mx-auto max-w-md rounded-xl border border-accent/15 bg-accent/[0.04] px-8 py-14 text-center backdrop-blur-sm">
-              <p className="font-display text-2xl text-accent">Sin resultados</p>
+              <p className="font-display text-2xl text-accent">{t("emptyTitle")}</p>
               <p className="mt-3 text-sm leading-relaxed text-white/55">
-                No hay embarcaciones que coincidan con los filtros seleccionados.
-                Prueba a ajustar los criterios de búsqueda.
+                {t("emptyLead")}
               </p>
               <button
                 type="button"
                 onClick={() => setFilters(initialVesselFilters)}
                 className="mt-6 text-sm font-medium text-accent transition-colors hover:text-accent-light"
               >
-                Restablecer filtros
+                {t("resetFilters")}
               </button>
             </div>
           </RevealOnScroll>

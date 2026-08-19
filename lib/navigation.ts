@@ -1,15 +1,16 @@
 export const NAV_LINKS = [
-  { href: "/", label: "Inicio" },
-  { href: "/propiedades", label: "Propiedades" },
-  { href: "/nautica", label: "Náutica" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/quienes-somos", label: "Quiénes somos" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/", key: "home" },
+  { href: "/propiedades", key: "properties" },
+  { href: "/nautica", key: "nautica" },
+  { href: "/servicios", key: "services" },
+  { href: "/quienes-somos", key: "about" },
+  { href: "/contacto", key: "contact" },
 ] as const;
 
 export type NavLink = (typeof NAV_LINKS)[number];
 
 export function isNavLinkActive(pathname: string, href: string): boolean {
-  if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(`${href}/`);
+  const normalized = pathname.replace(/^\/(en|sv|uk|it|zh|nl|nb|ca)(?=\/|$)/, "") || "/";
+  if (href === "/") return normalized === "/";
+  return normalized === href || normalized.startsWith(`${href}/`);
 }

@@ -1,0 +1,863 @@
+{
+  "languages": {
+    "es": "Español",
+    "en": "English",
+    "sv": "Svenska",
+    "uk": "Українська",
+    "it": "Italiano",
+    "zh": "中文",
+    "nl": "Nederlands",
+    "nb": "Norsk",
+    "ca": "Català"
+  },
+  "metadata": {
+    "siteTitle": "InmoLex | Compra, venda i lloguer",
+    "siteTitleTemplate": "%s | InmoLex",
+    "siteDescription": "Agència immobiliària a Madrid. Compra, ven o lloga propietats amb transparència i assessorament personalitzat.",
+    "home": {
+      "title": "Inici",
+      "description": "Agència immobiliària a Madrid. Compra, ven o lloga propietats amb transparència i assessorament personalitzat."
+    },
+    "properties": {
+      "title": "Propietats",
+      "description": "Descobreix la nostra selecció exclusiva d’habitatges d’alt standing a Madrid. Compra i lloguer amb assessorament personalitzat.",
+      "notFound": "Propietat no trobada"
+    },
+    "vessels": {
+      "title": "Nàutica",
+      "description": "Catàleg d’embarcacions: iots, velers, llanxes i motores en venda i lloguer, amb assessorament personalitzat.",
+      "notFound": "Embarcació no trobada"
+    },
+    "services": {
+      "title": "Serveis",
+      "description": "Serveis immobiliaris integrals a Madrid: venda, lloguer, inversió, hipoteques, reportatges fotogràfics i més.",
+      "notFound": "Servei no trobat"
+    },
+    "about": {
+      "title": "Qui som",
+      "description": "Coneix InmoLex: presentació, història, serveis i organització d’esdeveniments. Proximitat, criteri i una execució impecable."
+    },
+    "contact": {
+      "title": "Contacte",
+      "description": "Contacta amb InmoLex a Madrid. Assessorament gratuït, sense compromís i resposta en menys de 24 hores."
+    },
+    "legalNotice": {
+      "title": "Avís legal",
+      "description": "Avís legal i informació del titular del lloc web d’InmoLex."
+    },
+    "privacy": {
+      "title": "Política de privadesa",
+      "description": "Política de privadesa i tractament de dades d’InmoLex."
+    },
+    "cookies": {
+      "title": "Política de galetes",
+      "description": "Informació sobre l’ús de galetes al lloc web d’InmoLex."
+    }
+  },
+  "nav": {
+    "ariaLabel": "Navegació principal",
+    "home": "Inici",
+    "properties": "Propietats",
+    "nautica": "Nàutica",
+    "services": "Serveis",
+    "about": "Qui som",
+    "contact": "Contacte"
+  },
+  "header": {
+    "freeValuation": "Valoració gratuïta",
+    "openMenu": "Obrir menú",
+    "closeMenu": "Tancar menú",
+    "language": "Idioma"
+  },
+  "footer": {
+    "tagline": "Immobiliària premium a Madrid. Compra, venda i lloguer amb assessorament personalitzat i màxima transparència.",
+    "navigation": "Navegació",
+    "contact": "Contacte",
+    "rights": "© {year} InmoLex. Tots els drets reservats.",
+    "legalNotice": "Avís legal",
+    "privacy": "Privadesa",
+    "cookies": "Galetes",
+    "privateArea": "Zona privada"
+  },
+  "home": {
+    "heroTitle": "Què necessites?",
+    "heroSubtitle": "Prem un botó. Et truquem nosaltres.",
+    "portfolioCta": "Els nostres immobles en cartera",
+    "whyEyebrow": "Nosaltres",
+    "whyTitle": "Per què triar InmoLex",
+    "whyLead": "Un servei boutique: decisions amb criteri, execució curosa i una comunicació que et dona el control.",
+    "whyCta": "Coneix-nos",
+    "whyTalk": "Parlar amb un assessor",
+    "pillars": {
+      "market": {
+        "title": "Criteri de mercat",
+        "description": "Valoració realista i estratègia comercial per maximitzar el resultat sense perdre temps."
+      },
+      "execution": {
+        "title": "Execució impecable",
+        "description": "Fotografia, vídeo i materials llestos per publicar, amb una presentació coherent."
+      },
+      "followUp": {
+        "title": "Seguiment clar",
+        "description": "Comunicació constant, dades de visites i ajustos d’estratègia, sempre amb transparència."
+      },
+      "network": {
+        "title": "Xarxa de confiança",
+        "description": "Col·laboradors (finançament, reformes, legal) per resoldre friccions abans que apareguin."
+      }
+    },
+    "contactTitle": "Tens un dubte?",
+    "contactLead": "Omple el formulari o escriu-nos per WhatsApp. Et truquem nosaltres.",
+    "contactDetailsLabel": "Què necessites?",
+    "contactSubmit": "Enviar consulta",
+    "preferWhatsapp": "Prefereixo WhatsApp",
+    "featured": {
+      "eyebrow": "Selecció editorial",
+      "title": "Poques propietats. Millor triades.",
+      "lead": "Reunim els habitatges que realment mereixen obrir la conversa: bona ubicació, llum, estat i una història clara per a qui entra a veure’ls.",
+      "highlightedNow": "Destacats ara",
+      "portfolio": "Inmobles en cartera",
+      "activeOps": "Operacions actives",
+      "lookingDifferent": "Busques alguna cosa diferent?",
+      "lookingDifferentLead": "Filtrem per zona, pressupost i tipus d’operació per arribar abans a la propietat que encaixa amb tu.",
+      "viewCatalog": "Veure tot el catàleg",
+      "highlightedNowShort": "Destacades ara",
+      "quickView": "Una vista ràpida de la selecció",
+      "criterion": "Cada propietat entra per criteri, no per volum.",
+      "bedrooms": "Habitacions",
+      "bathrooms": "Banys",
+      "area": "Superfície",
+      "viewProperty": "Veure propietat"
+    },
+    "featuredVessels": {
+      "eyebrow": "Selecció nàutica",
+      "title": "Poques embarcacions. Millor triades.",
+      "lead": "Iots, velers i motores amb criteri: eslora, estat, amarratge i una presentació a l’altura de qui vol navegar, no només mirar.",
+      "highlightedNow": "Destacades ara",
+      "portfolio": "En cartera",
+      "activeOps": "Operacions actives",
+      "lookingDifferent": "Busques alguna cosa diferent?",
+      "lookingDifferentLead": "Filtrem per tipus, eslora, pressupost i port per arribar abans a l’embarcació que encaixa amb tu.",
+      "viewCatalog": "Veure el catàleg nàutic",
+      "quickView": "Una vista ràpida de la flota",
+      "criterion": "Cada embarcació entra per criteri, no per volum.",
+      "length": "Eslora",
+      "cabins": "Camarots",
+      "year": "Any",
+      "viewVessel": "Veure embarcació"
+    },
+    "servicesEyebrow": "Serveis",
+    "servicesTitle": "Tot el que necessites en un sol lloc",
+    "servicesLead": "Assessorament integral en compra, venda, lloguer, finançament i inversió. Tria el punt de partida i ens encarreguem de la resta.",
+    "catalogTitle": "Descobreix tots els nostres serveis",
+    "catalogLead": "Consulta el catàleg complet de serveis.",
+    "catalogCta": "Veure tots els serveis"
+  },
+  "elite": {
+    "kicker": "Elite Real Estate · Global",
+    "title": "Alta gamma, sense comissions exagerades.",
+    "lead": "GrupoRol ofereix un servei immobiliari exclusiu i de primer nivell per a qui busca màxima excel·lència i, alhora, eficiència financera. Rompem amb el model tradicional del luxe: atenció i eines premium, amb honoraris més competitius que els habituals del sector.",
+    "differentialTitle": "Excel·lència sense sobrecostos",
+    "differentialBody": "GrupoRol combina atenció personalitzada, tecnologia avançada, abast internacional i serveis immobiliaris premium, sense traslladar al client les estructures de cost habituals del sector de luxe.",
+    "differentialHighlight": "Alta gamma, amb honoraris més competitius.",
+    "closeTitle": "El luxe no té per què costar més.",
+    "closeSubtitle": "Experimenteu el veritable servei Elite.",
+    "cta": "Sol·licitar una consulta",
+    "blocks": {
+      "coverage": {
+        "title": "Cobertura global",
+        "body": "No tenim fronteres. Ens desplacem a qualsevol part del món per gestionar propietats, fer inspeccions o tancar negociacions personalment.",
+        "accent": "La vostra ubicació és la nostra ubicació."
+      },
+      "tailored": {
+        "title": "Servei a mida",
+        "body": "Cada client i cada operació són distints. Personalitzem completament el cas i dissenyem una estratègia adaptada a les seves necessitats financeres, fiscals i logístiques: un autèntic vestit a mida immobiliari."
+      },
+      "tech": {
+        "title": "Tecnologia visual d’avantguarda",
+        "body": "Maximitzem el valor i l’abast de cada propietat amb eines digitals premium, pensades per a compradors nacionals i internacionals.",
+        "items": {
+          "photo": "Reportatge fotogràfic professional",
+          "tours": "Tours virtuals 360°",
+          "visits": "Visites immersives d’alta definició",
+          "plans2d": "Plànols 2D",
+          "plans3d": "Modelats i plànols 3D",
+          "presentation": "Presentació nacional i internacional"
+        }
+      },
+      "finance": {
+        "title": "Solucions financeres i compra de deute",
+        "body": "Acompanyem operacions immobiliàries financerament complexes: compra de deute, gestió i liquidació de càrregues, reestructuració i alliberament d’actius.",
+        "accent": "Resolem operacions que d’altres consideren massa complexes."
+      },
+      "network": {
+        "title": "Xarxa internacional i gestió integral",
+        "body": "Treballem juntament amb immobiliàries i col·laboradors internacionals per multiplicar la visibilitat de cada propietat, amb discreció i atenció personalitzada.",
+        "items": {
+          "sale": "Venda",
+          "rent": "Lloguer",
+          "negotiation": "Negociació",
+          "exposure": "Exposició internacional",
+          "coordination": "Coordinació de l’operació"
+        }
+      }
+    }
+  },
+  "common": {
+    "sale": "Venda",
+    "rent": "Lloguer",
+    "ref": "Ref. {id}",
+    "perMonth": "/mes",
+    "yes": "Sí",
+    "no": "No",
+    "yesCount": "Sí ({count})",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "previous": "Anterior",
+    "next": "Següent",
+    "backHome": "← Tornar a l’inici"
+  },
+  "labels": {
+    "operation": {
+      "venta": "Venda",
+      "alquiler": "Lloguer"
+    },
+    "badge": {
+      "nuevo": "Nou",
+      "reservado": "Reservat",
+      "vendido": "Venut",
+      "destacado": "Destacat",
+      "exclusivo": "Exclusiu"
+    },
+    "status": {
+      "disponible": "Disponible",
+      "reservado": "Reservat",
+      "vendido": "Venut",
+      "alquilado": "Llogat"
+    },
+    "propertyType": {
+      "piso": "Pis",
+      "atico": "Àtic",
+      "chalet": "Xalet",
+      "duplex": "Dúplex",
+      "casa_pueblo": "Casa de poble",
+      "habitacion": "Habitació"
+    },
+    "vesselType": {
+      "yate": "Iot",
+      "velero": "Veler",
+      "lancha": "Llanxa",
+      "catamaran": "Catamarà",
+      "motora": "Motora"
+    },
+    "orientation": {
+      "norte": "Nord",
+      "sur": "Sud",
+      "este": "Est",
+      "oeste": "Oest",
+      "noreste": "Nord-est",
+      "noroeste": "Nord-oest",
+      "sureste": "Sud-est",
+      "suroeste": "Sud-oest"
+    },
+    "energy": {
+      "A": "Molt eficient",
+      "B": "Eficient",
+      "C": "Consum mitjà",
+      "D": "Consum elevat",
+      "E": "Consum molt elevat",
+      "F": "Consum excessiu",
+      "G": "Consum excessiu"
+    }
+  },
+  "properties": {
+    "eyebrow": "Els nostres immobles en cartera",
+    "title": "Propietats disponibles",
+    "lead": "Una selecció curosa d’habitatges d’alt standing a les millors zones de Madrid. Cada propietat, revisada amb criteri professional.",
+    "emptyTitle": "Sense resultats",
+    "emptyLead": "No hi ha propietats que coincideixin amb els filtres seleccionats. Prova d’ajustar els criteris de cerca.",
+    "resetFilters": "Restablir filtres",
+    "viewProperty": "Veure propietat",
+    "requestInfo": "Sol·licitar informació",
+    "bedroomsShort": "{count} hab.",
+    "bathroom": "{count} bany",
+    "bathrooms": "{count} banys",
+    "resultOne": "propietat",
+    "resultOther": "propietats",
+    "paginationAria": "Paginació de propietats",
+    "showing": "Mostrant {start}–{end} de {total} {itemLabel}",
+    "description": "Descripció",
+    "gallery": "Galeria",
+    "similar": "Propietats similars",
+    "similarLead": "Selecció exclusiva a la mateixa zona",
+    "backToList": "Tornar a propietats",
+    "luxury": "Luxe",
+    "salePrice": "Preu de venda",
+    "rentPrice": "Preu de lloguer mensual",
+    "features": "Característiques",
+    "featureGroups": {
+      "interior": "Interior",
+      "exterior": "Exterior",
+      "edificio": "Edifici",
+      "extras": "Extres",
+      "accesibilidad": "Accessibilitat"
+    },
+    "generatedFeatures": {
+      "terrace": "Terrassa",
+      "balcony": "Balcó",
+      "garage": "Plaça de garatge",
+      "storage": "Traster",
+      "elevator": "Ascensor",
+      "elevatorCount": "Ascensor ({count})",
+      "pmrYes": "Accés adaptat PMR",
+      "pmrNo": "Sense adaptació PMR registrada",
+      "orientation": "Orientació {value}"
+    },
+    "stats": {
+      "area": "Superfície",
+      "bedrooms": "Habitacions",
+      "bathrooms": "Banys",
+      "terrace": "Terrassa",
+      "parking": "Pàrquing",
+      "storage": "Traster",
+      "elevator": "Ascensor",
+      "orientation": "Orientació"
+    },
+    "energy": {
+      "title": "Certificat energètic",
+      "lead": "Eficiència energètica de l’immoble segons certificació oficial vigent.",
+      "rating": "Qualificació energètica",
+      "consumption": "Consum energètic",
+      "emissions": "Emissions de CO₂"
+    },
+    "map": {
+      "title": "Ubicació",
+      "lead": "Zona aproximada de la propietat a {district}. L’adreça exacta es facilita a la visita.",
+      "openMaps": "Obrir a Google Maps"
+    },
+    "plans": {
+      "comingSoon": "Plànol pròximament",
+      "enlarge": "Ampliar",
+      "title": "Plànols",
+      "plan2d": "Plànol 2D",
+      "plan3d": "Plànol 3D"
+    },
+    "videos": {
+      "title": "Vídeo",
+      "lead": "Descobriu els detalls i l’ambient d’aquesta propietat en vídeo."
+    },
+    "galleryCta": "Veure galeria",
+    "contact": {
+      "price": "Preu",
+      "bookVisit": "Agendar visita",
+      "moreInfo": "Més info",
+      "whatsappLead": "Assessorament personalitzat sense compromís. Resposta en menys de 24 hores.",
+      "contact": "Contactar",
+      "formLead": "Sol·licita visita o més informació sense sortir d’aquesta pàgina.",
+      "bookVisitSubmit": "Sol·licitar visita",
+      "requestInfoSubmit": "Sol·licitar informació",
+      "actionsAria": "Accions de contacte",
+      "whatsappAria": "Contactar per WhatsApp",
+      "whatsappMessage": "Hola, m’interessa la propietat \"{title}\" ({location}). M’agradaria rebre més informació."
+    },
+    "share": {
+      "share": "Compartir",
+      "close": "Tancar menú de compartir",
+      "copy": "Copiar enllaç",
+      "copied": "Enllaç copiat",
+      "emailSubject": "{title} · InmoLex"
+    },
+    "filters": {
+      "search": "Cercar per text o referència",
+      "searchPlaceholder": "Ex. Salamanca, àtic, INM-0001…",
+      "operation": "Operació",
+      "allOperations": "Totes",
+      "location": "Ubicació",
+      "allZones": "Totes les zones",
+      "price": "Preu",
+      "anyPrice": "Qualsevol preu",
+      "price0": "Fins a 500.000 €",
+      "price1": "500.000 – 1.000.000 €",
+      "price2": "1.000.000 – 2.000.000 €",
+      "price3": "Més de 2.000.000 €",
+      "rent0": "Lloguer fins a 2.500 €",
+      "rent1": "Lloguer més de 2.500 €",
+      "bedrooms": "Habitacions",
+      "any": "Qualsevol",
+      "type": "Tipus",
+      "allTypes": "Tots",
+      "sort": "Ordre",
+      "relevance": "Rellevància",
+      "newest": "Més recents",
+      "priceAsc": "Preu: de menor a major",
+      "priceDesc": "Preu: de major a menor",
+      "areaDesc": "Superfície: de major a menor",
+      "terrace": "Terrassa",
+      "garage": "Garatge",
+      "elevator": "Ascensor",
+      "pmr": "Accés PMR",
+      "clear": "Netejar filtres"
+    }
+  },
+  "vessels": {
+    "eyebrow": "Catàleg nàutic",
+    "title": "Embarcacions disponibles",
+    "lead": "Iots, velers i motores seleccionats amb el mateix criteri que les nostres propietats.",
+    "emptyTitle": "Sense resultats",
+    "emptyLead": "No hi ha embarcacions que coincideixin amb els filtres seleccionats. Prova d’ajustar els criteris de cerca.",
+    "resetFilters": "Restablir filtres",
+    "viewVessel": "Veure embarcació",
+    "requestInfo": "Sol·licitar informació",
+    "resultOne": "embarcació",
+    "resultOther": "embarcacions",
+    "paginationAria": "Paginació d’embarcacions",
+    "description": "Descripció",
+    "gallery": "Galeria",
+    "similar": "Embarcacions similars",
+    "similarLead": "Selecció a la mateixa zona o operació",
+    "backToList": "Tornar a nàutica",
+    "features": "Característiques",
+    "techSheet": "Fitxa tècnica",
+    "equipment": "Equipament",
+    "lengthValue": "Eslora {value}",
+    "yearValue": "Any {year}",
+    "shipyard": "Drassana {name}",
+    "engineValue": "Motor {name}",
+    "cabin": "{count} camarot",
+    "cabins": "{count} camarots",
+    "bathroom": "{count} bany",
+    "bathrooms": "{count} banys",
+    "capacity": "{count} places",
+    "stats": {
+      "length": "Eslora",
+      "year": "Any",
+      "cabins": "Camarots",
+      "bathrooms": "Banys",
+      "capacity": "Places",
+      "engine": "Motor"
+    },
+    "map": {
+      "title": "Ubicació",
+      "lead": "Port o zona aproximada de l’embarcació. L’amarratge exacte es facilita a la visita.",
+      "port": "Port / zona",
+      "openMaps": "Obrir a Google Maps"
+    },
+    "videos": {
+      "title": "Vídeo",
+      "lead": "Descobriu els detalls i l’ambient d’aquesta embarcació en vídeo."
+    },
+    "contact": {
+      "price": "Preu",
+      "bookVisit": "Agendar visita",
+      "moreInfo": "Més info",
+      "whatsappLead": "Assessorament nàutic personalitzat sense compromís. Resposta en menys de 24 hores.",
+      "contact": "Contactar",
+      "formLead": "Sol·licita visita o més informació sense sortir d’aquesta pàgina.",
+      "bookVisitSubmit": "Solicitar visita",
+      "requestInfoSubmit": "Solicitar información",
+      "actionsAria": "Acciones de contacto",
+      "whatsappAria": "Contactar por WhatsApp",
+      "whatsappMessage": "Hola, me interesa la embarcación \"{title}\" ({location}). Me gustaría recibir más información."
+    },
+    "share": {
+      "emailSubject": "{title} · InmoLex Nàutica"
+    },
+    "filters": {
+      "search": "Cercar per text o referència",
+      "searchPlaceholder": "Ex. Palma, iot, NAU-0001…",
+      "operation": "Operació",
+      "allOperations": "Totes",
+      "type": "Tipus",
+      "allTypes": "Tots",
+      "location": "Ubicació",
+      "allPorts": "Tots els ports",
+      "price": "Preu",
+      "anyPrice": "Qualsevol preu",
+      "length": "Eslora",
+      "anyLength": "Qualsevol",
+      "sort": "Ordre",
+      "relevance": "Rellevància",
+      "newest": "Més recents",
+      "priceAsc": "Preu: de menor a major",
+      "priceDesc": "Preu: de major a menor",
+      "lengthDesc": "Eslora: de major a menor",
+      "clear": "Netejar filtres",
+      "portZone": "Zona / puerto",
+      "price0": "Hasta 100.000 €",
+      "price1": "100.000 – 500.000 €",
+      "price2": "500.000 – 1.000.000 €",
+      "price3": "Más de 1.000.000 €",
+      "rent0": "Alquiler hasta 5.000 €",
+      "rent1": "Alquiler más de 5.000 €",
+      "length0": "Hasta 10 m",
+      "length1": "10 – 15 m",
+      "length2": "15 – 20 m",
+      "length3": "Más de 20 m"
+    }
+  },
+  "services": {
+    "eyebrow": "Serveis",
+    "title": "Tot el que necessites en un sol lloc",
+    "lead": "Compra, venda, lloguer, finançament i inversió. Assessorament integral amb la mateixa exigència en cada servei.",
+    "leadForm": {
+      "submitDefault": "Enviar sol·licitud",
+      "detailsIntermediation": "Explica’ns què busques o què tens",
+      "detailsFinance": "Explica’ns la teva situació",
+      "placeholderIntermediation": "Ex.: pis 3 hab. màx. 400.000 €…",
+      "placeholderFinance": "Ex.: dec 180.000 €, quotes endarrerides…"
+    },
+    "investorsEyebrow": "Per a inversors",
+    "notFoundCtaTitle": "No trobes el que busques?",
+    "notFoundCtaLead": "Explica’ns el teu cas i et proposem la solució més adequada, sense compromís.",
+    "contactNow": "Contactar ara",
+    "minuteNote": "Només tardaràs 1 minut · Et truquem nosaltres",
+    "preferWhatsapp": "Prefereixo WhatsApp",
+    "whatsappMessage": "Hola, vinc de la pàgina de {title} a InmoLex i prefereixo contactar per WhatsApp.",
+    "privacyLink": "Privadesa",
+    "categories": {
+      "intermediacion": "Intermediació immobiliària",
+      "inversion": "Inversió i finançament",
+      "adicional": "Serveis addicionals"
+    },
+    "items": {
+      "comprar-vender": {
+        "title": "Comprar o vendre",
+        "description": "Compra, venda i assessorament personalitzat en cada pas del procés immobiliari.",
+        "cta": "Sol·licitar informació",
+        "menuDescription": "Troba la teva llar o ven amb assessorament expert."
+      },
+      "alquiler": {
+        "title": "Lloguer",
+        "description": "Cerca un lloguer o posa la teva propietat al mercat amb gestió integral i transparència.",
+        "cta": "Consultar lloguer",
+        "menuDescription": "Cerca un lloguer o posa la teva propietat al mercat."
+      },
+      "valoracion": {
+        "title": "Valoració gratuïta",
+        "description": "Taxació sense compromís amb criteri de mercat i resposta en menys de 24 hores.",
+        "cta": "Sol·licitar valoració",
+        "menuDescription": "Taxació sense compromís amb criteri de mercat."
+      },
+      "financiacion": {
+        "title": "Hipoteca o préstec",
+        "description": "Comparem les millors condicions i et guiem en la tramitació sense cost addicional.",
+        "cta": "Simular finançament",
+        "menuDescription": "Finançament adaptat a la teva situació personal."
+      },
+      "deuda": {
+        "title": "Problemes amb el pagament",
+        "description": "Solucions per a situacions de deute hipotecari. Nosaltres comprem el teu deute.",
+        "cta": "Consultar solució",
+        "menuDescription": "Solucions per a situacions de deute hipotecari.",
+        "highlight": "Nosaltres comprem el teu deute"
+      },
+      "inversores": {
+        "title": "Inversors i subhastes",
+        "description": "Oportunitats off-market, subhastes i dossiers amb dades financeres per a inversors.",
+        "cta": "Accés inversors",
+        "menuDescription": "Oportunitats off-market i operacions en subhasta."
+      },
+      "nautica": {
+        "title": "Nàutica",
+        "description": "Compra, venda i lloguer d’iots, velers i motores amb el mateix criteri que les nostres propietats.",
+        "cta": "Veure nàutica",
+        "menuDescription": "Iots, velers i motores en venda o lloguer."
+      },
+      "reportajes": {
+        "title": "Reportatges fotogràfics",
+        "description": "Fotografia professional d’interiors i exteriors que transmet l’essència de cada immoble.",
+        "cta": "Sol·licitar reportatge"
+      },
+      "dron": {
+        "title": "Fotografia amb dron",
+        "description": "Vistes aèries de xalets, àtics i parcel·les que destaquen ubicació i dimensions reals.",
+        "cta": "Reservar sessió"
+      },
+      "eventos": {
+        "title": "Organització d’esdeveniments",
+        "description": "Presentacions exclusives, jornades de portes obertes i esdeveniments de networking immobiliari.",
+        "cta": "Planificar esdeveniment"
+      }
+    },
+    "pages": {
+      "comprar-vender": {
+        "eyebrow": "Compra i venda",
+        "title": "Comprar o vendre",
+        "description": "Prem el botó que correspongui. Et truquem nosaltres.",
+        "options": {
+          "buy": {
+            "label": "Vull comprar",
+            "description": "T’ajudem a trobar la teva propietat.",
+            "cta": "Vull comprar"
+          },
+          "sell": {
+            "label": "Vull vendre",
+            "description": "Valorem el teu immoble sense compromís.",
+            "cta": "Vull vendre"
+          }
+        }
+      },
+      "alquiler": {
+        "eyebrow": "Lloguer",
+        "title": "Lloguer",
+        "description": "Busques pis o vols llogar el teu? Tria una opció.",
+        "options": {
+          "search": {
+            "label": "Busco lloguer",
+            "description": "Digues-nos què busques i et contactem.",
+            "cta": "Busco lloguer"
+          },
+          "list": {
+            "label": "Vull llogar el meu pis",
+            "description": "Gestionem el lloguer per tu.",
+            "cta": "Llogar el meu pis"
+          }
+        }
+      },
+      "valoracion": {
+        "eyebrow": "Valoració",
+        "title": "Valoració gratuïta",
+        "description": "Sense compromís. Un clic i et truquem.",
+        "cta": "Demanar valoració gratuïta"
+      },
+      "financiacion": {
+        "eyebrow": "Finançament",
+        "title": "Hipoteca o préstec",
+        "description": "Tria què necessites. Nosaltres et guiem.",
+        "privacyNote": "Les teves dades financeres s’usen només per estudiar la teva sol·licitud.",
+        "options": {
+          "mortgage": {
+            "label": "Hipoteca",
+            "description": "Per comprar el teu habitatge.",
+            "cta": "Demanar hipoteca"
+          },
+          "loan": {
+            "label": "Préstec personal",
+            "description": "Per a altres projectes.",
+            "cta": "Demanar préstec"
+          }
+        }
+      },
+      "deuda": {
+        "eyebrow": "Ajuda amb deute",
+        "title": "Problemes amb el pagament",
+        "description": "T’ajudem. Explica’ns el teu cas amb total confidencialitat.",
+        "cta": "Necessito ajuda amb el meu deute",
+        "highlight": "Nosaltres comprem el teu deute",
+        "privacyNote": "Informació confidencial. Només l’usem per estudiar la teva situació."
+      },
+      "inversores": {
+        "eyebrow": "Inversió",
+        "title": "Inversors i subhastes",
+        "description": "Accedeix a oportunitats exclusives.",
+        "cta": "Sóc inversor"
+      },
+      "nautica": {
+        "eyebrow": "Nàutica",
+        "title": "Compra, venda i lloguer d’embarcacions",
+        "description": "Explica’ns què busques o què vols vendre. Et truquem nosaltres.",
+        "cta": "Vull informació nàutica",
+        "extraLink": "Veure catàleg d’embarcacions"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Qui som",
+    "title": "Proximitat, criteri i una execució impecable",
+    "subtitle": "InmoLex neix per elevar l’experiència de comprar, vendre o invertir: assessorament honest, processos clars i un estàndard visual i comercial a l’altura de l’immoble.",
+    "history": {
+      "origin": {
+        "title": "Origen",
+        "description": "Vam començar amb una idea simple: tractar cada operació com si fos pròpia. Sense presses, sense lletra petita i amb una comunicació constant."
+      },
+      "method": {
+        "title": "Mètode",
+        "description": "Combinem anàlisi de mercat, preparació de producte (foto i vídeo) i una gestió de visites que prioritza el temps de comprador i propietari."
+      },
+      "evolution": {
+        "title": "Evolució",
+        "description": "Avui treballem amb clients particulars i inversors, amb una cartera curosa i una xarxa de col·laboradors que garanteix agilitat sense perdre qualitat."
+      }
+    },
+    "servicesEyebrow": "Serveis",
+    "servicesTitle": "Una proposta integral, sense soroll",
+    "servicesLead": "Unifiquem assessorament, comercialització i contingut visual perquè cada immoble es presenti amb precisió i coherència.",
+    "highlights": {
+      "sale": "Venda i lloguer amb estratègia comercial i seguiment setmanal",
+      "investment": "Inversió immobiliària amb anàlisi de retorn i escenaris",
+      "finance": "Hipoteques i finançament amb comparativa d’opcions",
+      "media": "Producció audiovisual: foto i vídeo amb dron"
+    },
+    "viewServices": "Veure serveis",
+    "talkAdvisor": "Parlar amb un assessor",
+    "eventsTitle": "Organització d’esdeveniments",
+    "eventsDescription": "Coordinem presentacions privades, jornades de portes obertes i esdeveniments de networking per a promotors, inversors i compradors, cuidant des del guió fins a l’experiència a sala.",
+    "eventsBullets": {
+      "guests": "Convocatòria i gestió d’assistents",
+      "staging": "Posada en escena, senyalètica i recorregut",
+      "coverage": "Cobertura fotogràfica i vídeo-resum"
+    },
+    "letterTitle": "Carta de presentació",
+    "letterPending": "Aquest bloc queda pendent de rebre el text definitiu per integrar-lo amb el to de marca.",
+    "ctaTitle": "Parlem del teu cas?",
+    "ctaLead": "Et responem amb claredat i un pla d’acció sense compromís.",
+    "ctaButton": "Contactar ara"
+  },
+  "contact": {
+    "eyebrow": "Contacte",
+    "title": "Explica’ns què necessites",
+    "lead": "Resposta personalitzada en menys de 24 hores. Assessorament gratuït i sense compromís.",
+    "mapTitle": "Ubicació d’InmoLex a Madrid",
+    "office": "El nostre despatx",
+    "helpEyebrow": "Som aquí per ajudar-te",
+    "helpTitle": "Parlem del teu pròxim llar",
+    "helpLead": "Ja sigui per comprar, vendre o llogar, el nostre equip t’acompanya amb transparència i atenció personalitzada a cada pas.",
+    "phone": "Telèfon",
+    "email": "Correu electrònic",
+    "whatsapp": "WhatsApp",
+    "address": "Adreça",
+    "hours": "Horari d’atenció",
+    "weekdays": "Dl – dv: 9:30 – 19:00",
+    "saturday": "Ds: 10:00 – 14:00",
+    "trustAria": "Indicadors de confiança",
+    "trust": {
+      "response": "Temps mitjà de resposta",
+      "free": "Assessorament sense cost",
+      "noObligation": "Consulta sense obligació",
+      "clients": "Clients satisfets"
+    },
+    "trustValues": {
+      "free": "Gratuït",
+      "noObligation": "Sense compromís"
+    },
+    "formTitle": "Tens un dubte?",
+    "formLead": "Deixa’ns el telèfon i et truquem. Sense sortir d’aquesta pàgina.",
+    "detailsLabel": "Què necessites?",
+    "submit": "Enviar consulta",
+    "orWhatsapp": "O escriu-nos per WhatsApp",
+    "defaultWhatsapp": "Hola, m’agradaria rebre més informació sobre InmoLex."
+  },
+  "forms": {
+    "unavailable": "Formulari pròximament. Mentrestant, <link>contacta’ns aquí</link>.",
+    "success": "Sol·licitud enviada!",
+    "successLead": "Et truquem aviat. Gràcies per confiar en InmoLex.",
+    "optional": "(opcional)",
+    "zone": "En quina zona?",
+    "zonePlaceholder": "Salamanca, Chamberí, La Moraleja…",
+    "detailsDefault": "Explica’ns què necessites",
+    "property": "Quina propietat t’interessa?",
+    "name": "Nom",
+    "phone": "Telèfon",
+    "email": "Email",
+    "privacy": "Accepto la política de privadesa",
+    "privacyFinance": "Accepto la política de privadesa i el tractament confidencial de les meves dades",
+    "privacyLink": "Veure política",
+    "submit": "Enviar sol·licitud",
+    "submitting": "Enviant…",
+    "errors": {
+      "unavailable": "Formulari no disponible.",
+      "choice": "Selecciona una opció.",
+      "name": "El nom és obligatori.",
+      "phone": "El telèfon és obligatori.",
+      "email": "Introdueix un email vàlid.",
+      "privacy": "Has d’acceptar la política de privadesa.",
+      "submit": "No s’ha pogut enviar. Torna-ho a provar.",
+      "connection": "Error de connexió. Torna-ho a provar."
+    }
+  },
+  "cookiesBanner": {
+    "aria": "Consentiment de galetes",
+    "text": "Utilitzem galetes per millorar la vostra experiència. Podeu acceptar o rebutjar les galetes no essencials.",
+    "more": "Més informació",
+    "reject": "Rebutjar",
+    "accept": "Acceptar"
+  },
+  "legal": {
+    "eyebrow": "Informació legal",
+    "updated": "Darrera actualització: {date}",
+    "bindingNote": "La versió jurídicament vinculant d’aquest document és l’espanyola.",
+    "notice": {
+      "title": "Avís legal",
+      "intro": "En compliment de la Llei 34/2002, d’11 de juliol, de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSI-CE), s’informa els usuaris de les dades identificatives del titular d’aquest lloc web.",
+      "identityTitle": "Dades identificatives",
+      "holder": "Titular: {legalName} ({tradeName}).",
+      "taxId": "CIF: {taxId}.",
+      "email": "Correu electrònic: {email}",
+      "address": "Adreça: {address}",
+      "purposeTitle": "Objecte",
+      "purpose": "El present lloc web té per objecte oferir informació sobre els serveis immobiliaris de {tradeName} i facilitar el contacte amb clients potencials mitjançant formularis, telèfon, correu electrònic i WhatsApp.",
+      "termsTitle": "Condicions d’ús",
+      "terms1": "L’accés i l’ús d’aquest lloc web atribueixen la condició d’usuari i impliquen l’acceptació d’aquestes condicions. L’usuari es compromet a fer un ús adequat dels continguts i serveis oferts.",
+      "terms2": "Els formularis de contacte enllacen a Google Forms gestionats pel titular. En enviar-los, l’usuari accepta les condicions indicades a cada formulari i a la política de privadesa.",
+      "ipTitle": "Propietat intel·lectual",
+      "ip": "Tots els continguts del lloc web (textos, imatges, logotips, disseny) són propietat de {tradeName} o dels seus llicenciants i estan protegits per la legislació de propietat intel·lectual.",
+      "liabilityTitle": "Responsabilitat",
+      "liability1": "{tradeName} no es fa responsable dels danys derivats de l’ús indegut del lloc web ni de la informació publicada per tercers a través d’enllaços externs.",
+      "liability2": "Les fotografies, plànols i descripcions d’immobles tenen caràcter orientatiu i poden variar. La informació contractual definitiva es facilitarà en el moment de l’operació.",
+      "lawTitle": "Legislació aplicable",
+      "law": "Aquestes condicions es regeixen per la legislació espanyola. Per a qualsevol controvèrsia, les parts se sotmetran als jutjats i tribunals de {jurisdiction}."
+    },
+    "privacy": {
+      "title": "Política de privadesa",
+      "intro": "A {tradeName} ({legalName}) tractem les seves dades personals amb la màxima diligència i d’acord amb la normativa vigent en matèria de protecció de dades (RGPD i LOPDGDD).",
+      "controllerTitle": "Responsable del tractament",
+      "controller": "Responsable: {legalName} ({tradeName}).",
+      "contactEmail": "Correu de contacte: {email}",
+      "purposeTitle": "Finalitat del tractament",
+      "purpose": "Les dades personals que ens faciliteu a través de formularis, correu electrònic, telèfon o WhatsApp seran tractades per:",
+      "purposeList": {
+        "requests": "Gestionar les seves sol·licituds d’informació, compra, venda, lloguer o valoració.",
+        "services": "Prestar serveis d’intermediació immobiliària i finançament.",
+        "comms": "Enviar comunicacions relacionades amb la seva consulta.",
+        "legal": "Complir amb obligacions legals aplicables."
+      },
+      "formsTitle": "Formularis de contacte",
+      "forms1": "En prémer els botons del web, podeu accedir a formularis allotjats a Google Forms (Google LLC). Les dades que introduïu s’envien directament al responsable del tractament per gestionar la vostra sol·licitud.",
+      "forms2": "Us recomanem no incloure informació sensible que no sigui necessària per a la vostra consulta. Podeu exercir els vostres drets contactant-nos a l’adreça indicada a l’inici d’aquesta política.",
+      "financeTitle": "Tractament de dades financeres",
+      "finance1": "En formularis d’hipoteca, préstec personal o situacions de deute hipotecari, podem recollir dades de caràcter financer (ingressos, deutes, situació laboral).",
+      "finance2": "Aquestes dades es tractaran exclusivament per estudiar la vostra sol·licitud i oferir-vos una solució adequada. No es cediran a tercers sense el vostre consentiment exprés, tret d’obligació legal.",
+      "sensitiveTitle": "Tractament de dades sensibles (deute hipotecari)",
+      "sensitive": "La informació relativa a procediments judicials, embargaments o subhastes es considera de caràcter sensible. La tractarem amb estricta confidencialitat i únicament per analitzar la vostra situació i proposar alternatives.",
+      "legalBasisTitle": "Legitimació",
+      "legalBasis": "La base legal per al tractament és el consentiment de l’interessat, l’execució de mesures precontractuals a petició de l’interessat i l’interès legítim a respondre a les seves consultes.",
+      "retentionTitle": "Conservació de dades",
+      "retention": "Conservarem les seves dades mentre sigui necessari per atendre la seva sol·licitud i, posteriorment, durant els terminis legalment establerts.",
+      "recipientsTitle": "Destinataris",
+      "recipients1": "No cedim les seves dades a tercers, tret d’obligació legal o quan sigui necessari per a la prestació del servei sol·licitat (per exemple, entitats financeres en cas de sol·licitud d’hipoteca, amb la seva autorització prèvia).",
+      "recipients2": "Els formularis de Google Forms poden implicar el tractament de dades per Google com a proveïdor tecnològic, d’acord amb la seva pròpia política de privadesa.",
+      "rightsTitle": "Drets",
+      "rights1": "Podeu exercir els drets d’accés, rectificació, supressió, oposició, limitació i portabilitat enviant un correu a {email}.",
+      "rights2": "També teniu dret a presentar una reclamació davant l’Agència Espanyola de Protecció de Dades (www.aepd.es)."
+    },
+    "cookies": {
+      "title": "Política de galetes",
+      "intro": "Aquest lloc web utilitza emmagatzematge local al vostre navegador per recordar preferències bàsiques. A continuació us informem sobre el seu ús.",
+      "whatTitle": "Què són les galetes?",
+      "what": "Les galetes són petits fitxers de text que s’emmagatzemen al vostre dispositiu quan visiteu un lloc web. Permeten recordar preferències i millorar la funcionalitat del lloc.",
+      "useTitle": "Què utilitzem en aquest web",
+      "use": "En la versió actual del lloc utilitzem únicament:",
+      "useList": {
+        "storage": "Emmagatzematge local (localStorage) per recordar si heu acceptat o rebutjat l’avís de galetes.",
+        "technical": "Galetes tècniques estrictament necessàries per al funcionament bàsic del lloc, si les requereix el proveïdor d’allotjament."
+      },
+      "analyticsTitle": "Galetes d’anàlisi",
+      "analytics": "Actualment no instal·lem galetes d’anàlisi ni eines de mesurament d’audiència. Si en el futur s’incorporen, se us informarà i se sol·licitarà el vostre consentiment quan correspongui.",
+      "manageTitle": "Gestió de galetes",
+      "manage1": "En accedir al lloc web, se us mostrarà un bàner on podeu acceptar o rebutjar les galetes no essencials.",
+      "manage2": "També podeu configurar el navegador per bloquejar o eliminar galetes i dades emmagatzemades localment. Consulteu l’ajuda del navegador per a més informació.",
+      "moreTitle": "Més informació",
+      "more1": "Per a qualsevol consulta sobre l’ús de galetes, podeu contactar-nos a {email}.",
+      "more2": "Consulteu també la nostra política de privadesa per a més informació sobre el tractament de les vostres dades."
+    }
+  },
+  "notFound": {
+    "code": "Error 404",
+    "title": "Pàgina no trobada",
+    "lead": "La pàgina que busques no existeix o ha estat moguda. Explora les nostres propietats o contacta amb el nostre equip.",
+    "home": "Tornar a l’inici",
+    "properties": "Veure propietats",
+    "help": "Necessites ajuda?",
+    "contact": "Contacta amb nosaltres"
+  }
+}

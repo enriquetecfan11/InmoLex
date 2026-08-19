@@ -5,6 +5,7 @@ import type {
   PropertyStatus,
 } from "@/lib/properties";
 import { formatPrice } from "@/lib/properties";
+import { toIntlLocale } from "@/i18n/intl-locale";
 
 export type { Operation, PropertyBadge, PropertyCoordinates, PropertyStatus };
 
@@ -61,8 +62,8 @@ export function formatVesselReference(id: string): string {
   return id.startsWith("NAU-") ? id : `NAU-${id.padStart(4, "0")}`;
 }
 
-export function formatLength(meters: number): string {
-  return `${meters.toLocaleString("es-ES", { maximumFractionDigits: 1 })} m`;
+export function formatLength(meters: number, locale = "es"): string {
+  return `${meters.toLocaleString(toIntlLocale(locale), { maximumFractionDigits: 1 })} m`;
 }
 
 export { formatPrice };

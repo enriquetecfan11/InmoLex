@@ -1,17 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { isNavLinkActive, NAV_LINKS } from "@/lib/navigation";
 
 const ANIMATION_MS = 320;
 
 export function MobileNav() {
   const pathname = usePathname();
+  const tNav = useTranslations("nav");
+  const tHeader = useTranslations("header");
+  const tCommon = useTranslations("common");
+  const tContact = useTranslations("contact");
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [animatedOpen, setAnimatedOpen] = useState(false);
@@ -61,11 +66,11 @@ export function MobileNav() {
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         className="relative flex h-11 w-11 items-center justify-center rounded-full text-accent transition-colors hover:bg-accent/10"
-        aria-label={open ? "Cerrar menú" : "Abrir menú"}
+        aria-label={open ? tHeader("closeMenu") : tHeader("openMenu")}
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
       >
-        <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
+        <span className="sr-only">{open ? tHeader("closeMenu") : tHeader("openMenu")}</span>
         <span className="relative block h-3.5 w-5">
           <span
             className={`absolute left-0 block h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
@@ -95,7 +100,7 @@ export function MobileNav() {
                 animatedOpen ? "opacity-100" : "opacity-0"
               }`}
               onClick={closeMenu}
-              aria-label="Cerrar menú"
+              aria-label={tHeader("closeMenu")}
             />
 
             <nav
@@ -122,7 +127,7 @@ export function MobileNav() {
                             : "text-white/80 hover:bg-accent/10 hover:text-accent"
                         }`}
                       >
-                        {link.label}
+                        {tNav(link.key)}
                       </Link>
                     </li>
                   );
@@ -130,8 +135,12 @@ export function MobileNav() {
               </ul>
 
               <div className="mt-6 space-y-3 border-t border-accent/15 pt-6">
-                <WhatsAppLink className="flex w-full items-center justify-center rounded-lg border border-accent/25 px-4 py-3.5 text-base font-medium text-accent hover:bg-accent/10">
-                  WhatsApp
+                <LanguageSwitcher className="w-full" />
+                <WhatsAppLink
+                  message={tContact("defaultWhatsapp")}
+                  className="flex w-full items-center justify-center rounded-lg border border-accent/25 px-4 py-3.5 text-base font-medium text-accent hover:bg-accent/10"
+                >
+                  {tCommon("whatsapp")}
                 </WhatsAppLink>
                 <Button
                   href="/contacto"
@@ -140,7 +149,7 @@ export function MobileNav() {
                   className="w-full shadow-none"
                   onClick={closeMenu}
                 >
-                  Valoración gratuita
+                  {tHeader("freeValuation")}
                 </Button>
               </div>
             </nav>

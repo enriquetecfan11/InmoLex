@@ -1,4 +1,5 @@
 import type { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
+import { useTranslations } from "next-intl";
 
 const fieldClassName =
   "w-full rounded-lg border border-accent/20 bg-brand-dark/50 px-4 py-3 text-sm text-white placeholder:text-white/35 transition-colors focus:border-accent/50 focus:outline-none focus:ring-2 focus:ring-accent/20";
@@ -14,11 +15,13 @@ export function FormLabel({
   children: ReactNode;
   optional?: boolean;
 }) {
+  const t = useTranslations("forms");
+
   return (
     <label htmlFor={htmlFor} className={labelClassName}>
       {children}
       {optional && (
-        <span className="ml-1 font-normal text-white/40">(opcional)</span>
+        <span className="ml-1 font-normal text-white/40">{t("optional")}</span>
       )}
     </label>
   );
@@ -60,11 +63,13 @@ export function FormShell({
 }
 
 export function FormSuccessMessage({ children }: { children: ReactNode }) {
+  const t = useTranslations("forms");
+
   return (
     <div className="rounded-xl border border-accent/30 bg-accent/[0.1] px-5 py-6 text-center">
       <p className="font-display text-2xl text-accent">{children}</p>
       <p className="mt-2 text-sm text-white/65">
-        Te llamamos en breve. Gracias por confiar en InmoLex.
+        {t("successLead")}
       </p>
     </div>
   );

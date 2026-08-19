@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface PropertyGalleryProps {
   images: string[];
@@ -9,6 +10,8 @@ interface PropertyGalleryProps {
 }
 
 export function PropertyGallery({ images, title }: PropertyGalleryProps) {
+  const t = useTranslations("properties");
+  const tCommon = useTranslations("common");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -69,7 +72,7 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
             <circle cx="5.5" cy="6.5" r="1" fill="currentColor" />
             <path d="M2 10.5l3-2.5 2.5 2 3-3 3.5 3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          Ver galería
+          {t("galleryCta")}
           <span className="text-white/50">({images.length})</span>
         </span>
       </button>
@@ -145,9 +148,9 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
                 type="button"
                 onClick={goToPrevious}
                 className="rounded-lg border border-white/10 bg-black/40 px-4 py-2.5 text-sm text-white/80 transition hover:border-accent/30 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
-                aria-label="Imagen anterior"
+                aria-label={tCommon("previous")}
               >
-                Anterior
+                {tCommon("previous")}
               </button>
               <div className="text-sm font-medium text-white/60">
                 {selectedIndex + 1} / {images.length}
@@ -156,9 +159,9 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
                 type="button"
                 onClick={goToNext}
                 className="rounded-lg border border-white/10 bg-black/40 px-4 py-2.5 text-sm text-white/80 transition hover:border-accent/30 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
-                aria-label="Siguiente imagen"
+                aria-label={tCommon("next")}
               >
-                Siguiente
+                {tCommon("next")}
               </button>
             </div>
 

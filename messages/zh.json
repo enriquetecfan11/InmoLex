@@ -1,0 +1,863 @@
+{
+  "languages": {
+    "es": "Español",
+    "en": "English",
+    "sv": "Svenska",
+    "uk": "Українська",
+    "it": "Italiano",
+    "zh": "中文",
+    "nl": "Nederlands",
+    "nb": "Norsk",
+    "ca": "Català"
+  },
+  "metadata": {
+    "siteTitle": "InmoLex | 买卖与租赁",
+    "siteTitleTemplate": "%s | InmoLex",
+    "siteDescription": "马德里房产经纪。买卖或租赁房产，透明沟通，一对一顾问服务。",
+    "home": {
+      "title": "首页",
+      "description": "马德里房产经纪。买卖或租赁房产，透明沟通，一对一顾问服务。"
+    },
+    "properties": {
+      "title": "房产",
+      "description": "探索我们精选的马德里高端住宅。买卖与租赁均提供个性化顾问服务。",
+      "notFound": "未找到该房产"
+    },
+    "vessels": {
+      "title": "游艇",
+      "description": "船舶目录：游艇、帆船、快艇与摩托艇，出售与租赁，提供个性化顾问服务。",
+      "notFound": "未找到该船舶"
+    },
+    "services": {
+      "title": "服务",
+      "description": "马德里一站式房产服务：买卖、租赁、投资、按揭、摄影等。",
+      "notFound": "未找到该服务"
+    },
+    "about": {
+      "title": "关于我们",
+      "description": "认识 InmoLex：品牌介绍、历程、服务与活动策划。贴近客户、判断精准、执行无懈可击。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "description": "联系马德里的 InmoLex。免费、无义务咨询，24 小时内回复。"
+    },
+    "legalNotice": {
+      "title": "法律声明",
+      "description": "InmoLex 网站法律声明及所有者信息。"
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "description": "InmoLex 隐私政策与数据处理说明。"
+    },
+    "cookies": {
+      "title": "Cookie 政策",
+      "description": "关于 InmoLex 网站使用 Cookie 的说明。"
+    }
+  },
+  "nav": {
+    "ariaLabel": "主导航",
+    "home": "首页",
+    "properties": "房产",
+    "nautica": "游艇",
+    "services": "服务",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "header": {
+    "freeValuation": "免费估价",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "language": "语言"
+  },
+  "footer": {
+    "tagline": "马德里高端房产。买卖与租赁，个性化顾问服务，全程透明。",
+    "navigation": "导航",
+    "contact": "联系我们",
+    "rights": "© {year} InmoLex。保留所有权利。",
+    "legalNotice": "法律声明",
+    "privacy": "隐私",
+    "cookies": "Cookie",
+    "privateArea": "私人专区"
+  },
+  "home": {
+    "heroTitle": "您需要什么？",
+    "heroSubtitle": "点一下按钮，我们来电联系您。",
+    "portfolioCta": "我们的在售房产",
+    "whyEyebrow": "关于我们",
+    "whyTitle": "为什么选择 InmoLex",
+    "whyLead": "精品服务：判断有据、执行到位，沟通让您始终掌握主动。",
+    "whyCta": "了解我们",
+    "whyTalk": "与顾问交谈",
+    "pillars": {
+      "market": {
+        "title": "市场判断",
+        "description": "务实估价与商业策略，在不浪费时间的前提下争取最佳结果。"
+      },
+      "execution": {
+        "title": "精益执行",
+        "description": "摄影、视频与物料即刻可发布，呈现风格统一。"
+      },
+      "followUp": {
+        "title": "清晰跟进",
+        "description": "持续沟通、看房数据与策略调整，全程透明。"
+      },
+      "network": {
+        "title": "信赖网络",
+        "description": "融资、装修与法律合作伙伴，把摩擦消解在出现之前。"
+      }
+    },
+    "contactTitle": "有疑问？",
+    "contactLead": "填写表单或通过 WhatsApp 联系我们。我们会致电给您。",
+    "contactDetailsLabel": "您需要什么？",
+    "contactSubmit": "发送咨询",
+    "preferWhatsapp": "我更想用 WhatsApp",
+    "featured": {
+      "eyebrow": "编辑精选",
+      "title": "更少房产，更好选择。",
+      "lead": "我们只收录真正值得开口的住宅：地段、采光、状况，以及走进去就能读懂的故事。",
+      "highlightedNow": "当前精选",
+      "portfolio": "在售房产",
+      "activeOps": "进行中交易",
+      "lookingDifferent": "在找别的？",
+      "lookingDifferentLead": "我们按区域、预算和交易类型筛选，更快帮您找到合适的房产。",
+      "viewCatalog": "查看全部目录",
+      "highlightedNowShort": "当前精选",
+      "quickView": "精选速览",
+      "criterion": "每套房都凭标准入选，而非堆量。",
+      "bedrooms": "卧室",
+      "bathrooms": "卫生间",
+      "area": "面积",
+      "viewProperty": "查看房产"
+    },
+    "featuredVessels": {
+      "eyebrow": "游艇精选",
+      "title": "更少船舶，更好选择。",
+      "lead": "游艇、帆船与摩托艇皆经甄选：船长、状况、泊位，以及配得上真正想出海之人的呈现。",
+      "highlightedNow": "当前精选",
+      "portfolio": "在售船艇",
+      "activeOps": "进行中交易",
+      "lookingDifferent": "在找别的？",
+      "lookingDifferentLead": "我们按类型、船长、预算和港口筛选，更快帮您找到合适的船舶。",
+      "viewCatalog": "查看游艇目录",
+      "quickView": "船队速览",
+      "criterion": "每艘船都凭标准入选，而非堆量。",
+      "length": "船长",
+      "cabins": "舱室",
+      "year": "年份",
+      "viewVessel": "查看船舶"
+    },
+    "servicesEyebrow": "服务",
+    "servicesTitle": "一站满足所需",
+    "servicesLead": "买卖、租赁、融资与投资的全方位顾问。选一个起点，其余交给我们。",
+    "catalogTitle": "探索全部服务",
+    "catalogLead": "查看完整服务目录。",
+    "catalogCta": "查看全部服务"
+  },
+  "elite": {
+    "kicker": "Elite Real Estate · Global",
+    "title": "高端服务，佣金不虚高。",
+    "lead": "GrupoRol 为追求极致品质又重视财务效率的客户，提供专属一流房产服务。我们打破传统奢侈模式：高端服务与工具，佣金却比行业惯例更具竞争力。",
+    "differentialTitle": "卓越，不加价",
+    "differentialBody": "GrupoRol 融合个性化服务、先进技术、国际覆盖与高端房产服务，而不把奢侈板块常见的成本结构转嫁给客户。",
+    "differentialHighlight": "高端服务，佣金更具竞争力。",
+    "closeTitle": "奢华不必更贵。",
+    "closeSubtitle": "体验真正的 Elite 服务。",
+    "cta": "预约咨询",
+    "blocks": {
+      "coverage": {
+        "title": "全球覆盖",
+        "body": "我们没有边界。可前往世界任何地方管理房产、实地勘察，或亲自完成谈判。",
+        "accent": "您在何处，我们便在何处。"
+      },
+      "tailored": {
+        "title": "量身定制",
+        "body": "每位客户、每笔交易都不同。我们全面个性化方案，围绕您的财务、税务与后勤需求制定策略：真正的房产定制服务。"
+      },
+      "tech": {
+        "title": "前沿视觉技术",
+        "body": "以高端数字工具最大化每套房的价值与触达，面向国内外买家。",
+        "items": {
+          "photo": "专业摄影",
+          "tours": "360° 虚拟看房",
+          "visits": "高清沉浸式看房",
+          "plans2d": "2D 平面图",
+          "plans3d": "3D 建模与平面图",
+          "presentation": "国内与国际呈现"
+        }
+      },
+      "finance": {
+        "title": "金融方案与债务收购",
+        "body": "我们协助财务结构复杂的房产交易：债务收购、负担管理与清偿、重组与资产释放。",
+        "accent": "我们处理别人视为过于复杂的交易。"
+      },
+      "network": {
+        "title": "国际网络与全程管理",
+        "body": "我们与国际房产机构及合作伙伴协作，低调地放大每套房的曝光，并保持一对一关注。",
+        "items": {
+          "sale": "出售",
+          "rent": "租赁",
+          "negotiation": "谈判",
+          "exposure": "国际曝光",
+          "coordination": "交易协调"
+        }
+      }
+    }
+  },
+  "common": {
+    "sale": "出售",
+    "rent": "租赁",
+    "ref": "编号 {id}",
+    "perMonth": "/月",
+    "yes": "是",
+    "no": "否",
+    "yesCount": "是（{count}）",
+    "whatsapp": "WhatsApp",
+    "email": "邮箱",
+    "previous": "上一页",
+    "next": "下一页",
+    "backHome": "← 返回首页"
+  },
+  "labels": {
+    "operation": {
+      "venta": "出售",
+      "alquiler": "租赁"
+    },
+    "badge": {
+      "nuevo": "新上",
+      "reservado": "已预订",
+      "vendido": "已售",
+      "destacado": "精选",
+      "exclusivo": "独家"
+    },
+    "status": {
+      "disponible": "可售",
+      "reservado": "已预订",
+      "vendido": "已售",
+      "alquilado": "已租"
+    },
+    "propertyType": {
+      "piso": "公寓",
+      "atico": "顶层公寓",
+      "chalet": "独立别墅",
+      "duplex": "复式",
+      "casa_pueblo": "联排别墅",
+      "habitacion": "房间"
+    },
+    "vesselType": {
+      "yate": "游艇",
+      "velero": "帆船",
+      "lancha": "快艇",
+      "catamaran": "双体船",
+      "motora": "摩托艇"
+    },
+    "orientation": {
+      "norte": "北",
+      "sur": "南",
+      "este": "东",
+      "oeste": "西",
+      "noreste": "东北",
+      "noroeste": "西北",
+      "sureste": "东南",
+      "suroeste": "西南"
+    },
+    "energy": {
+      "A": "极高能效",
+      "B": "高效",
+      "C": "中等能耗",
+      "D": "较高能耗",
+      "E": "很高能耗",
+      "F": "过高能耗",
+      "G": "过高能耗"
+    }
+  },
+  "properties": {
+    "eyebrow": "我们的在售房产",
+    "title": "可售房产",
+    "lead": "精选马德里优质地段的高端住宅。每套房均经专业标准审阅。",
+    "emptyTitle": "无结果",
+    "emptyLead": "没有符合所选筛选条件的房产。请尝试调整搜索条件。",
+    "resetFilters": "重置筛选",
+    "viewProperty": "查看房产",
+    "requestInfo": "索取资料",
+    "bedroomsShort": "{count} 室",
+    "bathroom": "{count} 卫",
+    "bathrooms": "{count} 卫",
+    "resultOne": "套房",
+    "resultOther": "套房",
+    "paginationAria": "房产分页",
+    "showing": "显示 {start}–{end}，共 {total} {itemLabel}",
+    "description": "描述",
+    "gallery": "图库",
+    "similar": "相似房产",
+    "similarLead": "同区域独家精选",
+    "backToList": "返回房产列表",
+    "luxury": "奢华",
+    "salePrice": "售价",
+    "rentPrice": "月租金",
+    "features": "特色",
+    "featureGroups": {
+      "interior": "室内",
+      "exterior": "室外",
+      "edificio": "楼宇",
+      "extras": "附加",
+      "accesibilidad": "无障碍"
+    },
+    "generatedFeatures": {
+      "terrace": "露台",
+      "balcony": "阳台",
+      "garage": "车位",
+      "storage": "储藏室",
+      "elevator": "电梯",
+      "elevatorCount": "电梯（{count}）",
+      "pmrYes": "无障碍通行（PMR）",
+      "pmrNo": "未登记无障碍改造",
+      "orientation": "朝向 {value}"
+    },
+    "stats": {
+      "area": "面积",
+      "bedrooms": "卧室",
+      "bathrooms": "卫生间",
+      "terrace": "露台",
+      "parking": "停车",
+      "storage": "储藏室",
+      "elevator": "电梯",
+      "orientation": "朝向"
+    },
+    "energy": {
+      "title": "能源证书",
+      "lead": "该房产依据现行官方证书的能效情况。",
+      "rating": "能效等级",
+      "consumption": "能耗",
+      "emissions": "二氧化碳排放"
+    },
+    "map": {
+      "title": "位置",
+      "lead": "{district} 区域内的大致位置。精确地址将在看房时提供。",
+      "openMaps": "在 Google Maps 中打开"
+    },
+    "plans": {
+      "comingSoon": "平面图即将上线",
+      "enlarge": "放大",
+      "title": "平面图",
+      "plan2d": "2D 平面图",
+      "plan3d": "3D 平面图"
+    },
+    "videos": {
+      "title": "视频",
+      "lead": "通过视频了解这套房产的细节与氛围。"
+    },
+    "galleryCta": "查看图库",
+    "contact": {
+      "price": "价格",
+      "bookVisit": "预约看房",
+      "moreInfo": "更多信息",
+      "whatsappLead": "个性化顾问服务，无义务。24 小时内回复。",
+      "contact": "联系",
+      "formLead": "无需离开本页即可预约看房或索取更多信息。",
+      "bookVisitSubmit": "预约看房",
+      "requestInfoSubmit": "索取资料",
+      "actionsAria": "联系操作",
+      "whatsappAria": "通过 WhatsApp 联系",
+      "whatsappMessage": "您好，我对房产“{title}”（{location}）感兴趣，希望了解更多信息。"
+    },
+    "share": {
+      "share": "分享",
+      "close": "关闭分享菜单",
+      "copy": "复制链接",
+      "copied": "链接已复制",
+      "emailSubject": "{title} · InmoLex"
+    },
+    "filters": {
+      "search": "按文字或编号搜索",
+      "searchPlaceholder": "例如 Salamanca、顶层公寓、INM-0001…",
+      "operation": "交易类型",
+      "allOperations": "全部",
+      "location": "位置",
+      "allZones": "全部区域",
+      "price": "价格",
+      "anyPrice": "不限价格",
+      "price0": "最高 500.000 €",
+      "price1": "500.000 – 1.000.000 €",
+      "price2": "1.000.000 – 2.000.000 €",
+      "price3": "超过 2.000.000 €",
+      "rent0": "租金最高 2.500 €",
+      "rent1": "租金超过 2.500 €",
+      "bedrooms": "卧室",
+      "any": "不限",
+      "type": "类型",
+      "allTypes": "全部",
+      "sort": "排序",
+      "relevance": "相关度",
+      "newest": "最新",
+      "priceAsc": "价格：从低到高",
+      "priceDesc": "价格：从高到低",
+      "areaDesc": "面积：从大到小",
+      "terrace": "露台",
+      "garage": "车库",
+      "elevator": "电梯",
+      "pmr": "无障碍通行",
+      "clear": "清除筛选"
+    }
+  },
+  "vessels": {
+    "eyebrow": "游艇目录",
+    "title": "可售船舶",
+    "lead": "游艇、帆船与摩托艇，甄选标准与我们的房产一致。",
+    "emptyTitle": "无结果",
+    "emptyLead": "没有符合所选筛选条件的船舶。请尝试调整搜索条件。",
+    "resetFilters": "重置筛选",
+    "viewVessel": "查看船舶",
+    "requestInfo": "索取资料",
+    "resultOne": "艘",
+    "resultOther": "艘",
+    "paginationAria": "船舶分页",
+    "description": "描述",
+    "gallery": "图库",
+    "similar": "相似船舶",
+    "similarLead": "同区域或同交易类型精选",
+    "backToList": "返回游艇",
+    "features": "特色",
+    "techSheet": "技术参数",
+    "equipment": "装备",
+    "lengthValue": "船长 {value}",
+    "yearValue": "年份 {year}",
+    "shipyard": "船厂 {name}",
+    "engineValue": "发动机 {name}",
+    "cabin": "{count} 舱",
+    "cabins": "{count} 舱",
+    "bathroom": "{count} 卫",
+    "bathrooms": "{count} 卫",
+    "capacity": "{count} 人",
+    "stats": {
+      "length": "船长",
+      "year": "年份",
+      "cabins": "舱室",
+      "bathrooms": "卫生间",
+      "capacity": "载客",
+      "engine": "发动机"
+    },
+    "map": {
+      "title": "位置",
+      "lead": "船舶大致港口或区域。精确泊位将在看船时提供。",
+      "port": "港口 / 区域",
+      "openMaps": "在 Google Maps 中打开"
+    },
+    "videos": {
+      "title": "视频",
+      "lead": "通过视频了解这艘船的细节与氛围。"
+    },
+    "contact": {
+      "price": "价格",
+      "bookVisit": "预约看船",
+      "moreInfo": "更多信息",
+      "whatsappLead": "个性化游艇顾问服务，无义务。24 小时内回复。",
+      "contact": "联系",
+      "formLead": "无需离开本页即可预约看船或索取更多信息。",
+      "bookVisitSubmit": "Solicitar visita",
+      "requestInfoSubmit": "Solicitar información",
+      "actionsAria": "Acciones de contacto",
+      "whatsappAria": "Contactar por WhatsApp",
+      "whatsappMessage": "Hola, me interesa la embarcación \"{title}\" ({location}). Me gustaría recibir más información."
+    },
+    "share": {
+      "emailSubject": "{title} · InmoLex 游艇"
+    },
+    "filters": {
+      "search": "按文字或编号搜索",
+      "searchPlaceholder": "例如 Palma、游艇、NAU-0001…",
+      "operation": "交易类型",
+      "allOperations": "全部",
+      "type": "类型",
+      "allTypes": "全部",
+      "location": "位置",
+      "allPorts": "全部港口",
+      "price": "价格",
+      "anyPrice": "不限价格",
+      "length": "船长",
+      "anyLength": "不限",
+      "sort": "排序",
+      "relevance": "相关度",
+      "newest": "最新",
+      "priceAsc": "价格：从低到高",
+      "priceDesc": "价格：从高到低",
+      "lengthDesc": "船长：从长到短",
+      "clear": "清除筛选",
+      "portZone": "Zona / puerto",
+      "price0": "Hasta 100.000 €",
+      "price1": "100.000 – 500.000 €",
+      "price2": "500.000 – 1.000.000 €",
+      "price3": "Más de 1.000.000 €",
+      "rent0": "Alquiler hasta 5.000 €",
+      "rent1": "Alquiler más de 5.000 €",
+      "length0": "Hasta 10 m",
+      "length1": "10 – 15 m",
+      "length2": "15 – 20 m",
+      "length3": "Más de 20 m"
+    }
+  },
+  "services": {
+    "eyebrow": "服务",
+    "title": "一站满足所需",
+    "lead": "买卖、租赁、融资与投资。每项服务都保持同样高标准的全方位顾问。",
+    "leadForm": {
+      "submitDefault": "提交申请",
+      "detailsIntermediation": "告诉我们您在找什么或拥有什么",
+      "detailsFinance": "告诉我们您的情况",
+      "placeholderIntermediation": "例如：三居公寓，最高 400.000 €…",
+      "placeholderFinance": "例如：欠款 180.000 €，分期逾期…"
+    },
+    "investorsEyebrow": "面向投资者",
+    "notFoundCtaTitle": "没找到您需要的？",
+    "notFoundCtaLead": "告诉我们您的情况，我们会提出最合适的方案，无义务。",
+    "contactNow": "立即联系",
+    "minuteNote": "只需 1 分钟 · 我们来电联系您",
+    "preferWhatsapp": "我更想用 WhatsApp",
+    "whatsappMessage": "您好，我来自 InmoLex 的{title}页面，希望通过 WhatsApp 联系。",
+    "privacyLink": "隐私",
+    "categories": {
+      "intermediacion": "房产中介",
+      "inversion": "投资与融资",
+      "adicional": "附加服务"
+    },
+    "items": {
+      "comprar-vender": {
+        "title": "买入或卖出",
+        "description": "买卖全程个性化顾问，每一步都有人陪同。",
+        "cta": "索取资料",
+        "menuDescription": "找到理想住宅，或在专家顾问下出售。"
+      },
+      "alquiler": {
+        "title": "租赁",
+        "description": "寻找租房，或把您的房产推向市场，全程管理、透明清晰。",
+        "cta": "咨询租赁",
+        "menuDescription": "寻找租房，或把您的房产推向市场。"
+      },
+      "valoracion": {
+        "title": "免费估价",
+        "description": "无义务估价，依据市场判断，24 小时内回复。",
+        "cta": "申请估价",
+        "menuDescription": "无义务估价，依据市场判断。"
+      },
+      "financiacion": {
+        "title": "按揭或贷款",
+        "description": "比较最优条件，并全程指导办理，无额外费用。",
+        "cta": "模拟融资",
+        "menuDescription": "按您的情况量身融资。"
+      },
+      "deuda": {
+        "title": "还款困难",
+        "description": "针对按揭债务的解决方案。我们收购您的债务。",
+        "cta": "了解方案",
+        "menuDescription": "针对按揭债务的解决方案。",
+        "highlight": "我们收购您的债务"
+      },
+      "inversores": {
+        "title": "投资者与拍卖",
+        "description": "场外机会、拍卖以及面向投资者的财务资料。",
+        "cta": "投资者通道",
+        "menuDescription": "场外机会与拍卖交易。"
+      },
+      "nautica": {
+        "title": "游艇",
+        "description": "游艇、帆船与摩托艇的买卖与租赁，标准与我们的房产一致。",
+        "cta": "查看游艇",
+        "menuDescription": "游艇、帆船与摩托艇，出售或租赁。"
+      },
+      "reportajes": {
+        "title": "专业摄影",
+        "description": "室内外专业摄影，传达每套房的气质。",
+        "cta": "预约拍摄"
+      },
+      "dron": {
+        "title": "航拍摄影",
+        "description": "别墅、顶层公寓与地块的航拍视角，呈现真实区位与尺度。",
+        "cta": "预约航拍"
+      },
+      "eventos": {
+        "title": "活动策划",
+        "description": "独家发布会、开放日与房产社交活动。",
+        "cta": "策划活动"
+      }
+    },
+    "pages": {
+      "comprar-vender": {
+        "eyebrow": "买卖",
+        "title": "买入或卖出",
+        "description": "点选对应按钮。我们来电联系您。",
+        "options": {
+          "buy": {
+            "label": "我想买",
+            "description": "我们帮您找到合适的房产。",
+            "cta": "我想买"
+          },
+          "sell": {
+            "label": "我想卖",
+            "description": "无义务为您的房产估价。",
+            "cta": "我想卖"
+          }
+        }
+      },
+      "alquiler": {
+        "eyebrow": "租赁",
+        "title": "租赁",
+        "description": "在找公寓，还是想出租自己的？请选择一项。",
+        "options": {
+          "search": {
+            "label": "我在找租房",
+            "description": "告诉我们您的需求，我们会联系您。",
+            "cta": "我在找租房"
+          },
+          "list": {
+            "label": "我想出租我的公寓",
+            "description": "我们代您管理租赁。",
+            "cta": "出租我的公寓"
+          }
+        }
+      },
+      "valoracion": {
+        "eyebrow": "估价",
+        "title": "免费估价",
+        "description": "无义务。一点即致电。",
+        "cta": "申请免费估价"
+      },
+      "financiacion": {
+        "eyebrow": "融资",
+        "title": "按揭或贷款",
+        "description": "选择您需要的。我们来指导您。",
+        "privacyNote": "您的财务数据仅用于审核申请。",
+        "options": {
+          "mortgage": {
+            "label": "按揭",
+            "description": "用于购买住宅。",
+            "cta": "申请按揭"
+          },
+          "loan": {
+            "label": "个人贷款",
+            "description": "用于其他项目。",
+            "cta": "申请贷款"
+          }
+        }
+      },
+      "deuda": {
+        "eyebrow": "债务协助",
+        "title": "还款困难",
+        "description": "我们可以帮助您。请完全保密地告诉我们您的情况。",
+        "cta": "我需要债务协助",
+        "highlight": "我们收购您的债务",
+        "privacyNote": "机密信息。仅用于分析您的情况。"
+      },
+      "inversores": {
+        "eyebrow": "投资",
+        "title": "投资者与拍卖",
+        "description": "获取独家机会。",
+        "cta": "我是投资者"
+      },
+      "nautica": {
+        "eyebrow": "游艇",
+        "title": "船舶买卖与租赁",
+        "description": "告诉我们您在找什么或想卖什么。我们来电联系您。",
+        "cta": "我想了解游艇信息",
+        "extraLink": "查看船舶目录"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "关于我们",
+    "title": "贴近客户、判断精准、执行无懈可击",
+    "subtitle": "InmoLex 旨在提升买卖与投资体验：诚实顾问、清晰流程，以及配得上房产本身的视觉与商业标准。",
+    "history": {
+      "origin": {
+        "title": "缘起",
+        "description": "我们始于一个简单想法：把每笔交易当作自己的来对待。不赶、不藏细字，沟通始终在线。"
+      },
+      "method": {
+        "title": "方法",
+        "description": "我们结合市场分析、产品准备（照片与视频），以及尊重买家与业主时间的看房安排。"
+      },
+      "evolution": {
+        "title": "发展",
+        "description": "如今我们服务私人客户与投资者，拥有精选组合与合作网络，既敏捷又不牺牲品质。"
+      }
+    },
+    "servicesEyebrow": "服务",
+    "servicesTitle": "完整方案，没有噪音",
+    "servicesLead": "我们把顾问、营销与视觉内容统一起来，让每套房都以精准、一致的方式呈现。",
+    "highlights": {
+      "sale": "买卖与租赁，配商业策略与每周跟进",
+      "investment": "房产投资，含回报分析与情景测算",
+      "finance": "按揭与融资，比较多种方案",
+      "media": "影像制作：摄影与无人机视频"
+    },
+    "viewServices": "查看服务",
+    "talkAdvisor": "与顾问交谈",
+    "eventsTitle": "活动策划",
+    "eventsDescription": "我们为开发商、投资者与买家协调私人发布会、开放日与社交活动，从脚本到现场体验全程把控。",
+    "eventsBullets": {
+      "guests": "邀约与宾客管理",
+      "staging": "现场布置、导视与动线",
+      "coverage": "摄影与视频回顾"
+    },
+    "letterTitle": "介绍信",
+    "letterPending": "本区块正等待最终文案，以便与品牌语气整合。",
+    "ctaTitle": "聊聊您的情况？",
+    "ctaLead": "我们会清晰回复，并给出行动方案，无义务。",
+    "ctaButton": "立即联系"
+  },
+  "contact": {
+    "eyebrow": "联系我们",
+    "title": "告诉我们您的需求",
+    "lead": "24 小时内个性化回复。免费咨询，无义务。",
+    "mapTitle": "InmoLex 在马德里的位置",
+    "office": "我们的办公室",
+    "helpEyebrow": "我们随时协助",
+    "helpTitle": "聊聊您的下一处住所",
+    "helpLead": "无论买卖还是租赁，我们的团队都会以透明、个性化的方式陪伴每一步。",
+    "phone": "电话",
+    "email": "电子邮箱",
+    "whatsapp": "WhatsApp",
+    "address": "地址",
+    "hours": "营业时间",
+    "weekdays": "周一至周五：9:30 – 19:00",
+    "saturday": "周六：10:00 – 14:00",
+    "trustAria": "信任指标",
+    "trust": {
+      "response": "平均回复时间",
+      "free": "免费顾问服务",
+      "noObligation": "咨询无义务",
+      "clients": "满意客户"
+    },
+    "trustValues": {
+      "free": "免费",
+      "noObligation": "无义务"
+    },
+    "formTitle": "有疑问？",
+    "formLead": "留下电话，我们来电。无需离开本页。",
+    "detailsLabel": "您需要什么？",
+    "submit": "发送咨询",
+    "orWhatsapp": "或通过 WhatsApp 联系我们",
+    "defaultWhatsapp": "您好，我想了解更多关于 InmoLex 的信息。"
+  },
+  "forms": {
+    "unavailable": "表单即将上线。期间请<link>在此联系我们</link>。",
+    "success": "申请已发送！",
+    "successLead": "我们很快会致电。感谢您信任 InmoLex。",
+    "optional": "（选填）",
+    "zone": "哪个区域？",
+    "zonePlaceholder": "Salamanca、Chamberí、La Moraleja…",
+    "detailsDefault": "告诉我们您的需求",
+    "property": "您对哪套房感兴趣？",
+    "name": "姓名",
+    "phone": "电话",
+    "email": "邮箱",
+    "privacy": "我接受隐私政策",
+    "privacyFinance": "我接受隐私政策及对我数据的保密处理",
+    "privacyLink": "查看政策",
+    "submit": "提交申请",
+    "submitting": "发送中…",
+    "errors": {
+      "unavailable": "表单不可用。",
+      "choice": "请选择一项。",
+      "name": "姓名为必填。",
+      "phone": "电话为必填。",
+      "email": "请输入有效邮箱。",
+      "privacy": "您必须接受隐私政策。",
+      "submit": "发送失败。请重试。",
+      "connection": "连接错误。请重试。"
+    }
+  },
+  "cookiesBanner": {
+    "aria": "Cookie 同意",
+    "text": "我们使用 Cookie 以改善您的体验。您可以接受或拒绝非必要 Cookie。",
+    "more": "了解更多",
+    "reject": "拒绝",
+    "accept": "接受"
+  },
+  "legal": {
+    "eyebrow": "法律信息",
+    "updated": "最近更新：{date}",
+    "bindingNote": "本文件具有法律约束力的版本为西班牙语版本。",
+    "notice": {
+      "title": "法律声明",
+      "intro": "依据 2002 年 7 月 11 日第 34/2002 号《信息社会服务与电子商务法》（LSSI-CE），现向用户告知本网站所有者的识别信息。",
+      "identityTitle": "识别信息",
+      "holder": "所有者：{legalName}（{tradeName}）。",
+      "taxId": "税号：{taxId}。",
+      "email": "电子邮箱：{email}",
+      "address": "地址：{address}",
+      "purposeTitle": "目的",
+      "purpose": "本网站旨在提供 {tradeName} 的房产服务信息，并通过表单、电话、电子邮件和 WhatsApp 便于潜在客户联系。",
+      "termsTitle": "使用条款",
+      "terms1": "访问和使用本网站即成为用户，并意味着接受本条款。用户承诺妥善使用所提供的内容与服务。",
+      "terms2": "联系表单链接至由所有者管理的 Google 表单。提交即表示用户接受各表单及隐私政策中所述条件。",
+      "ipTitle": "知识产权",
+      "ip": "网站全部内容（文本、图像、标识、设计）归 {tradeName} 或其许可方所有，并受知识产权法律保护。",
+      "liabilityTitle": "责任",
+      "liability1": "{tradeName} 不对因不当使用本网站或第三方通过外部链接发布的信息所造成的损害承担责任。",
+      "liability2": "房产照片、平面图与描述仅供参考，可能有所变化。最终合同信息将在交易时提供。",
+      "lawTitle": "适用法律",
+      "law": "本条款受西班牙法律管辖。如有争议，双方服从 {jurisdiction} 的法院。"
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "intro": "{tradeName}（{legalName}）以最高审慎处理您的个人数据，并遵守现行数据保护法规（GDPR 与 LOPDGDD）。",
+      "controllerTitle": "数据控制者",
+      "controller": "控制者：{legalName}（{tradeName}）。",
+      "contactEmail": "联系邮箱：{email}",
+      "purposeTitle": "处理目的",
+      "purpose": "您通过表单、电子邮件、电话或 WhatsApp 提供的个人数据将用于：",
+      "purposeList": {
+        "requests": "处理您的信息、买卖、租赁或估价请求。",
+        "services": "提供房产中介与融资服务。",
+        "comms": "发送与您咨询相关的通讯。",
+        "legal": "履行适用的法定义务。"
+      },
+      "formsTitle": "联系表单",
+      "forms1": "点击网站按钮时，您可能进入托管于 Google 表单（Google LLC）的表格。您输入的数据将直接发送给数据控制者以处理您的请求。",
+      "forms2": "建议您不要填写咨询所不需要的敏感信息。您可通过本政策开头所示地址联系我们以行使权利。",
+      "financeTitle": "财务数据处理",
+      "finance1": "在按揭、个人贷款或按揭债务相关表单中，我们可能收集财务数据（收入、债务、就业状况）。",
+      "finance2": "这些数据仅用于审核您的申请并提供合适方案。未经您明确同意，不会向第三方披露，法律义务除外。",
+      "sensitiveTitle": "敏感数据处理（按揭债务）",
+      "sensitive": "与司法程序、扣押或拍卖相关的信息被视为敏感。我们将严格保密，并仅用于分析您的情况并提出替代方案。",
+      "legalBasisTitle": "合法依据",
+      "legalBasis": "处理的合法依据为当事人同意、应当事人请求采取合同前措施，以及回复咨询的合法利益。",
+      "retentionTitle": "数据保存",
+      "retention": "我们将在处理您的请求所需期间保存数据，其后按法定期限保存。",
+      "recipientsTitle": "接收方",
+      "recipients1": "我们不会向第三方披露您的数据，除非法律要求，或为提供所请求服务所必需（例如按揭申请时的金融机构，须事先获得您的授权）。",
+      "recipients2": "Google 表单可能涉及 Google 作为技术提供商处理数据，适用其自身隐私政策。",
+      "rightsTitle": "权利",
+      "rights1": "您可通过发送邮件至 {email} 行使访问、更正、删除、反对、限制与可携权。",
+      "rights2": "您亦有权向西班牙数据保护局（www.aepd.es）提出投诉。"
+    },
+    "cookies": {
+      "title": "Cookie 政策",
+      "intro": "本网站使用浏览器本地存储以记住基本偏好。以下说明其用途。",
+      "whatTitle": "什么是 Cookie？",
+      "what": "Cookie 是访问网站时存储在您设备上的小型文本文件。它们用于记住偏好并改善网站功能。",
+      "useTitle": "本网站使用什么",
+      "use": "当前版本的网站仅使用：",
+      "useList": {
+        "storage": "本地存储（localStorage），用于记住您是否接受或拒绝 Cookie 提示。",
+        "technical": "网站基本运行所严格必要的技术 Cookie（如托管服务商要求）。"
+      },
+      "analyticsTitle": "分析 Cookie",
+      "analytics": "目前我们不安装分析 Cookie 或受众测量工具。若将来引入，将另行告知并在需要时征求您的同意。",
+      "manageTitle": "管理 Cookie",
+      "manage1": "访问网站时将显示横幅，您可接受或拒绝非必要 Cookie。",
+      "manage2": "您也可在浏览器中设置拦截或删除 Cookie 及本地存储数据。详见浏览器帮助。",
+      "moreTitle": "更多信息",
+      "more1": "如对 Cookie 使用有任何疑问，请联系 {email}。",
+      "more2": "另请参阅我们的隐私政策，了解数据处理详情。"
+    }
+  },
+  "notFound": {
+    "code": "错误 404",
+    "title": "页面未找到",
+    "lead": "您查找的页面不存在或已移动。请浏览我们的房产或联系团队。",
+    "home": "返回首页",
+    "properties": "查看房产",
+    "help": "需要帮助？",
+    "contact": "联系我们"
+  }
+}

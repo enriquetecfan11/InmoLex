@@ -1,3 +1,5 @@
+import type { ServiceMenuIcon } from "@/lib/service-menu";
+
 export type ServiceCategory =
   | "intermediacion"
   | "inversion"
@@ -12,6 +14,16 @@ export interface Service {
   cta: string;
   featured?: boolean;
 }
+
+export const SERVICE_ICONS: Partial<Record<string, ServiceMenuIcon>> = {
+  "comprar-vender": "buy-sell",
+  alquiler: "keys",
+  valoracion: "chart",
+  financiacion: "finance",
+  deuda: "debt",
+  inversores: "portfolio",
+  nautica: "nautica",
+};
 
 export const SERVICE_CATEGORY_LABELS: Record<ServiceCategory, string> = {
   intermediacion: "Intermediación inmobiliaria",

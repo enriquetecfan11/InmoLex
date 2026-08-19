@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import {
   getVesselMapEmbedUrl,
@@ -19,14 +20,14 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function VesselLocationMap({ vessel }: VesselLocationMapProps) {
+  const t = useTranslations("vessels.map");
   const mapHref = getVesselMapHref(vessel);
 
   return (
     <RevealOnScroll>
-      <SectionHeading>Ubicación</SectionHeading>
+      <SectionHeading>{t("title")}</SectionHeading>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-        Puerto o zona aproximada de la embarcación. El amarre exacto se facilita
-        tras concertar una visita.
+        {t("lead")}
       </p>
 
       <div className="property-location-map contact-map relative mt-8 overflow-hidden rounded-2xl border border-accent/15">
@@ -43,7 +44,7 @@ export function VesselLocationMap({ vessel }: VesselLocationMapProps) {
         <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="rounded-lg border border-accent/20 bg-brand/90 px-4 py-3 backdrop-blur-sm">
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-accent">
-              Puerto / zona
+              {t("port")}
             </p>
             <p className="mt-0.5 text-sm text-white/80">{vessel.location}</p>
           </div>
@@ -62,7 +63,7 @@ export function VesselLocationMap({ vessel }: VesselLocationMapProps) {
               />
               <circle cx="8" cy="5.5" r="1.25" stroke="currentColor" strokeWidth="1.2" />
             </svg>
-            Abrir en Google Maps
+            {t("openMaps")}
           </a>
         </div>
       </div>

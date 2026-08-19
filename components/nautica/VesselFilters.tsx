@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { OPERATION_LABELS, type Operation } from "@/lib/properties";
 import {
   VESSEL_LOCATIONS,
@@ -87,6 +88,10 @@ export function VesselFilters({
   resultCount,
   locations = VESSEL_LOCATIONS,
 }: VesselFiltersProps) {
+  const t = useTranslations("vessels");
+  const tFilters = useTranslations("vessels.filters");
+  const tLabels = useTranslations("labels");
+
   const update = (partial: Partial<VesselFiltersState>) => {
     onChange({ ...filters, ...partial });
   };
@@ -108,7 +113,7 @@ export function VesselFilters({
             htmlFor="vessel-filter-query"
             className="mb-1.5 block text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/45"
           >
-            Buscar por texto o referencia
+            {tFilters("search")}
           </label>
           <div className="relative">
             <svg
@@ -127,37 +132,37 @@ export function VesselFilters({
               type="search"
               value={filters.query}
               onChange={(e) => update({ query: e.target.value })}
-              placeholder="Ej. yate, Palma, NAU-…"
+              placeholder={tFilters("searchPlaceholder")}
               className="w-full rounded-lg border border-accent/15 bg-brand-dark/50 py-3 pl-11 pr-4 text-sm text-white placeholder:text-white/35 transition-colors hover:border-accent/30 focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/15"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:gap-3">
-          <FilterField label="Operación" id="vessel-filter-operation">
+          <FilterField label={tFilters("operation")} id="vessel-filter-operation">
             <select
               id="vessel-filter-operation"
               value={filters.operation}
               onChange={(e) => update({ operation: e.target.value as Operation | "" })}
               className={selectClassName}
             >
-              <option value="">Todas</option>
+              <option value="">{tFilters("allOperations")}</option>
               {(Object.keys(OPERATION_LABELS) as Operation[]).map((op) => (
                 <option key={op} value={op}>
-                  {OPERATION_LABELS[op]}
+                  {tLabels(`operation.${op}`)}
                 </option>
               ))}
             </select>
           </FilterField>
 
-          <FilterField label="Zona / puerto" id="vessel-filter-location">
+          <FilterField label={tFilters("portZone")} id="vessel-filter-location">
             <select
               id="vessel-filter-location"
               value={filters.location}
               onChange={(e) => update({ location: e.target.value })}
               className={selectClassName}
             >
-              <option value="">Todas las zonas</option>
+              <option value="">{tFilters("allPorts")}</option>
               {locations.map((location) => (
                 <option key={location} value={location}>
                   {location}
@@ -166,66 +171,66 @@ export function VesselFilters({
             </select>
           </FilterField>
 
-          <FilterField label="Precio" id="vessel-filter-price">
+          <FilterField label={tFilters("price")} id="vessel-filter-price">
             <select
               id="vessel-filter-price"
               value={filters.priceRange}
               onChange={(e) => update({ priceRange: e.target.value })}
               className={selectClassName}
             >
-              <option value="">Cualquier precio</option>
-              <option value="0-100000">Hasta 100.000 €</option>
-              <option value="100000-500000">100.000 – 500.000 €</option>
-              <option value="500000-1000000">500.000 – 1.000.000 €</option>
-              <option value="1000000+">Más de 1.000.000 €</option>
-              <option value="rent-0-5000">Alquiler hasta 5.000 €</option>
-              <option value="rent-5000+">Alquiler más de 5.000 €</option>
+              <option value="">{tFilters("anyPrice")}</option>
+              <option value="0-100000">{tFilters("price0")}</option>
+              <option value="100000-500000">{tFilters("price1")}</option>
+              <option value="500000-1000000">{tFilters("price2")}</option>
+              <option value="1000000+">{tFilters("price3")}</option>
+              <option value="rent-0-5000">{tFilters("rent0")}</option>
+              <option value="rent-5000+">{tFilters("rent1")}</option>
             </select>
           </FilterField>
 
-          <FilterField label="Eslora" id="vessel-filter-length">
+          <FilterField label={tFilters("length")} id="vessel-filter-length">
             <select
               id="vessel-filter-length"
               value={filters.lengthRange}
               onChange={(e) => update({ lengthRange: e.target.value })}
               className={selectClassName}
             >
-              <option value="">Cualquiera</option>
-              <option value="0-10">Hasta 10 m</option>
-              <option value="10-15">10 – 15 m</option>
-              <option value="15-20">15 – 20 m</option>
-              <option value="20+">Más de 20 m</option>
+              <option value="">{tFilters("anyLength")}</option>
+              <option value="0-10">{tFilters("length0")}</option>
+              <option value="10-15">{tFilters("length1")}</option>
+              <option value="15-20">{tFilters("length2")}</option>
+              <option value="20+">{tFilters("length3")}</option>
             </select>
           </FilterField>
 
-          <FilterField label="Tipo" id="vessel-filter-type">
+          <FilterField label={tFilters("type")} id="vessel-filter-type">
             <select
               id="vessel-filter-type"
               value={filters.type}
               onChange={(e) => update({ type: e.target.value as VesselType | "" })}
               className={selectClassName}
             >
-              <option value="">Todos</option>
+              <option value="">{tFilters("allTypes")}</option>
               {(Object.keys(VESSEL_TYPE_LABELS) as VesselType[]).map((type) => (
                 <option key={type} value={type}>
-                  {VESSEL_TYPE_LABELS[type]}
+                  {tLabels(`vesselType.${type}`)}
                 </option>
               ))}
             </select>
           </FilterField>
 
-          <FilterField label="Orden" id="vessel-filter-sort">
+          <FilterField label={tFilters("sort")} id="vessel-filter-sort">
             <select
               id="vessel-filter-sort"
               value={filters.sort}
               onChange={(e) => update({ sort: e.target.value as VesselSort })}
               className={selectClassName}
             >
-              <option value="">Relevancia</option>
-              <option value="recientes">Más recientes</option>
-              <option value="precio-asc">Precio: menor a mayor</option>
-              <option value="precio-desc">Precio: mayor a menor</option>
-              <option value="eslora-desc">Eslora: mayor a menor</option>
+              <option value="">{tFilters("relevance")}</option>
+              <option value="recientes">{tFilters("newest")}</option>
+              <option value="precio-asc">{tFilters("priceAsc")}</option>
+              <option value="precio-desc">{tFilters("priceDesc")}</option>
+              <option value="eslora-desc">{tFilters("lengthDesc")}</option>
             </select>
           </FilterField>
         </div>
@@ -233,7 +238,7 @@ export function VesselFilters({
         <div className="mt-4 flex items-center justify-between border-t border-accent/15 pt-4">
           <p className="text-sm text-white/55">
             <span className="font-semibold text-accent">{resultCount}</span>{" "}
-            {resultCount === 1 ? "embarcación" : "embarcaciones"}
+            {resultCount === 1 ? t("resultOne") : t("resultOther")}
           </p>
           {hasActiveFilters && (
             <button
@@ -241,7 +246,7 @@ export function VesselFilters({
               onClick={() => onChange(initialVesselFilters)}
               className="text-sm font-medium text-accent transition-colors hover:text-accent-light"
             >
-              Limpiar filtros
+              {tFilters("clear")}
             </button>
           )}
         </div>

@@ -1,26 +1,35 @@
+import { useTranslations } from "next-intl";
 import { InmoLexLeadForm } from "@/components/forms/InmoLexLeadForm";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { TRUST_SIGNALS } from "@/lib/contact";
 import { CONTACTO_CHOICES } from "@/lib/google-form-prefill";
 
 export function ContactFormCta() {
+  const t = useTranslations("contact");
+
   return (
     <div className="contact-form-cta relative">
-      <h2 className="font-display text-2xl text-white">¿Tienes una duda?</h2>
+      <h2 className="font-display text-2xl text-white">{t("formTitle")}</h2>
       <p className="mt-3 text-sm leading-relaxed text-white/70">
-        Déjanos tu teléfono y te llamamos. Sin salir de esta página.
+        {t("formLead")}
       </p>
 
       <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-        {TRUST_SIGNALS.map((signal) => (
-          <li
-            key={signal.label}
-            className="rounded-lg border border-accent/10 bg-brand-dark/40 px-4 py-3"
-          >
-            <p className="text-sm font-semibold text-accent">{signal.value}</p>
-            <p className="mt-0.5 text-xs text-white/50">{signal.label}</p>
-          </li>
-        ))}
+        {TRUST_SIGNALS.map((signal) => {
+          const value =
+            "valueKey" in signal ? t(`trustValues.${signal.valueKey}`) : signal.value;
+          const label = t(`trust.${signal.labelKey}`);
+
+          return (
+            <li
+              key={signal.labelKey}
+              className="rounded-lg border border-accent/10 bg-brand-dark/40 px-4 py-3"
+            >
+              <p className="text-sm font-semibold text-accent">{value}</p>
+              <p className="mt-0.5 text-xs text-white/50">{label}</p>
+            </li>
+          );
+        })}
       </ul>
 
       <div className="mt-8">
@@ -28,15 +37,18 @@ export function ContactFormCta() {
           formKey="contacto"
           choice={CONTACTO_CHOICES.consulta}
           showDetails
-          detailsLabel="¿Qué necesitas?"
-          submitLabel="Enviar consulta"
+          detailsLabel={t("detailsLabel")}
+          submitLabel={t("submit")}
           className="border-0 bg-transparent p-0 backdrop-blur-none"
         />
       </div>
 
       <p className="mt-6 text-center">
-        <WhatsAppLink className="text-sm font-medium text-accent hover:text-accent-light">
-          O escríbenos por WhatsApp
+        <WhatsAppLink
+          message={t("defaultWhatsapp")}
+          className="text-sm font-medium text-accent hover:text-accent-light"
+        >
+          {t("orWhatsapp")}
         </WhatsAppLink>
       </p>
     </div>

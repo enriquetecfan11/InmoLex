@@ -1,8 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useActionState, useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { submitLeadForm, type SubmitLeadFormState } from "@/app/actions/submit-google-form";
+import type { FormErrorKey } from "@/lib/i18n-message-keys";
 import {
   FormErrorMessage,
   FormInput,
@@ -11,7 +13,6 @@ import {
   FormSuccessMessage,
   FormTextarea,
 } from "@/components/forms/FormField";
-import { GOOGLE_FORM_FIELDS } from "@/lib/google-form-fields";
 import type { GoogleFormKey } from "@/lib/google-forms";
 import { isGoogleFormAvailable } from "@/lib/google-forms";
 
@@ -37,20 +38,24 @@ export function InmoLexLeadForm({
   choiceLabel,
   showZona = false,
   showDetails = false,
-  detailsLabel = "Cuéntanos qué necesitas",
+  detailsLabel,
   detailsPlaceholder,
   showProperty = false,
   propertyDefault = "",
-  submitLabel = "Enviar solicitud",
+  submitLabel,
   className = "",
 }: InmoLexLeadFormProps) {
+  const t = useTranslations("forms");
   const [state, formAction, isPending] = useActionState(
     submitLeadForm,
     initialState
   );
   const formRef = useRef<HTMLFormElement>(null);
-  const privacyLabel = GOOGLE_FORM_FIELDS[formKey].privacyValue;
+  const privacyLabel =
+    formKey === "financiacion" ? t("privacyFinance") : t("privacy");
   const configured = isGoogleFormAvailable(formKey);
+  const resolvedDetailsLabel = detailsLabel ?? t("detailsDefault");
+  const resolvedSubmitLabel = submitLabel ?? t("submit");
 
   useEffect(() => {
     if (state.ok) {
@@ -62,11 +67,13 @@ export function InmoLexLeadForm({
     return (
       <FormShell className={className}>
         <p className="text-center text-sm text-white/60">
-          Formulario próximamente. Mientras tanto,{" "}
-          <Link href="/contacto" className="text-accent underline underline-offset-2">
-            contáctanos aquí
-          </Link>
-          .
+          {t.rich("unavailable", {
+            link: (chunks) => (
+              <Link href="/contacto" className="text-accent underline underline-offset-2">
+                {chunks}
+              </Link>
+            ),
+          })}
         </p>
       </FormShell>
     );
@@ -75,7 +82,7 @@ export function InmoLexLeadForm({
   if (state.ok) {
     return (
       <FormShell className={className}>
-        <FormSuccessMessage>¡Solicitud enviada!</FormSuccessMessage>
+        <FormSuccessMessage>{t("success")}</FormSuccessMessage>
       </FormShell>
     );
   }
@@ -95,13 +102,13 @@ export function InmoLexLeadForm({
         {showZona && (
           <div>
             <FormLabel htmlFor="zona" optional>
-              ¿En qué zona?
+              {t("zone")}
             </FormLabel>
             <FormInput
               id="zona"
               name="zona"
               type="text"
-              placeholder="Salamanca, Chamberí, La Moraleja…"
+              placeholder={t("zonePlaceholder")}
               autoComplete="address-level2"
             />
           </div>
@@ -110,7 +117,7 @@ export function InmoLexLeadForm({
         {showDetails && (
           <div>
             <FormLabel htmlFor="details" optional>
-              {detailsLabel}
+              {resolvedDetailsLabel}
             </FormLabel>
             <FormTextarea
               id="details"
@@ -124,7 +131,7 @@ export function InmoLexLeadForm({
         {showProperty && (
           <div>
             <FormLabel htmlFor="property" optional>
-              ¿Qué propiedad te interesa?
+              {t("property")}
             </FormLabel>
             <FormInput
               id="property"
@@ -137,7 +144,7 @@ export function InmoLexLeadForm({
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <FormLabel htmlFor="nombre">Nombre</FormLabel>
+            <FormLabel htmlFor="nombre">{t("name")}</FormLabel>
             <FormInput
               id="nombre"
               name="nombre"
@@ -147,7 +154,7 @@ export function InmoLexLeadForm({
             />
           </div>
           <div>
-            <FormLabel htmlFor="telefono">Teléfono</FormLabel>
+            <FormLabel htmlFor="telefono">{t("phone")}</FormLabel>
             <FormInput
               id="telefono"
               name="telefono"
@@ -159,7 +166,7 @@ export function InmoLexLeadForm({
         </div>
 
         <div>
-          <FormLabel htmlFor="email">Email</FormLabel>
+          <FormLabel htmlFor="email">{t("email")}</FormLabel>
           <FormInput
             id="email"
             name="email"
@@ -182,19 +189,21 @@ export function InmoLexLeadForm({
               href="/privacidad"
               className="text-accent underline underline-offset-2 hover:text-accent-light"
             >
-              Ver política
+              {t("privacyLink")}
             </Link>
           </span>
         </label>
 
-        {state.error && <FormErrorMessage message={state.error} />}
+        {state.errorKey && (
+          <FormErrorMessage message={t(`errors.${state.errorKey as FormErrorKey}`)} />
+        )}
 
         <button
           type="submit"
           disabled={isPending}
           className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-8 py-4 text-base font-semibold text-brand shadow-md shadow-black/20 transition-all duration-300 hover:bg-accent-light hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/30 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {isPending ? "Enviando…" : submitLabel}
+          {isPending ? t("submitting") : resolvedSubmitLabel}
         </button>
       </form>
     </FormShell>

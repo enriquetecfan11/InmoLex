@@ -1,20 +1,20 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import {
-  ABOUT_EVENTS,
-  ABOUT_HISTORY,
-  ABOUT_PRESENTATION,
-  ABOUT_PRESENTATION_LETTER,
-  ABOUT_SERVICES_HIGHLIGHTS,
-} from "@/lib/about";
+
+const HISTORY_IDS = ["origin", "method", "evolution"] as const;
+const HIGHLIGHT_IDS = ["sale", "investment", "finance", "media"] as const;
+const EVENT_BULLET_IDS = ["guests", "staging", "coverage"] as const;
 
 function Dot() {
   return <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />;
 }
 
 export function AboutSection() {
+  const t = useTranslations("about");
+
   return (
     <section className="relative overflow-hidden bg-brand text-white">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-brand-dark" />
@@ -32,26 +32,26 @@ export function AboutSection() {
         <RevealOnScroll>
           <header className="mx-auto max-w-3xl pt-14 text-center sm:pt-16 lg:pt-20">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-              {ABOUT_PRESENTATION.eyebrow}
+              {t("eyebrow")}
             </p>
             <h1 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl lg:text-[3.25rem]">
-              {ABOUT_PRESENTATION.title}
+              {t("title")}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-              {ABOUT_PRESENTATION.subtitle}
+              {t("subtitle")}
             </p>
           </header>
         </RevealOnScroll>
 
         <div className="grid gap-8 py-14 sm:py-16 lg:grid-cols-3 lg:gap-8 lg:py-24">
-          {ABOUT_HISTORY.map((item, index) => (
-            <RevealOnScroll key={item.title} delay={Math.min(index * 90, 240)}>
+          {HISTORY_IDS.map((id, index) => (
+            <RevealOnScroll key={id} delay={Math.min(index * 90, 240)}>
               <article className="h-full rounded-2xl border border-accent/15 bg-accent/[0.04] p-7 backdrop-blur-sm transition-colors duration-300 hover:border-accent/30 hover:bg-accent/[0.07]">
                 <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-                  {item.title}
+                  {t(`history.${id}.title`)}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
-                  {item.description}
+                  {t(`history.${id}.description`)}
                 </p>
               </article>
             </RevealOnScroll>
@@ -62,21 +62,20 @@ export function AboutSection() {
           <RevealOnScroll>
             <div>
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-                Servicios
+                {t("servicesEyebrow")}
               </p>
               <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">
-                Una propuesta integral, sin ruido
+                {t("servicesTitle")}
               </h2>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-                Unificamos asesoramiento, comercialización y contenido visual
-                para que cada inmueble se presente con precisión y coherencia.
+                {t("servicesLead")}
               </p>
 
               <ul className="mt-7 space-y-3">
-                {ABOUT_SERVICES_HIGHLIGHTS.map((line) => (
-                  <li key={line} className="flex items-start gap-3 text-sm text-white/75">
+                {HIGHLIGHT_IDS.map((id) => (
+                  <li key={id} className="flex items-start gap-3 text-sm text-white/75">
                     <Dot />
-                    <span>{line}</span>
+                    <span>{t(`highlights.${id}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -87,13 +86,13 @@ export function AboutSection() {
                   size="lg"
                   className="w-full hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/40 sm:w-auto"
                 >
-                  Ver servicios
+                  {t("viewServices")}
                 </Button>
                 <Link
                   href="/contacto"
                   className="text-sm font-semibold text-accent transition-colors hover:text-accent-light"
                 >
-                  Hablar con un asesor
+                  {t("talkAdvisor")}
                 </Link>
               </div>
             </div>
@@ -102,16 +101,16 @@ export function AboutSection() {
           <RevealOnScroll delay={120}>
             <div className="rounded-2xl border border-accent/15 bg-accent/[0.04] p-7 backdrop-blur-sm sm:p-8">
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-                {ABOUT_EVENTS.title}
+                {t("eventsTitle")}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                {ABOUT_EVENTS.description}
+                {t("eventsDescription")}
               </p>
               <ul className="mt-6 space-y-3">
-                {ABOUT_EVENTS.bullets.map((line) => (
-                  <li key={line} className="flex items-start gap-3 text-sm text-white/75">
+                {EVENT_BULLET_IDS.map((id) => (
+                  <li key={id} className="flex items-start gap-3 text-sm text-white/75">
                     <Dot />
-                    <span>{line}</span>
+                    <span>{t(`eventsBullets.${id}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -122,10 +121,10 @@ export function AboutSection() {
         <RevealOnScroll>
           <div className="mt-14 rounded-2xl border border-accent/15 bg-brand-dark/35 p-7 backdrop-blur-sm sm:mt-16 sm:p-9">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-              {ABOUT_PRESENTATION_LETTER.title}
+              {t("letterTitle")}
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/65">
-              {ABOUT_PRESENTATION_LETTER.pendingNote}
+              {t("letterPending")}
             </p>
           </div>
         </RevealOnScroll>
@@ -133,10 +132,10 @@ export function AboutSection() {
         <RevealOnScroll>
           <div className="border-t border-accent/15 pb-16 pt-10 text-center sm:pb-20 sm:pt-12 lg:pb-24">
             <p className="font-display text-2xl tracking-tight text-white sm:text-3xl">
-              ¿Hablamos de tu caso?
+              {t("ctaTitle")}
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/65 sm:text-base">
-              Te respondemos con claridad y un plan de acción sin compromiso.
+              {t("ctaLead")}
             </p>
             <Button
               href="/contacto"
@@ -144,7 +143,7 @@ export function AboutSection() {
               size="lg"
               className="mt-8 hover:-translate-y-0.5"
             >
-              Contactar ahora
+              {t("ctaButton")}
             </Button>
           </div>
         </RevealOnScroll>
@@ -152,4 +151,3 @@ export function AboutSection() {
     </section>
   );
 }
-

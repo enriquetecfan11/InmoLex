@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { ContactInfo } from "@/components/contact/ContactInfo";
@@ -5,11 +6,13 @@ import { ContactFormCta } from "@/components/contact/ContactFormCta";
 import { CONTACT_INFO } from "@/lib/contact";
 
 function ContactMap() {
+  const t = useTranslations("contact");
+
   return (
     <RevealOnScroll>
       <div className="contact-map relative overflow-hidden rounded-2xl border border-accent/15">
         <iframe
-          title="Ubicación de InmoLex en Madrid"
+          title={t("mapTitle")}
           src={CONTACT_INFO.mapEmbed}
           className="block h-[280px] w-full border-0 sm:h-[320px] lg:h-[360px]"
           loading="lazy"
@@ -19,7 +22,7 @@ function ContactMap() {
         <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-accent/15" />
         <div className="absolute bottom-4 left-4 rounded-lg border border-accent/20 bg-brand/90 px-4 py-2.5 backdrop-blur-sm">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-            Nuestra oficina
+            {t("office")}
           </p>
           <p className="mt-0.5 text-sm text-white/80">{CONTACT_INFO.address}</p>
         </div>
@@ -29,6 +32,8 @@ function ContactMap() {
 }
 
 export function ContactSection() {
+  const t = useTranslations("contact");
+
   return (
     <section className="relative overflow-hidden bg-brand text-white">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-brand-dark" />
@@ -46,13 +51,13 @@ export function ContactSection() {
         <RevealOnScroll>
           <header className="mx-auto max-w-2xl pt-14 text-center sm:pt-16 lg:pt-20">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-              Contacto
+              {t("eyebrow")}
             </p>
             <h1 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl lg:text-[3.25rem]">
-              Cuéntanos qué necesitas
+              {t("title")}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-              Respuesta personalizada en menos de 24 horas. Asesoramiento gratuito y sin compromiso.
+              {t("lead")}
             </p>
           </header>
         </RevealOnScroll>

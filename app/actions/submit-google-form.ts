@@ -9,7 +9,7 @@ import { isGoogleFormAvailable } from "@/lib/google-forms";
 
 export interface SubmitLeadFormState {
   ok: boolean;
-  error?: string;
+  errorKey?: string;
 }
 
 export async function submitLeadForm(
@@ -19,7 +19,7 @@ export async function submitLeadForm(
   const formKey = formData.get("formKey") as GoogleFormKey;
 
   if (!formKey || !isGoogleFormAvailable(formKey)) {
-    return { ok: false, error: "Formulario no disponible." };
+    return { ok: false, errorKey: "unavailable" };
   }
 
   const payload: LeadFormPayload = {

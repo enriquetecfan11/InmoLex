@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "next-intl";
+import { toIntlLocale } from "@/i18n/intl-locale";
 
 interface Stat {
   value: string;
@@ -30,6 +32,7 @@ function AnimatedValue({
   value: string;
   active: boolean;
 }) {
+  const locale = useLocale();
   const { prefix, target, suffix } = parseStatValue(value);
   const [display, setDisplay] = useState(0);
   const prefersReducedMotion = useRef(false);
@@ -69,7 +72,7 @@ function AnimatedValue({
   const formatted =
     suffix.includes("%") || suffix.includes(".")
       ? display.toString()
-      : display.toLocaleString("es-ES");
+      : display.toLocaleString(toIntlLocale(locale));
 
   return (
     <span>

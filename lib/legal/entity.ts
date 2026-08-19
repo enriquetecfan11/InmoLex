@@ -13,6 +13,9 @@ export const LEGAL_ENTITY = {
 
 export const LEGAL_UPDATED_AT = "11 de julio de 2026";
 
+/** ISO date for Intl formatting in legal pages */
+export const LEGAL_UPDATED_ISO = "2026-07-11";
+
 export function getLegalEntityLines(): string[] {
   const lines = [
     `Titular: ${LEGAL_ENTITY.legalName} (${LEGAL_ENTITY.tradeName}).`,

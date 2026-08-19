@@ -1,0 +1,863 @@
+{
+  "languages": {
+    "es": "Español",
+    "en": "English",
+    "sv": "Svenska",
+    "uk": "Українська",
+    "it": "Italiano",
+    "zh": "中文",
+    "nl": "Nederlands",
+    "nb": "Norsk",
+    "ca": "Català"
+  },
+  "metadata": {
+    "siteTitle": "InmoLex | Köpa, sälja och hyra",
+    "siteTitleTemplate": "%s | InmoLex",
+    "siteDescription": "Fastighetsmäklare i Madrid. Köp, sälj eller hyr fastigheter med transparens och personlig rådgivning.",
+    "home": {
+      "title": "Hem",
+      "description": "Fastighetsmäklare i Madrid. Köp, sälj eller hyr fastigheter med transparens och personlig rådgivning."
+    },
+    "properties": {
+      "title": "Fastigheter",
+      "description": "Upptäck vårt exklusiva urval av exklusiva bostäder i Madrid. Köp och uthyrning med personlig rådgivning.",
+      "notFound": "Fastigheten hittades inte"
+    },
+    "vessels": {
+      "title": "Marint",
+      "description": "Katalog över båtar: yachter, segelbåtar, speedbåtar och motorbåtar till salu och uthyrning, med personlig rådgivning.",
+      "notFound": "Båten hittades inte"
+    },
+    "services": {
+      "title": "Tjänster",
+      "description": "Kompletta fastighetstjänster i Madrid: försäljning, uthyrning, investering, bolån, fotografering och mer.",
+      "notFound": "Tjänsten hittades inte"
+    },
+    "about": {
+      "title": "Om oss",
+      "description": "Lär känna InmoLex: presentation, historia, tjänster och evenemang. Närhet, omdöme och en felfri genomförande."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontakta InmoLex i Madrid. Kostnadsfri rådgivning utan förpliktelse och svar inom 24 timmar."
+    },
+    "legalNotice": {
+      "title": "Juridisk information",
+      "description": "Juridisk information och uppgifter om innehavaren av InmoLex webbplats."
+    },
+    "privacy": {
+      "title": "Integritetspolicy",
+      "description": "Integritetspolicy och behandling av personuppgifter hos InmoLex."
+    },
+    "cookies": {
+      "title": "Cookiepolicy",
+      "description": "Information om användningen av cookies på InmoLex webbplats."
+    }
+  },
+  "nav": {
+    "ariaLabel": "Huvudnavigering",
+    "home": "Hem",
+    "properties": "Fastigheter",
+    "nautica": "Marint",
+    "services": "Tjänster",
+    "about": "Om oss",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "freeValuation": "Kostnadsfri värdering",
+    "openMenu": "Öppna meny",
+    "closeMenu": "Stäng meny",
+    "language": "Språk"
+  },
+  "footer": {
+    "tagline": "Premiummäklare i Madrid. Köp, försäljning och uthyrning med personlig rådgivning och maximal transparens.",
+    "navigation": "Navigering",
+    "contact": "Kontakt",
+    "rights": "© {year} InmoLex. Alla rättigheter förbehållna.",
+    "legalNotice": "Juridisk information",
+    "privacy": "Integritet",
+    "cookies": "Cookies",
+    "privateArea": "Privat område"
+  },
+  "home": {
+    "heroTitle": "Vad behöver du?",
+    "heroSubtitle": "Tryck på en knapp. Vi ringer upp dig.",
+    "portfolioCta": "Våra objekt i portföljen",
+    "whyEyebrow": "Om oss",
+    "whyTitle": "Därför InmoLex",
+    "whyLead": "En boutiquetjänst: beslut med omdöme, omsorgsfullt genomförande och en kommunikation som ger dig kontroll.",
+    "whyCta": "Lär känna oss",
+    "whyTalk": "Prata med en rådgivare",
+    "pillars": {
+      "market": {
+        "title": "Marknadsomdöme",
+        "description": "Realistisk värdering och en kommersiell strategi som maximerar resultatet utan att slösa tid."
+      },
+      "execution": {
+        "title": "Felfritt genomförande",
+        "description": "Foto, video och material redo att publiceras, med en sammanhållen presentation."
+      },
+      "followUp": {
+        "title": "Tydlig uppföljning",
+        "description": "Löpande kommunikation, visningsdata och justeringar av strategin – alltid med transparens."
+      },
+      "network": {
+        "title": "Ett nätverk att lita på",
+        "description": "Samarbetspartner inom finans, renovering och juridik, så att friktion löses innan den uppstår."
+      }
+    },
+    "contactTitle": "Har du en fråga?",
+    "contactLead": "Fyll i formuläret eller skriv till oss på WhatsApp. Vi ringer upp dig.",
+    "contactDetailsLabel": "Vad behöver du?",
+    "contactSubmit": "Skicka förfrågan",
+    "preferWhatsapp": "Jag föredrar WhatsApp",
+    "featured": {
+      "eyebrow": "Redaktionellt urval",
+      "title": "Färre objekt. Bättre valda.",
+      "lead": "Vi samlar de bostäder som verkligen förtjänar ett samtal: läge, ljus, skick och en tydlig historia för den som kliver in.",
+      "highlightedNow": "Utvalda just nu",
+      "portfolio": "Objekt i portföljen",
+      "activeOps": "Pågående affärer",
+      "lookingDifferent": "Söker du något annat?",
+      "lookingDifferentLead": "Vi filtrerar efter område, budget och typ av affär så att du snabbare når rätt bostad.",
+      "viewCatalog": "Se hela katalogen",
+      "highlightedNowShort": "Utvalda just nu",
+      "quickView": "En snabb överblick av urvalet",
+      "criterion": "Varje objekt tas in på meriter, inte volym.",
+      "bedrooms": "Sovrum",
+      "bathrooms": "Badrum",
+      "area": "Yta",
+      "viewProperty": "Visa objekt"
+    },
+    "featuredVessels": {
+      "eyebrow": "Marint urval",
+      "title": "Färre båtar. Bättre valda.",
+      "lead": "Yachter, segelbåtar och motorbåtar med omdöme: längd, skick, liggplats och en presentation värdig den som vill segla – inte bara titta.",
+      "highlightedNow": "Utvalda just nu",
+      "portfolio": "I portföljen",
+      "activeOps": "Pågående affärer",
+      "lookingDifferent": "Söker du något annat?",
+      "lookingDifferentLead": "Vi filtrerar efter typ, längd, budget och hamn så att du snabbare når rätt båt.",
+      "viewCatalog": "Se den marina katalogen",
+      "quickView": "En snabb överblick av flottan",
+      "criterion": "Varje båt tas in på meriter, inte volym.",
+      "length": "Längd",
+      "cabins": "Hytter",
+      "year": "År",
+      "viewVessel": "Visa båt"
+    },
+    "servicesEyebrow": "Tjänster",
+    "servicesTitle": "Allt du behöver på ett ställe",
+    "servicesLead": "Helhetsrådgivning kring köp, försäljning, uthyrning, finansiering och investering. Välj en startpunkt – vi tar hand om resten.",
+    "catalogTitle": "Upptäck alla våra tjänster",
+    "catalogLead": "Se den kompletta tjänstekatalogen.",
+    "catalogCta": "Visa alla tjänster"
+  },
+  "elite": {
+    "kicker": "Elite Real Estate · Global",
+    "title": "Högklassigt, utan överdrivna arvoden.",
+    "lead": "GrupoRol erbjuder en exklusiv fastighetstjänst i toppklass för den som söker högsta excellens och samtidigt finansiell effektivitet. Vi bryter med den traditionella lyxmodellen: premiumuppmärksamhet och verktyg, med mer konkurrenskraftiga arvoden än branschen vanligtvis tar.",
+    "differentialTitle": "Excellens utan merkostnader",
+    "differentialBody": "GrupoRol kombinerar personlig service, avancerad teknik, internationell räckvidd och premiumtjänster – utan att föra över lyxsegmentets vanliga kostnadsstrukturer på kunden.",
+    "differentialHighlight": "Högklassigt, med mer konkurrenskraftiga arvoden.",
+    "closeTitle": "Lyx behöver inte kosta mer.",
+    "closeSubtitle": "Upplev den verkliga Elite-tjänsten.",
+    "cta": "Begär en konsultation",
+    "blocks": {
+      "coverage": {
+        "title": "Global täckning",
+        "body": "Vi har inga gränser. Vi reser var som helst i världen för att förvalta fastigheter, göra inspektioner eller avsluta förhandlingar personligen.",
+        "accent": "Er plats är vår plats."
+      },
+      "tailored": {
+        "title": "Skräddarsydd tjänst",
+        "body": "Varje kund och varje affär är unik. Vi anpassar hela ärendet och utformar en strategi efter era finansiella, skattemässiga och logistiska behov: en äkta skräddarsydd fastighetstjänst."
+      },
+      "tech": {
+        "title": "Visuell teknik i framkant",
+        "body": "Vi maximerar värdet och räckvidden för varje fastighet med digitala premiumverktyg, utformade för nationella och internationella köpare.",
+        "items": {
+          "photo": "Professionell fotografering",
+          "tours": "Virtuella 360°-visningar",
+          "visits": "Immersiva visningar i hög upplösning",
+          "plans2d": "2D-planer",
+          "plans3d": "3D-modellering och planer",
+          "presentation": "Nationell och internationell presentation"
+        }
+      },
+      "finance": {
+        "title": "Finansiella lösningar och köp av skuld",
+        "body": "Vi stöttar finansiellt komplexa fastighetsaffärer: köp av skuld, hantering och avveckling av belastningar, omstrukturering och frigörande av tillgångar.",
+        "accent": "Vi löser affärer som andra anser vara för komplexa."
+      },
+      "network": {
+        "title": "Internationellt nätverk och helhetsförvaltning",
+        "body": "Vi samarbetar med internationella mäklare och partners för att multiplicera synligheten för varje fastighet, med diskretion och personlig uppmärksamhet.",
+        "items": {
+          "sale": "Försäljning",
+          "rent": "Uthyrning",
+          "negotiation": "Förhandling",
+          "exposure": "Internationell exponering",
+          "coordination": "Samordning av affären"
+        }
+      }
+    }
+  },
+  "common": {
+    "sale": "Försäljning",
+    "rent": "Uthyrning",
+    "ref": "Ref. {id}",
+    "perMonth": "/mån",
+    "yes": "Ja",
+    "no": "Nej",
+    "yesCount": "Ja ({count})",
+    "whatsapp": "WhatsApp",
+    "email": "E-post",
+    "previous": "Föregående",
+    "next": "Nästa",
+    "backHome": "← Tillbaka till startsidan"
+  },
+  "labels": {
+    "operation": {
+      "venta": "Försäljning",
+      "alquiler": "Uthyrning"
+    },
+    "badge": {
+      "nuevo": "Ny",
+      "reservado": "Reserverad",
+      "vendido": "Såld",
+      "destacado": "Utvald",
+      "exclusivo": "Exklusiv"
+    },
+    "status": {
+      "disponible": "Tillgänglig",
+      "reservado": "Reserverad",
+      "vendido": "Såld",
+      "alquilado": "Uthyrd"
+    },
+    "propertyType": {
+      "piso": "Lägenhet",
+      "atico": "Penthouse",
+      "chalet": "Villa",
+      "duplex": "Duplex",
+      "casa_pueblo": "Radhus",
+      "habitacion": "Rum"
+    },
+    "vesselType": {
+      "yate": "Yacht",
+      "velero": "Segelbåt",
+      "lancha": "Motorbåt",
+      "catamaran": "Katamaran",
+      "motora": "Motorbåt"
+    },
+    "orientation": {
+      "norte": "Norr",
+      "sur": "Söder",
+      "este": "Öster",
+      "oeste": "Väster",
+      "noreste": "Nordost",
+      "noroeste": "Nordväst",
+      "sureste": "Sydost",
+      "suroeste": "Sydväst"
+    },
+    "energy": {
+      "A": "Mycket effektiv",
+      "B": "Effektiv",
+      "C": "Medelförbrukning",
+      "D": "Hög förbrukning",
+      "E": "Mycket hög förbrukning",
+      "F": "Överdriven förbrukning",
+      "G": "Överdriven förbrukning"
+    }
+  },
+  "properties": {
+    "eyebrow": "Våra objekt i portföljen",
+    "title": "Tillgängliga fastigheter",
+    "lead": "Ett omsorgsfullt urval av exklusiva bostäder i Madrids bästa områden. Varje objekt granskat med professionellt omdöme.",
+    "emptyTitle": "Inga resultat",
+    "emptyLead": "Inga fastigheter matchar de valda filtren. Prova att justera sökningen.",
+    "resetFilters": "Återställ filter",
+    "viewProperty": "Visa objekt",
+    "requestInfo": "Begär information",
+    "bedroomsShort": "{count} rum",
+    "bathroom": "{count} badrum",
+    "bathrooms": "{count} badrum",
+    "resultOne": "fastighet",
+    "resultOther": "fastigheter",
+    "paginationAria": "Paginering av fastigheter",
+    "showing": "Visar {start}–{end} av {total} {itemLabel}",
+    "description": "Beskrivning",
+    "gallery": "Galleri",
+    "similar": "Liknande fastigheter",
+    "similarLead": "Exklusivt urval i samma område",
+    "backToList": "Tillbaka till fastigheter",
+    "luxury": "Lyx",
+    "salePrice": "Försäljningspris",
+    "rentPrice": "Månadshyra",
+    "features": "Egenskaper",
+    "featureGroups": {
+      "interior": "Interiör",
+      "exterior": "Exteriör",
+      "edificio": "Byggnad",
+      "extras": "Extra",
+      "accesibilidad": "Tillgänglighet"
+    },
+    "generatedFeatures": {
+      "terrace": "Terrass",
+      "balcony": "Balkong",
+      "garage": "Garageplats",
+      "storage": "Förråd",
+      "elevator": "Hiss",
+      "elevatorCount": "Hiss ({count})",
+      "pmrYes": "Anpassad tillgänglighet (PMR)",
+      "pmrNo": "Ingen registrerad PMR-anpassning",
+      "orientation": "Väderstreck {value}"
+    },
+    "stats": {
+      "area": "Yta",
+      "bedrooms": "Sovrum",
+      "bathrooms": "Badrum",
+      "terrace": "Terrass",
+      "parking": "Parkering",
+      "storage": "Förråd",
+      "elevator": "Hiss",
+      "orientation": "Väderstreck"
+    },
+    "energy": {
+      "title": "Energideklaration",
+      "lead": "Fastighetens energieffektivitet enligt gällande officiellt certifikat.",
+      "rating": "Energiklass",
+      "consumption": "Energiförbrukning",
+      "emissions": "CO₂-utsläpp"
+    },
+    "map": {
+      "title": "Läge",
+      "lead": "Ungefärligt läge för fastigheten i {district}. Exakt adress lämnas vid visningen.",
+      "openMaps": "Öppna i Google Maps"
+    },
+    "plans": {
+      "comingSoon": "Planritning kommer snart",
+      "enlarge": "Förstora",
+      "title": "Planritningar",
+      "plan2d": "2D-planritning",
+      "plan3d": "3D-planritning"
+    },
+    "videos": {
+      "title": "Video",
+      "lead": "Upptäck detaljerna och atmosfären i den här fastigheten på video."
+    },
+    "galleryCta": "Visa galleri",
+    "contact": {
+      "price": "Pris",
+      "bookVisit": "Boka visning",
+      "moreInfo": "Mer info",
+      "whatsappLead": "Personlig rådgivning utan förpliktelse. Svar inom 24 timmar.",
+      "contact": "Kontakta",
+      "formLead": "Begär visning eller mer information utan att lämna sidan.",
+      "bookVisitSubmit": "Boka visning",
+      "requestInfoSubmit": "Begär information",
+      "actionsAria": "Kontaktåtgärder",
+      "whatsappAria": "Kontakta via WhatsApp",
+      "whatsappMessage": "Hej, jag är intresserad av fastigheten \"{title}\" ({location}). Jag skulle vilja få mer information."
+    },
+    "share": {
+      "share": "Dela",
+      "close": "Stäng delningsmeny",
+      "copy": "Kopiera länk",
+      "copied": "Länk kopierad",
+      "emailSubject": "{title} · InmoLex"
+    },
+    "filters": {
+      "search": "Sök på text eller referens",
+      "searchPlaceholder": "T.ex. Salamanca, penthouse, INM-0001…",
+      "operation": "Affär",
+      "allOperations": "Alla",
+      "location": "Läge",
+      "allZones": "Alla områden",
+      "price": "Pris",
+      "anyPrice": "Valfritt pris",
+      "price0": "Upp till 500.000 €",
+      "price1": "500.000 – 1.000.000 €",
+      "price2": "1.000.000 – 2.000.000 €",
+      "price3": "Över 2.000.000 €",
+      "rent0": "Hyra upp till 2.500 €",
+      "rent1": "Hyra över 2.500 €",
+      "bedrooms": "Sovrum",
+      "any": "Alla",
+      "type": "Typ",
+      "allTypes": "Alla",
+      "sort": "Sortering",
+      "relevance": "Relevans",
+      "newest": "Nyast",
+      "priceAsc": "Pris: lägst till högst",
+      "priceDesc": "Pris: högst till lägst",
+      "areaDesc": "Yta: störst till minst",
+      "terrace": "Terrass",
+      "garage": "Garage",
+      "elevator": "Hiss",
+      "pmr": "PMR-tillgänglighet",
+      "clear": "Rensa filter"
+    }
+  },
+  "vessels": {
+    "eyebrow": "Marin katalog",
+    "title": "Tillgängliga båtar",
+    "lead": "Yachter, segelbåtar och motorbåtar utvalda med samma omdöme som våra fastigheter.",
+    "emptyTitle": "Inga resultat",
+    "emptyLead": "Inga båtar matchar de valda filtren. Prova att justera sökningen.",
+    "resetFilters": "Återställ filter",
+    "viewVessel": "Visa båt",
+    "requestInfo": "Begär information",
+    "resultOne": "båt",
+    "resultOther": "båtar",
+    "paginationAria": "Paginering av båtar",
+    "description": "Beskrivning",
+    "gallery": "Galleri",
+    "similar": "Liknande båtar",
+    "similarLead": "Urval i samma område eller affärstyp",
+    "backToList": "Tillbaka till marint",
+    "features": "Egenskaper",
+    "techSheet": "Teknisk data",
+    "equipment": "Utrustning",
+    "lengthValue": "Längd {value}",
+    "yearValue": "År {year}",
+    "shipyard": "Varv {name}",
+    "engineValue": "Motor {name}",
+    "cabin": "{count} hytt",
+    "cabins": "{count} hytter",
+    "bathroom": "{count} badrum",
+    "bathrooms": "{count} badrum",
+    "capacity": "{count} platser",
+    "stats": {
+      "length": "Längd",
+      "year": "År",
+      "cabins": "Hytter",
+      "bathrooms": "Badrum",
+      "capacity": "Platser",
+      "engine": "Motor"
+    },
+    "map": {
+      "title": "Läge",
+      "lead": "Ungefärlig hamn eller zon för båten. Exakt liggplats lämnas vid visningen.",
+      "port": "Hamn / zon",
+      "openMaps": "Öppna i Google Maps"
+    },
+    "videos": {
+      "title": "Video",
+      "lead": "Upptäck detaljerna och atmosfären i den här båten på video."
+    },
+    "contact": {
+      "price": "Pris",
+      "bookVisit": "Boka visning",
+      "moreInfo": "Mer info",
+      "whatsappLead": "Personlig marin rådgivning utan förpliktelse. Svar inom 24 timmar.",
+      "contact": "Kontakta",
+      "formLead": "Begär visning eller mer information utan att lämna sidan.",
+      "bookVisitSubmit": "Solicitar visita",
+      "requestInfoSubmit": "Solicitar información",
+      "actionsAria": "Acciones de contacto",
+      "whatsappAria": "Contactar por WhatsApp",
+      "whatsappMessage": "Hola, me interesa la embarcación \"{title}\" ({location}). Me gustaría recibir más información."
+    },
+    "share": {
+      "emailSubject": "{title} · InmoLex Marint"
+    },
+    "filters": {
+      "search": "Sök på text eller referens",
+      "searchPlaceholder": "T.ex. Palma, yacht, NAU-0001…",
+      "operation": "Affär",
+      "allOperations": "Alla",
+      "type": "Typ",
+      "allTypes": "Alla",
+      "location": "Läge",
+      "allPorts": "Alla hamnar",
+      "price": "Pris",
+      "anyPrice": "Valfritt pris",
+      "length": "Längd",
+      "anyLength": "Alla",
+      "sort": "Sortering",
+      "relevance": "Relevans",
+      "newest": "Nyast",
+      "priceAsc": "Pris: lägst till högst",
+      "priceDesc": "Pris: högst till lägst",
+      "lengthDesc": "Längd: störst till minst",
+      "clear": "Rensa filter",
+      "portZone": "Zona / puerto",
+      "price0": "Hasta 100.000 €",
+      "price1": "100.000 – 500.000 €",
+      "price2": "500.000 – 1.000.000 €",
+      "price3": "Más de 1.000.000 €",
+      "rent0": "Alquiler hasta 5.000 €",
+      "rent1": "Alquiler más de 5.000 €",
+      "length0": "Hasta 10 m",
+      "length1": "10 – 15 m",
+      "length2": "15 – 20 m",
+      "length3": "Más de 20 m"
+    }
+  },
+  "services": {
+    "eyebrow": "Tjänster",
+    "title": "Allt du behöver på ett ställe",
+    "lead": "Köp, försäljning, uthyrning, finansiering och investering. Helhetsrådgivning med samma krav i varje tjänst.",
+    "leadForm": {
+      "submitDefault": "Skicka förfrågan",
+      "detailsIntermediation": "Berätta vad du söker eller vad du har",
+      "detailsFinance": "Berätta om din situation",
+      "placeholderIntermediation": "T.ex.: 3 rum, max. 400.000 €…",
+      "placeholderFinance": "T.ex.: jag är skyldig 180.000 €, försenade delbetalningar…"
+    },
+    "investorsEyebrow": "För investerare",
+    "notFoundCtaTitle": "Hittar du inte det du söker?",
+    "notFoundCtaLead": "Berätta om ditt ärende så föreslår vi den mest lämpliga lösningen, utan förpliktelse.",
+    "contactNow": "Kontakta oss nu",
+    "minuteNote": "Det tar bara 1 minut · Vi ringer upp dig",
+    "preferWhatsapp": "Jag föredrar WhatsApp",
+    "whatsappMessage": "Hej, jag kommer från sidan {title} på InmoLex och vill hellre kontakta er via WhatsApp.",
+    "privacyLink": "Integritet",
+    "categories": {
+      "intermediacion": "Fastighetsförmedling",
+      "inversion": "Investering och finansiering",
+      "adicional": "Ytterligare tjänster"
+    },
+    "items": {
+      "comprar-vender": {
+        "title": "Köpa eller sälja",
+        "description": "Köp, försäljning och personlig rådgivning i varje steg av processen.",
+        "cta": "Begär information",
+        "menuDescription": "Hitta ditt hem eller sälj med expertstöd."
+      },
+      "alquiler": {
+        "title": "Uthyrning",
+        "description": "Hitta en hyresbostad eller lägg ut din fastighet med helhetsförvaltning och transparens.",
+        "cta": "Fråga om uthyrning",
+        "menuDescription": "Hitta en hyresbostad eller lägg ut din fastighet."
+      },
+      "valoracion": {
+        "title": "Kostnadsfri värdering",
+        "description": "Värdering utan förpliktelse med marknadsomdöme och svar inom 24 timmar.",
+        "cta": "Begär värdering",
+        "menuDescription": "Värdering utan förpliktelse med marknadsomdöme."
+      },
+      "financiacion": {
+        "title": "Bolån eller lån",
+        "description": "Vi jämför de bästa villkoren och guidar dig genom processen utan extra kostnad.",
+        "cta": "Simulera finansiering",
+        "menuDescription": "Finansiering anpassad efter din situation."
+      },
+      "deuda": {
+        "title": "Betalningssvårigheter",
+        "description": "Lösningar vid bolåneskuld. Vi köper din skuld.",
+        "cta": "Utforska en lösning",
+        "menuDescription": "Lösningar vid bolåneskuld.",
+        "highlight": "Vi köper din skuld"
+      },
+      "inversores": {
+        "title": "Investerare och auktioner",
+        "description": "Off-market-möjligheter, auktioner och underlag med finansiella data för investerare.",
+        "cta": "Investeraraccess",
+        "menuDescription": "Off-market-möjligheter och auktionsaffärer."
+      },
+      "nautica": {
+        "title": "Marint",
+        "description": "Köp, försäljning och uthyrning av yachter, segelbåtar och motorbåtar med samma omdöme som våra fastigheter.",
+        "cta": "Visa marint",
+        "menuDescription": "Yachter, segelbåtar och motorbåtar till salu eller uthyrning."
+      },
+      "reportajes": {
+        "title": "Fotografering",
+        "description": "Professionell foto av interiör och exteriör som förmedlar varje fastighets karaktär.",
+        "cta": "Begär fotografering"
+      },
+      "dron": {
+        "title": "Drönarfoto",
+        "description": "Flygbilder av villor, penthouse och tomter som visar läge och verkliga proportioner.",
+        "cta": "Boka session"
+      },
+      "eventos": {
+        "title": "Evenemangsproduktion",
+        "description": "Exklusiva presentationer, öppet hus och nätverksträffar inom fastigheter.",
+        "cta": "Planera evenemang"
+      }
+    },
+    "pages": {
+      "comprar-vender": {
+        "eyebrow": "Köp och försäljning",
+        "title": "Köpa eller sälja",
+        "description": "Tryck på rätt knapp. Vi ringer upp dig.",
+        "options": {
+          "buy": {
+            "label": "Jag vill köpa",
+            "description": "Vi hjälper dig att hitta din bostad.",
+            "cta": "Jag vill köpa"
+          },
+          "sell": {
+            "label": "Jag vill sälja",
+            "description": "Vi värderar din fastighet utan förpliktelse.",
+            "cta": "Jag vill sälja"
+          }
+        }
+      },
+      "alquiler": {
+        "eyebrow": "Uthyrning",
+        "title": "Uthyrning",
+        "description": "Söker du lägenhet eller vill du hyra ut din? Välj ett alternativ.",
+        "options": {
+          "search": {
+            "label": "Jag söker hyresbostad",
+            "description": "Berätta vad du söker så kontaktar vi dig.",
+            "cta": "Jag söker hyresbostad"
+          },
+          "list": {
+            "label": "Jag vill hyra ut min lägenhet",
+            "description": "Vi sköter uthyrningen åt dig.",
+            "cta": "Hyra ut min lägenhet"
+          }
+        }
+      },
+      "valoracion": {
+        "eyebrow": "Värdering",
+        "title": "Kostnadsfri värdering",
+        "description": "Utan förpliktelse. Ett klick så ringer vi.",
+        "cta": "Be om gratis värdering"
+      },
+      "financiacion": {
+        "eyebrow": "Finansiering",
+        "title": "Bolån eller lån",
+        "description": "Välj vad du behöver. Vi guidar dig.",
+        "privacyNote": "Dina finansiella uppgifter används endast för att bedöma din förfrågan.",
+        "options": {
+          "mortgage": {
+            "label": "Bolån",
+            "description": "För att köpa din bostad.",
+            "cta": "Ansök om bolån"
+          },
+          "loan": {
+            "label": "Privatlån",
+            "description": "För andra projekt.",
+            "cta": "Ansök om lån"
+          }
+        }
+      },
+      "deuda": {
+        "eyebrow": "Hjälp med skuld",
+        "title": "Betalningssvårigheter",
+        "description": "Vi hjälper dig. Berätta om ditt ärende i fullt förtroende.",
+        "cta": "Jag behöver hjälp med min skuld",
+        "highlight": "Vi köper din skuld",
+        "privacyNote": "Konfidentiell information. Vi använder den endast för att bedöma din situation."
+      },
+      "inversores": {
+        "eyebrow": "Investering",
+        "title": "Investerare och auktioner",
+        "description": "Få tillgång till exklusiva möjligheter.",
+        "cta": "Jag är investerare"
+      },
+      "nautica": {
+        "eyebrow": "Marint",
+        "title": "Köp, försäljning och uthyrning av båtar",
+        "description": "Berätta vad du söker eller vad du vill sälja. Vi ringer upp dig.",
+        "cta": "Jag vill ha marin information",
+        "extraLink": "Se katalogen över båtar"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Om oss",
+    "title": "Närhet, omdöme och ett felfritt genomförande",
+    "subtitle": "InmoLex finns för att höja upplevelsen av att köpa, sälja eller investera: ärlig rådgivning, tydliga processer och en visuell och kommersiell standard värdig fastigheten.",
+    "history": {
+      "origin": {
+        "title": "Ursprung",
+        "description": "Vi började med en enkel idé: behandla varje affär som om den vore vår egen. Utan brådska, utan finstilt och med ständig kommunikation."
+      },
+      "method": {
+        "title": "Metod",
+        "description": "Vi kombinerar marknadsanalys, produktförberedelse (foto och video) och visningshantering som respekterar både köparens och ägarens tid."
+      },
+      "evolution": {
+        "title": "Utveckling",
+        "description": "I dag arbetar vi med privatpersoner och investerare, med en omsorgsfullt vald portfölj och ett partnernätverk som ger snabbhet utan att tappa kvalitet."
+      }
+    },
+    "servicesEyebrow": "Tjänster",
+    "servicesTitle": "Ett helhetserbjudande, utan brus",
+    "servicesLead": "Vi förenar rådgivning, marknadsföring och visuellt innehåll så att varje fastighet presenteras med precision och sammanhang.",
+    "highlights": {
+      "sale": "Försäljning och uthyrning med kommersiell strategi och veckovis uppföljning",
+      "investment": "Fastighetsinvestering med avkastningsanalys och scenarier",
+      "finance": "Bolån och finansiering med jämförelse av alternativ",
+      "media": "Audiovisuell produktion: foto och video med drönare"
+    },
+    "viewServices": "Visa tjänster",
+    "talkAdvisor": "Prata med en rådgivare",
+    "eventsTitle": "Evenemangsproduktion",
+    "eventsDescription": "Vi samordnar privata presentationer, öppet hus och nätverksträffar för byggherrar, investerare och köpare – från manus till upplevelsen i rummet.",
+    "eventsBullets": {
+      "guests": "Inbjudningar och gästhantering",
+      "staging": "Scenografi, skyltning och flöde",
+      "coverage": "Fotografering och videosammanfattning"
+    },
+    "letterTitle": "Presentationsbrev",
+    "letterPending": "Detta block väntar på den slutgiltiga texten för att integreras med varumärkets ton.",
+    "ctaTitle": "Ska vi prata om ditt ärende?",
+    "ctaLead": "Vi svarar tydligt och med en handlingsplan, utan förpliktelse.",
+    "ctaButton": "Kontakta oss nu"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Berätta vad du behöver",
+    "lead": "Personligt svar inom 24 timmar. Kostnadsfri rådgivning utan förpliktelse.",
+    "mapTitle": "InmoLex läge i Madrid",
+    "office": "Vårt kontor",
+    "helpEyebrow": "Vi finns här för att hjälpa",
+    "helpTitle": "Låt oss tala om ditt nästa hem",
+    "helpLead": "Oavsett om du ska köpa, sälja eller hyra följer vårt team dig med transparens och personlig uppmärksamhet i varje steg.",
+    "phone": "Telefon",
+    "email": "E-post",
+    "whatsapp": "WhatsApp",
+    "address": "Adress",
+    "hours": "Öppettider",
+    "weekdays": "Mån – fre: 9:30 – 19:00",
+    "saturday": "Lör: 10:00 – 14:00",
+    "trustAria": "Förtroendeindikatorer",
+    "trust": {
+      "response": "Genomsnittlig svarstid",
+      "free": "Rådgivning utan kostnad",
+      "noObligation": "Förfrågan utan förpliktelse",
+      "clients": "Nöjda kunder"
+    },
+    "trustValues": {
+      "free": "Kostnadsfritt",
+      "noObligation": "Utan förpliktelse"
+    },
+    "formTitle": "Har du en fråga?",
+    "formLead": "Lämna ditt telefonnummer så ringer vi. Utan att lämna sidan.",
+    "detailsLabel": "Vad behöver du?",
+    "submit": "Skicka förfrågan",
+    "orWhatsapp": "Eller skriv till oss på WhatsApp",
+    "defaultWhatsapp": "Hej, jag skulle vilja ha mer information om InmoLex."
+  },
+  "forms": {
+    "unavailable": "Formuläret kommer snart. Under tiden kan du <link>kontakta oss här</link>.",
+    "success": "Förfrågan skickad!",
+    "successLead": "Vi ringer upp dig inom kort. Tack för att du litar på InmoLex.",
+    "optional": "(valfritt)",
+    "zone": "Vilket område?",
+    "zonePlaceholder": "Salamanca, Chamberí, La Moraleja…",
+    "detailsDefault": "Berätta vad du behöver",
+    "property": "Vilket objekt är du intresserad av?",
+    "name": "Namn",
+    "phone": "Telefon",
+    "email": "E-post",
+    "privacy": "Jag godkänner integritetspolicyn",
+    "privacyFinance": "Jag godkänner integritetspolicyn och den konfidentiella behandlingen av mina uppgifter",
+    "privacyLink": "Visa policy",
+    "submit": "Skicka förfrågan",
+    "submitting": "Skickar…",
+    "errors": {
+      "unavailable": "Formuläret är inte tillgängligt.",
+      "choice": "Välj ett alternativ.",
+      "name": "Namn är obligatoriskt.",
+      "phone": "Telefon är obligatoriskt.",
+      "email": "Ange en giltig e-postadress.",
+      "privacy": "Du måste godkänna integritetspolicyn.",
+      "submit": "Kunde inte skicka. Försök igen.",
+      "connection": "Anslutningsfel. Försök igen."
+    }
+  },
+  "cookiesBanner": {
+    "aria": "Cookie-samtycke",
+    "text": "Vi använder cookies för att förbättra din upplevelse. Du kan acceptera eller avvisa icke-nödvändiga cookies.",
+    "more": "Mer information",
+    "reject": "Avvisa",
+    "accept": "Acceptera"
+  },
+  "legal": {
+    "eyebrow": "Juridisk information",
+    "updated": "Senast uppdaterad: {date}",
+    "bindingNote": "Den juridiskt bindande versionen av detta dokument är den spanska.",
+    "notice": {
+      "title": "Juridisk information",
+      "intro": "I enlighet med lag 34/2002 av den 11 juli om informationssamhällets tjänster och elektronisk handel (LSSI-CE) informeras användarna om identifieringsuppgifterna för innehavaren av denna webbplats.",
+      "identityTitle": "Identifieringsuppgifter",
+      "holder": "Innehavare: {legalName} ({tradeName}).",
+      "taxId": "CIF: {taxId}.",
+      "email": "E-post: {email}",
+      "address": "Adress: {address}",
+      "purposeTitle": "Syfte",
+      "purpose": "Denna webbplats syftar till att ge information om fastighetstjänsterna hos {tradeName} och att underlätta kontakt med potentiella kunder via formulär, telefon, e-post och WhatsApp.",
+      "termsTitle": "Användarvillkor",
+      "terms1": "Tillgång till och användning av denna webbplats ger status som användare och innebär godkännande av dessa villkor. Användaren förbinder sig att använda innehållet och tjänsterna på ett lämpligt sätt.",
+      "terms2": "Kontaktformulären länkar till Google Forms som hanteras av innehavaren. Genom att skicka dem godkänner användaren villkoren i varje formulär och i integritetspolicyn.",
+      "ipTitle": "Immateriella rättigheter",
+      "ip": "Allt innehåll på webbplatsen (texter, bilder, logotyper, design) tillhör {tradeName} eller dess licensgivare och skyddas av lagstiftningen om immateriella rättigheter.",
+      "liabilityTitle": "Ansvar",
+      "liability1": "{tradeName} ansvarar inte för skador som uppstår till följd av felaktig användning av webbplatsen eller av information som publicerats av tredje part via externa länkar.",
+      "liability2": "Fotografier, planritningar och fastighetsbeskrivningar är vägledande och kan variera. Den slutgiltiga avtalsinformationen lämnas vid affären.",
+      "lawTitle": "Tillämplig lag",
+      "law": "Dessa villkor regleras av spansk lag. Vid tvist underkastar sig parterna domstolarna i {jurisdiction}."
+    },
+    "privacy": {
+      "title": "Integritetspolicy",
+      "intro": "På {tradeName} ({legalName}) behandlar vi era personuppgifter med största omsorg och i enlighet med gällande dataskyddslagstiftning (GDPR och LOPDGDD).",
+      "controllerTitle": "Personuppgiftsansvarig",
+      "controller": "Personuppgiftsansvarig: {legalName} ({tradeName}).",
+      "contactEmail": "Kontaktmejl: {email}",
+      "purposeTitle": "Ändamål med behandlingen",
+      "purpose": "De personuppgifter ni lämnar via formulär, e-post, telefon eller WhatsApp behandlas för att:",
+      "purposeList": {
+        "requests": "Hantera era förfrågningar om information, köp, försäljning, uthyrning eller värdering.",
+        "services": "Tillhandahålla fastighetsförmedling och finansieringstjänster.",
+        "comms": "Skicka kommunikation relaterad till er förfrågan.",
+        "legal": "Uppfylla tillämpliga rättsliga skyldigheter."
+      },
+      "formsTitle": "Kontaktformulär",
+      "forms1": "När ni klickar på knapparna på webbplatsen kan ni komma till formulär som hostas på Google Forms (Google LLC). De uppgifter ni anger skickas direkt till den personuppgiftsansvarige för att hantera er förfrågan.",
+      "forms2": "Vi rekommenderar att ni inte inkluderar känslig information som inte behövs för er förfrågan. Ni kan utöva era rättigheter genom att kontakta oss på den adress som anges i början av denna policy.",
+      "financeTitle": "Behandling av finansiella uppgifter",
+      "finance1": "I formulär om bolån, privatlån eller bolåneskuld kan vi samla in finansiella uppgifter (inkomster, skulder, anställningssituation).",
+      "finance2": "Dessa uppgifter behandlas uteslutande för att bedöma er förfrågan och erbjuda en lämplig lösning. De överlämnas inte till tredje part utan ert uttryckliga samtycke, utom vid rättslig skyldighet.",
+      "sensitiveTitle": "Behandling av känsliga uppgifter (bolåneskuld)",
+      "sensitive": "Uppgifter om rättsliga förfaranden, utmätning eller auktioner betraktas som känsliga. Vi behandlar dem med strikt konfidentialitet och enbart för att analysera er situation och föreslå alternativ.",
+      "legalBasisTitle": "Rättslig grund",
+      "legalBasis": "Den rättsliga grunden för behandlingen är den registrerades samtycke, genomförande av åtgärder före avtal på den registrerades begäran samt berättigat intresse av att besvara förfrågningar.",
+      "retentionTitle": "Lagring av uppgifter",
+      "retention": "Vi bevarar era uppgifter så länge det behövs för att hantera er förfrågan och därefter under de lagstadgade tidsfristerna.",
+      "recipientsTitle": "Mottagare",
+      "recipients1": "Vi överlämnar inte era uppgifter till tredje part, utom vid rättslig skyldighet eller när det krävs för att tillhandahålla den begärda tjänsten (till exempel finansinstitut vid bolåneansökan, med ert förhandsgodkännande).",
+      "recipients2": "Google Forms kan innebära att Google behandlar uppgifter som teknikleverantör, i enlighet med Googles egen integritetspolicy.",
+      "rightsTitle": "Rättigheter",
+      "rights1": "Ni kan utöva era rättigheter till tillgång, rättelse, radering, invändning, begränsning och dataportabilitet genom att skicka e-post till {email}.",
+      "rights2": "Ni har även rätt att lämna in ett klagomål till den spanska dataskyddsmyndigheten (www.aepd.es)."
+    },
+    "cookies": {
+      "title": "Cookiepolicy",
+      "intro": "Denna webbplats använder lokal lagring i er webbläsare för att komma ihåg grundläggande preferenser. Nedan informerar vi om användningen.",
+      "whatTitle": "Vad är cookies?",
+      "what": "Cookies är små textfiler som lagras på er enhet när ni besöker en webbplats. De gör det möjligt att komma ihåg preferenser och förbättra webbplatsens funktion.",
+      "useTitle": "Vad vi använder på den här webbplatsen",
+      "use": "I den aktuella versionen av webbplatsen använder vi endast:",
+      "useList": {
+        "storage": "Lokal lagring (localStorage) för att komma ihåg om ni har godkänt eller avvisat cookieaviseringen.",
+        "technical": "Tekniska cookies som är strikt nödvändiga för webbplatsens grundläggande funktion, om hostingleverantören kräver det."
+      },
+      "analyticsTitle": "Analyscookies",
+      "analytics": "För närvarande installerar vi inga analyscookies eller verktyg för mätning av besökare. Om de införs i framtiden kommer ni att informeras och samtycke att begäras när så krävs.",
+      "manageTitle": "Hantering av cookies",
+      "manage1": "När ni besöker webbplatsen visas en banner där ni kan acceptera eller avvisa icke-nödvändiga cookies.",
+      "manage2": "Ni kan också konfigurera er webbläsare för att blockera eller radera cookies och lokalt lagrade data. Se webbläsarens hjälp för mer information.",
+      "moreTitle": "Mer information",
+      "more1": "Vid frågor om användningen av cookies kan ni kontakta oss på {email}.",
+      "more2": "Se även vår integritetspolicy för mer information om behandlingen av era uppgifter."
+    }
+  },
+  "notFound": {
+    "code": "Fel 404",
+    "title": "Sidan hittades inte",
+    "lead": "Sidan du söker finns inte eller har flyttats. Utforska våra fastigheter eller kontakta vårt team.",
+    "home": "Tillbaka till startsidan",
+    "properties": "Visa fastigheter",
+    "help": "Behöver du hjälp?",
+    "contact": "Kontakta oss"
+  }
+}

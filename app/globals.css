@@ -57,6 +57,15 @@ body {
   font-family: var(--font-source-sans), system-ui, sans-serif;
 }
 
+html[lang="zh"] {
+  --font-sans: var(--font-noto-sc), var(--font-source-sans);
+  --font-display: var(--font-noto-sc), var(--font-cormorant);
+}
+
+html[lang="zh"] body {
+  font-family: var(--font-noto-sc), var(--font-source-sans), system-ui, sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -68,7 +77,7 @@ html {
 }
 
 .font-display {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-display), var(--font-cormorant), Georgia, serif;
 }
 
 @keyframes hero-fade-up {
@@ -136,6 +145,134 @@ html {
 .property-reveal--visible {
   opacity: 1;
   transform: none;
+}
+
+.editorial-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.editorial-reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+
+.service-menu-card {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease,
+    background-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.service-menu-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  background-color: color-mix(in srgb, var(--accent) 8%, transparent);
+  box-shadow: 0 16px 40px -20px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.service-menu-card:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--brand),
+    0 0 0 4px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.service-menu-card__icon {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-menu-card:hover .service-menu-card__icon {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.service-preview-card,
+.service-catalog-cta {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease,
+    background-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.service-preview-card:hover,
+.service-catalog-cta:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 42%, transparent);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: 0 16px 40px -20px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+.service-catalog-cta:hover {
+  background-color: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.service-preview-card:focus-visible,
+.service-catalog-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--brand),
+    0 0 0 4px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.service-preview-card__icon {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-preview-card:hover .service-preview-card__icon {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.service-preview-card__cta {
+  transition: color 0.35s ease;
+}
+
+.service-preview-card:hover .service-preview-card__cta,
+.service-catalog-cta:hover .service-preview-card__cta {
+  color: var(--accent-light);
+}
+
+.service-preview-card__arrow {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-preview-card:hover .service-preview-card__arrow,
+.service-catalog-cta:hover .service-preview-card__arrow {
+  transform: translateX(3px);
+}
+
+.elite-bento-card {
+  transition:
+    border-color 0.5s ease,
+    box-shadow 0.5s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elite-bento-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 32%, transparent);
+  box-shadow:
+    inset 0 1px 28px color-mix(in srgb, var(--accent) 8%, transparent),
+    0 12px 36px -24px color-mix(in srgb, var(--accent) 30%, transparent);
+  transform: translateY(-2px);
+}
+
+.elite-bento-card__icon {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elite-bento-card:hover .elite-bento-card__icon {
+  transform: translateY(-2px);
+}
+
+.elite-bento-watermark {
+  pointer-events: none;
+  position: absolute;
+  opacity: 0.055;
+  color: var(--accent);
 }
 
 .property-card {
@@ -412,12 +549,25 @@ html {
   .hero-trust,
   .hero-image,
   .hero-stat-card,
-  .property-reveal {
+  .property-reveal,
+  .editorial-reveal {
     opacity: 1;
     transform: none;
   }
 
-  .property-card:hover {
+  .property-card:hover,
+  .service-menu-card:hover,
+  .service-preview-card:hover,
+  .service-catalog-cta:hover,
+  .elite-bento-card:hover {
+    transform: none;
+  }
+
+  .service-menu-card:hover .service-menu-card__icon,
+  .service-preview-card:hover .service-preview-card__icon,
+  .elite-bento-card:hover .elite-bento-card__icon,
+  .service-preview-card:hover .service-preview-card__arrow,
+  .service-catalog-cta:hover .service-preview-card__arrow {
     transform: none;
   }
 

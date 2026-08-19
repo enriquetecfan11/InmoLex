@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import {
   DISTRICTS,
   OPERATION_LABELS,
@@ -80,6 +81,11 @@ export function PropertyFilters({
   onChange,
   resultCount,
 }: PropertyFiltersProps) {
+  const t = useTranslations("properties");
+  const tFilters = useTranslations("properties.filters");
+  const tOperation = useTranslations("labels.operation");
+  const tType = useTranslations("labels.propertyType");
+
   const update = (partial: Partial<PropertyFiltersState>) => {
     onChange({ ...filters, ...partial });
   };
@@ -105,7 +111,7 @@ export function PropertyFilters({
             htmlFor="filter-query"
             className="mb-1.5 block text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/45"
           >
-            Buscar por texto o referencia
+            {tFilters("search")}
           </label>
           <div className="relative">
             <svg
@@ -124,14 +130,14 @@ export function PropertyFilters({
               type="search"
               value={filters.query}
               onChange={(e) => update({ query: e.target.value })}
-              placeholder="Ej. Salamanca, ático, INM-0001…"
+              placeholder={tFilters("searchPlaceholder")}
               className="w-full rounded-lg border border-accent/15 bg-brand-dark/50 py-3 pl-11 pr-4 text-sm text-white placeholder:text-white/35 transition-colors hover:border-accent/30 focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/15"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:gap-3">
-          <FilterField label="Operación" id="filter-operation">
+          <FilterField label={tFilters("operation")} id="filter-operation">
             <select
               id="filter-operation"
               value={filters.operation}
@@ -140,23 +146,23 @@ export function PropertyFilters({
               }
               className={selectClassName}
             >
-              <option value="">Todas</option>
+              <option value="">{tFilters("allOperations")}</option>
               {(Object.keys(OPERATION_LABELS) as Operation[]).map((op) => (
                 <option key={op} value={op}>
-                  {OPERATION_LABELS[op]}
+                  {tOperation(op)}
                 </option>
               ))}
             </select>
           </FilterField>
 
-          <FilterField label="Ubicación" id="filter-district">
+          <FilterField label={tFilters("location")} id="filter-district">
             <select
               id="filter-district"
               value={filters.district}
               onChange={(e) => update({ district: e.target.value })}
               className={selectClassName}
             >
-              <option value="">Todas las zonas</option>
+              <option value="">{tFilters("allZones")}</option>
               {DISTRICTS.map((district) => (
                 <option key={district} value={district}>
                   {district}
@@ -165,31 +171,31 @@ export function PropertyFilters({
             </select>
           </FilterField>
 
-          <FilterField label="Precio" id="filter-price">
+          <FilterField label={tFilters("price")} id="filter-price">
             <select
               id="filter-price"
               value={filters.priceRange}
               onChange={(e) => update({ priceRange: e.target.value })}
               className={selectClassName}
             >
-              <option value="">Cualquier precio</option>
-              <option value="0-500000">Hasta 500.000 €</option>
-              <option value="500000-1000000">500.000 – 1.000.000 €</option>
-              <option value="1000000-2000000">1.000.000 – 2.000.000 €</option>
-              <option value="2000000+">Más de 2.000.000 €</option>
-              <option value="rent-0-2500">Alquiler hasta 2.500 €</option>
-              <option value="rent-2500+">Alquiler más de 2.500 €</option>
+              <option value="">{tFilters("anyPrice")}</option>
+              <option value="0-500000">{tFilters("price0")}</option>
+              <option value="500000-1000000">{tFilters("price1")}</option>
+              <option value="1000000-2000000">{tFilters("price2")}</option>
+              <option value="2000000+">{tFilters("price3")}</option>
+              <option value="rent-0-2500">{tFilters("rent0")}</option>
+              <option value="rent-2500+">{tFilters("rent1")}</option>
             </select>
           </FilterField>
 
-          <FilterField label="Habitaciones" id="filter-bedrooms">
+          <FilterField label={tFilters("bedrooms")} id="filter-bedrooms">
             <select
               id="filter-bedrooms"
               value={filters.bedrooms}
               onChange={(e) => update({ bedrooms: e.target.value })}
               className={selectClassName}
             >
-              <option value="">Cualquiera</option>
+              <option value="">{tFilters("any")}</option>
               <option value="1">1+</option>
               <option value="2">2+</option>
               <option value="3">3+</option>
@@ -198,7 +204,7 @@ export function PropertyFilters({
             </select>
           </FilterField>
 
-          <FilterField label="Tipo" id="filter-type">
+          <FilterField label={tFilters("type")} id="filter-type">
             <select
               id="filter-type"
               value={filters.type}
@@ -207,29 +213,29 @@ export function PropertyFilters({
               }
               className={selectClassName}
             >
-              <option value="">Todos</option>
+              <option value="">{tFilters("allTypes")}</option>
               {(Object.keys(PROPERTY_TYPE_LABELS) as PropertyType[]).map(
                 (type) => (
                   <option key={type} value={type}>
-                    {PROPERTY_TYPE_LABELS[type]}
+                    {tType(type)}
                   </option>
                 ),
               )}
             </select>
           </FilterField>
 
-          <FilterField label="Orden" id="filter-sort">
+          <FilterField label={tFilters("sort")} id="filter-sort">
             <select
               id="filter-sort"
               value={filters.sort}
               onChange={(e) => update({ sort: e.target.value as PropertySort })}
               className={selectClassName}
             >
-              <option value="">Relevancia</option>
-              <option value="recientes">Más recientes</option>
-              <option value="precio-asc">Precio: menor a mayor</option>
-              <option value="precio-desc">Precio: mayor a menor</option>
-              <option value="superficie-desc">Superficie: mayor a menor</option>
+              <option value="">{tFilters("relevance")}</option>
+              <option value="recientes">{tFilters("newest")}</option>
+              <option value="precio-asc">{tFilters("priceAsc")}</option>
+              <option value="precio-desc">{tFilters("priceDesc")}</option>
+              <option value="superficie-desc">{tFilters("areaDesc")}</option>
             </select>
           </FilterField>
         </div>
@@ -242,7 +248,7 @@ export function PropertyFilters({
               onChange={(e) => update({ terrace: e.target.checked })}
               className="h-4 w-4 rounded border-accent/30 bg-brand-dark text-accent focus:ring-2 focus:ring-accent/20"
             />
-            Terraza
+            {tFilters("terrace")}
           </label>
           <label className="flex items-center gap-2 rounded-lg border border-accent/10 bg-brand-dark/30 px-3 py-2 text-sm text-white/70 transition-colors hover:border-accent/25">
             <input
@@ -251,7 +257,7 @@ export function PropertyFilters({
               onChange={(e) => update({ garage: e.target.checked })}
               className="h-4 w-4 rounded border-accent/30 bg-brand-dark text-accent focus:ring-2 focus:ring-accent/20"
             />
-            Garaje
+            {tFilters("garage")}
           </label>
           <label className="flex items-center gap-2 rounded-lg border border-accent/10 bg-brand-dark/30 px-3 py-2 text-sm text-white/70 transition-colors hover:border-accent/25">
             <input
@@ -260,7 +266,7 @@ export function PropertyFilters({
               onChange={(e) => update({ elevator: e.target.checked })}
               className="h-4 w-4 rounded border-accent/30 bg-brand-dark text-accent focus:ring-2 focus:ring-accent/20"
             />
-            Ascensor
+            {tFilters("elevator")}
           </label>
           <label className="flex items-center gap-2 rounded-lg border border-accent/10 bg-brand-dark/30 px-3 py-2 text-sm text-white/70 transition-colors hover:border-accent/25">
             <input
@@ -269,14 +275,14 @@ export function PropertyFilters({
               onChange={(e) => update({ pmrAccessible: e.target.checked })}
               className="h-4 w-4 rounded border-accent/30 bg-brand-dark text-accent focus:ring-2 focus:ring-accent/20"
             />
-            Acceso PMR
+            {tFilters("pmr")}
           </label>
         </div>
 
         <div className="mt-4 flex items-center justify-between border-t border-accent/15 pt-4">
           <p className="text-sm text-white/55">
             <span className="font-semibold text-accent">{resultCount}</span>{" "}
-            {resultCount === 1 ? "propiedad" : "propiedades"}
+            {resultCount === 1 ? t("resultOne") : t("resultOther")}
           </p>
           {hasActiveFilters && (
             <button
@@ -298,7 +304,7 @@ export function PropertyFilters({
               }
               className="text-sm font-medium text-accent transition-colors hover:text-accent-light"
             >
-              Limpiar filtros
+              {tFilters("clear")}
             </button>
           )}
         </div>

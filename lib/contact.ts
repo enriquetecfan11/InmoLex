@@ -41,8 +41,8 @@ export function getWhatsAppHref(message?: string): string {
 export const CONTACT_INFO_WHATSAPP_HREF = getWhatsAppHref();
 
 export const TRUST_SIGNALS = [
-  { value: "< 24h", label: "Tiempo medio de respuesta" },
-  { value: "Gratuito", label: "Asesoramiento sin coste" },
-  { value: "Sin compromiso", label: "Consulta sin obligación" },
-  { value: "+200", label: "Clientes satisfechos" },
+  { value: "< 24h", labelKey: "response" },
+  { valueKey: "free", labelKey: "free" },
+  { valueKey: "noObligation", labelKey: "noObligation" },
+  { value: "+200", labelKey: "clients" },
 ] as const;

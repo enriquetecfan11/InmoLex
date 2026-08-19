@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import {
   formatPrice,
   formatPropertyReference,
@@ -16,6 +17,9 @@ export function PropertyShareButton({
   property,
   className = "",
 }: PropertyShareButtonProps) {
+  const locale = useLocale();
+  const t = useTranslations("properties.share");
+  const tCommon = useTranslations("common");
   const [shareUrl, setShareUrl] = useState("");
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(false);
@@ -25,11 +29,14 @@ export function PropertyShareButton({
   }, []);
 
   const reference = formatPropertyReference(property.id);
-  const price = formatPrice(property.price, property.operation);
-  const shareText = `${property.title} · ${price} · Ref. ${reference}`;
+  const price = formatPrice(property.price, property.operation, {
+    locale,
+    perMonth: tCommon("perMonth"),
+  });
+  const shareText = `${property.title} · ${price} · ${tCommon("ref", { id: reference })}`;
 
   const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${shareText}\n${shareUrl}`)}`;
-  const emailHref = `mailto:?subject=${encodeURIComponent(`${property.title} · InmoLex`)}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
+  const emailHref = `mailto:?subject=${encodeURIComponent(t("emailSubject", { title: property.title }))}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
 
   const copyLink = useCallback(async () => {
     if (!shareUrl) return;
@@ -61,7 +68,7 @@ export function PropertyShareButton({
             strokeLinejoin="round"
           />
         </svg>
-        Compartir
+        {t("share")}
       </button>
 
       {open && (
@@ -69,7 +76,7 @@ export function PropertyShareButton({
           <button
             type="button"
             className="fixed inset-0 z-40 cursor-default"
-            aria-label="Cerrar menú de compartir"
+            aria-label={t("close")}
             onClick={() => setOpen(false)}
           />
           <div
@@ -84,7 +91,7 @@ export function PropertyShareButton({
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/80 transition-colors hover:bg-accent/10 hover:text-accent"
               onClick={() => setOpen(false)}
             >
-              WhatsApp
+              {tCommon("whatsapp")}
             </a>
             <a
               href={emailHref}
@@ -92,7 +99,7 @@ export function PropertyShareButton({
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/80 transition-colors hover:bg-accent/10 hover:text-accent"
               onClick={() => setOpen(false)}
             >
-              Email
+              {tCommon("email")}
             </a>
             <button
               type="button"
@@ -103,7 +110,7 @@ export function PropertyShareButton({
               }}
               className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm text-white/80 transition-colors hover:bg-accent/10 hover:text-accent"
             >
-              {copied ? "Enlace copiado" : "Copiar enlace"}
+              {copied ? t("copied") : t("copy")}
             </button>
           </div>
         </>

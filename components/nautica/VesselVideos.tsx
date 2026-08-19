@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import type { Vessel } from "@/lib/vessels";
 
@@ -15,13 +16,15 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function VesselVideos({ vessel }: VesselVideosProps) {
+  const t = useTranslations("vessels.videos");
+
   if (!vessel.videos?.length) return null;
 
   return (
     <RevealOnScroll>
-      <SectionHeading>Vídeo</SectionHeading>
+      <SectionHeading>{t("title")}</SectionHeading>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-        Descubra los detalles y el ambiente de esta embarcación en vídeo.
+        {t("lead")}
       </p>
       <div className="mt-8 space-y-5">
         {vessel.videos.map((url, idx) => (

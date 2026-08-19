@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -5,10 +6,10 @@ import { ServiceCard } from "@/components/services/ServiceCard";
 import {
   ADDITIONAL_SERVICES,
   CORE_SERVICES,
-  SERVICE_CATEGORY_LABELS,
   getServicesByCategory,
   type ServiceCategory,
 } from "@/lib/services";
+import type { ServiceItemId } from "@/lib/i18n-message-keys";
 
 const CATEGORIES: ServiceCategory[] = [
   "intermediacion",
@@ -19,6 +20,10 @@ const CATEGORIES: ServiceCategory[] = [
 const featuredService = CORE_SERVICES.find((service) => service.featured);
 
 export function ServicesSection() {
+  const t = useTranslations("services");
+  const tItems = useTranslations("services.items");
+  const featuredId = featuredService?.id as ServiceItemId | undefined;
+
   return (
     <section className="relative overflow-hidden bg-brand text-white">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-brand-dark" />
@@ -36,30 +41,30 @@ export function ServicesSection() {
         <RevealOnScroll>
           <header className="mx-auto max-w-2xl pt-10 text-center sm:pt-12 lg:pt-16">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
-              Servicios
+              {t("eyebrow")}
             </p>
             <h1 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl lg:text-[3.25rem]">
-              Todo lo que necesitas en un solo lugar
+              {t("title")}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-              Compra, venta, alquiler, financiación e inversión. Asesoramiento integral con la misma exigencia en cada servicio.
+              {t("lead")}
             </p>
           </header>
         </RevealOnScroll>
 
-        {featuredService && (
+        {featuredService && featuredId && (
           <RevealOnScroll className="mt-12 sm:mt-16">
             <div className="relative overflow-hidden rounded-2xl border border-accent/25 bg-accent/[0.06] p-8 sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
               <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/[0.08] blur-3xl" />
               <div className="relative max-w-xl">
                 <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent">
-                  Para inversores
+                  {t("investorsEyebrow")}
                 </p>
                 <h2 className="mt-2 font-display text-3xl tracking-tight sm:text-4xl">
-                  {featuredService.title}
+                  {tItems(`${featuredId}.title`)}
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-white/70">
-                  {featuredService.description}
+                  {tItems(`${featuredId}.description`)}
                 </p>
               </div>
               <div className="relative mt-8 shrink-0 lg:mt-0">
@@ -68,7 +73,7 @@ export function ServicesSection() {
                   size="lg"
                   className="w-full hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/40 sm:w-auto"
                 >
-                  {featuredService.cta}
+                  {tItems(`${featuredId}.cta`)}
                 </Button>
               </div>
             </div>
@@ -93,7 +98,7 @@ export function ServicesSection() {
                     id={`category-${category}`}
                     className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent"
                   >
-                    {SERVICE_CATEGORY_LABELS[category]}
+                    {t(`categories.${category}`)}
                   </h2>
                 </RevealOnScroll>
 
@@ -114,10 +119,10 @@ export function ServicesSection() {
         <RevealOnScroll>
           <div className="border-t border-accent/15 pb-16 pt-10 text-center sm:pb-20 sm:pt-12 lg:pb-24">
             <p className="font-display text-2xl tracking-tight text-white sm:text-3xl">
-              ¿No encuentras lo que buscas?
+              {t("notFoundCtaTitle")}
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/65 sm:text-base">
-              Cuéntanos tu caso y te proponemos la solución más adecuada, sin compromiso.
+              {t("notFoundCtaLead")}
             </p>
             <Button
               href="/contacto"
@@ -125,7 +130,7 @@ export function ServicesSection() {
               size="lg"
               className="mt-8 hover:-translate-y-0.5"
             >
-              Contactar ahora
+              {t("contactNow")}
             </Button>
           </div>
         </RevealOnScroll>
