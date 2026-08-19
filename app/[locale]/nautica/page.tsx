@@ -3,14 +3,10 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { VesselsListing } from "@/components/nautica/VesselsListing";
 import { getVessels } from "@/app/actions/vessel-actions";
-import type { AppLocale } from "@/i18n/routing";
+import { resolveLocale, type LocaleParams } from "@/i18n/params";
 
-type PageProps = {
-  params: Promise<{ locale: AppLocale }>;
-};
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
+  const locale = await resolveLocale(params);
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {

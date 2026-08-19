@@ -1,7 +1,13 @@
 "use server";
 
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import {
+  createSupabasePublicClient,
+  createSupabaseServerClient,
+  getAdminClaims,
+} from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
+import { localizeProperty } from "@/lib/property-i18n";
+import type { PropertyTranslations } from "@/lib/property-i18n";
 import type { Property, PropertyStatus, PropertyType, Orientation } from "@/lib/properties";
 
 type DbProperty = {
@@ -35,6 +41,7 @@ type DbProperty = {
   badge: string | null;
   energy_certificate: { rating: string; consumption: number; emissionsRating: string; emissions: number } | null;
   coordinates: { lat: number; lng: number } | null;
+  translations: PropertyTranslations | null;
 };
 
 function toDb(property: Partial<Property> & { id?: string }): Record<string, unknown> {
@@ -68,6 +75,7 @@ function toDb(property: Partial<Property> & { id?: string }): Record<string, unk
   if (property.badge) data.badge = property.badge;
   if (property.energyCertificate) data.energy_certificate = property.energyCertificate;
   if (property.coordinates) data.coordinates = property.coordinates;
+  if (property.translations) data.translations = property.translations;
   return data;
 }
 
@@ -103,11 +111,12 @@ function toProperty(db: DbProperty): Property {
     badge: db.badge as Property["badge"] ?? undefined,
     energyCertificate: db.energy_certificate as Property["energyCertificate"] ?? undefined,
     coordinates: db.coordinates ?? undefined,
+    translations: db.translations ?? undefined,
   };
 }
 
-export async function getProperties(): Promise<Property[]> {
-  const supabase = createSupabaseServerClient();
+export async function getProperties(locale?: string): Promise<Property[]> {
+  const supabase = createSupabasePublicClient();
   const { data, error } = await supabase
     .from("properties")
     .select("*")
@@ -118,11 +127,12 @@ export async function getProperties(): Promise<Property[]> {
     return [];
   }
 
-  return data.map(toProperty);
+  const properties = data.map(toProperty);
+  return locale ? properties.map((property) => localizeProperty(property, locale)) : properties;
 }
 
-export async function getProperty(id: string): Promise<Property | null> {
-  const supabase = createSupabaseServerClient();
+export async function getProperty(id: string, locale?: string): Promise<Property | null> {
+  const supabase = createSupabasePublicClient();
   const { data, error } = await supabase
     .from("properties")
     .select("*")
@@ -133,7 +143,8 @@ export async function getProperty(id: string): Promise<Property | null> {
     return null;
   }
 
-  return toProperty(data);
+  const property = toProperty(data);
+  return locale ? localizeProperty(property, locale) : property;
 }
 
 type CreatePropertyInput = {
@@ -167,7 +178,12 @@ type CreatePropertyInput = {
 };
 
 export async function createProperty(input: CreatePropertyInput): Promise<{ ok: boolean; error?: string }> {
-  const supabase = createSupabaseServerClient();
+  const claims = await getAdminClaims();
+  if (!claims) {
+    return { ok: false, error: "No autorizado" };
+  }
+
+  const supabase = await createSupabaseServerClient();
 
   const required = ["title", "price", "description", "location", "district", "type", "operation", "status"];
   for (const field of required) {
@@ -199,7 +215,12 @@ export async function createProperty(input: CreatePropertyInput): Promise<{ ok: 
 type UpdatePropertyInput = Partial<CreatePropertyInput> & { id: string };
 
 export async function updateProperty(input: UpdatePropertyInput): Promise<{ ok: boolean; error?: string }> {
-  const supabase = createSupabaseServerClient();
+  const claims = await getAdminClaims();
+  if (!claims) {
+    return { ok: false, error: "No autorizado" };
+  }
+
+  const supabase = await createSupabaseServerClient();
 
   if (!input.id) {
     return { ok: false, error: "ID requerido" };
@@ -224,7 +245,12 @@ export async function updateProperty(input: UpdatePropertyInput): Promise<{ ok: 
 }
 
 export async function deleteProperty(id: string): Promise<{ ok: boolean; error?: string }> {
-  const supabase = createSupabaseServerClient();
+  const claims = await getAdminClaims();
+  if (!claims) {
+    return { ok: false, error: "No autorizado" };
+  }
+
+  const supabase = await createSupabaseServerClient();
 
   const { error } = await supabase
     .from("properties")

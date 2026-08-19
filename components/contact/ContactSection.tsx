@@ -1,35 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import { ContactInfo } from "@/components/contact/ContactInfo";
 import { ContactFormCta } from "@/components/contact/ContactFormCta";
-import { CONTACT_INFO } from "@/lib/contact";
-
-function ContactMap() {
-  const t = useTranslations("contact");
-
-  return (
-    <RevealOnScroll>
-      <div className="contact-map relative overflow-hidden rounded-2xl border border-accent/15">
-        <iframe
-          title={t("mapTitle")}
-          src={CONTACT_INFO.mapEmbed}
-          className="block h-[280px] w-full border-0 sm:h-[320px] lg:h-[360px]"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-accent/15" />
-        <div className="absolute bottom-4 left-4 rounded-lg border border-accent/20 bg-brand/90 px-4 py-2.5 backdrop-blur-sm">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-            {t("office")}
-          </p>
-          <p className="mt-0.5 text-sm text-white/80">{CONTACT_INFO.address}</p>
-        </div>
-      </div>
-    </RevealOnScroll>
-  );
-}
 
 export function ContactSection() {
   const t = useTranslations("contact");
@@ -62,18 +34,10 @@ export function ContactSection() {
           </header>
         </RevealOnScroll>
 
-        <div className="grid gap-12 py-14 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-24 xl:gap-20">
+        <div className="mx-auto max-w-xl py-14 sm:py-16 lg:py-24">
           <RevealOnScroll>
-            <ContactInfo />
-          </RevealOnScroll>
-
-          <RevealOnScroll delay={120}>
             <ContactFormCta />
           </RevealOnScroll>
-        </div>
-
-        <div className="border-t border-accent/15 pb-16 pt-10 sm:pb-20 sm:pt-12 lg:pb-24">
-          <ContactMap />
         </div>
       </Container>
     </section>

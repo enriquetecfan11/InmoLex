@@ -1,5 +1,6 @@
 import propertiesData from "@/data/properties.json";
 import { toIntlLocale } from "@/i18n/intl-locale";
+import type { PropertyTranslations } from "@/lib/property-i18n";
 
 export type Operation = "venta" | "alquiler";
 
@@ -82,6 +83,7 @@ export interface Property {
   energyCertificate?: EnergyCertificate;
   coordinates?: PropertyCoordinates;
   detailSections?: PropertyDetailSection[];
+  translations?: PropertyTranslations;
 }
 
 export const PROPERTY_TYPE_LABELS: Record<PropertyType, string> = {

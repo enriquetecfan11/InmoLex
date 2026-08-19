@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import { InmoLexLeadForm } from "@/components/forms/InmoLexLeadForm";
-import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { TRUST_SIGNALS } from "@/lib/contact";
 import { CONTACTO_CHOICES } from "@/lib/google-form-prefill";
 
@@ -42,15 +41,6 @@ export function ContactFormCta() {
           className="border-0 bg-transparent p-0 backdrop-blur-none"
         />
       </div>
-
-      <p className="mt-6 text-center">
-        <WhatsAppLink
-          message={t("defaultWhatsapp")}
-          className="text-sm font-medium text-accent hover:text-accent-light"
-        >
-          {t("orWhatsapp")}
-        </WhatsAppLink>
-      </p>
     </div>
   );
 }

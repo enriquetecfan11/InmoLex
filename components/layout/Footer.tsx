@@ -3,8 +3,7 @@ import { Link } from "@/i18n/navigation";
 import NextLink from "next/link";
 import { Container } from "@/components/ui/Container";
 import { BrandLogo } from "@/components/ui/BrandLogo";
-import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
-import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/contact";
+import { SOCIAL_LINKS } from "@/lib/contact";
 import { NAV_LINKS } from "@/lib/navigation";
 
 function InstagramIcon() {
@@ -34,7 +33,6 @@ const SOCIAL_ICONS = {
 export function Footer() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
-  const tContact = useTranslations("contact");
 
   return (
     <footer className="border-t border-accent/20 bg-brand text-white">
@@ -90,32 +88,9 @@ export function Footer() {
             </h2>
             <ul className="mt-4 space-y-3 text-sm text-white/60">
               <li>
-                <a href={CONTACT_INFO.phoneHref} className="transition-colors hover:text-accent">
-                  {CONTACT_INFO.phone}
-                </a>
-              </li>
-              <li>
-                <a href={CONTACT_INFO.emailHref} className="transition-colors hover:text-accent">
-                  {CONTACT_INFO.email}
-                </a>
-              </li>
-              <li>
-                <WhatsAppLink
-                  message={tContact("defaultWhatsapp")}
-                  className="text-white/60 hover:text-accent"
-                >
-                  {CONTACT_INFO.whatsapp}
-                </WhatsAppLink>
-              </li>
-              <li>
-                <a
-                  href={CONTACT_INFO.addressHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-accent"
-                >
-                  {CONTACT_INFO.address}
-                </a>
+                <Link href="/contacto" className="transition-colors hover:text-accent">
+                  {tNav("contact")}
+                </Link>
               </li>
             </ul>
           </div>

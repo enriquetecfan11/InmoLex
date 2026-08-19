@@ -2,10 +2,11 @@ import createMiddleware from "next-intl/middleware";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { routing } from "@/i18n/routing";
+import { updateAdminSession } from "@/lib/supabase/middleware";
 
 const intlMiddleware = createMiddleware(routing);
 
-export default function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   if (pathname.startsWith("/api")) {
@@ -13,28 +14,7 @@ export default function middleware(request: NextRequest) {
   }
 
   if (pathname.startsWith("/admin")) {
-    const cookie = request.headers.get("cookie") || "";
-    const hasAccessToken =
-      cookie.includes("sb-access-token") || cookie.includes("sb-refresh-token");
-    const isLoginPage = pathname === "/admin/login";
-
-    if (!hasAccessToken && !isLoginPage) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/admin/login";
-      return NextResponse.redirect(url);
-    }
-
-    if (hasAccessToken && isLoginPage) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/admin/dashboard";
-      return NextResponse.redirect(url);
-    }
-
-    return NextResponse.next({
-      request: {
-        headers: request.headers,
-      },
-    });
+    return updateAdminSession(request);
   }
 
   return intlMiddleware(request);

@@ -1,6 +1,6 @@
 "use server";
 
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabaseServerClient, getAdminClaims } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 
 export type AuthState = {
@@ -15,7 +15,7 @@ export async function login(_: AuthState | undefined, formData: FormData): Promi
     return { error: "Email y contraseña requeridos" };
   }
 
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
@@ -29,15 +29,11 @@ export async function login(_: AuthState | undefined, formData: FormData): Promi
 }
 
 export async function logout() {
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   await supabase.auth.signOut();
   redirect("/admin/login");
 }
 
 export async function getSession() {
-  const supabase = createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  return user;
+  return getAdminClaims();
 }

@@ -3,21 +3,17 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ServiceLanding } from "@/components/services/ServiceLanding";
 import { getServicePage, SERVICE_PAGES } from "@/lib/service-pages";
-import type { AppLocale } from "@/i18n/routing";
-import type messages from "@/messages/es.json";
+import { resolveLocaleParams, type LocaleParams } from "@/i18n/params";
+import type { ServicePageSlug } from "@/lib/i18n-message-keys";
 
-type ServicePageSlug = keyof (typeof messages)["services"]["pages"];
-
-interface PageProps {
-  params: Promise<{ locale: AppLocale; slug: string }>;
-}
+type PageProps = LocaleParams<{ slug: string }>;
 
 export function generateStaticParams() {
   return SERVICE_PAGES.map((page) => ({ slug: page.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { locale, slug } = await resolveLocaleParams(params);
   const t = await getTranslations({ locale, namespace: "metadata" });
   const page = getServicePage(slug);
 
@@ -35,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ServicePage({ params }: PageProps) {
-  const { locale, slug } = await params;
+  const { locale, slug } = await resolveLocaleParams(params);
   setRequestLocale(locale);
 
   const page = getServicePage(slug);

@@ -16,17 +16,15 @@ import { PropertyShareButton } from "@/components/properties/PropertyShareButton
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { formatPrice, getSimilarProperties } from "@/lib/properties";
 import { getProperty, getProperties } from "@/app/actions/property-actions";
-import type { AppLocale } from "@/i18n/routing";
+import { resolveLocaleParams, type LocaleParams } from "@/i18n/params";
 
-interface PageProps {
-  params: Promise<{ locale: AppLocale; id: string }>;
-}
+type PageProps = LocaleParams<{ id: string }>;
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { locale, id } = await params;
-  const property = await getProperty(id);
+  const { locale, id } = await resolveLocaleParams(params);
+  const property = await getProperty(id, locale);
   const t = await getTranslations({ locale, namespace: "metadata" });
   if (!property) return { title: t("properties.notFound") };
 
@@ -56,14 +54,14 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export default async function PropertyDetailPage({ params }: PageProps) {
-  const { locale, id } = await params;
+  const { locale, id } = await resolveLocaleParams(params);
   setRequestLocale(locale);
-  const property = await getProperty(id);
+  const property = await getProperty(id, locale);
 
   if (!property) notFound();
 
   const t = await getTranslations("properties");
-  const allProperties = await getProperties();
+  const allProperties = await getProperties(locale);
   const similarProperties = getSimilarProperties(property, allProperties);
 
   return (

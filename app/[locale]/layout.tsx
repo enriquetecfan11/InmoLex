@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsent } from "@/components/legal/CookieConsent";
-import { routing, type AppLocale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
+import { resolveLocale, type LocaleParams } from "@/i18n/params";
 
-type Props = {
+type Props = LocaleParams & {
   children: React.ReactNode;
-  params: Promise<{ locale: AppLocale }>;
 };
 
 export function generateStaticParams() {
@@ -17,7 +15,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+  const locale = await resolveLocale(params);
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   const languages = Object.fromEntries(
@@ -43,20 +41,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
+  const locale = await resolveLocale(params);
   setRequestLocale(locale);
-  const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <>
       <Header />
       <main className="flex flex-1 flex-col">{children}</main>
       <Footer />
       <CookieConsent />
-    </NextIntlClientProvider>
+    </>
   );
 }

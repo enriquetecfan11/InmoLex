@@ -31,7 +31,8 @@ create table if not exists public.properties (
   videos text[] not null default '{}',
   badge text,
   energy_certificate jsonb,
-  coordinates jsonb
+  coordinates jsonb,
+  translations jsonb not null default '{}'::jsonb
 );
 
 alter table public.properties enable row level security;

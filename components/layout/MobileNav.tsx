@@ -5,7 +5,6 @@ import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
-import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { isNavLinkActive, NAV_LINKS } from "@/lib/navigation";
 
@@ -15,8 +14,6 @@ export function MobileNav() {
   const pathname = usePathname();
   const tNav = useTranslations("nav");
   const tHeader = useTranslations("header");
-  const tCommon = useTranslations("common");
-  const tContact = useTranslations("contact");
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [animatedOpen, setAnimatedOpen] = useState(false);
@@ -136,12 +133,6 @@ export function MobileNav() {
 
               <div className="mt-6 space-y-3 border-t border-accent/15 pt-6">
                 <LanguageSwitcher className="w-full" />
-                <WhatsAppLink
-                  message={tContact("defaultWhatsapp")}
-                  className="flex w-full items-center justify-center rounded-lg border border-accent/25 px-4 py-3.5 text-base font-medium text-accent hover:bg-accent/10"
-                >
-                  {tCommon("whatsapp")}
-                </WhatsAppLink>
                 <Button
                   href="/contacto"
                   variant="primary"

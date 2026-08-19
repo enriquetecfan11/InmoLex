@@ -14,16 +14,14 @@ import { VesselVideos } from "@/components/nautica/VesselVideos";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { formatLength, formatPrice, getSimilarVessels } from "@/lib/vessels";
 import { getVessel, getVessels } from "@/app/actions/vessel-actions";
-import type { AppLocale } from "@/i18n/routing";
+import { resolveLocaleParams, type LocaleParams } from "@/i18n/params";
 
-interface PageProps {
-  params: Promise<{ locale: AppLocale; id: string }>;
-}
+type PageProps = LocaleParams<{ id: string }>;
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { locale, id } = await params;
+  const { locale, id } = await resolveLocaleParams(params);
   const t = await getTranslations({ locale, namespace: "metadata" });
   const tCommon = await getTranslations({ locale, namespace: "common" });
   const vessel = await getVessel(id);
@@ -53,7 +51,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export default async function VesselDetailPage({ params }: PageProps) {
-  const { locale, id } = await params;
+  const { locale, id } = await resolveLocaleParams(params);
   setRequestLocale(locale);
   const t = await getTranslations("vessels");
 

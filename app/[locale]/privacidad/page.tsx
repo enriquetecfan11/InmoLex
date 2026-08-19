@@ -2,16 +2,12 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LegalPageLayout } from "@/components/legal/LegalPageLayout";
 import { toIntlLocale } from "@/i18n/intl-locale";
-import type { AppLocale } from "@/i18n/routing";
+import { resolveLocale, type LocaleParams } from "@/i18n/params";
 import { LEGAL_ENTITY, LEGAL_UPDATED_ISO } from "@/lib/legal/entity";
 import { buildLegalSections } from "@/lib/legal/i18n-sections";
 
-type PageProps = {
-  params: Promise<{ locale: AppLocale }>;
-};
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
+  const locale = await resolveLocale(params);
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
@@ -20,8 +16,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function PrivacidadPage({ params }: PageProps) {
-  const { locale } = await params;
+export default async function PrivacidadPage({ params }: LocaleParams) {
+  const locale = await resolveLocale(params);
   setRequestLocale(locale);
 
   const t = await getTranslations("legal");

@@ -1,13 +1,11 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { InmoLexLeadForm } from "@/components/forms/InmoLexLeadForm";
-import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { CONTACTO_CHOICES } from "@/lib/google-form-prefill";
 
-export function HomeContactCta() {
-  const t = useTranslations("home");
-  const tContact = useTranslations("contact");
+export async function HomeContactCta() {
+  const t = await getTranslations("home");
 
   return (
     <section className="brand-section">
@@ -37,15 +35,6 @@ export function HomeContactCta() {
                   className="border-accent/20 bg-brand-dark/30"
                 />
               </div>
-
-              <p className="mt-5 text-center">
-                <WhatsAppLink
-                  className="inline-flex items-center justify-center rounded-lg border border-accent/30 bg-accent/[0.06] px-6 py-3 text-base font-semibold text-accent transition-colors hover:border-accent/50 hover:bg-accent/10"
-                  message={tContact("defaultWhatsapp")}
-                >
-                  {t("preferWhatsapp")}
-                </WhatsAppLink>
-              </p>
             </div>
           </div>
         </RevealOnScroll>

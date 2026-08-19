@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Noto_Sans_SC, Source_Sans_3 } from "next/font/google";
-import { getLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -33,11 +35,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let locale = "es";
+  let locale: string = routing.defaultLocale;
+  let messages: Record<string, unknown> = {};
+
   try {
     locale = await getLocale();
+    messages = await getMessages();
   } catch {
-    locale = "es";
+    locale = routing.defaultLocale;
+    messages = (await import("@/messages/es.json")).default;
   }
 
   return (
@@ -48,7 +54,9 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
-        {children}
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

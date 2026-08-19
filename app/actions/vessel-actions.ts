@@ -1,6 +1,10 @@
 "use server";
 
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import {
+  createSupabasePublicClient,
+  createSupabaseServerClient,
+  getAdminClaims,
+} from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 import type {
   Operation,
@@ -87,7 +91,7 @@ function toVessel(db: DbVessel): Vessel {
 }
 
 export async function getVessels(): Promise<Vessel[]> {
-  const supabase = createSupabaseServerClient();
+  const supabase = createSupabasePublicClient();
   const { data, error } = await supabase
     .from("vessels")
     .select("*")
@@ -102,7 +106,7 @@ export async function getVessels(): Promise<Vessel[]> {
 }
 
 export async function getVessel(id: string): Promise<Vessel | null> {
-  const supabase = createSupabaseServerClient();
+  const supabase = createSupabasePublicClient();
   const { data, error } = await supabase
     .from("vessels")
     .select("*")
@@ -141,7 +145,12 @@ type CreateVesselInput = {
 export async function createVessel(
   input: CreateVesselInput,
 ): Promise<{ ok: boolean; error?: string }> {
-  const supabase = createSupabaseServerClient();
+  const claims = await getAdminClaims();
+  if (!claims) {
+    return { ok: false, error: "No autorizado" };
+  }
+
+  const supabase = await createSupabaseServerClient();
 
   const required = ["title", "price", "description", "location", "type", "operation", "status"];
   for (const field of required) {
@@ -176,7 +185,12 @@ type UpdateVesselInput = Partial<CreateVesselInput> & { id: string };
 export async function updateVessel(
   input: UpdateVesselInput,
 ): Promise<{ ok: boolean; error?: string }> {
-  const supabase = createSupabaseServerClient();
+  const claims = await getAdminClaims();
+  if (!claims) {
+    return { ok: false, error: "No autorizado" };
+  }
+
+  const supabase = await createSupabaseServerClient();
 
   if (!input.id) {
     return { ok: false, error: "ID requerido" };
@@ -203,7 +217,12 @@ export async function updateVessel(
 }
 
 export async function deleteVessel(id: string): Promise<{ ok: boolean; error?: string }> {
-  const supabase = createSupabaseServerClient();
+  const claims = await getAdminClaims();
+  if (!claims) {
+    return { ok: false, error: "No autorizado" };
+  }
+
+  const supabase = await createSupabaseServerClient();
 
   const { error } = await supabase.from("vessels").delete().eq("id", id);
 

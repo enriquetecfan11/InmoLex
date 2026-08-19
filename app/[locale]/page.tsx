@@ -8,17 +8,16 @@ import { HomeWhyChoose } from "@/components/home/HomeWhyChoose";
 import { HomeContactCta } from "@/components/home/HomeContactCta";
 import { getProperties } from "@/app/actions/property-actions";
 import { getVessels } from "@/app/actions/vessel-actions";
-import type { AppLocale } from "@/i18n/routing";
+import { resolveLocale, type LocaleParams } from "@/i18n/params";
 
-type PageProps = {
-  params: Promise<{ locale: AppLocale }>;
-};
-
-export default async function Home({ params }: PageProps) {
-  const { locale } = await params;
+export default async function Home({ params }: LocaleParams) {
+  const locale = await resolveLocale(params);
   setRequestLocale(locale);
 
-  const [properties, vessels] = await Promise.all([getProperties(), getVessels()]);
+  const [properties, vessels] = await Promise.all([
+    getProperties(locale),
+    getVessels(),
+  ]);
 
   return (
     <>

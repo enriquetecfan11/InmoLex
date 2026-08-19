@@ -4,29 +4,11 @@ import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { InmoLexLeadForm } from "@/components/forms/InmoLexLeadForm";
-import { getWhatsAppHref } from "@/lib/contact";
 import { CONTACTO_CHOICES } from "@/lib/google-form-prefill";
 import { formatPrice, type Vessel } from "@/lib/vessels";
 
 interface VesselContactPanelProps {
   vessel: Vessel;
-}
-
-function WhatsAppIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
-      <path
-        d="M9 1.5a7.5 7.5 0 0 0-6.52 11.28L1.5 16.5l4-1.9A7.5 7.5 0 1 0 9 1.5Z"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M6.8 7.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .5-.2.7l-.5.5c-.2.2-.2.4 0 .7.5.8 1.3 1.6 2.1 2.1.3.2.5.2.7 0l.5-.5c.2-.2.5-.3.7-.2l1.9.8c.3.1.4.3.4.5v.6c0 .3 0 .5-.5.7-.8.4-2 .2-3.4-.9-1.5-1.1-2.7-2.8-3-3.6-.3-.8-.1-1.4.3-1.8Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
 }
 
 type ContactMode = "visita" | "info";
@@ -38,11 +20,6 @@ export function VesselContactPanel({ vessel }: VesselContactPanelProps) {
   const locale = useLocale();
   const [mode, setMode] = useState<ContactMode>("visita");
 
-  const whatsappText = t("whatsappMessage", {
-    title: vessel.title,
-    location: vessel.location,
-  });
-  const whatsappHref = getWhatsAppHref(whatsappText);
   const price = formatPrice(vessel.price, vessel.operation, {
     locale,
     perMonth: tCommon("perMonth"),
@@ -99,20 +76,6 @@ export function VesselContactPanel({ vessel }: VesselContactPanelProps) {
               className="border-0 bg-transparent p-0 backdrop-blur-none"
             />
           </div>
-
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noreferrer"
-            className="property-cta-whatsapp mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-accent/30 bg-accent/[0.06] px-6 py-3 text-sm font-medium text-accent transition-all duration-300 hover:border-accent/50 hover:bg-accent/10"
-          >
-            <WhatsAppIcon />
-            {tCommon("whatsapp")}
-          </a>
-
-          <p className="mt-6 border-t border-accent/15 pt-5 text-xs leading-relaxed text-white/40">
-            {t("whatsappLead")}
-          </p>
         </div>
       </aside>
 
@@ -131,15 +94,6 @@ export function VesselContactPanel({ vessel }: VesselContactPanelProps) {
           >
             {t("contact")}
           </Link>
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={t("whatsappAria")}
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-accent/30 text-accent transition-colors hover:bg-accent/10"
-          >
-            <WhatsAppIcon />
-          </a>
         </div>
       </div>
       <div

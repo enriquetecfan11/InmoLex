@@ -41,14 +41,14 @@ export function ServiceLeadSection({ page }: ServiceLeadSectionProps) {
   const hasMultipleOptions = Boolean(page.formOptions && page.formOptions.length > 1);
 
   const submitLabel = selectedOptionKey
-    ? tPages(`${slug}.options.${selectedOptionKey}.cta`)
+    ? tPages(`${slug}.options.${selectedOptionKey}.cta` as never)
     : page.ctaLabel
-      ? tPages(`${slug}.cta`)
+      ? tPages(`${slug}.cta` as never)
       : tLead("submitDefault");
 
   const choiceLabel =
     hasMultipleOptions && selectedOptionKey
-      ? tPages(`${slug}.options.${selectedOptionKey}.label`)
+      ? tPages(`${slug}.options.${selectedOptionKey}.label` as never)
       : undefined;
 
   return (
@@ -59,7 +59,7 @@ export function ServiceLeadSection({ page }: ServiceLeadSectionProps) {
             const active = selectedIndex === index;
             const optionKey = optionKeys?.[index];
             const cta = optionKey
-              ? tPages(`${slug}.options.${optionKey}.cta`)
+              ? tPages(`${slug}.options.${optionKey}.cta` as never)
               : option.ctaLabel;
             return (
               <button

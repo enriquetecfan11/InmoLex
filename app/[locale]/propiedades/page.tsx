@@ -3,16 +3,12 @@ import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PropertiesListing } from "@/components/properties/PropertiesListing";
 import { getProperties } from "@/app/actions/property-actions";
-import type { AppLocale } from "@/i18n/routing";
-
-interface PageProps {
-  params: Promise<{ locale: AppLocale }>;
-}
+import { resolveLocale, type LocaleParams } from "@/i18n/params";
 
 export async function generateMetadata({
   params,
-}: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+}: LocaleParams): Promise<Metadata> {
+  const locale = await resolveLocale(params);
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
@@ -21,10 +17,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function PropiedadesPage({ params }: PageProps) {
-  const { locale } = await params;
+export default async function PropiedadesPage({ params }: LocaleParams) {
+  const locale = await resolveLocale(params);
   setRequestLocale(locale);
-  const properties = await getProperties();
+  const properties = await getProperties(locale);
 
   return (
     <Suspense
