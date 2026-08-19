@@ -47,6 +47,15 @@ interface PlanCardProps {
   title: string;
 }
 
+function isImageUrl(src: string): boolean {
+  try {
+    const url = new URL(src);
+    return /\.(png|jpe?g|webp|gif|avif|svg)$/i.test(url.pathname);
+  } catch {
+    return /\.(png|jpe?g|webp|gif|avif|svg)(\?.*)?$/i.test(src);
+  }
+}
+
 function PlanCard({ label, src, title }: PlanCardProps) {
   const t = useTranslations("properties.plans");
   const [modalOpen, setModalOpen] = useState(false);
@@ -58,6 +67,22 @@ function PlanCard({ label, src, title }: PlanCardProps) {
         <div className="mt-3">
           <PlanPlaceholder label={label} />
         </div>
+      </div>
+    );
+  }
+
+  if (!isImageUrl(src)) {
+    return (
+      <div className="property-plan-card rounded-2xl border border-accent/12 p-4">
+        <p className="text-sm font-semibold text-white/80">{label}</p>
+        <a
+          href={src}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-3 flex aspect-[16/10] items-center justify-center rounded-xl border border-accent/20 bg-accent/[0.03] text-sm font-medium text-accent transition-colors hover:bg-accent/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+        >
+          {label} ↗
+        </a>
       </div>
     );
   }
